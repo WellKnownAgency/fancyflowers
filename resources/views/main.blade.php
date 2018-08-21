@@ -2,9 +2,10 @@
   <head>
     @include('partials/_head')
   </head>
-  <body class="index home-2">
+  <body class="index home-1">
     <div id="all">
       @include('partials/_nav')
+      @include('partials/_slideshow')
       @yield('content')
       @include('partials/_footer')
 

@@ -5,38 +5,6 @@
 @extends('main')
 
 @section('content')
-<div class="tiva-slideshow-wrapper">
-  <div class="container">
-    <div id="tiva-slideshow" class="nivoSlider">
-      <a href="#" title="Slideshow image"><img class="img-responsive" src="img/slide/slide1-h2.jpg" title="#caption1" alt="Slideshow image"></a>
-      <a href="#" title="Slideshow image"><img class="img-responsive" src="img/slide/slide2-h2.jpg" title="#caption2" alt="Slideshow image"></a>
-    </div>
-
-    <div id="caption1" class="nivo-html-caption">
-      <div class="tiva-caption">
-        <div class="left-right tiva-caption-lr hidden-xs">
-          <div class="very_large_30">Save 30% off</div>
-          <div class="very_large_48">Bouquets</div>
-          <div class="medium_20">Coupon code</div>
-          <div class="medium_24"><span>ATM123VA</span></div>
-          <div class="slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
-        </div>
-      </div>
-    </div>
-    <div id="caption2" class="nivo-html-caption">
-      <div class="tiva-caption">
-        <div class="right-left tiva-caption-lr hidden-xs">
-          <div class="very_large_30">Save 30% off</div>
-          <div class="normal very_large_48">Weddings</div>
-          <div class="medium_20">Coupon code</div>
-          <div class="medium_24"><span>ATM123VA</span></div>
-          <div class="slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><!-- end tiva-slideshow-wrapper -->
-
 <div id="columns" class="columns-container">
   <div class="section section-tabsproduct">
     <div class="container">
@@ -63,7 +31,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - red">
-                          <img src="img/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
+                          <img src="images/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                         <span class="label-sale label">Sale</span>
@@ -113,7 +81,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Queen rose - yellow">
-                          <img src="img/product/2.jpg" alt="Queen rose - yellow" class="img-responsive" width="480" height="640">
+                          <img src="images/product/2.jpg" alt="Queen rose - yellow" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -160,7 +128,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Flowers Bouquet - pink">
-                          <img src="img/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
+                          <img src="images/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -207,7 +175,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - yellow">
-                          <img src="img/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive" width="480" height="640">
+                          <img src="images/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -254,7 +222,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Queen rose - pink">
-                          <img src="img/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
+                          <img src="images/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -301,7 +269,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet rose">
-                          <img src="img/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
+                          <img src="images/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                         <span class="label-sale label">Sale</span>
@@ -351,7 +319,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet lavender">
-                          <img src="img/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
+                          <img src="images/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -398,7 +366,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - white">
-                          <img src="img/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
+                          <img src="images/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -451,7 +419,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet rose">
-                          <img src="img/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
+                          <img src="images/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -498,7 +466,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Queen rose - pink">
-                          <img src="img/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
+                          <img src="images/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -545,7 +513,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet lavender">
-                          <img src="img/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
+                          <img src="images/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -592,7 +560,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - white">
-                          <img src="img/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
+                          <img src="images/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -639,7 +607,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Flowers Bouquet - pink">
-                          <img src="img/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
+                          <img src="images/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                         <span class="label-sale label">Sale</span>
@@ -689,7 +657,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - red">
-                          <img src="img/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
+                          <img src="images/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -736,7 +704,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Flowers Bouquet - pink">
-                          <img src="img/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
+                          <img src="images/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                       </div>
@@ -783,7 +751,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - violet white">
-                          <img src="img/product/9.jpg" alt="Bouquet Hydrangea - violet white" class="img-responsive" width="480" height="640">
+                          <img src="images/product/9.jpg" alt="Bouquet Hydrangea - violet white" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                         <span class="label-sale label">Sale</span>
@@ -838,7 +806,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Flowers Bouquet - pink">
-                        <img src="img/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
+                        <img src="images/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                       <span class="label-sale label">Sale</span>
@@ -888,7 +856,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - yellow">
-                        <img src="img/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive" width="480" height="640">
+                        <img src="images/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -935,7 +903,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet rose">
-                        <img src="img/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
+                        <img src="images/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -982,7 +950,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - red">
-                        <img src="img/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
+                        <img src="images/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1029,7 +997,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet lavender">
-                        <img src="img/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
+                        <img src="images/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1076,7 +1044,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - violet white">
-                        <img src="img/product/9.jpg" alt="Bouquet Hydrangea - violet white" class="img-responsive" width="480" height="640">
+                        <img src="images/product/9.jpg" alt="Bouquet Hydrangea - violet white" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1123,7 +1091,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - white">
-                        <img src="img/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
+                        <img src="images/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1170,7 +1138,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Queen rose - pink">
-                        <img src="img/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
+                        <img src="images/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1221,7 +1189,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - white">
-                        <img src="img/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
+                        <img src="images/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                       <span class="label-sale label">Sale</span>
@@ -1271,7 +1239,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Queen rose - pink">
-                        <img src="img/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
+                        <img src="images/product/5.jpg" alt="Queen rose - pink" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1318,7 +1286,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - red">
-                        <img src="img/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
+                        <img src="images/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1365,7 +1333,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet lavender">
-                        <img src="img/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
+                        <img src="images/product/7.jpg" alt="Bouquet lavender" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1412,7 +1380,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - yellow">
-                        <img src="img/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive" width="480" height="640">
+                        <img src="images/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1459,7 +1427,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet rose">
-                        <img src="img/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
+                        <img src="images/product/6.jpg" alt="Bouquet rose" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1506,7 +1474,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - white">
-                        <img src="img/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
+                        <img src="images/product/8.jpg" alt="Bouquet Hydrangea - white" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1553,7 +1521,7 @@
                   <div class="left-block">
                     <div class="product-image-container">
                       <a class="product_img_link" href="page-detail.html" title="Bouquet Hydrangea - violet white">
-                        <img src="img/product/9.jpg" alt="Bouquet Hydrangea - violet white" class="img-responsive" width="480" height="640">
+                        <img src="images/product/9.jpg" alt="Bouquet Hydrangea - violet white" class="img-responsive" width="480" height="640">
                       </a>
                       <span class="label-new label">New</span>
                     </div>
@@ -1607,13 +1575,13 @@
       <div class="testimoniol-slider">
         <div class="testimoniol-items">
           <div class="item">
-            <img class="img-responsive" src="img/testimonial/1.png" alt="">
+            <img class="img-responsive" src="images/testimonial/1.png" alt="">
             <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
             <a href="#" title="">John Doe</a><br>
             <span class="position">CEO & Founder</span>
           </div>
           <div class="item">
-            <img class="img-responsive" src="img/testimonial/2.png" alt="">
+            <img class="img-responsive" src="images/testimonial/2.png" alt="">
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
             <a href="#" title="">Tivatheme</a><br>
             <span class="position">CEO & Founder</span>
@@ -1636,7 +1604,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="img/blog/870x578/1.jpg" alt="" class="img-responsive">
+                    <img src="images/blog/870x578/1.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">May</span><br><span class="day">08</span></span>
                 </div>
@@ -1656,7 +1624,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="img/blog/870x578/2.jpg" alt="" class="img-responsive">
+                    <img src="images/blog/870x578/2.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Mar</span><br><span class="day">20</span></span>
                 </div>
@@ -1676,7 +1644,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="img/blog/870x578/3.jpg" alt="" class="img-responsive">
+                    <img src="images/blog/870x578/3.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Web</span><br><span class="day">25</span></span>
                 </div>
@@ -1696,7 +1664,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="img/blog/870x578/4.jpg" alt="" class="img-responsive">
+                    <img src="images/blog/870x578/4.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Thu</span><br><span class="day">30</span></span>
                 </div>
@@ -1716,7 +1684,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="img/blog/870x578/5.jpg" alt="" class="img-responsive">
+                    <img src="images/blog/870x578/5.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Fri</span><br><span class="day">18</span></span>
                 </div>
@@ -1742,14 +1710,14 @@
     <div class="container">
       <div class="block manufacturers_block">
         <ul class="manufacture_block">
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image1.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image2.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image3.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image4.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image5.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image1.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image2.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image3.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image1.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image2.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image3.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image4.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image5.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image1.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image2.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image3.jpg" alt=""></a></li>
         </ul><!--end manufacture_block-->
       </div><!-- end Manufactures -->
     </div><!-- end container -->
