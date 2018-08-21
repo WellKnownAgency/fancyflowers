@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('/about-us', function () {
+    return view('about-us');
+});
+
+Route::get('/contact-us', function () {
+    return view('contact-us');
+});
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
