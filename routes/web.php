@@ -27,3 +27,11 @@ Route::get('/contact-us', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 });
+
+Route::get('/products-list', function () {
+    return view('products-list/products-list');
+});
+
+Route::get('/blog', function () {
+    return view('blog/index');
+});
