@@ -6,65 +6,38 @@
 
 @section('content')
 <div class="tiva-slideshow-wrapper">
-  <div id="tiva-slideshow" class="nivoSlider">
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="img/slide/slide1-h1.jpg" title="#caption1" alt="Slideshow image"></a>
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="img/slide/slide2-h1.jpg" title="#caption2" alt="Slideshow image"></a>
-  </div>
-
-  <div id="caption1" class="nivo-html-caption">
-    <div class="tiva-caption">
-      <div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>
-      <div class="left-right hidden-xs normal very_large_60">Floral headband</div>
-      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
-      <div class="left-right hidden-xs slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
+  <div class="container">
+    <div id="tiva-slideshow" class="nivoSlider">
+      <a href="#" title="Slideshow image"><img class="img-responsive" src="img/slide/slide1-h2.jpg" title="#caption1" alt="Slideshow image"></a>
+      <a href="#" title="Slideshow image"><img class="img-responsive" src="img/slide/slide2-h2.jpg" title="#caption2" alt="Slideshow image"></a>
     </div>
-  </div>
-  <div id="caption2" class="nivo-html-caption">
-    <div class="tiva-caption">
-      <div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>
-      <div class="left-right hidden-xs normal very_large_60">Floral headband</div>
-      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
-      <div class="left-right hidden-xs slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
+
+    <div id="caption1" class="nivo-html-caption">
+      <div class="tiva-caption">
+        <div class="left-right tiva-caption-lr hidden-xs">
+          <div class="very_large_30">Save 30% off</div>
+          <div class="very_large_48">Bouquets</div>
+          <div class="medium_20">Coupon code</div>
+          <div class="medium_24"><span>ATM123VA</span></div>
+          <div class="slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
+        </div>
+      </div>
+    </div>
+    <div id="caption2" class="nivo-html-caption">
+      <div class="tiva-caption">
+        <div class="right-left tiva-caption-lr hidden-xs">
+          <div class="very_large_30">Save 30% off</div>
+          <div class="normal very_large_48">Weddings</div>
+          <div class="medium_20">Coupon code</div>
+          <div class="medium_24"><span>ATM123VA</span></div>
+          <div class="slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
+        </div>
+      </div>
     </div>
   </div>
 </div><!-- end tiva-slideshow-wrapper -->
 
 <div id="columns" class="columns-container">
-  <div class="section section-banner">
-    <div class="container">
-      <div class="tv-table block">
-        <div class="tv-tablecell">
-          <div class="block-html block">
-            <h4>Flowers for the</h4>
-            <h3>Birthday & Gifts</h3>
-            <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            <a class="button btn btn-primary" href="page-category-left.html" title="Shop now">Shop now</a>
-          </div><!--end block-html -->
-        </div>
-        <div class="tv-tablecell box-image">
-          <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="img/banner/banner1-h1.jpg" alt=""></a>
-          </div><!--end banner-item-->
-        </div>
-      </div>
-      <div class="tv-table block">
-        <div class="tv-tablecell box-image">
-          <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="img/banner/banner2-h1.jpg" alt=""></a>
-          </div><!--end banner-item-->
-        </div>
-        <div class="tv-tablecell">
-          <div class="block-html block">
-            <h4>Flowers for the</h4>
-            <h3>Wedding day</h3>
-            <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            <a class="button btn btn-primary" href="page-category-left.html" title="Shop now">Shop now</a>
-          </div><!--end block-html -->
-        </div>
-      </div>
-    </div><!-- end container -->
-  </div><!-- end section-banner -->
-
   <div class="section section-tabsproduct">
     <div class="container">
       <!-- tabs-top -->
@@ -1629,54 +1602,157 @@
     </div><!-- end container -->
   </div><!-- end section-tabsproduct -->
 
-  <div class="section section-newsletter">
+  <div class="section section-testimoniol">
     <div class="container">
-      <!-- start newsletter -->
-      <div class="block-newsletter" id="block-newsletter">
-        <h4 class="title_block">Sign up for the newsletter</h4>
-        <p class="descript">Sign up for our mailing list to get latest updates and offers</p>
-        <form action="#" method="post" class="form-inline">
-          <div class="form-group">
-            <input class="inputNew form-control grey newsletter-input" id="newsletter-input" type="text" name="email" size="18" placeholder="Enter your email...">
-            <button type="submit" name="submitNewsletter" class="btn-primary btn button button-small">
-              <span class="submit-icon"></span>
-              <span class="submit-text">Subscribe</span>
-            </button>
+      <div class="testimoniol-slider">
+        <div class="testimoniol-items">
+          <div class="item">
+            <img class="img-responsive" src="img/testimonial/1.png" alt="">
+            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
+            <a href="#" title="">John Doe</a><br>
+            <span class="position">CEO & Founder</span>
           </div>
-        </form>
-      </div><!-- end block-newsletter -->
-    </div>
-  </div><!-- end section section-newsletter -->
-
-  <section class="section section-gallery">
-    <div class="container">
-      <div class="block-gallery block">
-        <h4 class="title_block">Gallery</h4>
-        <p class="des-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore</p>
-        <div class="block_content">
-          <div class="row no-gutters">
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="img/gallery/1.jpg"><img class="img-responsive" src="img/gallery/1.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="img/gallery/2.jpg"><img class="img-responsive" src="img/gallery/2.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="img/gallery/3.jpg"><img class="img-responsive" src="img/gallery/3.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="img/gallery/4.jpg"><img class="img-responsive" src="img/gallery/4.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="img/gallery/5.jpg"><img class="img-responsive" src="img/gallery/5.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="img/gallery/6.jpg"><img class="img-responsive" src="img/gallery/6.jpg" alt=""></a>
-            </div>
+          <div class="item">
+            <img class="img-responsive" src="img/testimonial/2.png" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
+            <a href="#" title="">Tivatheme</a><br>
+            <span class="position">CEO & Founder</span>
           </div>
         </div>
-      </div><!-- end block-gallery -->
+      </div><!-- end testimoniol-slider -->
     </div><!-- end container -->
-  </section><!-- end section-gallery -->
+  </div><!--end section-testimoniol-->
+
+  <div class="section section-posts">
+    <div class="container">
+      <div class="tiva-postslist">
+        <h4 class="title_block">Form the blog</h4>
+        <div class="des-text">
+          <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
+        </div>
+        <div class="block_content">
+          <div class="postslist-owlcaousel owl-carousel">
+            <div class="item">
+              <div class="post-container">
+                <div class="post-image">
+                  <a href="page-blog-left-detail.html">
+                    <img src="img/blog/870x578/1.jpg" alt="" class="img-responsive">
+                  </a>
+                  <span class="post-date"><span class="month">May</span><br><span class="day">08</span></span>
+                </div>
+                <div class="post-content">
+                  <h4><a href="page-blog-left-detail.html" title="Nullam ullamcorper nisl quis ornare">Nullam ullamcorper nisl quis ornare</a></h4>
+                  <div class="post-meta">
+                    <div class="post-meta-lr post-meta-left">
+                      <span class="post-user">By Tivatheme</span>
+                      <span class="post-comment">3 comment</span>
+                    </div><!-- end post-meta-left -->
+                  </div><!-- end post-meta -->
+                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
+                </div><!-- end post-content -->
+              </div><!-- end post-container -->
+            </div><!-- end item -->
+            <div class="item">
+              <div class="post-container">
+                <div class="post-image">
+                  <a href="page-blog-left-detail.html">
+                    <img src="img/blog/870x578/2.jpg" alt="" class="img-responsive">
+                  </a>
+                  <span class="post-date"><span class="month">Mar</span><br><span class="day">20</span></span>
+                </div>
+                <div class="post-content">
+                  <h4><a href="page-blog-left-detail.html" title="Growing a wood flower business">Growing a wood flower business</a></h4>
+                  <div class="post-meta">
+                    <div class="post-meta-lr post-meta-left">
+                      <span class="post-user">By Tivatheme</span>
+                      <span class="post-comment">3 comment</span>
+                    </div><!-- end post-meta-left -->
+                  </div><!-- end post-meta -->
+                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
+                </div><!-- end post-content -->
+              </div><!-- end post-container -->
+            </div><!-- end item -->
+            <div class="item">
+              <div class="post-container">
+                <div class="post-image">
+                  <a href="page-blog-left-detail.html">
+                    <img src="img/blog/870x578/3.jpg" alt="" class="img-responsive">
+                  </a>
+                  <span class="post-date"><span class="month">Web</span><br><span class="day">25</span></span>
+                </div>
+                <div class="post-content">
+                  <h4><a href="page-blog-left-detail.html" title="More than just a simple bouquet">More than just a simple bouquet</a></h4>
+                  <div class="post-meta">
+                    <div class="post-meta-lr post-meta-left">
+                      <span class="post-user">By Tivatheme</span>
+                      <span class="post-comment">3 comment</span>
+                    </div><!-- end post-meta-left -->
+                  </div><!-- end post-meta -->
+                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
+                </div><!-- end post-content -->
+              </div><!-- end post-container -->
+            </div><!-- end item -->
+            <div class="item">
+              <div class="post-container">
+                <div class="post-image">
+                  <a href="page-blog-left-detail.html">
+                    <img src="img/blog/870x578/4.jpg" alt="" class="img-responsive">
+                  </a>
+                  <span class="post-date"><span class="month">Thu</span><br><span class="day">30</span></span>
+                </div>
+                <div class="post-content">
+                  <h4><a href="page-blog-left-detail.html" title="Eiusmod tempor incididunt ut labore">Eiusmod tempor incididunt ut labore</a></h4>
+                  <div class="post-meta">
+                    <div class="post-meta-lr post-meta-left">
+                      <span class="post-user">By Tivatheme</span>
+                      <span class="post-comment">3 comment</span>
+                    </div><!-- end post-meta-left -->
+                  </div><!-- end post-meta -->
+                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
+                </div><!-- end post-content -->
+              </div><!-- end post-container -->
+            </div><!-- end item -->
+            <div class="item">
+              <div class="post-container">
+                <div class="post-image">
+                  <a href="page-blog-left-detail.html">
+                    <img src="img/blog/870x578/5.jpg" alt="" class="img-responsive">
+                  </a>
+                  <span class="post-date"><span class="month">Fri</span><br><span class="day">18</span></span>
+                </div>
+                <div class="post-content">
+                  <h4><a href="page-blog-left-detail.html" title="The key to more success is to get">The key to more success is to get</a></h4>
+                  <div class="post-meta">
+                    <div class="post-meta-lr post-meta-left">
+                      <span class="post-user">By Tivatheme</span>
+                      <span class="post-comment">3 comment</span>
+                    </div><!-- end post-meta-left -->
+                  </div><!-- end post-meta -->
+                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
+                </div><!-- end post-content -->
+              </div><!-- end post-container -->
+            </div><!-- end item -->
+          </div><!-- end postslist-owlcaousel -->
+        </div><!-- end bock_content -->
+      </div><!-- end tiva-postslist -->
+    </div><!-- end container -->
+  </div><!-- end section-posts -->
+
+  <div class="section section-manufacture">
+    <div class="container">
+      <div class="block manufacturers_block">
+        <ul class="manufacture_block">
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image1.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image2.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image3.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image4.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image5.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image1.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image2.jpg" alt=""></a></li>
+          <li><a href="#"><img class="img-responsive" src="img/brand/logo_image3.jpg" alt=""></a></li>
+        </ul><!--end manufacture_block-->
+      </div><!-- end Manufactures -->
+    </div><!-- end container -->
+  </div><!-- end section-manufacture -->
 </div><!--end columns -->
 @stop
