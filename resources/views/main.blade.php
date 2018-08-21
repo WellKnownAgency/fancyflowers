@@ -2,7 +2,7 @@
   <head>
     @include('partials/_head')
   </head>
-  <body class="index home-1">
+  <body class="index home-2">
     <div id="all">
       @include('partials/_nav')
       @yield('content')
