@@ -9,7 +9,7 @@
       @yield('content')
       @include('partials/_footer')
 
-      <!-- Popup Screen -->
+      <!-- Popup Screen
 			<div class="tiva-popup-screen">
 				<div class="popup-wrap" id="tiva-popupscreen">
 					<div class="popup">
@@ -31,9 +31,10 @@
 					</div>
 				</div>
 			</div>
+       -->
 
       <div class="go-up">
-				<a href="#"><i class="fa fa-chevron-up"></i></a>
+				<a href="#"><i class="fa fa-chevron-up" style="margin-top:13px;"></i></a>
 			</div><!-- end go-up -->
     </div>
     @include('partials/_js')

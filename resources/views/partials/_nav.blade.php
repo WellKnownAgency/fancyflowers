@@ -3,42 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-8">
-          <div class="block-languages dropdown-over pull-left">
-            <div data-toggle="dropdown" class="dropdown-title">
-              <a href="#" title="Language">
-                <img src="img/language/en.jpg" alt="" width="16" height="11">
-                <span>ENG</span>
-              </a>
-            </div>
-            <div class="dropdown-content">
-              <ul class="links">
-                <li class="selected">
-                  <img src="img/language/en.jpg" alt="" width="16" height="11"> English
-                </li>
-                <li>
-                  <a href="#" title="Français"><img src="img/language/fr.jpg" alt="" width="16" height="11"> Français</a>
-                </li>
-              </ul>
-            </div>
-          </div><!-- block-languages -->
 
-          <div class="block-currencies dropdown-over pull-left">
-            <div data-toggle="dropdown" class="dropdown-title">
-              <a href="#" title="currency">
-                <span>USD</span>
-              </a>
-            </div>
-            <div class="dropdown-content">
-              <ul class="links">
-                <li class="selected">
-                  <a href="#" title="Dollar">$ Dollar</a>
-                </li>
-                <li>
-                  <a href="#" title="Euros">€ Euros</a>
-                </li>
-              </ul>
-            </div>
-          </div><!-- block-currencies -->
           <div class="block-callus pull-left hidden-xs">
             <span>Call us now: 0123-456-789</span>
           </div><!-- end call us -->
@@ -46,7 +11,7 @@
         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-4">
           <div class="header_user_info pull-right">
             <div data-toggle="dropdown" class="dropdown-title">
-              <a href="#" title="My account"><i class="fa fa-user"></i></a>
+              <a href="#" title="My account"><i class="fa fa-user" style=margin-top:4px;></i></a>
             </div>
             <ul class="links">
               <li>
@@ -55,11 +20,8 @@
               <li>
                 <a href="page-register.html" title="Register">Register</a>
               </li>
-              <li>
-                <a href="page-login.html" title="Login">Login</a>
-              </li>
               <li class="last">
-                <a href="#" title="My wishlists">Wishlists</a>
+                <a href="page-login.html" title="Login">Login</a>
               </li>
             </ul>
           </div><!-- end header_user_info -->
@@ -137,24 +99,9 @@
                 </div><!-- end dropdown-content -->
               </div><!-- end blockcart_top -->
 
-              <div id="search_block_top" class="block-search dropdown-over pull-right">
-                <div data-toggle="dropdown" class="dropdown-title">
-                  <a href="#" title="Search"><i class="zmdi zmdi-search"></i></a>
-                </div>
-                <div class="dropdown-content">
-                  <form id="searchbox" action="#">
-                    <div class="input-group">
-                      <input class="search_query form-control" type="text" id="search_query_top" name="search_query" placeholder="Search" value="" autocomplete="off">
-                      <div class="input-group-btn">
-                        <button type="submit" name="submit_search" class="btn button btn-primary">Search</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div><!-- end #search_block_top -->
             </div><!-- end topheader-navholder-lf -->
             <div class="topheader-navholder-rg">
-              <span id="btn-menu"><i class="zmdi zmdi-menu"></i></span>
+              <span id="btn-menu"><i class="zmdi zmdi-menu" style="margin-top:39px"></i></span>
               <nav id="main-nav">
                 <ul class="nav navbar-nav megamenu">
                   <li class="dropdown">

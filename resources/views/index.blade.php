@@ -1570,26 +1570,86 @@
     </div><!-- end container -->
   </div><!-- end section-tabsproduct -->
 
-  <div class="section section-testimoniol">
-    <div class="container">
-      <div class="testimoniol-slider">
-        <div class="testimoniol-items">
-          <div class="item">
-            <img class="img-responsive" src="images/testimonial/1.png" alt="">
-            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
-            <a href="#" title="">John Doe</a><br>
-            <span class="position">CEO & Founder</span>
-          </div>
-          <div class="item">
-            <img class="img-responsive" src="images/testimonial/2.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
-            <a href="#" title="">Tivatheme</a><br>
-            <span class="position">CEO & Founder</span>
-          </div>
+  <div class="section section-servies">
+    <div class="services-items">
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-sp-12">
+          <div class="services-item services-item1">
+            <div class="media">
+              <div class="icon-box">
+                <i class="zmdi zmdi-truck"></i>
+              </div>
+              <div class="media-body">
+                <h4><a title="Free shipping" href="#">Free shipping</a></h4>
+                <p>Guaranteed delivery in 3 days</p>
+              </div>
+            </div>
+          </div><!--end services-item-->
         </div>
-      </div><!-- end testimoniol-slider -->
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-sp-12">
+          <div class="services-item services-item2">
+            <div class="media">
+              <div class="icon-box">
+                <i class="zmdi zmdi-mail-reply-all"></i>
+              </div>
+              <div class="media-body">
+                <h4><a title="Exchanges & returns" href="#">Exchanges & returns</a></h4>
+                <p>100% money back within 30 days</p>
+              </div>
+            </div>
+          </div><!--end services-item-->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-sp-12">
+          <div class="services-item services-item3">
+            <div class="media">
+              <div class="icon-box">
+                <i class="zmdi zmdi-comments"></i>
+              </div>
+              <div class="media-body">
+                <h4><a title="Online support" href="#">Online support</a></h4>
+                <p>Live chat or call us 24/7</p>
+              </div>
+            </div>
+          </div><!--end services-item-->
+        </div>
+      </div>
+    </div><!-- end services-items -->
+  </div><!-- end section-servies -->
+
+  <div class="section section-banner">
+    <div class="container">
+      <div class="tv-table block">
+        <div class="tv-tablecell">
+          <div class="block-html block">
+            <h4>Flowers for the</h4>
+            <h3>Birthday & Gifts</h3>
+            <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <a class="button btn btn-primary" href="page-category-left.html" title="Shop now">Shop now</a>
+          </div><!--end block-html -->
+        </div>
+        <div class="tv-tablecell box-image">
+          <div class="banner-item effectbanner">
+            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/banner1-h1.jpg" alt=""></a>
+          </div><!--end banner-item-->
+        </div>
+      </div>
+      <div class="tv-table block">
+        <div class="tv-tablecell box-image">
+          <div class="banner-item effectbanner">
+            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/banner2-h1.jpg" alt=""></a>
+          </div><!--end banner-item-->
+        </div>
+        <div class="tv-tablecell">
+          <div class="block-html block">
+            <h4>Flowers for the</h4>
+            <h3>Wedding day</h3>
+            <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <a class="button btn btn-primary" href="page-category-left.html" title="Shop now">Shop now</a>
+          </div><!--end block-html -->
+        </div>
+      </div>
     </div><!-- end container -->
-  </div><!--end section-testimoniol-->
+  </div><!-- end section-banner -->
 
   <div class="section section-posts">
     <div class="container">
@@ -1706,21 +1766,35 @@
     </div><!-- end container -->
   </div><!-- end section-posts -->
 
-  <div class="section section-manufacture">
+  <section class="section section-gallery">
     <div class="container">
-      <div class="block manufacturers_block">
-        <ul class="manufacture_block">
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image1.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image2.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image3.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image4.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image5.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image1.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image2.jpg" alt=""></a></li>
-          <li><a href="#"><img class="img-responsive" src="images/brand/logo_image3.jpg" alt=""></a></li>
-        </ul><!--end manufacture_block-->
-      </div><!-- end Manufactures -->
+      <div class="block-gallery block">
+        <h4 class="title_block">Instagram</h4>
+        <p class="des-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore</p>
+        <div class="block_content">
+          <div class="row no-gutters">
+            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
+              <a href="images/gallery/1.jpg"><img class="img-responsive" src="images/gallery/1.jpg" alt=""></a>
+            </div>
+            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
+              <a href="images/gallery/2.jpg"><img class="img-responsive" src="images/gallery/2.jpg" alt=""></a>
+            </div>
+            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
+              <a href="images/gallery/3.jpg"><img class="img-responsive" src="images/gallery/3.jpg" alt=""></a>
+            </div>
+            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
+              <a href="images/gallery/4.jpg"><img class="img-responsive" src="images/gallery/4.jpg" alt=""></a>
+            </div>
+            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
+              <a href="images/gallery/5.jpg"><img class="img-responsive" src="images/gallery/5.jpg" alt=""></a>
+            </div>
+            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
+              <a href="images/gallery/6.jpg"><img class="img-responsive" src="images/gallery/6.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- end block-gallery -->
     </div><!-- end container -->
-  </div><!-- end section-manufacture -->
+  </section><!-- end section-gallery -->
 </div><!--end columns -->
 @stop

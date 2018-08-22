@@ -26,10 +26,11 @@
           <img src="img/default/not.png" alt="" class="img-responsive">
           <h4 class="title_block">Oops! That page can’t be found</h4>
           <p class="page-not-des">It looks like nothing was found at this location. Maybe try to use a search?</p>
-          <a href="#" class="btn button btn-primary">Back to homepage</a>
+          <a href="/" class="btn button btn-primary">Back to homepage</a>
         </div><!-- end page-not-found -->
       </div><!-- end center_column -->
     </div>
   </div> <!-- end container -->
 </div><!--end columns -->
+<br>
 @stop
