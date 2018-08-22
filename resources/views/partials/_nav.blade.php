@@ -56,7 +56,7 @@
                         <tr>
                           <td class="product-thumbnail">
                             <a href="page-detail.html">
-                              <img width="80" height="107" alt="" class="img-responsive" src="img/product/1.jpg">
+                              <img width="80" height="107" alt="" class="img-responsive" src="images/product/1.jpg">
                             </a>
                           </td>
                           <td class="product-name">
@@ -72,7 +72,7 @@
                         <tr>
                           <td class="product-thumbnail">
                             <a href="page-detail.html">
-                              <img width="80" height="107" alt="" class="img-responsive" src="img/product/2.jpg">
+                              <img width="80" height="107" alt="" class="img-responsive" src="images/product/2.jpg">
                             </a>
                           </td>
                           <td class="product-name">
@@ -105,14 +105,8 @@
               <nav id="main-nav">
                 <ul class="nav navbar-nav megamenu">
                   <li class="dropdown">
-                    <a href='#'>Home <b class="caret"></b></a>
-                    <div id="dropdown-menu1" class="dropdown-menu">
-                      <ul>
-                        <li><a href='index.html'>Homepage 1</a></li>
-                        <li><a href='page-home-2.html'>Homepage 2</a></li>
-                        <li><a href='page-home-3.html'>Homepage 3</a></li>
-                      </ul>
-                    </div>
+                    <a href='/'>Home </a>
+
                   </li>
                   <li class="dropdown aligned-fullwidth">
                     <a href='#'>Shop <b class="caret"></b></a>
@@ -170,58 +164,31 @@
                       <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-image">
-                            <img class="img-responsive" src="img/menu/banner-1.jpg" width="378" height="128" alt="">
+                            <img class="img-responsive" src="images/menu/banner-1.jpg" width="378" height="128" alt="">
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-image">
-                            <img class="img-responsive" src="img/menu/banner-2.jpg" width="378" height="128" alt="">
+                            <img class="img-responsive" src="images/menu/banner-2.jpg" width="378" height="128" alt="">
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-image">
-                            <img class="img-responsive" src="img/menu/banner-3.jpg" width="378" height="128" alt="">
+                            <img class="img-responsive" src="images/menu/banner-3.jpg" width="378" height="128" alt="">
                           </div>
                         </div>
                       </div>
                     </div>
                   </li>
+
                   <li class="dropdown">
-                    <a href='#'>Page <b class="caret"></b></a>
-                    <div id="dropdown-menu4" class="dropdown-menu">
-                      <ul>
-                        <li class="parent dropdown-submenu">
-                          <a href='page-category-left.html'>Page category</a>
-                          <div class="dropdown-menu level2">
-                            <ul>
-                              <li><a href="page-category-left.html">Category left</a></li>
-                              <li><a href="page-category-right.html">Category right</a></li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li><a href='page-detail.html'>Page Detail</a></li>
-                        <li><a href='page-checkout.html'>Page Checkout</a></li>
-                        <li><a href='page-shopping-cart.html'>Page shopping cart</a></li>
-                        <li><a href='page-404.html'>Page 404</a></li>
-                        <li><a href='page-logged.html'>Page Logged</a></li>
-                        <li><a href='page-layout-rtl.html'>Page RTL</a></li>
-                      </ul>
-                    </div>
+                    <a href='/blog'>Blog </a>
+
                   </li>
                   <li class="dropdown">
-                    <a href='#'>Blog <b class="caret"></b></a>
-                    <div id="dropdown-menu5" class="dropdown-menu">
-                      <ul>
-                        <li><a href='page-blog-left-sidebar.html'>Blog left sidebar</a></li>
-                        <li><a href='page-blog-right-sidebar.html'>Blog right sidebar</a></li>
-                        <li><a href='page-blog-left-detail.html'>Blog detail</a></li>
-                      </ul>
-                    </div>
+                    <a href='/about-us'>About us</a>
                   </li>
-                  <li class="dropdown">
-                    <a href='page-about.html'>About us</a>
-                  </li>
-                  <li class="dropdown"><a href='page-contact.html'>Contact</a></li>
+                  <li class="dropdown"><a href='/contact-us'>Contact</a></li>
                 </ul>
               </nav><!-- end main-nav -->
             </div><!-- end topheader-navholder-rg -->
