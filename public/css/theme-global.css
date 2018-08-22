@@ -18,14 +18,14 @@ Created     	: 11/01/2017
             2.1.2. Currencies / .block-currencies
             2.1.3. Contact us / .block-callus
             2.1.4. User info / .header_user_info
-        2.2. Header main / .header-main 
+        2.2. Header main / .header-main
             2.2.1. Logo / .logo
             2.2.2. Cart / .block-cart
             2.2.3. Search / .block-search
             2.2.4. Menu / #main-nav
     3. Slideshow / .tiva-slideshow-wrapper
     4. Breadcrumb / #breadcrumb
-    5. Content / #columns   
+    5. Content / #columns
         5.1. Banner / .section-banner
         5.2. Shop by collection / .section-tabsproduct
         5.3. Newsletter / .section-newsletter
@@ -44,7 +44,7 @@ Created     	: 11/01/2017
         5.13. Checkout / .page-checkout
         5.14. 404 Page / .page-not-found
         5.15. Page RTL / .rtl
-    6. Footer / #footer 
+    6. Footer / #footer
         6.1. Footer center / .footer-center
             6.1.1. Keep in touch / .block-keep
             6.1.2. Social Block / .social_block
@@ -1841,22 +1841,22 @@ input[type=number] {
 .home-3 .section-servies {
   padding: 30px 0;
 }
-.home-3 .services-item {
+.home-1 .services-item {
   background-color: #fafafa;
   padding: 35px 10px;
   text-align: center;
 }
-.home-3 .services-item.services-item2 {
+.home-1 .services-item.services-item2 {
   background-color: #e9e8e8;
 }
-.home-3 .services-item i {
+.home-1 .services-item i {
   font-size: 50px;
   color: #db3762;
 }
-.home-3 .services-item .icon-box {
+.home-1 .services-item .icon-box {
   margin-bottom: 15px;
 }
-.home-3 .services-item h4 {
+.home-1 .services-item h4 {
   text-transform: uppercase;
   margin-bottom: 0;
 }
