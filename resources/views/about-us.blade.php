@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/1.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/1.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Steven Craig.">Steven Craig</a>
               <p class="position">CEO & Founder</p>
@@ -55,7 +55,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/2.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/2.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Sarah Conor">Sarah Conor</a>
               <p class="position">Chief Customer Officer</p>
@@ -64,7 +64,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/3.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/3.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Jenifer Lorenwer">Jenifer Lorenwer</a>
               <p class="position">HR Officer</p>
@@ -73,7 +73,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/4.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/4.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Craig Bordon">Craig Bordon</a>
               <p class="position">Business Manager</p>
@@ -82,7 +82,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/5.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/5.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Kitty">Kitty</a>
               <p class="position">Art Director</p>
@@ -91,7 +91,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/6.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/6.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Steve Pham">Steve Pham</a>
               <p class="position">Photographer</p>
@@ -100,7 +100,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/7.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/7.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Laura">Laura</a>
               <p class="position">Content Manager</p>
@@ -109,7 +109,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="img/about-us/370x270/8.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/8.jpg" alt=""></a></div>
             <div class="weare-content">
               <a href="#" title="Mirinda">Mirinda</a>
               <p class="position">Model Creative</p>

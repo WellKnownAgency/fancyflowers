@@ -29,7 +29,7 @@
 							<div class="post post-large">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-										<img src="img/blog/870x578/1.jpg" alt="" class="img-responsive">
+										<img src="images/blog/870x578/1.jpg" alt="" class="img-responsive">
 									</a>
 									<div class="post-meta">
 										<div class="post-meta-lr">
@@ -54,7 +54,7 @@
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-									<img src="img/blog/870x578/2.jpg" alt="" class="img-responsive">
+									<img src="images/blog/870x578/2.jpg" alt="" class="img-responsive">
 									</a>
 								</div>
 								<div class="post-content">
@@ -68,7 +68,7 @@
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-									<img src="img/blog/870x578/3.jpg" alt="" class="img-responsive">
+									<img src="images/blog/870x578/3.jpg" alt="" class="img-responsive">
 									</a>
 								</div>
 								<div class="post-content">
@@ -82,7 +82,7 @@
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-									<img src="img/blog/870x578/1.jpg" alt="" class="img-responsive">
+									<img src="images/blog/870x578/1.jpg" alt="" class="img-responsive">
 									</a>
 								</div>
 								<div class="post-content">
@@ -96,7 +96,7 @@
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-									<img src="img/blog/870x578/4.jpg" alt="" class="img-responsive">
+									<img src="images/blog/870x578/4.jpg" alt="" class="img-responsive">
 									</a>
 								</div>
 								<div class="post-content">
@@ -110,7 +110,7 @@
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-									<img src="img/blog/870x578/5.jpg" alt="" class="img-responsive">
+									<img src="images/blog/870x578/5.jpg" alt="" class="img-responsive">
 									</a>
 								</div>
 								<div class="post-content">
@@ -124,7 +124,7 @@
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
-									<img src="img/blog/870x578/6.jpg" alt="" class="img-responsive">
+									<img src="images/blog/870x578/6.jpg" alt="" class="img-responsive">
 									</a>
 								</div>
 								<div class="post-content">
@@ -228,7 +228,7 @@
 								<div class="media">
 									<div class="post-image pull-left">
 										<a href="page-blog-left-detail.html">
-											<img class="img-responsive" src="img/blog/870x578/1.jpg" alt="" width="90" height="54">
+											<img class="img-responsive" src="images/blog/870x578/1.jpg" alt="" width="90" height="54">
 										</a>
 									</div>
 									<div class="post-info media-body">
@@ -245,7 +245,7 @@
 								<div class="media">
 									<div class="post-image pull-left">
 										<a href="page-blog-left-detail.html">
-											<img class="img-responsive" src="img/blog/870x578/2.jpg" alt="" width="90" height="54">
+											<img class="img-responsive" src="images/blog/870x578/2.jpg" alt="" width="90" height="54">
 										</a>
 									</div>
 									<div class="post-info media-body">
@@ -262,7 +262,7 @@
 								<div class="media">
 									<div class="post-image pull-left">
 										<a href="page-blog-left-detail.html">
-											<img class="img-responsive" src="img/blog/870x578/3.jpg" alt="" width="90" height="54">
+											<img class="img-responsive" src="images/blog/870x578/3.jpg" alt="" width="90" height="54">
 										</a>
 									</div>
 									<div class="post-info media-body">
@@ -279,7 +279,7 @@
 								<div class="media">
 									<div class="post-image pull-left">
 										<a href="page-blog-left-detail.html">
-											<img class="img-responsive" src="img/blog/870x578/4.jpg" alt="" width="90" height="54">
+											<img class="img-responsive" src="images/blog/870x578/4.jpg" alt="" width="90" height="54">
 										</a>
 									</div>
 									<div class="post-info media-body">
@@ -296,7 +296,7 @@
 								<div class="media">
 									<div class="post-image pull-left">
 										<a href="page-blog-left-detail.html">
-											<img class="img-responsive" src="img/blog/870x578/5.jpg" alt="" width="90" height="54">
+											<img class="img-responsive" src="images/blog/870x578/5.jpg" alt="" width="90" height="54">
 										</a>
 									</div>
 									<div class="post-info media-body">
