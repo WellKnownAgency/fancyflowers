@@ -268,7 +268,7 @@ a {
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #e6c302;
+  color: #FF8C94;
   text-decoration: none;
 }
 a:focus {
@@ -2868,7 +2868,7 @@ select[multiple].input-lg,
   border-color: transparent;
 }
 .btn-link:hover, .btn-link:focus {
-  color: #e6c302;
+  color: #FF8C94;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4021,7 +4021,7 @@ input[type="button"].btn-block {
   color: black;
 }
 .breadcrumb > .active {
-  color: #e6c302;
+  color: #FF8C94;
 }
 
 .pagination {
@@ -4059,7 +4059,7 @@ input[type="button"].btn-block {
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  color: #e6c302;
+  color: #FF8C94;
   background-color: transparent;
   border-color: transparent;
 }
@@ -4068,7 +4068,7 @@ input[type="button"].btn-block {
 .pagination > .active > span:hover,
 .pagination > .active > span:focus {
   z-index: 2;
-  color: #e6c302;
+  color: #FF8C94;
   background-color: transparent;
   border-color: transparent;
   cursor: default;
