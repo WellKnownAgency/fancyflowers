@@ -35,3 +35,7 @@ Route::get('/products-list', function () {
 Route::get('/blog', function () {
     return view('blog/index');
 });
+
+Route::get('/admin', function () {
+    return view('admin/index');
+});
