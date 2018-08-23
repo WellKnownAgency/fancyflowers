@@ -78,7 +78,7 @@ Slideshow:  : "Poppins", sans-serif
 body {
   font-weight: 300;
   font-family: "Poppins", sans-serif;
-  
+
 }
 
 #all {
@@ -198,8 +198,8 @@ input[type=number] {
 }
 
 .btn-primary {
-  background-color: #e6c302;
-  border-color: #e6c302;
+  background-color: #A8E6CE;
+  border-color: #A8E6CE;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #333333;
@@ -526,17 +526,17 @@ input[type=number] {
   color: #333333;
 }
 #main-nav > ul > li > a:hover, #main-nav > ul > li > a:focus, #main-nav > ul > li > a:active {
-  color: #e6c302;
+  color: #FF8C94;
   background-color: transparent;
 }
 #main-nav > ul > li > a:hover .caret, #main-nav > ul > li > a:focus .caret, #main-nav > ul > li > a:active .caret {
-  color: #e6c302;
+  color: #FF8C94;
 }
 #main-nav > ul > li:hover > a, #main-nav > ul > li:focus > a, #main-nav > ul > li:active > a {
-  color: #e6c302;
+  color: #FF8C94;
 }
 #main-nav > ul > li:hover > a .caret, #main-nav > ul > li:focus > a .caret, #main-nav > ul > li:active > a .caret {
-  color: #e6c302;
+  color: #FF8C94;
 }
 #main-nav > ul > li.aligned-fullwidth {
   position: static;
@@ -591,10 +591,10 @@ input[type=number] {
 }
 #main-nav .dropdown-menu li a:hover {
   background-color: transparent;
-  color: #e6c302;
+  color: #FF8C94;
 }
 #main-nav .dropdown-menu li a:hover .fa {
-  color: #e6c302;
+  color: #FF8C94;
 }
 #main-nav .dropdown-submenu {
   position: relative;
@@ -778,20 +778,20 @@ input[type=number] {
   right: 50%;
 }
 .tiva-slideshow-wrapper .tiva-caption .btn {
-  color: #333;
+  color: #DCEDC2;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
   padding: 10px 30px;
-  border: 2px solid #333;
+  border: 2px solid #DCEDC2;
 }
 .tiva-slideshow-wrapper .tiva-caption .btn:hover {
   color: white;
-  border: 2px solid #e6c302;
-  background-color: #e6c302;
+  border: 2px solid #DCEDC2;
+  background-color: #DCEDC2;
 }
 .tiva-slideshow-wrapper .nivo-controlNav .nivo-control.active {
-  background-color: #e6c302;
+  background-color: #FF8C94;
 }
 
 /*******************************************************************
@@ -998,7 +998,8 @@ input[type=number] {
 
 /* section-banner */
 .section-banner .tv-tablecell {
-  background-color: #f7f7f7;
+  background-color: rgba(255, 170, 166, 0.1);
+  box-shadow: 5px 5px 30px rgba(127, 137, 161, 0.25);
 }
 .section-banner .tv-tablecell .block-html {
   padding: 0 85px;
@@ -1067,6 +1068,7 @@ input[type=number] {
 }
 .home-1 .header-main .block-cart .ajax_cart_quantity {
   bottom: 47px;
+  background-color: #FF8C94;
 }
 .home-1 .header-main .block-search .dropdown-title a,
 .home-1 .header-main .block-cart .dropdown-title a {
@@ -1076,7 +1078,7 @@ input[type=number] {
 .home-1 .header-main .block-search .dropdown-title a:hover, .home-1 .header-main .block-search .dropdown-title a:focus,
 .home-1 .header-main .block-cart .dropdown-title a:hover,
 .home-1 .header-main .block-cart .dropdown-title a:focus {
-  color: #e6c302;
+  color: #FF8C94;
 }
 .home-1 .header-main .block-search {
   margin-left: 30px;
@@ -1130,7 +1132,7 @@ input[type=number] {
   color: #999999;
 }
 .home-1 .header_user_info ul li a:hover {
-  color: #e6c302;
+  color: #FF8C94;
 }
 .home-1 .header_user_info ul li.last {
   padding-right: 0;
@@ -1154,7 +1156,7 @@ input[type=number] {
 .home-1 .block-languages .dropdown-title a:hover, .home-1 .block-languages .dropdown-title a:focus,
 .home-1 .block-currencies .dropdown-title a:hover,
 .home-1 .block-currencies .dropdown-title a:focus {
-  color: #e6c302;
+  color: #FF8C94;
 }
 .home-1 .block-languages .dropdown-title:before,
 .home-1 .block-currencies .dropdown-title:before {
@@ -1463,7 +1465,7 @@ input[type=number] {
   color: #e74c3c;
 }
 .home-2 .go-up a {
-  background-color: #e74c3c;
+  background-color: #FF8C94;
 }
 .home-2 .go-up a:hover {
   color: white;
@@ -1852,7 +1854,7 @@ input[type=number] {
 }
 .home-1 .services-item i {
   font-size: 50px;
-  color: #db3762;
+  color: #FF8C94;
 }
 .home-1 .services-item .icon-box {
   margin-bottom: 15px;
@@ -1923,7 +1925,7 @@ input[type=number] {
   color: #db3762;
 }
 .home-3 .go-up a {
-  background-color: #db3762;
+  background-color: #FF8C94;
 }
 .home-3 .go-up a:hover {
   color: white;
@@ -3391,7 +3393,7 @@ span.jslider.jslider_plastic .jslider-value.jslider-value-to {
   right: auto;
 }
 .go-up a {
-  background: #e6c302;
+  background: #FF8C94;
   width: 44px;
   height: 44px;
   line-height: 44px;
