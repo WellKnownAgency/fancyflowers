@@ -11,11 +11,13 @@
 |
 */
 
+// Main Pages Routes
 Route::get('/', function () {
     $flowers = App\Flower::latest()->limit(8)->get();
     return view('index', compact('flowers'));
 });
 
+Route::get('product/{slug}', ['as' => 'product.single', 'uses' => 'FlowerController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 Route::get('/about-us', function () {
     return view('about-us');

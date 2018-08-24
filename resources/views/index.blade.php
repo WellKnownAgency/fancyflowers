@@ -55,7 +55,7 @@
                   <div class="product-container">
                     <div class="left-block">
                       <div class="product-image-container">
-                        <a class="product_img_link" href="#" title="Tulipa floriade - red">
+                        <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
                           <img src="images/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
@@ -64,7 +64,7 @@
                       </div>
                       <div class="box-buttons">
                           <a class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                          <a class="button btn quick-view" href="#" title="Quick view">
+                          <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
                             <i class="zmdi zmdi-eye"></i>
                           </a>
                           <a class="button btn addToWishlist" href="#" title="Add to my wishlist">
@@ -78,7 +78,7 @@
                     <div class="right-block">
                       <div class="product-box">
                         <h5 class="name">
-                          <a class="product-name" href="page-detail.html" title="Tulipa floriade - red">
+                          <a class="product-name" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
                             {{ $flower->name }}
                           </a>
                         </h5>

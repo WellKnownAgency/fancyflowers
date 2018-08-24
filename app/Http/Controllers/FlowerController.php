@@ -140,4 +140,10 @@ class FlowerController extends Controller
     {
         //
     }
+
+    public function getSingle($slug) {
+      $flower = Flower::where('slug', '=', $slug)->first();
+
+      return view('product.single')->withFlower($flower);
+    }
 }
