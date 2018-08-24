@@ -91,7 +91,7 @@ Product list Styles
 	*display: inline;
 }
 .product-container .name a:hover {
-	color: #e6c302;
+	color: #FF8C94;
 }
 .product-container .product-image-container {
 	position: relative;
@@ -125,7 +125,7 @@ Product list Styles
 }
 .product-container .box-buttons .btn:hover {
 	color: white;
-	background-color: #e6c302;
+	background-color: #FFD385;
 }
 .product-container .box-buttons i {
 	line-height: 35px;
