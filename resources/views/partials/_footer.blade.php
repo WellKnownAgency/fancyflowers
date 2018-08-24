@@ -12,9 +12,8 @@
           <div class="social_block">
             <ul class="links">
               <li><a href="#"><em class="fa fa-facebook"></em><span class="unvisible">facebook</span> </a></li>
-              <li><a href="#"><em class="fa fa-twitter"></em><span class="unvisible">twitter</span> </a></li>
-              <li><a href="#"><em class="fa fa-google-plus"></em><span class="unvisible">google</span> </a></li>
-              <li><a href="#"><em class="fa fa-linkedin"></em><span class="unvisible">linkedin</span> </a></li>
+              <!--<li><a href="#"><em class="fa fa-twitter"></em><span class="unvisible">twitter</span> </a></li>-->
+              <!--<li><a href="#"><em class="fa fa-google-plus"></em><span class="unvisible">google</span> </a></li>-->
               <li><a href="#"><em class="fa fa-pinterest"></em><span class="unvisible">pinterest</span> </a></li>
               <li class="last"><a href="#"><em class="fa fa-instagram"></em><span class="unvisible">instagram</span> </a></li>
             </ul>
@@ -62,7 +61,7 @@
     <div class="container">
       <div class="row">
         <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sp-12">
-          Copyright © 2017 - All rights reserved. Powered by <a href="https://wknown.com">WellKnown Agency</a>
+          Copyright © 2018 - All rights reserved. Powered by <a href="https://wknown.com">WellKnown Agency</a>
         </div>
       </div>
     </div>

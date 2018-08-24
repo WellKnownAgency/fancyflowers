@@ -778,17 +778,17 @@ input[type=number] {
   right: 50%;
 }
 .tiva-slideshow-wrapper .tiva-caption .btn {
-  color: #DCEDC2;
+  color: white;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
   padding: 10px 30px;
-  border: 2px solid #DCEDC2;
+  border: 2px solid #A8E6CE;
 }
 .tiva-slideshow-wrapper .tiva-caption .btn:hover {
-  color: white;
-  border: 2px solid #DCEDC2;
-  background-color: #DCEDC2;
+  color: black;
+  border: 2px solid #A8E6CE;
+  background-color: transparent;
 }
 .tiva-slideshow-wrapper .nivo-controlNav .nivo-control.active {
   background-color: #FF8C94;
