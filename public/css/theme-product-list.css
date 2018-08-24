@@ -31,7 +31,7 @@ Product list Styles
 }
 .product-container .label-new {
 	right: 15px;
-	background: #77c66d;
+	background: #A8E6CE;
 }
 .rtl .product-container .label-new {
 	left: 15px;
@@ -40,7 +40,7 @@ Product list Styles
 .product-container .label-sale {
 	top: 39px;
 	right: 15px;
-	background-color: #f65b47;
+	background-color: #FF8C94;
 }
 .rtl .product-container .label-sale {
 	left: 15px;
@@ -48,7 +48,7 @@ Product list Styles
 }
 .product-container .label-reduction {
 	left: 15px;
-	background-color: #f65b47;
+	background-color: #FF8C94;
 }
 .rtl .product-container .label-reduction {
 	right: 15px;
