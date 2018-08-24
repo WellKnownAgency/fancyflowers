@@ -16,11 +16,22 @@ class CreateFlowersTable extends Migration
         Schema::create('flowers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('price');
-            $table->string('rating');
+            $table->string('slug');
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
+            $table->string('image4');
+            $table->string('image5');
+            $table->integer('price1');
+            $table->string('price1name');
+            $table->integer('price2');
+            $table->string('price2name');
+            $table->integer('price3');
+            $table->string('price3name');
+            $table->string('rating_id')->nullable();
             $table->string('dscr');
-            $table->string('quantity');
-            $table->boolean('stock')->default(0);
+            $table->boolean('stock');
+            $table->integer('option_id')->nullable();
             $table->timestamps();
         });
     }

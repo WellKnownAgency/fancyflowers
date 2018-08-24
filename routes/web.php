@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $flowers = App\Flower::latest()->limit(8)->get();
+    return view('index', compact('flowers'));
 });
 
 
@@ -36,6 +37,10 @@ Route::get('/blog', function () {
     return view('blog/index');
 });
 
+
+
 Route::get('/admin', function () {
     return view('admin/index');
 });
+
+Route::resource('/admin/products', 'FlowerController');
