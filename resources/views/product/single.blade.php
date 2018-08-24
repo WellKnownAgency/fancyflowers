@@ -173,7 +173,7 @@
                     <div class="media comments">
                       <div class="pull-left">
                         <p class="avatar">
-                          <img src="img/default/avatar/avatar1.jpg" alt="" width="70" height="70">
+                          <img src="images/default/avatar/avatar1.jpg" alt="" width="70" height="70">
                         </p>
                         <div class="star_content">
                           <div class="star star_on"></div>
@@ -194,7 +194,7 @@
                     <div class="media comments">
                       <div class="pull-left">
                         <p class="avatar">
-                          <img src="img/default/avatar/avatar2.jpg" alt="" width="70" height="70">
+                          <img src="/images/default/avatar/avatar2.jpg" alt="" width="70" height="70">
                         </p>
                         <div class="star_content clearfix">
                           <div class="star star_on"></div>
@@ -252,7 +252,7 @@
                 <div class="left-block">
                   <div class="product-image-container">
                     <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - red">
-                      <img src="img/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive image-effect" width="480" height="640">
+                      <img src="/images/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive image-effect" width="480" height="640">
                     </a>
                     <span class="label-new label">New</span>
                     <span class="label-sale label">Sale</span>
@@ -302,7 +302,7 @@
                 <div class="left-block">
                   <div class="product-image-container">
                     <a class="product_img_link" href="page-detail.html" title="Queen rose - yellow">
-                      <img src="img/product/2.jpg" alt="Queen rose - yellow" class="img-responsive image-no-effect" width="480" height="640">
+                      <img src="/images/product/2.jpg" alt="Queen rose - yellow" class="img-responsive image-no-effect" width="480" height="640">
                     </a>
                     <span class="label-new label">New</span>
                   </div>
@@ -349,7 +349,7 @@
                 <div class="left-block">
                   <div class="product-image-container">
                     <a class="product_img_link" href="page-detail.html" title="Flowers Bouquet - pink">
-                      <img src="img/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive image-effect" width="480" height="640">
+                      <img src="/images/product/3.jpg" alt="Flowers Bouquet - pink" class="img-responsive image-effect" width="480" height="640">
                     </a>
                     <span class="label-new label">New</span>
                   </div>
@@ -396,7 +396,7 @@
                 <div class="left-block">
                   <div class="product-image-container">
                     <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - yellow">
-                      <img src="img/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive image-effect" width="480" height="640">
+                      <img src="/images/product/4.jpg" alt="Tulipa floriade - yellow" class="img-responsive image-effect" width="480" height="640">
                     </a>
                     <span class="label-new label">New</span>
                   </div>
@@ -443,7 +443,7 @@
                 <div class="left-block">
                   <div class="product-image-container">
                     <a class="product_img_link" href="page-detail.html" title="Queen rose">
-                      <img src="img/product/5.jpg" alt="Queen rose" class="img-responsive image-effect" width="480" height="640">
+                      <img src="/images/product/5.jpg" alt="Queen rose" class="img-responsive image-effect" width="480" height="640">
                     </a>
                     <span class="label-new label">New</span>
                   </div>
