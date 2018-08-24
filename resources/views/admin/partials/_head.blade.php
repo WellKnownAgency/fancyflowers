@@ -6,6 +6,7 @@
 <meta name="keywords" content="Admin">
 <meta name="description" content="Admin">
 <meta name="author" content="WellKnown Agency">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
