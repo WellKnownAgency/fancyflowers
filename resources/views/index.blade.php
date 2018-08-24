@@ -24,7 +24,7 @@
       <div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>
       <div class="left-right hidden-xs normal very_large_60">Floral headband</div>
       <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
-      <div class="left-right hidden-xs slow"><a class="btn button btn-now" href="#" title="Shop now">Shop now</a></div>
+      <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="#" title="Shop now">Shop now</a></div>
     </div>
   </div>
 </div><!-- end tiva-slideshow-wrapper -->
@@ -168,14 +168,14 @@
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/banner1-h1.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/birthandgifts.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
       </div>
       <div class="tv-table block">
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/banner2-h1.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/weddingday.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
         <div class="tv-tablecell">
