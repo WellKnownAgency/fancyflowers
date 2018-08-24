@@ -10,6 +10,7 @@
 <script src="{!! asset('vendor/slider-range/js/jquery.dependClass-0.1.js') !!}"></script>
 <script src="{!! asset('vendor/slider-range/js/draggable-0.1.js') !!}"></script>
 <script src="{!! asset('vendor/slider-range/js/jquery.slider.js') !!}"></script>
+<script src="{!! asset('vendor/jquery.elevatezoom/jquery.elevatezoom.js') !!}"></script>
 
 <!-- Template Base, Components and Settings -->
 <script src="{!! asset('js/theme.js') !!}"></script>
