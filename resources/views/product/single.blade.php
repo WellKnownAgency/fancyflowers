@@ -13,7 +13,7 @@
         <li><a href="page-category-left.html" title="Categories">Categories</a></li>
         <li><span>The Cottage Bouquet</span></li>
       </ul>
-      <h2 class="bread-title">Products Detail</h2>
+      <h2 class="bread-title">Product Details</h2>
     </div>
   </div>
 </div><!-- end breadcrumb -->
@@ -25,23 +25,23 @@
       <div class="pb-left-column col-xs-12 col-sm-12 col-md-5">
         <div id="image-block" class="clearfix">
           <div id="view_full_size">
-            <img src="img/product/2.jpg" alt="The Cottage Bouquet" class="img-responsive" width="470" height="627">
+            <img src="/images/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="470" height="627">
           </div>
         </div><!-- end #image-block -->
         <div id="views_block" class="clearfix">
           <div id="thumbs_list">
             <ul id="thumbs_list_frame" class="list-inline">
               <li class="first">
-                <img src="img/product/2.jpg" alt="The Cottage Bouquet" class="img-responsive" width="102" height="136">
+                <img src="/images/{{ $flower->image2 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
               <li>
-                <img src="img/product/1.jpg" alt="The Cottage Bouquet" class="img-responsive" width="102" height="136">
+                <img src="/images/{{ $flower->image3 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
               <li>
-                <img src="img/product/3.jpg" alt="The Cottage Bouquet" class="img-responsive" width="102" height="136">
+                <img src="/images/{{ $flower->image4 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
               <li class="last">
-                <img src="img/product/4.jpg" alt="The Cottage Bouquet" class="img-responsive" width="102" height="136">
+                <img src="/images/{{ $flower->image5 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@
       </div><!-- end pb-left-column -->
       <div class="pb-center-column col-xs-12 col-sm-12 col-md-7">
         <div class="pb-centercolumn">
-          <h1>The Cottage Bouquet</h1>
+          <h1>{{ $flower->name }}</h1>
           <div class="product_comments clearfix">
             <div class="product-rating">
               <div class="star_content">
@@ -63,29 +63,29 @@
           </div><!-- end product_comments -->
           <div class="price clearfix">
             <p class="our_price_display">
-              $26.00
+              ${{ $flower->price1 }}
             </p>
             <p class="old_price">
-              $34.00
+              ${{ $flower->price1 }}
             </p>
           </div><!-- end price -->
           <div class="product-boxinfo">
-            <p id="product_reference">
-              <label>Reference: </label>
-              <span class="editable">123456</span>
-            </p>
             <p id="availability_statut">
               <label>Available: </label>
+              @if ($flower->stock == true)
               <span id="availability_value" class="label label-success">In stock</span>
+              @else
+              <span id="availability_value" class="label label-danger">Out of stock</span>
+              @endif
             </p>
           </div><!-- end product-boxinfo -->
           <div id="short_description_block">
-            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum anteposuerit est notare quam littera</p>
+            <p>{{ $flower->dscr}}</p>
           </div><!-- end short_description_block -->
           <div class="box-info-product clearfix">
             <div id="attributes">
               <div class="attribute_fieldset clearfix">
-                <label class="attribute_label">Scent</label>
+                <label class="attribute_label">Size</label>
                 <div class="attribute_list">
                   <select class="form-control">
                     <option value="0">Please choose one</option>
@@ -94,19 +94,6 @@
                     <option value="3">Lilac Blossoms</option>
                     <option value="4">Black Raspberry Vanilla</option>
                     <option value="5">Strawberry Lemonade</option>
-                  </select>
-                </div>
-              </div>
-              <div class="attribute_fieldset clearfix">
-                <label class="attribute_label">Color</label>
-                <div class="attribute_list">
-                  <select class="form-control">
-                    <option value="0">Please choose one</option>
-                    <option value="1">Blue</option>
-                    <option value="2">Yellow</option>
-                    <option value="3">Pink</option>
-                    <option value="4">White</option>
-                    <option value="5">Black</option>
                   </select>
                 </div>
               </div>
