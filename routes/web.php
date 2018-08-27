@@ -46,3 +46,4 @@ Route::get('/admin', function () {
 });
 
 Route::resource('/admin/products', 'FlowerController');
+Route::resource('/admin/collections', 'CollectionController');

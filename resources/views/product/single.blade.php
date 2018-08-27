@@ -88,12 +88,9 @@
                 <label class="attribute_label">Size</label>
                 <div class="attribute_list">
                   <select class="form-control">
-                    <option value="0">Please choose one</option>
-                    <option value="1">Fresh Cut Roses</option>
-                    <option value="2">Japanese Cherry Blossom</option>
-                    <option value="3">Lilac Blossoms</option>
-                    <option value="4">Black Raspberry Vanilla</option>
-                    <option value="5">Strawberry Lemonade</option>
+                    <option value="0">{{ $flower->price1name }}</option>
+                    <option value="0">{{ $flower->price2name }}</option>
+                    <option value="0">{{ $flower->price3name }}</option>
                   </select>
                 </div>
               </div>
@@ -115,7 +112,6 @@
             <button id="add_to_cart" type="submit" name="Submit" class="exclusive btn button btn-primary" title="Add to cart">
               Add to cart
             </button>
-            <a class="btn button" id="wishlist_button" title="Add to wishlist">Add to wishlist</a>
           </div><!-- end box-cart-bottom -->
           <div class="share-social">
             <span>Share:</span>
