@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Image;
+use App\Collection;
 use App\Flower;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,8 @@ class FlowerController extends Controller
      */
     public function create()
     {
-      return view('admin.products.create');
+      $collections = Collection::all();
+      return view('admin.products.create')->withCollections($collections);
     }
 
     /**
@@ -93,6 +96,8 @@ class FlowerController extends Controller
 
          $flower->save();
 
+         $flower->collections()->sync($request->collections, false);
+
          return redirect()->route('products.index');
     }
 
@@ -104,7 +109,9 @@ class FlowerController extends Controller
      */
     public function show($id)
     {
-        //
+      $flower = Flower::find($id);
+      $collections = Collection::all();
+      return view('admin.products.show')->withFlower($flower)->withCollections($collections);
     }
 
     /**
@@ -115,7 +122,7 @@ class FlowerController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

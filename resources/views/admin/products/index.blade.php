@@ -14,6 +14,8 @@
         </div>
         <div class="card-body">
           <a href="/admin/products/create" class="btn btn-success">Create Product</a>
+          <br>
+            {{ $flowers->sum() }}
         </div>
       </div>
     </div>
@@ -50,7 +52,7 @@
                   @endif
                 </td>
                 <td class="text-right">
-                  <a href="#" class="btn btn-success btn-sm">View</a>
+                  <a href="{{ route('products.show', $flower->id) }}" class="btn btn-success btn-sm">View</a>
                   <a href="#" class="btn btn-warning btn-sm">Edit</a>
                   <a href="#" class="btn btn-danger btn-sm">Delete</a>
                 </td>
