@@ -15,7 +15,6 @@
         <div class="card-body">
           <a href="/admin/products/create" class="btn btn-success">Create Product</a>
           <br>
-            {{ $flowers->sum() }}
         </div>
       </div>
     </div>
@@ -30,7 +29,6 @@
                 <th scope="col">Price 2</th>
                 <th scope="col">Price 3</th>
                 <th scope="col">Created</th>
-                <th scope="col">Category</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
@@ -43,7 +41,6 @@
                 <td>${{ $flower->price2 }}</td>
                 <td>${{ $flower->price3 }}</td>
                 <td>{{ $flower->created_at }}</td>
-                <td>Loose Flowers</td>
                 <td>
                   @if ($flower->stock == true)
                   <span class="badge badge-success">In Stock</span>
@@ -53,7 +50,6 @@
                 </td>
                 <td class="text-right">
                   <a href="{{ route('products.show', $flower->id) }}" class="btn btn-success btn-sm">View</a>
-                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
                   <a href="#" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>

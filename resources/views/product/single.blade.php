@@ -25,23 +25,23 @@
       <div class="pb-left-column col-xs-12 col-sm-12 col-md-5">
         <div id="image-block" class="clearfix">
           <div id="view_full_size">
-            <img src="/images/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="470" height="627">
+            <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="470" height="627">
           </div>
         </div><!-- end #image-block -->
         <div id="views_block" class="clearfix">
           <div id="thumbs_list">
             <ul id="thumbs_list_frame" class="list-inline">
               <li class="first">
-                <img src="/images/{{ $flower->image2 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
+                <img src="/images/product/{{ $flower->image2 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
               <li>
-                <img src="/images/{{ $flower->image3 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
+                <img src="/images/product/{{ $flower->image3 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
               <li>
-                <img src="/images/{{ $flower->image4 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
+                <img src="/images/product/{{ $flower->image4 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
               <li class="last">
-                <img src="/images/{{ $flower->image5 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
+                <img src="/images/product/{{ $flower->image5 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
               </li>
             </ul>
           </div>
@@ -103,7 +103,7 @@
                 </a>
                 <input type="number" min="1" name="qty" id="quantity_wanted" class="text form-control" value="1">
                 <a href="#" class="btn status-enable btn-sm product_quantity_down">
-                  <i class="fa fa-caret-up"></i>
+                  <i class="fa fa-caret-up" style="margin"></i>
                 </a>
               </div>
             </div>

@@ -61,35 +61,35 @@ class FlowerController extends Controller
          if ($request->hasFile('image1')) {
            $image = $request->file('image1');
            $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/' . $filename);
+           $location = public_path('images/product/' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image1 = $filename;
          }
          if ($request->hasFile('image2')) {
            $image = $request->file('image2');
            $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/' . $filename);
+           $location = public_path('images/product/' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image2 = $filename;
          }
          if ($request->hasFile('image3')) {
            $image = $request->file('image3');
            $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/' . $filename);
+           $location = public_path('images/product/' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image3 = $filename;
          }
          if ($request->hasFile('image4')) {
            $image = $request->file('image4');
            $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/' . $filename);
+           $location = public_path('images/product/' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image4 = $filename;
          }
          if ($request->hasFile('image5')) {
            $image = $request->file('image5');
            $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/' . $filename);
+           $location = public_path('images/product' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image5 = $filename;
          }
