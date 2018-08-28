@@ -56,7 +56,7 @@
                     <div class="left-block">
                       <div class="product-image-container">
                         <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
-                          <img src="images/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
+                          <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
                         </a>
                         <span class="label-new label">New</span>
                         <span class="label-sale label">Sale</span>
@@ -168,14 +168,14 @@
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/birthandgifts.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/birthandgifts.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
       </div>
       <div class="tv-table block">
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="images/banner/weddingday.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/weddingday.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
         <div class="tv-tablecell">
@@ -203,7 +203,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="images/blog/870x578/1.jpg" alt="" class="img-responsive">
+                    <img src="/images/blog/870x578/1.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">May</span><br><span class="day">08</span></span>
                 </div>
@@ -223,7 +223,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="images/blog/870x578/2.jpg" alt="" class="img-responsive">
+                    <img src="/images/blog/870x578/2.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Mar</span><br><span class="day">20</span></span>
                 </div>
@@ -243,7 +243,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="images/blog/870x578/3.jpg" alt="" class="img-responsive">
+                    <img src="/images/blog/870x578/3.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Web</span><br><span class="day">25</span></span>
                 </div>
@@ -263,7 +263,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="images/blog/870x578/4.jpg" alt="" class="img-responsive">
+                    <img src="/images/blog/870x578/4.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Thu</span><br><span class="day">30</span></span>
                 </div>
@@ -283,7 +283,7 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="page-blog-left-detail.html">
-                    <img src="images/blog/870x578/5.jpg" alt="" class="img-responsive">
+                    <img src="/images/blog/870x578/5.jpg" alt="" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">Fri</span><br><span class="day">18</span></span>
                 </div>
@@ -313,22 +313,22 @@
         <div class="block_content">
           <div class="row no-gutters">
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="images/gallery/1.jpg"><img class="img-responsive" src="images/gallery/1.jpg" alt=""></a>
+              <a href="/images/gallery/1.jpg"><img class="img-responsive" src="images/gallery/1.jpg" alt=""></a>
             </div>
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="images/gallery/2.jpg"><img class="img-responsive" src="images/gallery/2.jpg" alt=""></a>
+              <a href="/images/gallery/2.jpg"><img class="img-responsive" src="images/gallery/2.jpg" alt=""></a>
             </div>
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="images/gallery/3.jpg"><img class="img-responsive" src="images/gallery/3.jpg" alt=""></a>
+              <a href="/images/gallery/3.jpg"><img class="img-responsive" src="images/gallery/3.jpg" alt=""></a>
             </div>
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="images/gallery/4.jpg"><img class="img-responsive" src="images/gallery/4.jpg" alt=""></a>
+              <a href="/images/gallery/4.jpg"><img class="img-responsive" src="images/gallery/4.jpg" alt=""></a>
             </div>
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="images/gallery/5.jpg"><img class="img-responsive" src="images/gallery/5.jpg" alt=""></a>
+              <a href="/images/gallery/5.jpg"><img class="img-responsive" src="images/gallery/5.jpg" alt=""></a>
             </div>
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="images/gallery/6.jpg"><img class="img-responsive" src="images/gallery/6.jpg" alt=""></a>
+              <a href="/images/gallery/6.jpg"><img class="img-responsive" src="images/gallery/6.jpg" alt=""></a>
             </div>
           </div>
         </div>

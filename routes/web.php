@@ -39,7 +39,13 @@ Route::get('/blog', function () {
     return view('blog/index');
 });
 
-
+// Collection Routes
+Route::get('/collections/birthday', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'Birthday');
+  })->get();
+  return view('/collections/birthday', compact('flowers', 'collections'));
+});
 
 Route::get('/admin', function () {
     return view('admin/index');
