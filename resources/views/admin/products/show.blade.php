@@ -42,11 +42,11 @@
          <li class="list-group-item">{{ $flower->price1name }} - ${{ $flower->price1}}</li>
          <li class="list-group-item">{{ $flower->price2name }} - ${{ $flower->price2}}</li>
          <li class="list-group-item">{{ $flower->price3name }} - ${{ $flower->price3}}</li>
-         <li class="list-group-item"><img src="/images/{{ $flower->image1 }}" height="200px"/>
-           <img src="/images/{{ $flower->image2 }}" height="200px"/>
-           <img src="/images/{{ $flower->image3 }}" height="200px"/>
-           <img src="/images/{{ $flower->image4 }}" height="200px"/>
-           <img src="/images/{{ $flower->image5 }}" height="200px"/></li>
+         <li class="list-group-item"><img src="/images/product/{{ $flower->image1 }}" height="200px"/>
+           <img src="/images/product/{{ $flower->image2 }}" height="200px"/>
+           <img src="/images/product/{{ $flower->image3 }}" height="200px"/>
+           <img src="/images/product/{{ $flower->image4 }}" height="200px"/>
+           <img src="/images/product/{{ $flower->image5 }}" height="200px"/></li>
          <li class="list-group-item">{{ $flower->dscr }}</li>
          <li class="list-group-item">
            @if ($flower->stock == true)

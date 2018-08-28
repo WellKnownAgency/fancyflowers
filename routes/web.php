@@ -47,6 +47,8 @@ Route::get('/collections/birthday', function() {
   return view('/collections/birthday', compact('flowers', 'collections'));
 });
 
+//
+
 Route::get('/admin', function () {
     return view('admin/index');
 });
