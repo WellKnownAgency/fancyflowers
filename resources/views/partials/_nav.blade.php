@@ -117,7 +117,7 @@
 
                             <ul>
                               <li><a href="/collections/birthday" title="Birthday">Birthday</a></li>
-                              <li><a href="/collections/weddings" title="Weddings">Weddings</a></li>
+                              <li><a href="/collections/weddings" title="Weddings">Wedding</a></li>
                               <li><a href="/collections/congradulation" title="Congradulation">Congradulation</a></li>
                             </ul>
                           </div>

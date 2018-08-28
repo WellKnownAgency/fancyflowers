@@ -47,6 +47,49 @@ Route::get('/collections/birthday', function() {
   return view('/collections/birthday', compact('flowers', 'collections'));
 });
 
+Route::get('/collections/compositions', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'Compositions');
+  })->get();
+  return view('/collections/compositions', compact('flowers', 'collections'));
+});
+
+Route::get('/collections/congratulation', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'Congratulation');
+  })->get();
+  return view('/collections/congratulation', compact('flowers', 'collections'));
+});
+
+Route::get('/collections/gifts', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'Gifts');
+  })->get();
+  return view('/collections/gifts', compact('flowers', 'collections'));
+});
+
+Route::get('/collections/new-baby', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'New Baby');
+  })->get();
+  return view('/collections/new-baby', compact('flowers', 'collections'));
+});
+
+Route::get('/collections/thank-you', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'Thank You');
+  })->get();
+  return view('/collections/thank-you', compact('flowers', 'collections'));
+});
+
+Route::get('/collections/wedding', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'Wedding');
+  })->get();
+  return view('/collections/wedding', compact('flowers', 'collections'));
+});
+
+
 Route::get('/admin', function () {
     return view('admin/index');
 });
