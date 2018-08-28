@@ -10,10 +10,10 @@
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
 				<li><a href="index.html" title="Home">Home</a></li>
-				<li><a href="page-category-left.html" title="Categories">Categories</a></li>
-				<li><span>Bouquets</span></li>
+				<li><a href="page-category-left.html" title="Categories">Collections</a></li>
+				<li><span>birthday</span></li>
 			</ul>
-			<h2 class="bread-title">Products List</h2>
+			<h2 class="bread-title">Birthday flowers</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
