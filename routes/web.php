@@ -47,6 +47,7 @@ Route::get('/collections/birthday', function() {
   return view('/collections/birthday', compact('flowers', 'collections'));
 });
 
+
 Route::get('/collections/compositions', function() {
   $flowers = App\Flower::whereHas('collections', function ($query) {
     $query->where('name', 'Compositions');
@@ -88,6 +89,7 @@ Route::get('/collections/wedding', function() {
   })->get();
   return view('/collections/wedding', compact('flowers', 'collections'));
 });
+
 
 
 Route::get('/admin', function () {
