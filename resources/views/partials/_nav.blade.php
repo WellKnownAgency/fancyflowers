@@ -109,74 +109,50 @@
 
                   </li>
                   <li class="dropdown aligned-fullwidth">
-                    <a href='#'>Shop <b class="caret"></b></a>
+                    <a href='#'>Collections <b class="caret"></b></a>
                     <div id="dropdown-menu2" class="dropdown-menu">
                       <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
-                            <div class="menu-title">
-                              <a href="page-category-left.html" title="Bouquets">Bouquets</a>
-                            </div>
+
                             <ul>
-                              <li><a href="page-category-left.html" title="Bouquets 1">Bouquets 1</a></li>
-                              <li><a href="page-category-left.html" title="Bouquets 2">Bouquets 2</a></li>
-                              <li><a href="page-category-left.html" title="Bouquets 3">Bouquets 3</a></li>
+                              <li><a href="/collections/birthday" title="Birthday">Birthday</a></li>
+                              <li><a href="/collections/weddings" title="Weddings">Weddings</a></li>
+                              <li><a href="/collections/congradulation" title="Congradulation">Congradulation</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
-                            <div class="menu-title">
-                              <a href="page-category-left.html" title="Home Decor">Home Decor</a>
-                            </div>
+
                             <ul>
-                              <li><a href="page-category-left.html" title="Cheers">Cheers</a></li>
-                              <li><a href="page-category-left.html" title="State of Love">State of Love</a></li>
-                              <li><a href="page-category-left.html" title="Country Love">Country Love</a></li>
+                              <li><a href="/collections/new-baby" title="New Baby">New Baby</a></li>
+                              <li><a href="/collections/thank-you" title="Thank You">Thank You</a></li>
+                              <li><a href="/collections/compositions" title="Flower Composition">Flower Composition</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
-                            <div class="menu-title">
-                              <a href="page-category-left.html" title="Weddings">Weddings</a>
-                            </div>
                             <ul>
-                              <li><a href="page-category-left.html" title="Bridesmaid">Bridesmaid</a></li>
-                              <li><a href="page-category-left.html" title="Toss Bouquets">Toss Bouquets</a></li>
-                              <li><a href="page-category-left.html" title="Mini Replica Toss">Mini Replica Toss</a></li>
+                              <li><a href="gifts" title="Gifts">Gifts</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                          <div class="block-subcategories">
-                            <div class="menu-title">
-                              <a href="page-category-left.html" title="Birthday">Birthday</a>
-                            </div>
-                            <ul>
-                              <li><a href="page-category-left.html" title="Flowers & Berries">Flowers & Berries</a></li>
-                              <li><a href="page-category-left.html" title="Birthdays for Mom">Birthdays for Mom</a></li>
-                              <li><a href="page-category-left.html" title="Birthdays for Wife">Birthdays for Wife</a></li>
-                            </ul>
-                          </div>
-                        </div>
+
                       </div>
                       <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="block-image">
                             <img class="img-responsive" src="images/menu/banner-1.jpg" width="378" height="128" alt="">
                           </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="block-image">
                             <img class="img-responsive" src="images/menu/banner-2.jpg" width="378" height="128" alt="">
                           </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                          <div class="block-image">
-                            <img class="img-responsive" src="images/menu/banner-3.jpg" width="378" height="128" alt="">
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                   </li>

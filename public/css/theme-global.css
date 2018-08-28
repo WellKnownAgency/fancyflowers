@@ -542,18 +542,18 @@ input[type=number] {
   position: static;
 }
 #main-nav > ul > li.aligned-fullwidth > .dropdown-menu {
-  width: 100%!important;
+  width: 70%!important;
 }
 #main-nav .dropdown:hover > .dropdown-menu {
   display: block;
-  left: 0;
+  left: 280px;
   -webkit-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.175);
 }
 #main-nav .dropdown-menu {
   position: absolute;
   background: white;
-  width: 200px;
+  width: 160px;
   z-index: 10;
   top: 100%;
   margin: 0;
