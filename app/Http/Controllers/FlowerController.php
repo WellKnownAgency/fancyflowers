@@ -89,7 +89,7 @@ class FlowerController extends Controller
          if ($request->hasFile('image5')) {
            $image = $request->file('image5');
            $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/product' . $filename);
+           $location = public_path('images/product/' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image5 = $filename;
          }
