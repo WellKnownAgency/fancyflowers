@@ -21,7 +21,7 @@
       <div class="card" style="width: 100%;">
         <h5 class="card-header">Create New Post</h5>
         <div class="card-body">
-          <form action="{{route('posts.store')}}" method="post">
+          <form action="{{route('posts.store')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
               <label for="image">Upload Image (900x450)</label>
-              <input type="file" class="form-control-file" name="image" id="image">
+              <input type="file" class="form-control-file" name="img" id="image">
             </div>
             <div class="form-group">
               <label for="excerpt">Excerpt</label>
@@ -55,7 +55,7 @@
               <label for="body">Body</label>
               <textarea class="form-control" id="Body" name="body" rows="7"></textarea>
             </div>
-        
+
             <button type="submit" class="btn btn-success">Create</button>
           </form>
         </div>
