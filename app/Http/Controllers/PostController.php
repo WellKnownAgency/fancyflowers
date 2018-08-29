@@ -51,11 +51,10 @@ class PostController extends Controller
      $post->dscr = $request->dscr;
      $post->excerpt = $request->excerpt;
      $post->body = $request->body;
-     
 
-     if ($request->hasFile('image')) {
-       $image = $request->file('image');
-       $filename = time() . $image->getClientOriginalName();
+     if ($request->hasFile('img')) {
+       $image = $request->file('img');
+       $filename = time() . '.' . $image->getClientOriginalExtension();
        $location = public_path('images/blog/' . $filename);
        Image::make($image)->resize(900, 450)->save($location);
        $post->image = $filename;
@@ -63,8 +62,6 @@ class PostController extends Controller
 
 
      $post->save();
-
-
 
       return redirect()->route('posts.index');
     }
