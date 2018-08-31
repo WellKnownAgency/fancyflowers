@@ -38,27 +38,14 @@
        </h2>
 
        <ul class="list-group list-group-flush">
-         <li class="list-group-item">{{ ->title }}</li>
-         <li class="list-group-item">{{ ->slug }}</li>
-         <li class="list-group-item">{{ ->metatitle }}</li>
-         <li class="list-group-item">{{ ->dscr }}</li>
-         <li class="list-group-item">{{ ->excerpt }}</li>
-         <li class="list-group-item">{{ ->body }}</li>
+         <li class="list-group-item">{{ $post->title }}</li>
+         <li class="list-group-item">{{ $post->slug }}</li>
+         <li class="list-group-item">{{ $post->metatitle }}</li>
+         <li class="list-group-item">{{ $post->dscr }}</li>
+         <li class="list-group-item">{{ $post->excerpt }}</li>
+         <li class="list-group-item">{{ $post->body }}</li>
+         <li class="list-group-item"><img src="/images/blog/{{ $post->image }}" height="200px"/>
 
-         <li class="list-group-item"><img src="/images/product/{{ $post->image1 }}" height="200px"/>
-
-         <li class="list-group-item">
-           @if ($post->stock == true)
-           <span class="badge badge-success">In Stock</span>
-           @else
-           <span class="badge badge-danger">Out of Stock</span>
-           @endif
-         </li>
-         <li class="list-group-item">
-           @foreach ($post->posts as $post)
-           <h4>  <span class="badge badge-secondary">{{ $post->name }}</span></h4>
-           @endforeach
-         </li>
        </ul>
       </div>
     </div>
