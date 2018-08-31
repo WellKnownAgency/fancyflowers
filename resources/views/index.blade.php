@@ -160,10 +160,10 @@
       <div class="tv-table block">
         <div class="tv-tablecell">
           <div class="block-html block">
-            <h4>Flowers for the</h4>
-            <h3>Birthday & Gifts</h3>
+            <h4></h4>
+            <h3>Flower Composition</h3>
             <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            <a class="button btn btn-primary" href="page-category-left.html" title="Shop now">Shop now</a>
+            <a class="button btn btn-primary" href="/collections/compositions" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
         <div class="tv-tablecell box-image">
@@ -180,10 +180,10 @@
         </div>
         <div class="tv-tablecell">
           <div class="block-html block">
-            <h4>Flowers for the</h4>
-            <h3>Wedding day</h3>
+            <h4></h4>
+            <h3>Thank You</h3>
             <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            <a class="button btn btn-primary" href="page-category-left.html" title="Shop now">Shop now</a>
+            <a class="button btn btn-primary" href="/collections/thank-you" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
       </div>

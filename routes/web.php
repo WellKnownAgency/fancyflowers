@@ -39,6 +39,7 @@ Route::get('/blog', function () {
     return view('blog/index');
 });
 
+
 // Collection Routes
 Route::get('/collections/birthday', function() {
   $flowers = App\Flower::whereHas('collections', function ($query) {
@@ -89,6 +90,22 @@ Route::get('/collections/weddings', function() {
   })->get();
   return view('/collections/weddings', compact('flowers', 'collections'));
 });
+
+Route::get('/collections/all', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'All');
+  })->get();
+  return view('/collections/all', compact('flowers', 'collections'));
+});
+
+Route::get('/collections/looseflowers', function() {
+  $flowers = App\Flower::whereHas('collections', function ($query) {
+    $query->where('name', 'looseflowers');
+  })->get();
+  return view('/collections/looseflowers', compact('flowers', 'collections'));
+});
+
+
 
 
 

@@ -40,7 +40,7 @@
                 <td>{{ $post->published}}</td>
                 <td>{{ $post->created_at}}</td>
                 <td class="text-right">
-                  <a href="#" class="btn btn-success btn-sm">View</a>
+                  <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">View</a>
                   <a href="#" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>

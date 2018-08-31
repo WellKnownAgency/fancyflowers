@@ -11,9 +11,9 @@
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
 				<li><a href="/collections/all" title="Categories">Collections</a></li>
-				<li><span>Gifts</span></li>
+				<li><span>Loose Flowers</span></li>
 			</ul>
-			<h2 class="bread-title">Gifts</h2>
+			<h2 class="bread-title">Loose Flowers</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
@@ -29,7 +29,7 @@
 						<ul class="list-block">
 							<li>
 								<a href="page-category-left.html" title="">
-									Weddings<span class="count">(15)</span>
+									Wedding<span class="count">(15)</span>
 								</a>
 							</li>
 							<li>
