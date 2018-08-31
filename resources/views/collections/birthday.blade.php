@@ -9,8 +9,8 @@
 	<div class="container">
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
-				<li><a href="index.html" title="Home">Home</a></li>
-				<li><a href="page-category-left.html" title="Categories">Collections</a></li>
+				<li><a href="/" title="Home">Home</a></li>
+				<li><a href="/collections/all" title="Categories">Collections</a></li>
 				<li><span>Birthday</span></li>
 			</ul>
 			<h2 class="bread-title">Birthday</h2>

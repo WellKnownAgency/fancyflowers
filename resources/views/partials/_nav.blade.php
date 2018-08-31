@@ -116,26 +116,28 @@
                           <div class="block-subcategories">
 
                             <ul>
+                              <li><a href="/collections/all" title="All">All</a></li>
                               <li><a href="/collections/birthday" title="Birthday">Birthday</a></li>
                               <li><a href="/collections/weddings" title="Weddings">Wedding</a></li>
-                              <li><a href="/collections/congratulation" title="Congratulation">Congratulation</a></li>
-                            </ul>
+                           </ul>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
 
                             <ul>
+                              <li><a href="/collections/congratulation" title="Congratulation">Congratulation</a></li>
                               <li><a href="/collections/new-baby" title="New Baby">New Baby</a></li>
                               <li><a href="/collections/thank-you" title="Thank You">Thank You</a></li>
-                              <li><a href="/collections/compositions" title="Flower Composition">Flower Composition</a></li>
                             </ul>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
                             <ul>
-                              <li><a href="gifts" title="Gifts">Gifts</a></li>
+                              <li><a href="/collections/compositions" title="Flower Composition">Flower Composition</a></li>
+                              <li><a href="/collections/looseflowers" title="Looseflowers">Loose Flowers</a></li>
+                              <li><a href="/collections/gifts" title="Gifts">Gifts</a></li>
                             </ul>
                           </div>
                         </div>
