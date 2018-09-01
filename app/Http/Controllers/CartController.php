@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use Cart;
 use Illuminate\Http\Request;
 
@@ -40,10 +41,13 @@ class CartController extends Controller
         });
 
         if($duplicates->isNotEmpty()) {
+          session()->put('error','Item Already in your Cart');
           return back();
         }
 
         Cart::add($request->id, $request->name, 1, $request->price1)->associate('App\Flower');
+
+        session()->put('success','Item Added Successfully to Your Cart ');
 
         return back();
     }
@@ -92,6 +96,7 @@ class CartController extends Controller
     {
         Cart::remove($id);
 
+        session()->put('success','Item Deleted Successfully from Your Cart ');
         return back();
     }
 }

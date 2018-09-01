@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Flower;
 use App\Collection;
 use Illuminate\Http\Request;
@@ -49,6 +50,7 @@ class CollectionController extends Controller
 
      $collection->save();
 
+     session()->put('success','Item Deleted Successfully from Your Cart ');
      return redirect()->route('collections.index');
     }
 
