@@ -17,3 +17,4 @@
 
 <!-- Template Custom -->
 <script src="{!! asset('js/custom.js') !!}"></script>
+@yield('customjs')

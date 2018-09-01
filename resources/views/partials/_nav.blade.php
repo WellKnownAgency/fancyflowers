@@ -44,52 +44,42 @@
             <div class="topheader-navholder-lf">
               <div id="block-cart" class="block-cart dropdown-over pull-right">
                 <div data-toggle="dropdown" class="dropdown-title">
-                  <a href="#" title="Shopping cart">
+                  <a href="{{ route('cart.index') }}" title="Shopping cart">
                     <span class="title-cart"><i class="zmdi zmdi-shopping-basket"></i></span>
-                    <span class="ajax_cart_quantity">2</span>
+                    <span class="ajax_cart_quantity">{{ Cart::instance('default')->count() }}</span>
                   </a>
                 </div>
                 <div class="dropdown-content">
                   <div class="cart_block_list">
                     <table class="cart">
                       <tbody>
+                        @foreach (Cart::content() as $item)
                         <tr>
                           <td class="product-thumbnail">
                             <a href="page-detail.html">
-                              <img width="80" height="107" alt="" class="img-responsive" src="images/product/1.jpg">
+                              <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
                             </a>
                           </td>
                           <td class="product-name">
-                            <a href="page-detail.html">Tulipa floriade - red</a>
-                            <br><span class="amount"><strong>$28.98</strong></span>
+                            <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+                            <br><span class="amount"><strong>${{ $item->model->price1 }}</strong></span>
                           </td>
                           <td class="product-actions">
-                            <a title="Remove this item" class="remove" href="#">
-                              <i class="fa fa-times"></i>
-                            </a>
+                            <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                              {{ csrf_field() }}
+                              {{ method_field('DELETE') }}
+                              <button type="submit" title="Remove this item" class="remove" href="#">
+                                <i class="fa fa-times"></i>
+                              </button>
+                            </form>
                           </td>
                         </tr>
-                        <tr>
-                          <td class="product-thumbnail">
-                            <a href="page-detail.html">
-                              <img width="80" height="107" alt="" class="img-responsive" src="images/product/2.jpg">
-                            </a>
-                          </td>
-                          <td class="product-name">
-                            <a href="page-detail.html">Tulipa floriade - red</a>
-                            <br><span class="amount"><strong>$28.98</strong></span>
-                          </td>
-                          <td class="product-actions">
-                            <a title="Remove this item" class="remove" href="#">
-                              <i class="fa fa-times"></i>
-                            </a>
-                          </td>
-                        </tr>
+                        @endforeach
                         <tr>
                           <td class="actions" colspan="3">
                             <div class="actions-continue">
-                              <button type="submit" class="btn btn-default">View All</button>
-                              <button type="submit" class="btn pull-right btn-primary">Checkout<i class="fa fa-angle-right ml-xs"></i></button>
+                              <a href="{{ route('cart.index') }}" class="btn btn-default">View All</a>
+                              <a href="{{ route('checkout.index') }}" class="btn pull-right btn-primary">Checkout<i class="fa fa-angle-right ml-xs"></i></a>
                             </div>
                           </td>
                         </tr>

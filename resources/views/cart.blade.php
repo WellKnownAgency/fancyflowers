@@ -1,0 +1,102 @@
+@section('title', '')
+@section('dscr', '')
+@section('keywords', '')
+
+@extends('main')
+
+@section('content')
+<div id="breadcrumb" class="clearfix">
+  <div class="container">
+    <div class="breadcrumb clearfix">
+      <ul class="ul-breadcrumb">
+        <li><a href="index.html" title="Home">Home</a></li>
+        <li><span>about us</span></li>
+      </ul>
+      <h2 class="bread-title">About us</h2>
+    </div>
+  </div>
+</div><!-- end breadcrumb -->
+
+<div id="columns" class="columns-container">
+  <!-- container -->
+  <div class="container">
+    <div id="order-detail-content" class="table_block table-responsive">
+      <table id="cart_summary" class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="cart_delete last_item">&nbsp;</th>
+            <th class="cart_product first_item">Product</th>
+            <th class="cart_description item">Description</th>
+            <th class="cart_unit item text-right">Unit price</th>
+            <th class="cart_quantity item text-center">Qty</th>
+            <th class="cart_total item text-right">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (Cart::content() as $item)
+          <tr>
+            <td class="cart_delete text-center">
+              <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+              <button type="submit" title="Remove this item" class="remove" href="#">
+                <i class="fa fa-times"></i>
+              </button>
+            </form>
+            </td>
+            <td class="cart_product">
+              <a href="/product/{{ $item->model->slug }}">
+                <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
+              </a>
+            </td>
+            <td class="cart_description">
+              <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+            </td>
+            <td class="cart_unit text-right">
+              <span class="amount">${{ $item->model->price1 }}</span>
+            </td>
+            <td class="cart_quantity text-center">
+              <div class="quantity">
+                <input type="button" class="minus" value="-">
+                <input type="text" class="input-text qty text" title="Qty" value="1" name="quantity">
+                <input type="button" class="plus" value="+">
+              </div>
+            </td>
+            <td class="cart_total text-right">
+              <span class="amount">$299</span>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+        <tfoot>
+          <tr>
+            <td rowspan="3" colspan="3"></td>
+            <td colspan="2" class="text-right">Total products</td>
+            <td colspan="1" class="price text-right" id="total_product">${{ Cart::subtotal() }}</td>
+          </tr>
+          <tr class="cart_total_delivery">
+            <td colspan="2" class="text-right">Total shipping</td>
+            <td colspan="1" class="price text-right" id="total_shipping">$7.00</td>
+          </tr>
+          <tr class="cart_total_price">
+            <td colspan="2" class="total_price_container text-right">
+              <span>Total</span>
+              <div class="hookDisplayProductPriceBlock-price"></div>
+            </td>
+            <td colspan="1" class="price text-right" id="total_price_container">
+              <span id="total_price">${{ Cart::subtotal() }}</span>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div><!-- end order-detail-content -->
+    <div class="cart_navigation">
+      <a href="{{ route('checkout.index') }}" class="button btn btn-primary standard-checkout pull-right" title="Proceed to checkout">
+        <span>Proceed to checkout</span>
+        <i class="fa fa-angle-right ml-xs"></i>
+      </a>
+    </div><!-- end cart_navigation -->
+  </div> <!-- end container -->
+</div><!--end columns -->
+<br>
+@stop

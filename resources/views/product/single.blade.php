@@ -109,9 +109,17 @@
             </div>
           </div><!-- end box-info-product -->
           <div class="box-cart-bottom clearfix">
-            <button id="add_to_cart" type="submit" name="Submit" class="exclusive btn button btn-primary" title="Add to cart">
-              Add to cart
-            </button>
+            <form action="{{ route('cart.store') }}" method="POST">
+              {{ csrf_field() }}
+              <input type="hidden" name="id" value="{{ $flower->id }}">
+              <input type="hidden" name="name" value="{{ $flower->name }}">
+              <input type="hidden" name="price1" value="{{ $flower->price1 }}">
+              <button id="add_to_cart" type="submit" class="exclusive btn button btn-primary" title="Add to cart">
+                Add to cart
+              </button>
+            </form>
+
+
           </div><!-- end box-cart-bottom -->
           <div class="share-social">
             <span>Share:</span>
