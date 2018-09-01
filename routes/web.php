@@ -19,16 +19,20 @@ Route::get('/', function () {
 
 Route::get('product/{slug}', ['as' => 'product.single', 'uses' => 'FlowerController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::delete('/cart/{flower}', 'CartController@destroy')->name('cart.destroy');
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+
 Route::get('/about-us', function () {
     return view('about-us');
 });
 
 Route::get('/contact-us', function () {
     return view('contact-us');
-});
-
-Route::get('/checkout', function () {
-    return view('checkout');
 });
 
 Route::get('/products-list', function () {
