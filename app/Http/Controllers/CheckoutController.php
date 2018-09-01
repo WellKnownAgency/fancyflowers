@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session
 use Stripe;
 use Cart;
 use Illuminate\Http\Request;
@@ -48,6 +49,7 @@ class CheckoutController extends Controller
               // 'quantity' => Cart::instance('default')->count(),
             ],
           ]);
+          session()->put('success','Your Purchase was Successfull');
           return back();
         } catch(Exception $e) {
 
