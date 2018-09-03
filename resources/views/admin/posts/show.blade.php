@@ -34,7 +34,7 @@
         <h2 class="card-header">
          {{ $post->name }}
 
-         <span style="float:right;"><a href="/admin/posts/" class="btn btn-warning">Edit Post</a></span>
+         <span style="float:right;"><a href="/admin/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit Post</a></span>
        </h2>
 
        <ul class="list-group list-group-flush">

@@ -86,7 +86,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Post::find($id);
+        return view('admin.posts.edit')->withPost($post);
     }
 
     /**
@@ -98,9 +99,32 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+      // validate the data
+     $this->validate($request, array(
+             'title'         => 'required|max:255',
+             'slug'          => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+             'dscr'          => 'required'
+         ));
+     // store in the database
+     $post = new Post;
+     $post->title = $request->input('title');
+     $post->slug = $request->input('slug');
+     $post->metatitle = $request->input('metatitle');
+     $post->dscr = $request->input('dscr');
+     $post->excerpt = $request->input('excerpt');
+     $post->body = $request->input('body');
 
+     if ($request->hasFile('img')) {
+       $image = $request->file('img');
+       $filename = time() . '.' . $image->getClientOriginalExtension();
+       $location = public_path('images/blog/' . $filename);
+       Image::make($image)->resize(900, 450)->save($location);
+       $post->image = $filename;
+     }
+     $post->save();
+
+      return redirect()->route('posts.show', $post->id);
+}
     /**
      * Remove the specified resource from storage.
      *
