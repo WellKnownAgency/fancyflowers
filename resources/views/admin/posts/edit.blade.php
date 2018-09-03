@@ -10,7 +10,7 @@
     <div class="col-md-3">
       <div class="card" style="width: 100%;">
         <h5 class="card-header">
-          Fancy Flowers Posts
+          Fancy Flowers Edit Post
         </h5>
         <div class="card-body">
           <a href="/admin/posts" class="btn btn-info">All Posts</a>
@@ -19,9 +19,9 @@
     </div>
     <div class="col-md-9">
       <div class="card" style="width: 100%;">
-        <h5 class="card-header">Create New Post</h5>
+        <h5 class="card-header">EditPost</h5>
         <div class="card-body">
-          <form action="{{route('posts.update', $post->id)}}" method="put" enctype="multipart/form-data">
+          <form action="{{action('PostController@update', $post->id)}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-row">
               <div class="form-group col-md-6">
