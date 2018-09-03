@@ -120,3 +120,4 @@ Route::get('/admin', function () {
 Route::resource('/admin/products', 'FlowerController');
 Route::resource('/admin/collections', 'CollectionController');
 Route::resource('/admin/posts', 'PostController');
+Route::post('/posts/{id}','PostController@update');
