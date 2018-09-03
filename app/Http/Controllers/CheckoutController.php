@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Session
+use Session;
 use Stripe;
 use Cart;
 use Illuminate\Http\Request;
