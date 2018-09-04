@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Flower;
 use Session;
 use Cart;
 use Illuminate\Http\Request;

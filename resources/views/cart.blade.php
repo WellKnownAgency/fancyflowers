@@ -63,7 +63,7 @@
               </select>
             </td>
             <td class="cart_total text-right">
-              <span class="amount">$299</span>
+              <span class="amount">${{ $item->subtotal }}</span>
             </td>
           </tr>
           @endforeach
