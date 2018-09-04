@@ -10,7 +10,7 @@
     <div class="col-md-3">
       <div class="card" style="width: 100%;">
         <h5 class="card-header">
-          Fancy Flowers Edit Post
+          Fancy Flowers Edit Collection
         </h5>
         <div class="card-body">
           <a href="/admin/posts" class="btn btn-info">All Posts</a>

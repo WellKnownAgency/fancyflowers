@@ -37,7 +37,7 @@
                 <td>{{ $collection->created_at}}</td>
                 <td class="text-right">
                   <a href="#" class="btn btn-success btn-sm">View</a>
-                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="/admin/collections/{{ $collection->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                   <a href="#" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>
