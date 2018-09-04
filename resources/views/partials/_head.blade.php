@@ -7,6 +7,7 @@
   <meta name="description" content="Scara Responsive HTML Template">
   <meta name="author" content="tivatheme">
 
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 

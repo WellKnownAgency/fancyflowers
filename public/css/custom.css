@@ -1,9 +1,11 @@
 .notifications {
   position: fixed;
   z-index: 9999;
-
 }
-
+#complete-order:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
 /* Positioning */
 .notifications.top-right {
   right: 10px;

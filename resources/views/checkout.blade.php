@@ -64,7 +64,7 @@
 							<div class="panel-heading">
 								<h4 class="panel-title">
 									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-										Address
+										Billing Address
 									</a>
 								</h4>
 							</div>
@@ -72,26 +72,8 @@
 								<div class="panel-body">
 										<div class="form-group">
 											<div class="col-md-12">
-												<label>Country</label>
-												<select class="form-control">
-													<option value="">Select a country</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6">
-												<label>First Name</label>
+												<label>Name on Card</label>
 												<input id="name_on_card" type="text" value="" class="form-control">
-											</div>
-											<div class="col-md-6">
-												<label>Last Name</label>
-												<input type="text" value="" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Company Name</label>
-												<input type="text" value="" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
@@ -110,6 +92,18 @@
 											<div class="col-md-12">
 												<label>Zip Code</label>
 												<input id="postalcode" type="text" value="" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Phone Number</label>
+												<input id="phone" type="text" value="" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Email</label>
+												<input id="email" type="text" value="" class="form-control">
 											</div>
 										</div>
 										<br>
@@ -262,12 +256,20 @@
 													Free Shipping<input type="hidden" value="free_shipping" class="shipping_method" name="shipping_method">
 												</td>
 											</tr>
+											<tr class="shipping">
+												<th>
+													Processing Fee
+												</th>
+												<td>
+													<strong><span class="amount">${{ Cart::tax()+0.30 }}</span></strong>
+												</td>
+											</tr>
 											<tr class="total">
 												<th>
 													<strong>Order Total</strong>
 												</th>
 												<td>
-													<strong><span class="amount">${{ Cart::subtotal() }}</span></strong>
+													<strong><span class="amount">${{ Cart::total()+0.3 }}</span></strong>
 												</td>
 											</tr>
 										</tbody>
@@ -297,7 +299,7 @@
 						</div>
 						<br>
 						<div class="actions-continue pull-right">
-						<button type="submit" class="btn btn-primary">I confirm my order</button>
+						<button type="submit" id="complete-order" class="btn btn-primary">I confirm my order</button>
 						</div>
 						</form>
 					</div>
@@ -388,11 +390,15 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
+	document.getElementById('complete-order').disabled = true;
+
 	var options = {
 		name: document.getElementById('name_on_card').value,
 		address_line1: document.getElementById('address').value,
 		address_city: document.getElementById('city').value,
 		address_zip: document.getElementById('postalcode').value,
+		email: document.getElementById('email').value,
+		phone: document.getElementById('phone').value,
 	}
 
   stripe.createToken(card, options).then(function(result) {
@@ -400,6 +406,9 @@ form.addEventListener('submit', function(event) {
       // Inform the user if there was an error.
       var errorElement = document.getElementById('card-errors');
       errorElement.textContent = result.error.message;
+
+			document.getElementById('complete-order').disabled = false;
+
     } else {
       // Send the token to your server.
       stripeTokenHandler(result.token);

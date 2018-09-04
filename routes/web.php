@@ -21,6 +21,7 @@ Route::get('product/{slug}', ['as' => 'product.single', 'uses' => 'FlowerControl
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::patch('/cart/{flower}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{flower}', 'CartController@destroy')->name('cart.destroy');
 
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
