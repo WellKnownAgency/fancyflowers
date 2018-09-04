@@ -47,7 +47,7 @@ class CartController extends Controller
 
         Cart::add($request->id, $request->name, 1, $request->price1)->associate('App\Flower');
 
-        session()->put('success','Item Added Successfully to Your Cart ');
+        session()->put('success','Item Added Successfully to Your Cart');
 
         return back();
     }
@@ -83,7 +83,10 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Cart::update($id, $request->quantity);
+
+        session()->put('success','Item Added Successfully to Your Cart');
+        return response()->json(['success' => true]);
     }
 
     /**

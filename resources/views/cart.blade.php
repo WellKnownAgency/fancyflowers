@@ -56,11 +56,11 @@
               <span class="amount">${{ $item->model->price1 }}</span>
             </td>
             <td class="cart_quantity text-center">
-              <div class="quantity">
-                <input type="button" class="minus" value="-">
-                <input type="text" class="input-text qty text" title="Qty" value="1" name="quantity">
-                <input type="button" class="plus" value="+">
-              </div>
+              <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
+                @for ($i = 1; $i < 10 + 1 ; $i++)
+                    <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                @endfor
+              </select>
             </td>
             <td class="cart_total text-right">
               <span class="amount">$299</span>
@@ -99,4 +99,31 @@
   </div> <!-- end container -->
 </div><!--end columns -->
 <br>
+@stop
+
+@section('customjs')
+  <script src="{{ asset('js/app.js') }}"></script>
+  <script>
+        (function(){
+            const classname = document.querySelectorAll('.quantity')
+            Array.from(classname).forEach(function(element) {
+                element.addEventListener('change', function() {
+                    const id = element.getAttribute('data-id')
+                    const productQuantity = element.getAttribute('data-productQuantity')
+                    axios.patch(`/cart/${id}`, {
+                        quantity: this.value,
+                        productQuantity: productQuantity
+                    })
+                    .then(function (response) {
+                        // console.log(response);
+                        window.location.href = '{{ route('cart.index') }}'
+                    })
+                    .catch(function (error) {
+                        // console.log(error);
+                        window.location.href = '{{ route('cart.index') }}'
+                    });
+                })
+            })
+        })();
+    </script>
 @stop

@@ -6,6 +6,7 @@ use Session;
 use Stripe;
 use Cart;
 use Illuminate\Http\Request;
+use Cartalyst\Stripe\Exception\CardErrorException;
 
 class CheckoutController extends Controller
 {
@@ -37,23 +38,32 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        $contents = Cart::content()->map(function ($item) {
+          return $item->model->slug.', '.$item->qty;
+        })->values()->toJson();
+
         try {
           $charge = Stripe::charges()->create([
-            'amount' => Cart::total(),
+            'amount' => Cart::total()+0.30 ,
             'currency' => 'USD',
             'source' => $request->stripeToken,
             'description' => 'Order',
             'receipt-email' => $request->email,
             'metadata' => [
-              // 'contents' => $contents,
-              // 'quantity' => Cart::instance('default')->count(),
+               'contents' => $contents,
+               'quantity' => Cart::instance('default')->count(),
             ],
           ]);
+
+          Cart::instance('default')->destroy();
+
           session()->put('success','Your Purchase was Successfull');
           return back();
-        } catch(Exception $e) {
+        } catch(CardErrorException $e) {
 
-        }
+          session()->put('error','Error. ' . $e->getMessage());
+          return back();
+        };
     }
 
     /**
