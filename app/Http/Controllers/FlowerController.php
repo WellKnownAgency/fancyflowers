@@ -122,7 +122,8 @@ class FlowerController extends Controller
      */
     public function edit($id)
     {
-
+      $flower = Flower::find($id);
+        return view('admin.products.edit')->withFlower($flower);
     }
 
     /**
@@ -134,8 +135,65 @@ class FlowerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+     // store in the database
+     $flower = Flower::find($id);
+     $flower->name = $request->input('name');
+     $flower->slug = $request->input('slug');
+     $flower->stock = $request->input('stock');
+     $flower->price1 = $request->input ('price1');
+     $flower->price1name = $request->input ('price1name');
+     $flower->price2 = $request->input ('price2');
+     $flower->price2name = $request->input ('price2name');
+     $flower->price3 = $request->input ('price3');
+     $flower->price3name = $request->input ('price3name');
+     $flower->dscr = $request->input ('dscr');
+
+
+
+
+     if ($request->hasFile('image1')) {
+       $image = $request->file('image1');
+       $filename = time() . $image->getClientOriginalName();
+       $location = public_path('images/product/' . $filename);
+       Image::make($image)->resize(600, 800)->save($location);
+       $flower->image1 = $filename;
+     }
+     if ($request->hasFile('image2')) {
+       $image = $request->file('image2');
+       $filename = time() . $image->getClientOriginalName();
+       $location = public_path('images/product/' . $filename);
+       Image::make($image)->resize(600, 800)->save($location);
+       $flower->image2 = $filename;
+     }
+     if ($request->hasFile('image3')) {
+       $image = $request->file('image3');
+       $filename = time() . $image->getClientOriginalName();
+       $location = public_path('images/product/' . $filename);
+       Image::make($image)->resize(600, 800)->save($location);
+       $flower->image3 = $filename;
+     }
+     if ($request->hasFile('image4')) {
+       $image = $request->file('image4');
+       $filename = time() . $image->getClientOriginalName();
+       $location = public_path('images/product/' . $filename);
+       Image::make($image)->resize(600, 800)->save($location);
+       $flower->image4 = $filename;
+     }
+     if ($request->hasFile('image5')) {
+       $image = $request->file('image5');
+       $filename = time() . $image->getClientOriginalName();
+       $location = public_path('images/product/' . $filename);
+       Image::make($image)->resize(600, 800)->save($location);
+       $flower->image5 = $filename;
+     }
+     $flower->save();
+     if (isset($request->collections)) {
+              $flower->collections()->sync($request->collections);
+          } else {
+              $flower->collections()->sync(array());
+          }
+      return redirect()->route('products.show', $flower->id);
+}
 
     /**
      * Remove the specified resource from storage.

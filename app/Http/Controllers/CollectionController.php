@@ -73,7 +73,8 @@ class CollectionController extends Controller
      */
     public function edit($id)
     {
-        //
+      $collection = Collection::find($id);
+        return view('admin.collections.edit')->withCollection($collection);
     }
 
     /**
@@ -85,8 +86,16 @@ class CollectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+      // store in the database
+      $collection = Collection::find($id);
+      $collection->name = $request->input('name');
+      $collection->slug = $request->input('slug');
+
+    
+      $collection->save();
+
+      return redirect()->route('collections.index', $collection->id);
+ }
 
     /**
      * Remove the specified resource from storage.
