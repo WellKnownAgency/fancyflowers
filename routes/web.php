@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes();
+
 // Main Pages Routes
 Route::get('/', function () {
     $flowers = App\Flower::latest()->limit(8)->get();

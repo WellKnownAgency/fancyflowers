@@ -14,15 +14,31 @@
               <a href="#" title="My account"><i class="fa fa-user" style=margin-top:4px;></i></a>
             </div>
             <ul class="links">
+              @guest
               <li>
-                <a href="#" title="Account">Account</a>
+                <a href="/account" title="Account">Account</a>
               </li>
               <li>
-                <a href="page-register.html" title="Register">Register</a>
+                <a href="/register" title="Register">Register</a>
               </li>
               <li class="last">
-                <a href="page-login.html" title="Login">Login</a>
+                <a href="/login" title="Login">Login</a>
               </li>
+              @else
+              <li>
+                <a href="/account" title="Account">Account</a>
+              </li>
+              <li class="last">
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+              </li>
+              @endguest
             </ul>
           </div><!-- end header_user_info -->
         </div>
