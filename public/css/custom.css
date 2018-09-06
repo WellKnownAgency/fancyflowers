@@ -1,3 +1,43 @@
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.tab-content > .tab-pane {
+  display: none !important;
+}
+.tab-content > .active {
+  display: block !important;
+}
+
+.no-border {
+  border-left: 0;
+  border-right: 0;
+}
+
+.list-edit {
+  color:#FF8C94;
+  float: right;
+  transition: 0.3s;
+}
+
+.list-edit:hover{
+  color:#A8E6CE;
+}
+
+.btn-edit {
+  color:#fff;
+  transition: 0.3s;
+  background-color:#FF8C94;
+}
+
+.btn-edit:hover{
+  color:#fff;
+  background-color:#A8E6CE;
+  border-color: #A8E6CE;
+}
+
 .notifications {
   position: fixed;
   z-index: 9999;
