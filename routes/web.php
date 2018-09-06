@@ -114,14 +114,10 @@ Route::get('/collections/looseflowers', function() {
 
 Route::middleware('auth:web')->group(function () {
   Route::get('/account', function () {
-      return view('account');
+    $ships = App\Ship::latest()->get();
+      return view('account', compact('ships'));
   });
-
-
-
-
-
-
+  Route::resource('/account/addresses', 'ShipController');
 });
 
 
