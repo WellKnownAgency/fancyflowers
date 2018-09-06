@@ -112,7 +112,17 @@ Route::get('/collections/looseflowers', function() {
   return view('/collections/looseflowers', compact('flowers', 'collections'));
 });
 
+Route::middleware('auth:web')->group(function () {
+  Route::get('/account', function () {
+      return view('account');
+  });
 
+
+
+
+
+
+});
 
 
 
