@@ -17,13 +17,16 @@
   background-color: white;
   height: 39px;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: 0;
   border: 1px solid #ebebeb;
   transition: #ebebeb ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 .StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+	border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 .StripeElement--invalid {
@@ -56,67 +59,11 @@
 		<div class="page-checkout">
 			<div class="row">
 				<div class="checkoutleft col-lg-9 col-md-9 col-sm-9 col-xs-12">
-					<p>Returning customer? <a href="page-login.html">Click here to login</a>.</p>
+
+					<p>Returning customer? <a href="/login">Click here to login</a>.</p>
 					<div class="panel-group" id="accordion">
 						<form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
 							{{ csrf_field() }}
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-										Billing Address
-									</a>
-								</h4>
-							</div>
-							<div id="collapseOne" class="accordion-body collapse in">
-								<div class="panel-body">
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Name on Card</label>
-												<input id="name_on_card" type="text" value="" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Address </label>
-												<input id="address" type="text" value="" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>City </label>
-												<input id="city" type="text" value="" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Zip Code</label>
-												<input id="postalcode" type="text" value="" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Phone Number</label>
-												<input id="phone" type="text" value="" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Email</label>
-												<input id="email" type="text" value="" class="form-control">
-											</div>
-										</div>
-										<br>
-										<div class="form-group" >
-											<div class="col-md-12" style="margin-top:15px;">
-												<div class="pull-right">
-												<a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion" class="btn btn-primary"> Next</a>
-												</div>
-											</div>
-										</div>
-								</div>
-							</div>
-						</div>
 						<div class="panel panel-default">
 							<div class="panel-heading" >
 								<h4 class="panel-title">
@@ -125,29 +72,29 @@
 									</a>
 								</h4>
 							</div>
-							<div id="collapseTwo" class="accordion-body collapse">
+							<div id="collapseTwo" class="accordion-body collapse in">
 								<div class="panel-body">
+
 										<div class="form-group">
-											<div class="col-md-12">
-												<span class="remember-box checkbox">
-													<label>
-														<input type="checkbox" checked="checked">Ship to billing address?
-													</label>
-												</span>
+											<div class="row">
+												<div class="col-md-6 ">
+													<label>Choose Shipping Address</label>
+													<select class="form-control" id="show" onchange="change(this)">
+														<option value="newaddress">New Address</option>
+														@if (Auth::check())
+														@foreach(Auth::user()->ships as $ship)
+														<option value="{{ $ship->id }}">{{ $ship->name }}</option>
+														@endforeach
+														@endif
+													</select>
+												</div>
 											</div>
 										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Country</label>
-												<select class="form-control">
-													<option value="">Select a country</option>
-												</select>
-											</div>
-										</div>
+										<div style="display: none" id="newform">
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" value="">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
@@ -156,10 +103,11 @@
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
-												<label>Company Name</label>
+												<label>Phone Number</label>
 												<input type="text" class="form-control">
 											</div>
 										</div>
+
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Address </label>
@@ -172,11 +120,7 @@
 												<input type="text"  class="form-control">
 											</div>
 										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-
-											</div>
-										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -261,7 +205,13 @@
 													Processing Fee
 												</th>
 												<td>
-													<strong><span class="amount">${{ Cart::tax()+0.30 }}</span></strong>
+													<strong><span class="amount">$
+													@if (Cart::subtotal() > 0)
+													{{ Cart::tax()+0.3 }}
+													@else
+													0.00
+													@endif
+													</span></strong>
 												</td>
 											</tr>
 											<tr class="total">
@@ -269,7 +219,14 @@
 													<strong>Order Total</strong>
 												</th>
 												<td>
-													<strong><span class="amount">${{ Cart::total()+0.3 }}</span></strong>
+													<strong><span class="amount">$
+														@if (Cart::subtotal() > 0)
+														{{ Cart::total()+0.3 }}
+														@else
+														0.00
+														@endif
+													</span></strong>
+
 												</td>
 											</tr>
 										</tbody>
@@ -279,19 +236,48 @@
 
 									<h4 class="heading-primary">Payment</h4>
 
-
-										<div class="form-row">
-											<label for="card-element">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Name on Card</label>
+											<input id="name_on_card" type="text" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Phone Number</label>
+											<input id="phone" type="text" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Email</label>
+											<input id="email" type="text" value="" class="form-control">
+										</div>
+									</div>
+									@if (Auth::check())
+									<div class="col-md-6 ">
+										<label>Choose Card</label>
+										<select class="form-control">
+											@foreach(Auth::user()->cards as $card)
+											<option>{{ $card->name }}</option>
+											@endforeach
+										</select>
+									</div>
+									@endif
+									<div class="form-row">
+										<div class="col-md-12">
+											<label>
 												Credit or debit card
 											</label>
 											<div id="card-element">
 												<!-- A Stripe Element will be inserted here. -->
 											</div>
 
-											<!-- Used to display form errors. -->
-											<div id="card-errors" role="alert"></div>
-										</div>
-										<br>
+										<!-- Used to display form errors. -->
+										<div id="card-errors" role="alert"></div>
+									</div>
+									</div>
+									<br>
 
 
 								</div>
@@ -342,6 +328,20 @@
 <br>
 @stop
 @section('customjs')
+<script>
+function change(shipping){
+	var selectBox = shipping
+  var selected = selectBox.options[selectBox.selectedIndex].value;
+  var newform = document.getElementById("newform");
+  if(selected === 'newaddress'){
+       newform.style.display = "block";
+   }
+   else{
+       newform.style.display = "block";
+   }
+
+}
+</script>
 <script>
 (function(){
 // Create a Stripe client.
@@ -394,9 +394,6 @@ form.addEventListener('submit', function(event) {
 
 	var options = {
 		name: document.getElementById('name_on_card').value,
-		address_line1: document.getElementById('address').value,
-		address_city: document.getElementById('city').value,
-		address_zip: document.getElementById('postalcode').value,
 		email: document.getElementById('email').value,
 		phone: document.getElementById('phone').value,
 	}

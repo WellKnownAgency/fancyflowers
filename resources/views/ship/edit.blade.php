@@ -19,9 +19,9 @@
   <div class="container">
     <div class="row">
       <div class=" col-md-8 col-md-offset-2">
-          <form action="{{ route('shipping-addresses.update', $post->id) }}" id="form-account-creation" class="form-horizontal box panel panel-default" method="PUT">
+          <form action="{{ action('ShipController@update', $ship->id) }}" id="form-account-creation" class="form-horizontal box panel panel-default" method="POST">
             @csrf
-            <h3 class="panel-heading">Edit a Shipping Address </h3>
+            <h3 class="panel-heading">Edit {{$ship->name}} Address </h3>
 
             <div class="form_content panel-body clearfix">
               <div class="form-group required">

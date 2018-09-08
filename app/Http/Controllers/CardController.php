@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Ship;
-use App\Card;
-use Flower;
 use Session;
-use Cart;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Card;
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +17,7 @@ class CartController extends Controller
      */
     public function index()
     {
-      $cards = Card::latest()->get();
-      $ships = Ship::latest()->get();
-      return view('/cart')->withShips($ships)->withCards($cards);
+        //
     }
 
     /**
@@ -41,20 +38,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $duplicates = Cart::search(function($cartItem, $rowId) use($request){
-          return $cartItem->id === $request->id;
-        });
-
-        if($duplicates->isNotEmpty()) {
-          session()->put('error','Item Already in your Cart');
-          return back();
-        }
-
-        Cart::add($request->id, $request->name, 1, $request->price1)->associate('App\Flower');
-
-        session()->put('success','Item Added Successfully to Your Cart');
-
-        return back();
+        //
     }
 
     /**
@@ -88,10 +72,7 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Cart::update($id, $request->quantity);
-
-        session()->put('success','Item Added Successfully to Your Cart');
-        return response()->json(['success' => true]);
+        //
     }
 
     /**
@@ -102,9 +83,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-
-        session()->put('success','Item Deleted Successfully from Your Cart ');
-        return back();
+        //
     }
 }
