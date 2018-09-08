@@ -76,8 +76,7 @@ class ShipController extends Controller
      */
     public function show($id)
     {
-      $ship = Ship::find($id);
-      return view('addresses.show')->withPost($post);
+      //
     }
 
     /**
@@ -89,7 +88,7 @@ class ShipController extends Controller
     public function edit($id)
     {
         $ship = Ship::find($id);
-        return route('addresses.edit')->withShip($ship);
+        return view('ship.edit')->with('ship', $ship);
     }
 
     /**
@@ -101,7 +100,23 @@ class ShipController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      $ship = Ship::find($id);
+
+      $ship->name = $request->input('name');
+      $ship->firstname = $request->input('firstname');
+      $ship->lastname = $request->input('lastname');
+      $ship->street = $request->input('street');
+      $ship->city = $request->input('city');
+      $ship->state = $request->input('state');
+      $ship->zipcode = $request->input('zipcode');
+      $ship->phone = $request->input('phone');
+
+      $ship->save();
+
+      session()->put('success','Your Shipping Address was Successfully Changed');
+
+       return redirect('/account');
     }
 
     /**

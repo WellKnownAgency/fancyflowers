@@ -37,14 +37,24 @@
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="tab-pane fade active in" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <br>
             <a href="{{route('addresses.create')}}" class="button btn btn-primary">Add New Address</a>
             <br>
             <ul class="list-group">
-              @foreach (Auth::user()->ships as $ship)
-              <li class="list-group-item no-border" style="border-top: 0px;">{{ $ship->id }}<a href="{{route('addresses.edit', $ship->id )}}" class="list-edit">Edit</a></li>
-              @endforeach
+              <div class="table-responsive-md">
+                <table class="table">
+                  <tbody>
+                    @foreach (Auth::user()->ships as $ship)
+                      <tr>
+                        <td>{{ $ship->name }}</td>
+                        <td>{{ $ship->street }} {{ $ship->city }}, {{ $ship->state }} {{ $ship->zipcode }}</td>
+                        <td><a href="{{route('addresses.edit', $ship->id )}}" class="list-edit">Edit</a></td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </ul>
           </div>
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -52,11 +62,20 @@
             <a href="" class="button btn btn-primary">Add New Card</a>
             <br>
             <ul class="list-group">
-              <li class="list-group-item no-border" style="border-top: 0px;">Cras justo odio<a href="" class="list-edit">Edit</a></li>
-              <li class="list-group-item no-border">Dapibus ac facilisis in</li>
-              <li class="list-group-item no-border">Morbi leo risus</li>
-              <li class="list-group-item no-border">Porta ac consectetur ac</li>
-              <li class="list-group-item no-border">Vestibulum at eros</li>
+              <div class="table-responsive-md">
+                <table class="table">
+                  <tbody>
+                    @foreach (Auth::user()->cards as $card)
+                      <tr>
+                        <td>{{ $card->name }}</td>
+                        <td>**** **** **** {{ substr($card->number, -4)}}</td>
+                        <td>{{ $card->zipcode }}</td>
+                        <td><a href="" class="list-edit">Edit</a></td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </ul>
           </div>
         </div>
