@@ -27,7 +27,7 @@
               <li><a href="#" title="Gurantees">Gurantees</a></li>
               <li><a href="#" title="Terms & Conditions">Terms & Conditions</a></li>
               <li><a href="#" title="Shipping & Returns">Shipping & Returns</a></li>
-              <li><a href="#" title="F.A.Qs">F.A.Qs</a></li>
+              <!--<li><a href="#" title="F.A.Qs">F.A.Qs</a></li>-->
             </ul>
           </div>
         </div>
@@ -37,7 +37,7 @@
             <ul class="toggle-footer list-group bullet">
               <li><a href="page-login.html" title="Login">Login</a></li>
               <li><a href="page-register.html" title="Register">Register</a></li>
-              <li><a href="#" title="Wishlist">Wishlist</a></li>
+              <!--<li><a href="#" title="Wishlist">Wishlist</a></li>-->
               <li><a href="#" title="Order History">Order History</a></li>
               <li><a href="page-checkout.html" title="Checkout">Checkout</a></li>
             </ul>

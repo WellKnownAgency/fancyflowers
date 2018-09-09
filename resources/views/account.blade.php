@@ -59,7 +59,7 @@
           </div>
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <br>
-            <a href="" class="button btn btn-primary">Add New Card</a>
+            <a href="{{route('cards.create')}}" class="button btn btn-primary">Add New Card</a>
             <br>
             <ul class="list-group">
               <div class="table-responsive-md">
@@ -70,7 +70,9 @@
                         <td>{{ $card->name }}</td>
                         <td>**** **** **** {{ substr($card->number, -4)}}</td>
                         <td>{{ $card->zipcode }}</td>
-                        <td><a href="" class="list-edit">Edit</a></td>
+                        <td>{{ $card->phone }}</td>
+                        <td>{{ $card->email }}</td>
+                        <td><a href="{{route('cards.edit', $card->id )}}" class="list-edit">Edit</a></td>
                       </tr>
                     @endforeach
                   </tbody>

@@ -27,7 +27,7 @@ class CardController extends Controller
      */
     public function create()
     {
-        //
+        return view('cards.create');
     }
 
     /**
@@ -38,8 +38,30 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      // validate the data
+      $this->validate($request, array(
+             'name'         => 'required|max:255',
+             'number'         => 'required|digits:16',
+             'month'         => 'required|digits:2',
+             'year'         => 'required|digits:4',
+
+         ));
+       // store in the database
+      $card = new Card;
+      $card->name = $request->name;
+      $card->number = $request->number;
+      $card->month = $request->month;
+      $card->year = $request->year;
+      $card->user_id = Auth::id();
+
+
+      $card->save();
+
+     session()->put('success','Your new card was Successfully Added');
+
+      return back();
     }
+
 
     /**
      * Display the specified resource.
@@ -60,7 +82,8 @@ class CardController extends Controller
      */
     public function edit($id)
     {
-        //
+      $card = Card::find($id);
+      return view('cards.edit')->with('card', $card);
     }
 
     /**
@@ -72,7 +95,18 @@ class CardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $card = Card::find($id);
+
+      $card->name = $request->input('name');
+      $card->number = $request->input('number');
+      $card->month = $request->input('month');
+      $card->year = $request->input('year');
+
+      $card->save();
+
+      session()->put('success','Your Card Information was Successfully Changed');
+
+       return redirect('/account');
     }
 
     /**
