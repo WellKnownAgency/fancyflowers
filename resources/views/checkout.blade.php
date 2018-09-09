@@ -82,15 +82,15 @@
 													<select class="form-control" id="show" onchange="change(this)">
 														<option value="newaddress">New Address</option>
 														@if (Auth::check())
-														@foreach(Auth::user()->ships as $ship)
-														<option value="{{ $ship->id }}">{{ $ship->name }}</option>
-														@endforeach
+															@foreach(Auth::user()->ships as $ship)
+																<option value="{{ $ship->id }}">{{ $ship->name }}</option>
+															@endforeach
 														@endif
 													</select>
 												</div>
 											</div>
 										</div>
-										<div style="display: none" id="newform">
+										<div style="display: block" id="newform">
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
@@ -121,6 +121,41 @@
 											</div>
 										</div>
 									</div>
+
+									@if (Auth::check())
+									<div style="display: none" id="filloutform">
+										@foreach(Auth::user()->ships->take(1) as $ship)
+										<div class="form-group">
+											<div class="col-md-6">
+												<label>First Name</label>
+												<input type="text" class="form-control" value="{{ $ship->firstname }}">
+											</div>
+											<div class="col-md-6">
+												<label>Last Name</label>
+												<input type="text" class="form-control" value="{{ $ship->lastname }}">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Phone Number</label>
+												<input type="text" class="form-control" value="{{ $ship->phone }}">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Address </label>
+												<input type="text" class="form-control" value="{{ $ship->street }}">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>City </label>
+												<input type="text"  class="form-control" value="{{ $ship->city }}">
+											</div>
+										</div>
+									@endforeach
+								</div>
+								@endif
 								</div>
 							</div>
 						</div>
@@ -156,25 +191,25 @@
 										</thead>
 										<tbody>
 											@foreach (Cart::content() as $item)
-											<tr class="cart_table_item">
-												<td class="product-thumbnail text-center">
-													<a href="/product/{{ $item->model->slug }}">
-														<img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
-													</a>
-												</td>
-												<td class="product-name">
-													<a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
-												</td>
-												<td class="product-price text-right">
-													<span class="amount">${{ $item->model->price1 }}</span>
-												</td>
-												<td class="product-quantity text-center">
-													1
-												</td>
-												<td class="product-subtotal text-right">
-													<span class="amount">${{ $item->model->price1 }}</span>
-												</td>
-											</tr>
+												<tr class="cart_table_item">
+													<td class="product-thumbnail text-center">
+														<a href="/product/{{ $item->model->slug }}">
+															<img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
+														</a>
+													</td>
+													<td class="product-name">
+														<a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+													</td>
+													<td class="product-price text-right">
+														<span class="amount">${{ $item->model->price1 }}</span>
+													</td>
+													<td class="product-quantity text-center">
+														1
+													</td>
+													<td class="product-subtotal text-right">
+														<span class="amount">${{ $item->model->price1 }}</span>
+													</td>
+												</tr>
 											@endforeach
 										</tbody>
 									</table>
@@ -322,9 +357,9 @@
 					</table>
 				</div>
 			</div>
-		</div>
-	</div> <!-- end container -->
-</div><!--end columns -->
+			</div>
+		</div> <!-- end container -->
+	</div><!--end columns -->
 <br>
 @stop
 @section('customjs')
@@ -333,11 +368,15 @@ function change(shipping){
 	var selectBox = shipping
   var selected = selectBox.options[selectBox.selectedIndex].value;
   var newform = document.getElementById("newform");
+
+	var filloutform = document.getElementById("filloutform")
   if(selected === 'newaddress'){
        newform.style.display = "block";
+			 filloutform.style.display = "none";
    }
    else{
-       newform.style.display = "block";
+       newform.style.display = "none";
+			 filloutform.style.display = "block";
    }
 
 }
