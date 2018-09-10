@@ -339,7 +339,7 @@ input[type=number] {
   display: inline-block;
 }
 .dropdown-over .dropdown-content a:hover {
-  color: #FF8C94;
+  color: white;
 }
 .dropdown-over .dropdown-content ul {
   margin-bottom: 0;
