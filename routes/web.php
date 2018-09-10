@@ -99,10 +99,8 @@ Route::get('/collections/weddings', function() {
 });
 
 Route::get('/collections/all', function() {
-  $flowers = App\Flower::whereHas('collections', function ($query) {
-    $query->where('name', 'All');
-  })->get();
-  return view('/collections/all', compact('flowers', 'collections'));
+  $flowers = App\Flower::latest()->get();
+  return view('/collections/all', compact('flowers'));
 });
 
 Route::get('/collections/looseflowers', function() {
