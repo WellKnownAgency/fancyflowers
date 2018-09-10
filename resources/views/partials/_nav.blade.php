@@ -51,7 +51,7 @@
         <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5">
           <div class="logo">
             <a href="/" title="Fancy Flowers">
-              <img class="img-responsive" src="images/logo.png" height="100" alt="">
+              <img class="img-responsive" src="/images/logo.png" height="100" alt="">
             </a>
           </div><!--end logo-->
         </div>

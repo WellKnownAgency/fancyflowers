@@ -334,7 +334,7 @@
 									<strong>Cart Subtotal</strong>
 								</th>
 								<td>
-									<strong><span class="amount">$431</span></strong>
+									<strong><span class="amount">${{ Cart::subtotal() }}</span></strong>
 								</td>
 							</tr>
 							<tr class="shipping">
@@ -350,7 +350,12 @@
 									<strong>Order Total</strong>
 								</th>
 								<td>
-									<strong><span class="amount">$431</span></strong>
+									<strong><span class="amount">
+										@if (Cart::subtotal() > 0)
+										{{ Cart::total()+0.3 }}
+										@else
+										0.00
+										@endif</span></strong>
 								</td>
 							</tr>
 						</tbody>
