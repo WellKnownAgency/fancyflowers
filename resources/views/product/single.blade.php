@@ -95,18 +95,6 @@
                 </div>
               </div>
             </div>
-            <div id="quantity_wanted_p">
-              <label>Quantity</label>
-              <div class="group-quantity">
-                <a href="#" class="btn status-enable btn-sm product_quantity_down">
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <input type="number" min="1" name="qty" id="quantity_wanted" class="text form-control" value="1">
-                <a href="#" class="btn status-enable btn-sm product_quantity_down">
-                  <i class="fa fa-caret-up" style="margin"></i>
-                </a>
-              </div>
-            </div>
           </div><!-- end box-info-product -->
           <div class="box-cart-bottom clearfix">
             <form action="{{ route('cart.store') }}" method="POST">
@@ -125,9 +113,9 @@
             <span>Share:</span>
             <ul class="links list-inline">
               <li><a href="#"><em class="fa fa-facebook"></em></a></li>
-              <li><a href="#"><em class="fa fa-twitter"></em></a></li>
+              <!--<li><a href="#"><em class="fa fa-twitter"></em></a></li>
               <li><a href="#"><em class="fa fa-google-plus"></em></a></li>
-              <li><a href="#"><em class="fa fa-linkedin"></em></a></li>
+              <li><a href="#"><em class="fa fa-linkedin"></em></a></li>-->
               <li><a href="#"><em class="fa fa-pinterest"></em></a></li>
               <li class="last"><a href="#"><em class="fa fa-instagram"></em></a></li>
             </ul>
@@ -138,7 +126,6 @@
         <div class="tabs-top accordion-info">
           <ul id="myTabs" class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
-            <li role="presentation"><a href="#additional-info" aria-controls="additional-info" role="tab" data-toggle="tab">Additional infomation</a></li>
             <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
           </ul>
           <div class="tab-content">
@@ -146,28 +133,6 @@
               <div class="panel-body">
                 <p>Look at the sunset, life is amazing, life is beautiful, life is what you make it. To succeed you must believe. When you believe, you will succeed. In life there will be road blocks but we will over come it. Celebrate success right, the only way, apple. The ladies always say Khaled you smell good, I use no cologne. Cocoa butter is the key. Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise.</p>
                 <p>I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing. It’s on you how you want to live your life. Everyone has a choice. I pick my choice, squeaky clean. You see that bamboo behind me though, you see that bamboo? Ain’t nothin’ like bamboo. Bless up. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise.</p>
-              </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="additional-info">
-              <div class="panel-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tbody>
-                      <tr class="odd">
-                        <td>Compositions</td>
-                        <td>Cotton</td>
-                      </tr>
-                      <tr class="even">
-                        <td>Styles</td>
-                        <td>Casual</td>
-                      </tr>
-                      <tr class="odd">
-                        <td>Properties</td>
-                        <td>Short Sleeve</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="reviews">
