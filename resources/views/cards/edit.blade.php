@@ -32,19 +32,19 @@
               </div>
               <div class="form-group required">
                 <div class="col-lg-12">
-                  <label for="number">Number<sup>*</sup></label>
+                  <label for="number">Card Number<sup>*</sup></label>
                   <input type="text" class="form-control" id="number" name="number" value="{{$card->number}}" required>
                 </div>
               </div>
               <div class="form-group required">
                 <div class="col-lg-12">
-                  <label for="month">Last Name<sup>*</sup></label>
+                  <label for="month">Expiration Month<sup>*</sup></label>
                   <input type="text" class="form-control" id="month" name="month" value="{{$card->month}}" required>
                 </div>
               </div>
               <div class="form-group required">
                 <div class="col-lg-12">
-                  <label for="year">Street Address <sup>*</sup></label>
+                  <label for="year">Expiration Year<sup>*</sup></label>
                   <input type="text" class="form-control" id="year" name="year" value="{{$card->year}}" required>
                 </div>
               </div>
