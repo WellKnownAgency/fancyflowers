@@ -93,16 +93,14 @@ Route::get('/collections/thank-you', function() {
 
 Route::get('/collections/weddings', function() {
   $flowers = App\Flower::whereHas('collections', function ($query) {
-    $query->where('name', 'Weddings');
+    $query->where('name', 'Wedding');
   })->get();
   return view('/collections/weddings', compact('flowers', 'collections'));
 });
 
 Route::get('/collections/all', function() {
-  $flowers = App\Flower::whereHas('collections', function ($query) {
-    $query->where('name', 'All');
-  })->get();
-  return view('/collections/all', compact('flowers', 'collections'));
+  $flowers = App\Flower::latest()->get();
+  return view('/collections/all', compact('flowers'));
 });
 
 Route::get('/collections/looseflowers', function() {
