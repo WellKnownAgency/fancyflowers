@@ -28,33 +28,43 @@
 					<div class="block_content">
 						<ul class="list-block">
 							<li>
-								<a href="page-category-left.html" title="">
-									Weddings<span class="count">(15)</span>
+								<a href="/collections/all" title="All">
+									All
 								</a>
 							</li>
 							<li>
-								<a href="page-category-left.html" title="Weddings">
-									Congratulations<span class="count">(15)</span>
+								<a href="/collections/birthday" title="Birthday">
+									Birthday
 								</a>
 							</li>
 							<li>
-								<a href="page-category-left.html" title="Clearance">
-									New Baby<span class="count">(15)</span>
+								<a href="/collections/weddings" title="Wedding">
+									Wedding
 								</a>
 							</li>
 							<li>
-								<a href="page-category-left.html" title="Vases">
-									Thank You<span class="count">(15)</span>
+								<a href="/collections/congratulation" title="Congratulation">
+									Congratulation
 								</a>
 							</li>
 							<li>
-								<a href="page-category-left.html" title="Prom & Special Events">
-									Flower Composition<span class="count">(15)</span>
+								<a href="/collections/thank-you" title="Thank-You">
+									Thank You
 								</a>
 							</li>
 							<li>
-								<a href="page-category-left.html" title="Prom & Special Events">
-									Gifts<span class="count">(15)</span>
+								<a href="/collections/compositions" title="Flower-Composition">
+									Flower Composition
+								</a>
+							</li>
+							<li>
+								<a href="/collections/looseflowers" title="Loose-Flowers">
+									Loose Flowers
+								</a>
+							</li>
+							<li>
+								<a href="/collections/gifts" title="Gifts">
+									Gifts
 								</a>
 							</li>
 						</ul>
@@ -74,31 +84,6 @@
 						</div>
 					</div>
 				</div><!-- end block_price_filter -->
-				<div id="block_color_filter" class="block">
-					<h4 class="title_block">Select by color</h4>
-					<div class="block_content">
-						<ul class="list-block">
-							<li>
-								<a href="page-category-left.html" title="Black">
-									Black
-									<span class="count">(8)</span>
-								</a>
-							</li>
-							<li>
-								<a href="page-category-left.html" title="Blue">
-									Blue
-									<span class="count">(10)</span>
-								</a>
-							</li>
-							<li>
-								<a href="page-category-left.html" title="Yellow">
-									Yellow
-									<span class="count">(12)</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div><!-- end block_color_filter -->
 				<div id="block_featured_product" class="block">
 					<h4 class="title_block">Best sellers</h4>
 					<div class="block_content">
@@ -310,15 +295,15 @@
 											<span class="label-reduction label">-5%</span>
 										</div>
 										<div class="box-buttons">
-												<a class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></a>
+											<form action="{{ route('cart.store') }}" method="POST">
+												{{ csrf_field() }}
+												<input type="hidden" name="id" value="{{ $flower->id }}">
+												<input type="hidden" name="name" value="{{ $flower->name }}">
+												<input type="hidden" name="price1" value="{{ $flower->price1 }}">
+												<button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
+											</form>
 												<a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
 													<i class="zmdi zmdi-eye"></i>
-												</a>
-												<a class="button btn addToWishlist" href="#" title="Add to my wishlist">
-													<i class="zmdi zmdi-favorite-outline"></i>
-												</a>
-												<a class="button btn add_to_compare" href="#" title="Quick view">
-													<i class="zmdi zmdi-refresh-alt"></i>
 												</a>
 										</div>
 									</div><!--end left block -->

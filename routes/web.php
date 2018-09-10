@@ -93,7 +93,7 @@ Route::get('/collections/thank-you', function() {
 
 Route::get('/collections/weddings', function() {
   $flowers = App\Flower::whereHas('collections', function ($query) {
-    $query->where('name', 'Weddings');
+    $query->where('name', 'Wedding');
   })->get();
   return view('/collections/weddings', compact('flowers', 'collections'));
 });
