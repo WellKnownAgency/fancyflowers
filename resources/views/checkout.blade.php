@@ -298,7 +298,7 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Name on Card</label>
-											<input id="name_on_card" type="text" value="" class="form-control">
+											<input id="name_on_card" type="text" name="name_on_card" class="form-control" data-error="Something wrong with your name">
 										</div>
 									</div>
 									<div class="form-group">
@@ -410,6 +410,48 @@ function change(shipping){
 
 }
 </script>
+
+<script>
+$(document).ready(function() {
+	$('#payment-form').bootstrapValidator({
+		fields: {
+				name_on_card: {
+						validators: {
+										stringLength: {
+										min: 2,
+								},
+										notEmpty: {
+										message: 'Please supply your first name'
+								}
+						}
+				},
+				phone: {
+						validators: {
+								notEmpty: {
+										message: 'Please supply your phone number'
+								},
+								phone: {
+										country: 'US',
+										message: 'Please supply a vaild phone number with area code'
+								}
+						}
+				},
+				email: {
+						validators: {
+								notEmpty: {
+										message: 'Please supply your email address'
+								},
+								emailAddress: {
+										message: 'Please supply a valid email address'
+								}
+						}
+				},
+
+				}
+		})
+});
+</script>
+
 <script>
 (function(){
 // Create a Stripe client.
