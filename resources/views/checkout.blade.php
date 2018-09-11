@@ -94,30 +94,42 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" class="form-control" value="">
+												<input type="text" name="firstname" class="form-control" value="">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
-												<input type="text" class="form-control">
+												<input type="text" name="lastname" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Phone Number</label>
-												<input type="text" class="form-control">
+												<input type="text" name="phone" class="form-control">
 											</div>
 										</div>
 
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Address </label>
-												<input type="text" class="form-control">
+												<input type="text" name="street" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>City </label>
-												<input type="text"  class="form-control">
+												<input type="text" name="city" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>State</label>
+												<input type="text" name="state" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Zip Code</label>
+												<input type="text" name="zipcode" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -128,29 +140,41 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" class="form-control" value="{{ $ship->firstname }}">
+												<input type="text" name="firstname" class="form-control" value="{{ $ship->firstname }}">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
-												<input type="text" class="form-control" value="{{ $ship->lastname }}">
+												<input type="text" name="lastname" class="form-control" value="{{ $ship->lastname }}">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Phone Number</label>
-												<input type="text" class="form-control" value="{{ $ship->phone }}">
+												<input type="text" name="phone" class="form-control" value="{{ $ship->phone }}">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Address </label>
-												<input type="text" class="form-control" value="{{ $ship->street }}">
+												<input type="text" name="street" class="form-control" value="{{ $ship->street }}">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>City </label>
-												<input type="text"  class="form-control" value="{{ $ship->city }}">
+												<input type="text" name="city" class="form-control" value="{{ $ship->city }}">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>State</label>
+												<input type="text" name="state" class="form-control" value="{{ $ship->state }}">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Zip Code</label>
+												<input type="text" name="zipcode" class="form-control" value="{{ $ship->zipcode }}">
 											</div>
 										</div>
 									@endforeach
@@ -280,13 +304,13 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Phone Number</label>
-											<input id="phone" type="text" value="" class="form-control">
+											<input id="phone" type="text" name="phone" value="" class="form-control">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Email</label>
-											<input id="email" type="text" value="" class="form-control">
+											<input id="email" type="text" value="" name="email" class="form-control">
 										</div>
 									</div>
 									@if (Auth::check())
