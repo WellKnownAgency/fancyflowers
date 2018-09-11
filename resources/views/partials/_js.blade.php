@@ -1,8 +1,11 @@
+
 <!-- Vendor JS -->
 <script src="{!! asset('vendor/jquery/jquery.min.js') !!}"></script>
 <script src="{!! asset('vendor/owl.carousel/owl.carousel.min.js') !!}"></script>
 <script src="{!! asset('vendor/magnific-popup/jquery.magnific-popup.js') !!}"></script>
 <script src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
+
+<script src="{!! asset('js/bootstrap-validation.js') !!}"></script>
 
 <script src="{!! asset('vendor/nivo-slider/js/jquery.nivo.slider.js') !!}"></script>
 

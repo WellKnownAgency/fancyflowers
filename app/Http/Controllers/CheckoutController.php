@@ -48,7 +48,7 @@ class CheckoutController extends Controller
             'amount' => Cart::total()+0.30 ,
             'currency' => 'USD',
             'source' => $request->stripeToken,
-            'description' => 'Order',
+            'description' => $content,
             'receipt_email' => $request->email,
             'metadata' => [
                'Name of the Item' => $content,
