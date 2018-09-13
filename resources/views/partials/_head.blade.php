@@ -18,6 +18,7 @@
   <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
 
   <!-- Vendor CSS -->
+
   <link rel="stylesheet" href="{!! asset('vendor/bootstrap/css/bootstrap-theme.css') !!}">
   <link rel="stylesheet" href="{!! asset('vendor/font-awesome/css/font-awesome.min.css') !!}">
   <link rel="stylesheet" href="{!! asset('vendor/font-material/css/material-design-iconic-font.min.css') !!}">

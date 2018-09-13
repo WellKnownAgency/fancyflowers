@@ -22,6 +22,10 @@ Route::get('/', function () {
 
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::get('product/{slug}', ['as' => 'product.single', 'uses' => 'FlowerController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
