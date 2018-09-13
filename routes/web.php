@@ -18,8 +18,6 @@ Route::get('/', function () {
     $flowers = App\Flower::latest()->limit(8)->get();
     $posts = App\Post::latest()->limit(5)->get();
     return view('index', compact('flowers'))->withPosts($posts);
-
-
 });
 
 Route::get('/test', function () {
@@ -50,8 +48,8 @@ Route::get('/products-list', function () {
 });
 
 Route::get('/blog', function () {
-  $posts = App\Post::latest()->take(1)->get();
-  $postss = App\Post::get();
+    $posts = App\Post::latest()->take(1)->get();
+    $postss = App\Post::latest()->skip(1)->take(1000)->get();
     return view('blog/index', compact('posts'))->withPostss($postss);
 });
 

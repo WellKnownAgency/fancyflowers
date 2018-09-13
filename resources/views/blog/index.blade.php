@@ -25,8 +25,8 @@
 				<div class="blog-posts clearfix">
 					<h1 class="title_block">Latest blog</h1>
 					<div class="row">
+						@foreach ($posts as $post)
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							@foreach ($posts as $post)
 							<div class="post post-large">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
@@ -50,12 +50,10 @@
 									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
 								</div>
 							</div><!-- end post -->
-								@endforeach
 						</div>
-
-
+						@endforeach
+						@foreach ($postss as $post)
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
-							@foreach (array_slice($postss, 1) as $post)
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
@@ -68,8 +66,8 @@
 									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
 								</div>
 							</div><!-- end post -->
-							@endforeach
 						</div>
+						@endforeach
 						</div>
 					</div><!-- end row -->
 					<div class="content_sortPagiBar bottom clearfix">
