@@ -208,16 +208,15 @@
               <div class="post-container">
                 <div class="post-image">
                   <a href="/blog/{{$post->slug}}">
-                    <img src="/images/blog/{{$post->image}}" alt="{{$post->name}}" class="img-responsive">
+                    <img src="/images/blog/{{$post->image}}" alt="{{$post->title}}" class="img-responsive">
                   </a>
-                  <span class="post-date"><span class="month">May</span><br><span class="day">08</span></span>
+                  <span class="post-date"><span class="month">{{ Carbon\Carbon::parse($post->created_at)->format('M') }}</span><br><span class="day">{{ Carbon\Carbon::parse($post->created_at)->format('d') }}</span></span>
                 </div>
                 <div class="post-content">
-                  <h4><a href="/blog/{{$post->slug}}" title="{{$post->name}}">{{$post->name}}</a></h4>
+                  <h4><a href="/blog/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a></h4>
                   <div class="post-meta">
                     <div class="post-meta-lr post-meta-left">
-                      <span class="post-user">By Tivatheme</span>
-                      <span class="post-comment">3 comment</span>
+                      <span class="post-comment">By FancyFlowers</span>
                     </div><!-- end post-meta-left -->
                   </div><!-- end post-meta -->
                   <div class="des">{{$post->excerpt}}</div>
