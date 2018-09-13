@@ -129,4 +129,10 @@ class PostController extends Controller
     {
         //
     }
+
+    public function getSingle($slug) {
+      $post = Post::where('slug', '=', $slug)->first();
+
+      return view('post.single')->withPost($post);
+    }
 }

@@ -197,112 +197,34 @@
   <div class="section section-posts">
     <div class="container">
       <div class="tiva-postslist">
-        <h4 class="title_block">Form the blog</h4>
+        <h4 class="title_block">Latest blog posts</h4>
         <div class="des-text">
           <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
         </div>
         <div class="block_content">
           <div class="postslist-owlcaousel owl-carousel">
+            @foreach ($posts as $post)
             <div class="item">
               <div class="post-container">
                 <div class="post-image">
-                  <a href="page-blog-left-detail.html">
-                    <img src="/images/blog/870x578/1.jpg" alt="" class="img-responsive">
+                  <a href="/blog/{{$post->slug}}">
+                    <img src="/images/blog/{{$post->image}}" alt="{{$post->name}}" class="img-responsive">
                   </a>
                   <span class="post-date"><span class="month">May</span><br><span class="day">08</span></span>
                 </div>
                 <div class="post-content">
-                  <h4><a href="page-blog-left-detail.html" title="Nullam ullamcorper nisl quis ornare">Nullam ullamcorper nisl quis ornare</a></h4>
+                  <h4><a href="/blog/{{$post->slug}}" title="{{$post->name}}">{{$post->name}}</a></h4>
                   <div class="post-meta">
                     <div class="post-meta-lr post-meta-left">
                       <span class="post-user">By Tivatheme</span>
                       <span class="post-comment">3 comment</span>
                     </div><!-- end post-meta-left -->
                   </div><!-- end post-meta -->
-                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
+                  <div class="des">{{$post->excerpt}}</div>
                 </div><!-- end post-content -->
               </div><!-- end post-container -->
             </div><!-- end item -->
-            <div class="item">
-              <div class="post-container">
-                <div class="post-image">
-                  <a href="page-blog-left-detail.html">
-                    <img src="/images/blog/870x578/2.jpg" alt="" class="img-responsive">
-                  </a>
-                  <span class="post-date"><span class="month">Mar</span><br><span class="day">20</span></span>
-                </div>
-                <div class="post-content">
-                  <h4><a href="page-blog-left-detail.html" title="Growing a wood flower business">Growing a wood flower business</a></h4>
-                  <div class="post-meta">
-                    <div class="post-meta-lr post-meta-left">
-                      <span class="post-user">By Tivatheme</span>
-                      <span class="post-comment">3 comment</span>
-                    </div><!-- end post-meta-left -->
-                  </div><!-- end post-meta -->
-                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
-                </div><!-- end post-content -->
-              </div><!-- end post-container -->
-            </div><!-- end item -->
-            <div class="item">
-              <div class="post-container">
-                <div class="post-image">
-                  <a href="page-blog-left-detail.html">
-                    <img src="/images/blog/870x578/3.jpg" alt="" class="img-responsive">
-                  </a>
-                  <span class="post-date"><span class="month">Web</span><br><span class="day">25</span></span>
-                </div>
-                <div class="post-content">
-                  <h4><a href="page-blog-left-detail.html" title="More than just a simple bouquet">More than just a simple bouquet</a></h4>
-                  <div class="post-meta">
-                    <div class="post-meta-lr post-meta-left">
-                      <span class="post-user">By Tivatheme</span>
-                      <span class="post-comment">3 comment</span>
-                    </div><!-- end post-meta-left -->
-                  </div><!-- end post-meta -->
-                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
-                </div><!-- end post-content -->
-              </div><!-- end post-container -->
-            </div><!-- end item -->
-            <div class="item">
-              <div class="post-container">
-                <div class="post-image">
-                  <a href="page-blog-left-detail.html">
-                    <img src="/images/blog/870x578/4.jpg" alt="" class="img-responsive">
-                  </a>
-                  <span class="post-date"><span class="month">Thu</span><br><span class="day">30</span></span>
-                </div>
-                <div class="post-content">
-                  <h4><a href="page-blog-left-detail.html" title="Eiusmod tempor incididunt ut labore">Eiusmod tempor incididunt ut labore</a></h4>
-                  <div class="post-meta">
-                    <div class="post-meta-lr post-meta-left">
-                      <span class="post-user">By Tivatheme</span>
-                      <span class="post-comment">3 comment</span>
-                    </div><!-- end post-meta-left -->
-                  </div><!-- end post-meta -->
-                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
-                </div><!-- end post-content -->
-              </div><!-- end post-container -->
-            </div><!-- end item -->
-            <div class="item">
-              <div class="post-container">
-                <div class="post-image">
-                  <a href="page-blog-left-detail.html">
-                    <img src="/images/blog/870x578/5.jpg" alt="" class="img-responsive">
-                  </a>
-                  <span class="post-date"><span class="month">Fri</span><br><span class="day">18</span></span>
-                </div>
-                <div class="post-content">
-                  <h4><a href="page-blog-left-detail.html" title="The key to more success is to get">The key to more success is to get</a></h4>
-                  <div class="post-meta">
-                    <div class="post-meta-lr post-meta-left">
-                      <span class="post-user">By Tivatheme</span>
-                      <span class="post-comment">3 comment</span>
-                    </div><!-- end post-meta-left -->
-                  </div><!-- end post-meta -->
-                  <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod and vitality, tempor ut labore et dolore magna aliqua. Over the years come, who nostrud exercise, school district</div>
-                </div><!-- end post-content -->
-              </div><!-- end post-container -->
-            </div><!-- end item -->
+            @endforeach
           </div><!-- end postslist-owlcaousel -->
         </div><!-- end bock_content -->
       </div><!-- end tiva-postslist -->

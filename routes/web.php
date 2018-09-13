@@ -16,7 +16,10 @@ Auth::routes();
 // Main Pages Routes
 Route::get('/', function () {
     $flowers = App\Flower::latest()->limit(8)->get();
-    return view('index', compact('flowers'));
+    $posts = App\Post::latest()->limit(5)->get();
+    return view('index', compact('flowers'))->withPosts($posts);
+
+
 });
 
 Route::get('product/{slug}', ['as' => 'product.single', 'uses' => 'FlowerController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
@@ -45,6 +48,8 @@ Route::get('/products-list', function () {
 Route::get('/blog', function () {
     return view('blog/index');
 });
+
+Route::get('/blog/{slug}', ['as' => 'post.single', 'uses' => 'PostController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 
 // Collection Routes
