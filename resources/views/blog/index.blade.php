@@ -26,6 +26,7 @@
 					<h1 class="title_block">Latest blog</h1>
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							@foreach ($posts as $post)
 							<div class="post post-large">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
@@ -49,8 +50,12 @@
 									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
 								</div>
 							</div><!-- end post -->
+								@endforeach
 						</div>
+
+
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
+							@foreach (array_slice($postss, 1) as $post)
 							<div class="post post-medium">
 								<div class="post-image">
 									<a href="page-blog-left-detail.html">
@@ -63,76 +68,8 @@
 									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
 								</div>
 							</div><!-- end post -->
+							@endforeach
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
-							<div class="post post-medium">
-								<div class="post-image">
-									<a href="page-blog-left-detail.html">
-									<img src="images/blog/870x578/3.jpg" alt="" class="img-responsive">
-									</a>
-								</div>
-								<div class="post-content">
-									<h4 class="title_block"><a href="page-blog-left-detail.html" title="Eiusmod tempor incididunt ut labore et dolore">Eiusmod tempor incididunt ut labore et dolore</a></h4>
-									<div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
-									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
-								</div>
-							</div><!-- end post -->
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
-							<div class="post post-medium">
-								<div class="post-image">
-									<a href="page-blog-left-detail.html">
-									<img src="images/blog/870x578/1.jpg" alt="" class="img-responsive">
-									</a>
-								</div>
-								<div class="post-content">
-									<h4 class="title_block"><a href="page-blog-left-detail.html" title="Tempor incididunt ut labore et dolore magna aliqua">Tempor incididunt ut labore et dolore magna aliqua</a></h4>
-									<div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
-									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
-								</div>
-							</div><!-- end post -->
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
-							<div class="post post-medium">
-								<div class="post-image">
-									<a href="page-blog-left-detail.html">
-									<img src="images/blog/870x578/4.jpg" alt="" class="img-responsive">
-									</a>
-								</div>
-								<div class="post-content">
-									<h4 class="title_block"><a href="page-blog-left-detail.html" title="Turpis at eleifend elit Aenean porta ac sed faucibus">Turpis at eleifend elit Aenean porta ac sed faucibus</a></h4>
-									<div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
-									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
-								</div>
-							</div><!-- end post -->
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
-							<div class="post post-medium">
-								<div class="post-image">
-									<a href="page-blog-left-detail.html">
-									<img src="images/blog/870x578/5.jpg" alt="" class="img-responsive">
-									</a>
-								</div>
-								<div class="post-content">
-									<h4 class="title_block"><a href="page-blog-left-detail.html" title="Eiusmod tempor incididunt ut labore et dolore">Eiusmod tempor incididunt ut labore et dolore</a></h4>
-									<div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
-									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
-								</div>
-							</div><!-- end post -->
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12">
-							<div class="post post-medium">
-								<div class="post-image">
-									<a href="page-blog-left-detail.html">
-									<img src="images/blog/870x578/6.jpg" alt="" class="img-responsive">
-									</a>
-								</div>
-								<div class="post-content">
-									<h4 class="title_block"><a href="page-blog-left-detail.html" title="Tempor incididunt ut labore et dolore magna aliqua">Tempor incididunt ut labore et dolore magna aliqua</a></h4>
-									<div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
-									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
-								</div>
-							</div><!-- end post -->
 						</div>
 					</div><!-- end row -->
 					<div class="content_sortPagiBar bottom clearfix">
@@ -156,7 +93,6 @@
 						</nav>
 					</div><!-- end content_sortPagiBar -->
 				</div><!-- end blog-posts -->
-			</div><!-- end center_column -->
 			<div id="right_column" class="sidebar col-lg-3 col-md-3">
 				<div id="blog-search" class="block blog-search">
 					<h4 class="title_block">Search blog</h4>
