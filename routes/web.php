@@ -50,9 +50,8 @@ Route::get('/products-list', function () {
 });
 
 Route::get('/blog', function () {
-    $posts = App\Post::latest()->take(1)->get();
-    $postss = App\Post::latest()->skip(1)->take(1000)->paginate(9);
-    return view('blog/index', compact('posts'))->withPostss($postss);
+    $postss = App\Post::latest()->paginate(9);
+    return view('blog/index')->withPostss($postss);
 });
 
 Route::get('/blog/{slug}', ['as' => 'post.single', 'uses' => 'PostController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
