@@ -38,6 +38,22 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
+                <label for="best">Best Sellers</label>
+                <select class="form-control" id="best" name="best">
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="new">New Item</label>
+                <select class="form-control" id="new" name="new">
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
                 <label for="price1">Product Price 1 ($)</label>
                 <input type="number" name="price1" class="form-control" id="price1" placeholder="Price" value="{{$flower->price1}}">
               </div>

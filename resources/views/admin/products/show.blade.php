@@ -56,6 +56,20 @@
            @endif
          </li>
          <li class="list-group-item">
+           @if ($flower->best == true)
+           <span class="badge badge-success">Best Sellers</span>
+           @else
+           <span class="badge badge-danger">Not Best Sellers</span>
+           @endif
+         </li>
+         <li class="list-group-item">
+           @if ($flower->new == true)
+           <span class="badge badge-success">New</span>
+           @else
+           <span class="badge badge-danger">Not New</span>
+           @endif
+         </li>
+         <li class="list-group-item">
            @foreach ($flower->collections as $collection)
            <h4>  <span class="badge badge-secondary">{{ $collection->name }}</span></h4>
            @endforeach

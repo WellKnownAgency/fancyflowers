@@ -74,7 +74,7 @@
 						<nav>
 							<ul class="pagination">
 							<li>
-								<a href="#" aria-label="Previous">
+								<a href="{{$postss->previousPageUrl()}}" aria-label="Previous">
 								<span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
 								</a>
 							</li>
@@ -83,7 +83,7 @@
 							<li class="truncate"><span>...</span></li>
 							<li><a href="#">12</a></li>
 							<li>
-								<a href="#" aria-label="Next">
+								<a href="{{$postss->nextPageUrl()}}" aria-label="Next">
 								<span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
 								</a>
 							</li>
@@ -93,7 +93,7 @@
 				</div><!-- end blog-posts -->
 			<div id="right_column" class="sidebar col-lg-3 col-md-3">
 				<div id="recent-posts" class="block recent-posts">
-					<h4 class="title_block">Ropular posts</h4>
+					<h4 class="title_block">Popular posts</h4>
 					<div class="block_content">
 						<ul class="posts-list">
 							<li>
