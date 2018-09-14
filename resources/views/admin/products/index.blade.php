@@ -31,6 +31,8 @@
                 <th scope="col">Created</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -46,6 +48,20 @@
                   <span class="badge badge-success">In Stock</span>
                   @else
                   <span class="badge badge-danger">Out of Stock</span>
+                  @endif
+                </td>
+                <td>
+                  @if ($flower->best == true)
+                  <span class="badge badge-success">Best Sellers</span>
+                  @else
+                  <span class="badge badge-danger">Not Best Sellers</span>
+                  @endif
+                </td>
+                <td>
+                  @if ($flower->new == true)
+                  <span class="badge badge-success">New</span>
+                  @else
+                  <span class="badge badge-danger">Not New</span>
                   @endif
                 </td>
                 <td class="text-right">

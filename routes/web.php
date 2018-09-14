@@ -51,7 +51,7 @@ Route::get('/products-list', function () {
 
 Route::get('/blog', function () {
     $posts = App\Post::latest()->take(1)->get();
-    $postss = App\Post::latest()->skip(1)->take(1000)->get();
+    $postss = App\Post::latest()->skip(1)->take(1000)->paginate(2);
     return view('blog/index', compact('posts'))->withPostss($postss);
 });
 

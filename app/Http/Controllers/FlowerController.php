@@ -51,6 +51,8 @@ class FlowerController extends Controller
          $flower->name = $request->name;
          $flower->slug = $request->slug;
          $flower->stock = $request->stock;
+         $flower->best = $request->best;
+         $flower->new = $request->new;
          $flower->price1 = $request->price1;
          $flower->price1name = $request->price1name;
          $flower->price2 = $request->price2;
@@ -140,6 +142,8 @@ class FlowerController extends Controller
      $flower->name = $request->input('name');
      $flower->slug = $request->input('slug');
      $flower->stock = $request->input('stock');
+     $flower->best = $request->input('best');
+     $flower->new = $request->input('new');
      $flower->price1 = $request->input ('price1');
      $flower->price1name = $request->input ('price1name');
      $flower->price2 = $request->input ('price2');
