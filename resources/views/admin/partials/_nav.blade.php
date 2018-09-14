@@ -24,6 +24,11 @@
           Posts
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/contacts">
+          Contacts
+        </a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="/admin/collections" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Blog

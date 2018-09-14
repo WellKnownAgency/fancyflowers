@@ -43,6 +43,8 @@ Route::get('/contact-us', function () {
     return view('contact-us');
 });
 
+Route::post('/contact-us/contact', 'ContactController@postMess')->name('contact.store');
+
 Route::get('/products-list', function () {
     return view('products-list/products-list');
 });
@@ -133,6 +135,8 @@ Route::get('/admin', function () {
     return view('admin/index');
 });
 
+Route::get('/admin/contacts', 'ContactController@index');
+Route::get('/admin/contacts/{id}', 'ContactController@show')->name('contacts.show');
 Route::resource('/admin/products', 'FlowerController');
 Route::resource('/admin/collections', 'CollectionController');
 Route::resource('/admin/posts', 'PostController');
