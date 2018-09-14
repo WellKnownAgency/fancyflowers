@@ -1,4 +1,36 @@
+.pagination > li.active > span {
+    color: white;
+    border: 1px solid #FF8C94;
+    background-color: #FF8C94;
+    width: 40px;
+    height: 41px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+.pagination > li:first-child > span, .pagination > li:last-child > span{
+  margin-top: 5px;
+  padding-top: 1px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+  padding-left: 12px;
+  width: 40px;
+  height: 29px;
+  margin-right: 3px;
+  }
+.pagination > li:first-child > a, .pagination > li:last-child > a{
+    margin-top: 5px;
+    padding-top: 1px;
+    padding-bottom: 6px;
+    padding-right: 12px;
+    padding-left: 12px;
+    width: 40px;
+    height: 29px;
+    margin-right: 3px;
+    }
 
+.blog-posts .post-content .des p{
+  width:auto;
+}
 .table > tbody > tr > td{
       border-top: 0;
       border-bottom: 1px solid #eaeaea;
