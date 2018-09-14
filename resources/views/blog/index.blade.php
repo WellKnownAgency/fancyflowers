@@ -41,12 +41,12 @@
 							</div><!-- end post -->
 						</div>
 						@endforeach
-						</div>
 					</div><!-- end row -->
+				</div>
 					<div class="content_sortPagiBar bottom clearfix">
 						{{$postss->links()}}
 					</div><!-- end content_sortPagiBar -->
-				</div><!-- end blog-posts -->
+			</div><!-- end blog-posts -->
 			<div id="right_column" class="sidebar col-lg-3 col-md-3">
 				<div id="recent-posts" class="block recent-posts">
 					<h4 class="title_block">Popular posts</h4>
