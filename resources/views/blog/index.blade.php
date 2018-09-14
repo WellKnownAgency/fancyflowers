@@ -35,7 +35,7 @@
 								</div>
 								<div class="post-content">
 									<h4 class="title_block"><a href="/blog/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a></h4>
-									<div class="des"><p>{{ str_limit($post->excerpt, 50) }}</p></div>
+									<div class="des">{{ str_limit($post->excerpt, 50) }}</div>
 									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
 								</div>
 							</div><!-- end post -->
