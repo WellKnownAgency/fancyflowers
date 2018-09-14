@@ -29,26 +29,27 @@
 									<ul>
 										<li><i class="zmdi zmdi-pin"></i><span>123 canberra Street, New York, USA</span></li>
 										<li><i class="zmdi zmdi-phone"></i><span>+844 123 456 78 / +844 123 456 79</span></li>
-										<li><i class="zmdi zmdi-email"></i><a href="#" title="">contact@byhands.org</a></li>
+										<li><i class="zmdi zmdi-email"></i><a href="mailto:myfancyflower@gmail.com" title="">myfancyflower@gmail.com</a></li>
 									</ul>
 								</div><!-- contact-box-->
 							</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 								<div class="contact-form clearfix">
 									<h2 class="title_block">Send us a message</h2>
-									<form method="post" action="php/contact.php" id="cform" autocomplete="on">
+									<form method="post" action="{{route('contact.store')}}" id="cform" autocomplete="on">
+										{{ csrf_field() }}
 										<div class="row">
 											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<input type="text" id="name" name="name" placeholder="Name*"/>
+												<input type="text" id="name" name="name" placeholder="Name*" required/>
 											</div>
 											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<input type="email" id="email" name="email" placeholder="Email*"/>
+												<input type="email" id="email" name="email" placeholder="Email*" required/>
 											</div>
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<input type="text" id="subject" name="subject" placeholder="Subject*"/>
+												<input type="text" id="subject" name="subj" placeholder="Subject*" required/>
 											</div>
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<textarea id="message" name="message" placeholder="Enter your message*"></textarea>
+												<textarea id="message" name="body" placeholder="Enter your message*" required></textarea>
 											</div>
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 												<button type="submit" class="btn button btn-primary">Send message</button>
