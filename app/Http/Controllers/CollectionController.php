@@ -20,6 +20,28 @@ class CollectionController extends Controller
       return view('admin.collections.index')->withCollections($collections);
     }
 
+      public function getBirthday()
+      {
+
+      $flowers = Flower::whereHas('collections', function ($query) {
+        $query->where('name', 'Birthday');
+      })->get();
+
+
+      if (request()->sort = 'lowest_first') {
+        $flowers = $flowers->sortBy('price1');
+      } elseif(request()->sort = 'highest_first') {
+        $flowers = $flowers->sortByDesc('price1');
+      }
+
+      if (request()->sort = 'a-z') {
+        $flowers = $flowers->sortBy('name');
+      } elseif(request()->sort = 'z-a') {
+        $flowers = $flowers->sortByDesc('price1');
+      }
+      return view('/collections/birthday', compact('flowers', 'collections'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -91,7 +113,7 @@ class CollectionController extends Controller
       $collection->name = $request->input('name');
       $collection->slug = $request->input('slug');
 
-    
+
       $collection->save();
 
       return redirect()->route('collections.index', $collection->id);
