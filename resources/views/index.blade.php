@@ -219,7 +219,7 @@
                       <span class="post-comment">By FancyFlowers</span>
                     </div><!-- end post-meta-left -->
                   </div><!-- end post-meta -->
-                  <div class="des">{{ str_limit($post->excerpt, 50) }}</div>
+                  <div class="des">{{ str_limit($post->excerpt, 50, '') }}</div>
                 </div><!-- end post-content -->
               </div><!-- end post-container -->
             </div><!-- end item -->

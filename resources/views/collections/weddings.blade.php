@@ -251,32 +251,15 @@
 						</nav>
 					</div>
 					<div class="sort pull-right">
-						<form id="productsSortForm" action="#" class="form-inline pull-right">
-							<div class="select">
-								<label for="selectProductSort">Sort by</label>
-								<select id="selectProductSort" class="selectProductSort form-control">
-									<option value="0" selected="selected">name</option>
-									<option value="1">Price: Lowest first</option>
-									<option value="2">Price: Highest first</option>
-									<option value="3">Product Name: A to Z</option>
-									<option value="4">Product Name: Z to A</option>
-									<option value="5">In stock</option>
-								</select>
-							</div>
-						</form>
-						<form id="productsShowForm" action="#" class="form-inline pull-right">
-							<div class="select">
-								<label for="selectProductShow">Show</label>
-								<select id="selectProductShow" class="selectProductShow form-control">
-									<option value="0" selected="selected">9</option>
-									<option value="1">15</option>
-									<option value="2">25</option>
-									<option value="3">45</option>
-									<option value="4">60</option>
-									<option value="5">100</option>
-								</select>
-							</div>
-						</form>
+						<label for="selectProductSort">Sort by</label>
+						<select id="selectProductSort" class="selectProductSort form-control" onchange="location = this.value;">
+							<option selected="selected">Choose...</option>
+							<option value="{{ route('collection.weddings', ['sort' => 'low_high']) }}">Lowest First</option>
+							<option value="{{ route('collection.weddings', ['sort' => 'high_low']) }}">Highest First</option>
+							<option value="{{ route('collection.weddings', ['sort' => 'a_z']) }}">Product Name A-Z</option>
+							<option value="{{ route('collection.weddings', ['sort' => 'z_a']) }}">Product Name Z-A</option>
+							<option value="{{ route('collection.weddings', ['sort' => 'instock']) }}">In Stock</option>
+						</select>
 					</div>
 				</div>
 				<div class="tab-content">

@@ -251,32 +251,17 @@
 						</nav>
 					</div>
 					<div class="sort pull-right">
-						<form id="productsSortForm" action="#" class="form-inline pull-right">
-							<div class="select">
-								<label for="selectProductSort">Sort by</label>
-								<select id="selectProductSort" class="selectProductSort form-control">
-									<option value="0" selected="selected">name</option>
-									<option value="1">Price: Lowest first</option>
-									<option value="2">Price: Highest first</option>
-									<option value="3">Product Name: A to Z</option>
-									<option value="4">Product Name: Z to A</option>
-									<option value="5">In stock</option>
-								</select>
-							</div>
-						</form>
-						<form id="productsShowForm" action="#" class="form-inline pull-right">
-							<div class="select">
-								<label for="selectProductShow">Show</label>
-								<select id="selectProductShow" class="selectProductShow form-control">
-									<option value="0" selected="selected">9</option>
-									<option value="1">15</option>
-									<option value="2">25</option>
-									<option value="3">45</option>
-									<option value="4">60</option>
-									<option value="5">100</option>
-								</select>
-							</div>
-						</form>
+						<div class="select">
+							<label for="selectProductSort">Sort by</label>
+							<select id="selectProductSort" class="selectProductSort form-control" onchange="location = this.value;">
+								<option selected="selected">Choose...</option>
+								<option value="{{ route('collection.congratulation', ['sort' => 'low_high']) }}">Lowest First</option>
+								<option value="{{ route('collection.congratulation', ['sort' => 'high_low']) }}">Highest First</option>
+								<option value="{{ route('collection.congratulation', ['sort' => 'a_z']) }}">Product Name A-Z</option>
+								<option value="{{ route('collection.congratulation', ['sort' => 'z_a']) }}">Product Name Z-A</option>
+								<option value="{{ route('collection.congratulation', ['sort' => 'instock']) }}">In Stock</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<div class="tab-content">
@@ -338,25 +323,7 @@
 					</div><!-- end tiva-grid -->
 				</div>
 				<div class="content_sortPagiBar bottom clearfix">
-					<nav>
-						<ul class="pagination">
-						<li>
-							<a href="#" aria-label="Previous">
-							<span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-							</a>
-						</li>
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li class="truncate"><span>...</span></li>
-						<li><a href="#">12</a></li>
-						<li>
-							<a href="#" aria-label="Next">
-							<span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-							</a>
-						</li>
-						</ul>
-					</nav>
+					{{$flowers->appends(request()->input())->links()}}
 				</div>
 			</div><!-- end center_column -->
 		</div>
