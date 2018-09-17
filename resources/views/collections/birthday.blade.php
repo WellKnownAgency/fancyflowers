@@ -255,11 +255,11 @@
 							<label for="selectProductSort">Sort by</label>
 							<select id="selectProductSort" class="selectProductSort form-control" onchange="location = this.value;">
 								<option selected="selected">Choose...</option>
-								<option value="{{ route('collection.birthday', ['sort' => 'lowest_first']) }}">Lowest First</option>
-								<option value="{{ route('collection.birthday', ['sort' => 'highest_first']) }}">Highest First</option>
-								<option value="{{ route('collection.birthday', ['sort' => 'a-z']) }}">Product Name A-Z</option>
-								<option value="{{ route('collection.birthday', ['sort' => 'z-a']) }}">Product Name Z-A</option>
-								<option value="/">In Stock</option>
+								<option value="{{ route('collection.birthday', ['sort' => 'low_high']) }}">Lowest First</option>
+								<option value="{{ route('collection.birthday', ['sort' => 'high_low']) }}">Highest First</option>
+								<option value="{{ route('collection.birthday', ['sort' => 'a_z']) }}">Product Name A-Z</option>
+								<option value="{{ route('collection.birthday', ['sort' => 'z_a']) }}">Product Name Z-A</option>
+								<option value="{{ route('collection.birthday', ['sort' => 'instock']) }}">In Stock</option>
 							</select>
 						</div>
 					</div>

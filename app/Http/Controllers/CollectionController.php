@@ -20,27 +20,232 @@ class CollectionController extends Controller
       return view('admin.collections.index')->withCollections($collections);
     }
 
+
+    //collections
       public function getBirthday()
       {
+        $pagination = 1;
 
       $flowers = Flower::whereHas('collections', function ($query) {
         $query->where('name', 'Birthday');
-      })->get();
+      });
 
-
-      if (request()->sort = 'lowest_first') {
-        $flowers = $flowers->sortBy('price1');
-      } elseif(request()->sort = 'highest_first') {
-        $flowers = $flowers->sortByDesc('price1');
+      if (request()->sort == 'low_high') {
+        $flowers = $flowers->orderBy('price1', 'asc');
+      } elseif(request()->sort == 'high_low') {
+        $flowers = $flowers->orderBy('price1', 'desc');
+      } elseif(request()->sort == 'a_z') {
+        $flowers = $flowers->orderBy('name', 'asc');
+      } elseif(request()->sort == 'z_a') {
+        $flowers = $flowers->orderBy('name', 'desc');
+      } elseif(request()->sort == 'instock') {
+        $flowers = $flowers->where('stock', '1');
       }
 
-      if (request()->sort = 'a-z') {
-        $flowers = $flowers->sortBy('name');
-      } elseif(request()->sort = 'z-a') {
-        $flowers = $flowers->sortByDesc('price1');
-      }
+      $flowers = $flowers->paginate($pagination);
+
       return view('/collections/birthday', compact('flowers', 'collections'));
     }
+
+    public function getCompositions()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'Flower Composition');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/compositions', compact('flowers', 'collections'));
+  }
+
+  public function getCongratulation()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'Congratulation');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/congratulation', compact('flowers', 'collections'));
+  }
+
+  public function getGifts()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'Gifts');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/gifts', compact('flowers', 'collections'));
+  }
+
+  public function getNewbaby()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'New Baby');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/new-baby', compact('flowers', 'collections'));
+  }
+
+  public function getThankyou()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'Thank you');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/thank-you', compact('flowers', 'collections'));
+  }
+
+  public function getWeddings()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'Wedding');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/weddings', compact('flowers', 'collections'));
+  }
+
+  public function getLooseflowers()
+    {
+      $pagination = 1;
+
+    $flowers = Flower::whereHas('collections', function ($query) {
+      $query->where('name', 'Wedding');
+    });
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/looseflowers', compact('flowers', 'collections'));
+  }
+
+  public function getAll()
+    {
+      $pagination = 1;
+
+      $flowers = Flower::all();
+
+    if (request()->sort == 'low_high') {
+      $flowers = $flowers->orderBy('price1', 'asc');
+    } elseif(request()->sort == 'high_low') {
+      $flowers = $flowers->orderBy('price1', 'desc');
+    } elseif(request()->sort == 'a_z') {
+      $flowers = $flowers->orderBy('name', 'asc');
+    } elseif(request()->sort == 'z_a') {
+      $flowers = $flowers->orderBy('name', 'desc');
+    } elseif(request()->sort == 'instock') {
+      $flowers = $flowers->where('stock', '1');
+    } else {
+      $flowers = $flowers->paginate($pagination);
+    }
+
+    $flowers = $flowers->paginate($pagination);
+
+    return view('/collections/all', compact('flowers', 'collections'));
+  }
 
     /**
      * Show the form for creating a new resource.

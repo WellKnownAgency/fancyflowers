@@ -254,13 +254,13 @@
 						<form id="productsSortForm" action="#" class="form-inline pull-right">
 							<div class="select">
 								<label for="selectProductSort">Sort by</label>
-								<select id="selectProductSort" class="selectProductSort form-control">
-									<option value="0" selected="selected">name</option>
-									<option value="1">Price: Lowest first</option>
-									<option value="2">Price: Highest first</option>
-									<option value="3">Product Name: A to Z</option>
-									<option value="4">Product Name: Z to A</option>
-									<option value="5">In stock</option>
+								<select id="selectProductSort" class="selectProductSort form-control" onchange="location = this.value;">
+									<option selected="selected">Choose...</option>
+									<option value="{{ route('collection.compositions', ['sort' => 'low_high']) }}">Lowest First</option>
+									<option value="{{ route('collection.compositions', ['sort' => 'high_low']) }}">Highest First</option>
+									<option value="{{ route('collection.compositions', ['sort' => 'a_z']) }}">Product Name A-Z</option>
+									<option value="{{ route('collection.compositions', ['sort' => 'z_a']) }}">Product Name Z-A</option>
+									<option value="{{ route('collection.compositions', ['sort' => 'instock']) }}">In Stock</option>
 								</select>
 							</div>
 						</form>
