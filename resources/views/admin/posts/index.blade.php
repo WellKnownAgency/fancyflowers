@@ -29,6 +29,7 @@
                 <th scope="col">Published</th>
                 <th scope="col">Created date</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -41,6 +42,8 @@
                 <td>{{ $post->created_at}}</td>
                 <td class="text-right">
                   <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">View</a>
+                </td>
+                <td>
                   <a href="#" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>
