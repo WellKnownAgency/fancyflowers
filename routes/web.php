@@ -57,13 +57,13 @@ Route::get('/blog', function () {
 Route::get('/blog/{slug}', ['as' => 'post.single', 'uses' => 'PostController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 
-// Collection Routes
-Route::get('/collections/birthday', function() {
-  $flowers = App\Flower::whereHas('collections', function ($query) {
-    $query->where('name', 'Birthday');
-  })->get();
-  return view('/collections/birthday', compact('flowers', 'collections'));
-});
+Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
+Route::get('/collections/compositions', 'CollectionController@getComposition')->name('collection.composition');
+Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
+Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
+Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
+Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
+
 
 
 Route::get('/collections/compositions', function() {
