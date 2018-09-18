@@ -161,6 +161,7 @@
 
   <div class="section section-banner">
     <div class="container">
+      <div class="block-shadow">
       <div class="tv-table block">
         <div class="tv-tablecell">
           <div class="block-html block">
@@ -191,6 +192,7 @@
           </div><!--end block-html -->
         </div>
       </div>
+    </div>
     </div><!-- end container -->
   </div><!-- end section-banner -->
 
