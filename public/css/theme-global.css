@@ -997,9 +997,11 @@ input[type=number] {
 }
 
 /* section-banner */
+.section-banner .block-shadow{
+box-shadow: 10px 10px 30px rgba(127, 137, 161, 0.25);
+}
 .section-banner .tv-tablecell {
   background-color: rgba(255, 170, 166, 0.1);
-  box-shadow: 5px 5px 30px rgba(127, 137, 161, 0.25);
 }
 .section-banner .tv-tablecell .block-html {
   padding: 0 85px;
