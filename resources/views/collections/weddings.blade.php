@@ -321,25 +321,7 @@
 					</div><!-- end tiva-grid -->
 				</div>
 				<div class="content_sortPagiBar bottom clearfix">
-					<nav>
-						<ul class="pagination">
-						<li>
-							<a href="#" aria-label="Previous">
-							<span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-							</a>
-						</li>
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li class="truncate"><span>...</span></li>
-						<li><a href="#">12</a></li>
-						<li>
-							<a href="#" aria-label="Next">
-							<span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-							</a>
-						</li>
-						</ul>
-					</nav>
+					{{$flowers->appends(request()->input())->links()}}
 				</div>
 			</div><!-- end center_column -->
 		</div>
