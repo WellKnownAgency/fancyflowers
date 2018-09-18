@@ -84,92 +84,50 @@
           <div class="comments-area">
             <h4 class="title_block">Comments <span class="cm-count">(2)</span></h4>
             <ol class="comments-list">
+              @foreach ($post->comments as $comment)
               <li>
                 <div class="comment-inner">
                   <div class="comment-head media">
-                    <div class="cm-avatar pull-left">
-                      <img src="img/default/avatar/avatar1.jpg" alt="" class="img-responsive">
-                    </div>
                     <div class="cm-content media-body">
                       <div class="cm-meta">
-                        <a class="link-author" href="#">Lunatmtn</a>
-                        <span class="cm-date">Mar 2nd 2017</span>
+                        <a class="link-author">{{ $comment->user->firstname }} {{ $comment->user->lastname }}</a>
+                        <span class="cm-date">{{ Carbon\Carbon::parse($comment->created_at)->format('M, d') }}</span>
                         <a href="#" class="reply-link"><i class="fa fa-mail-reply-all"></i>Reply</a>
                       </div>
                       <div class="cm-des">
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
-                      </div>
-                    </div><!--end cm-content media-body -->
-                  </div><!--end comment head -->
-                </div><!--end comment inner -->
-                <ol>
-                  <li>
-                    <div class="comment-inner">
-                      <div class="comment-head media">
-                        <div class="cm-avatar pull-left">
-                          <img src="img/default/avatar/avatar2.jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="cm-content media-body">
-                          <div class="cm-meta">
-                            <a class="link-author" href="#">Admin</a>
-                            <span class="cm-date">Mar 2nd 2017</span>
-                            <a href="#" class="reply-link"><i class="fa fa-mail-reply-all"></i>Reply</a>
-                          </div>
-                          <div class="cm-des">
-                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
-                          </div>
-                        </div><!--end cm-content media-body -->
-                      </div><!--end comment head -->
-                    </div><!--end comment inner -->
-                  </li>
-                </ol>
-              </li>
-              <li>
-                <div class="comment-inner">
-                  <div class="comment-head media">
-                    <div class="cm-avatar pull-left">
-                      <img src="img/default/avatar/avatar1.jpg" alt="" class="img-responsive">
-                    </div>
-                    <div class="cm-content media-body">
-                      <div class="cm-meta">
-                        <a class="link-author" href="#">Nunatmtn</a>
-                        <span class="cm-date">Mar 2nd 2017</span>
-                        <a href="#" class="reply-link"><i class="fa fa-mail-reply-all"></i>Reply</a>
-                      </div>
-                      <div class="cm-des">
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
+                        <p>{{ $comment->body}}</p>
                       </div>
                     </div><!--end cm-content media-body -->
                   </div><!--end comment head -->
                 </div><!--end comment inner -->
               </li>
+              @endforeach
             </ol><!--end comments lest -->
           </div><!-- end comments-area -->
-
+            @if (Auth::check())
           <div class="comments-form">
             <h4 class="title_block">Leave us a comment</h4>
-            <p>Dont worry! Your email is always unpublic. The fields (*) is require!</p>
-            <form action="#" class="form-horizontal">
+            <form action="{{ route('comment.store', $post->id) }}" method="POST" class="form-horizontal">
+              {{csrf_field()}}
               <div class="form-group">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" class="form-control input-email" placeholder="Your Name *">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <input type="email" class="form-control" placeholder="Your email *">
+                <div class="col-lg-12">
+                  <textarea class="form-control" name="body" placeholder="Your comment *" ></textarea>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-lg-12">
-                  <textarea class="form-control" placeholder="Your comment *" ></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-lg-12">
-                  <button class="btn button btn-primary">Send message</button>
+                  <button type="submit" class="btn button btn-primary">Send message</button>
                 </div>
               </div>
             </form><!--end form -->
           </div><!--end comments form -->
+          @else
+          <div class="text-center">
+            To post a comment you need to be logged in<br>
+            <a href="/login" class="btn btn-primary btn-raised">Login</a>
+          </div>
+          <br>
+          @endif
         </div><!-- end single-post -->
       </div><!-- end center_column -->
     </div>
