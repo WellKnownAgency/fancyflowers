@@ -54,6 +54,7 @@ Route::get('/blog', function () {
     return view('blog/index')->withPostss($postss);
 });
 
+Route::post('comment/{post_id}', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
 Route::get('/blog/{slug}', ['as' => 'post.single', 'uses' => 'PostController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 
