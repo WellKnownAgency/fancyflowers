@@ -226,7 +226,7 @@ class CollectionController extends Controller
     {
       $pagination = 1;
 
-      $flowers = Flower::all();
+      $flowers = Flower::get();
 
     if (request()->sort == 'low_high') {
       $flowers = $flowers->orderBy('price1', 'asc');
@@ -238,8 +238,6 @@ class CollectionController extends Controller
       $flowers = $flowers->orderBy('name', 'desc');
     } elseif(request()->sort == 'instock') {
       $flowers = $flowers->where('stock', '1');
-    } else {
-      $flowers = $flowers->paginate($pagination);
     }
 
     $flowers = $flowers->paginate($pagination);
