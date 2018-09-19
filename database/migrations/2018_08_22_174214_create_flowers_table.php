@@ -28,10 +28,9 @@ class CreateFlowersTable extends Migration
             $table->string('price2name');
             $table->integer('price3');
             $table->string('price3name');
-            $table->string('rating_id')->nullable();
             $table->string('dscr');
+            $table->string('lgdscr');
             $table->boolean('stock');
-            $table->integer('option_id')->nullable();
             $table->timestamps();
         });
     }

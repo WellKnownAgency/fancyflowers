@@ -67,6 +67,7 @@ Route::get('/collections/thank-you', 'CollectionController@getThankyou')->name('
 Route::get('/collections/weddings', 'CollectionController@getWeddings')->name('collection.weddings');
 Route::get('/collections/looseflowers', 'CollectionController@getLooseflowers')->name('collection.looseflowers');
 Route::get('/collections/all', 'CollectionController@getAll')->name('collection.all');
+Route::post('/rating', 'FlowerController@postPost')->name('posts.post');
 
 Route::middleware('auth:web')->group(function () {
   Route::get('/account', function () {
