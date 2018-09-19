@@ -49,15 +49,41 @@
       </div><!-- end pb-left-column -->
       <div class="pb-center-column col-xs-12 col-sm-12 col-md-7">
         <div class="pb-centercolumn">
-          <h1>{{ $flower->name }}</h1>
+          <h1>{{ $flower->name }} {{ $flower->averageRating }}</h1>
           <div class="product_comments clearfix">
             <div class="product-rating">
               <div class="star_content">
+                @if( $flower->averageRating > 4.5 )
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                @elseif( $flower->averageRating > 3.5 && $flower->averageRating < 4.5)
                 <div class="star star_on"></div>
                 <div class="star star_on"></div>
                 <div class="star star_on"></div>
                 <div class="star star_on"></div>
                 <div class="star"></div>
+                @elseif( $flower->averageRating > 2.5 && $flower->averageRating < 3.5 )
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                @elseif( $flower->averageRating > 1.5 && $flower->averageRating < 2.5 )
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                @elseif( $flower->averageRating < 1.5)
+                <div class="star star_on"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                @endif
               </div>
             </div>
           </div><!-- end product_comments -->
@@ -138,65 +164,66 @@
             <div role="tabpanel" class="tab-pane" id="reviews">
               <div class="panel-body">
                 <div class="comments-review">
+                  @foreach ($flower->ratings as $rating)
                   <div class="comments-list">
                     <div class="media comments">
                       <div class="pull-left">
-                        <p class="avatar">
-                          <img src="images/default/avatar/avatar1.jpg" alt="" width="70" height="70">
-                        </p>
-                        <div class="star_content">
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                        </div>
-                        <p class="author">Tiva</p>
-                      </div>
-                      <div class="media-body">
-                        <p class="comment-datetime">June 17, 2017</p>
-                        <div class="comment-desc">Look at the sunset, life is amazing, life is beautiful, life is what you make it. To succeed you must believe. When you believe, you will succeed. In life there will be road blocks but we will over come it. Celebrate success right, the only way, apple. The ladies always say Khaled you smell good, I use no cologne. Cocoa butter is the key. </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="comments-list">
-                    <div class="media comments">
-                      <div class="pull-left">
-                        <p class="avatar">
-                          <img src="/images/default/avatar/avatar2.jpg" alt="" width="70" height="70">
-                        </p>
+                        <p class="author">{{Auth::user()->firstname}}</p>
                         <div class="star_content clearfix">
+                          @if( $rating->rating > 4.5 )
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
+                          @elseif( $rating->rating > 3.5 && $flower->averageRating < 4.5)
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          @elseif( $rating->rating > 2.5 && $flower->averageRating < 3.5 )
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          @elseif( $rating->rating > 1.5 && $flower->averageRating < 2.5 )
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          @elseif( $rating->rating < 1.5)
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          @endif
                         </div>
-                        <p class="author">Tiva</p>
                       </div>
                       <div class="media-body">
-                        <p class="comment-datetime">June 17, 2017</p>
-                        <div class="comment-desc">Look at the sunset, life is amazing, life is beautiful, life is what you make it. To succeed you must believe. When you believe, you will succeed. In life there will be road blocks but we will over come it. Celebrate success right, the only way, apple. The ladies always say Khaled you smell good, I use no cologne. Cocoa butter is the key. </div>
+                        <p class="comment-datetime">{{ Carbon\Carbon::parse($rating->created_at)->format('M, d Y') }}</p>
+                        <div class="comment-desc">{{ $rating->comment }}</div>
                       </div>
                     </div>
                   </div>
+                  @endforeach
                   <div class="review-form">
                     <h4 class="title_block">Write a review</h4>
                     <div class="reviews">
-                      <form id="form_review" action="/vietnam-tours" method="post" class="form-validate width_common">
+                      <form id="form_review" action="{{ route('posts.post') }}" method="post" class="form-validate width_common">
+                        {{ csrf_field() }}
                         <div class="form-group">
                           <label>You rate</label>
-                          <div class="star_content clearfix">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
+                          <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $flower->userAverageRating }}" data-size="xs">
                           </div>
                         </div>
                         <div class="form-group">
                           <label>You review<sup class="required">*</sup></label>
                           <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true"></textarea>
+                          <input type="hidden" name="id" required="" value="{{ $flower->id }}">
                         </div>
                         <div class="form-group btn-send">
                           <button class="btn btn-default">Send your review</button>
@@ -460,5 +487,9 @@
     </div><!-- end blockproductscategory -->
   </div> <!-- end container -->
 </div><!--end warp-->
+<script type="text/javascript">
 
+    $("#input-id").rating();
+
+</script>
 @stop

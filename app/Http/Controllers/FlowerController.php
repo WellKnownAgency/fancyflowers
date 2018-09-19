@@ -212,7 +212,25 @@ class FlowerController extends Controller
 
     public function getSingle($slug) {
       $flower = Flower::where('slug', '=', $slug)->first();
+      $ratings = \willvincent\Rateable\Rating::take(10)->get();
+      return view('product.single')->withFlower($flower)->withRatings($ratings);
+    }
 
-      return view('product.single')->withFlower($flower);
+    public function postPost(Request $request)
+
+    {
+        request()->validate(['rate' => 'required']);
+
+        $flower = Flower::find($request->id);
+
+        $rating = new \willvincent\Rateable\Rating;
+        $rating->rating = $request->rate;
+        $rating->comment = $request->comment;
+        $rating->user_id = auth()->user()->id;
+
+        $flower->ratings()->save($rating);
+
+        return back();
+
     }
 }

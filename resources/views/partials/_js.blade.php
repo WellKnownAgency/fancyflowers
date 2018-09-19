@@ -1,4 +1,4 @@
-
+<script src="{!! asset('js/rating.js') !!}"></script>
 <!-- Vendor JS -->
 <script src="{!! asset('vendor/jquery/jquery.min.js') !!}"></script>
 <script src="{!! asset('vendor/owl.carousel/owl.carousel.min.js') !!}"></script>
