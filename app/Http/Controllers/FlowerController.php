@@ -60,6 +60,7 @@ class FlowerController extends Controller
          $flower->price3 = $request->price3;
          $flower->price3name = $request->price3name;
          $flower->dscr = $request->dscr;
+         $flower->lgdscr = $request->lgdscr;
          if ($request->hasFile('image1')) {
            $image = $request->file('image1');
            $filename = time() . $image->getClientOriginalName();
@@ -151,6 +152,7 @@ class FlowerController extends Controller
      $flower->price3 = $request->input ('price3');
      $flower->price3name = $request->input ('price3name');
      $flower->dscr = $request->input ('dscr');
+     $flower->lgdscr = $request->input ('lgdscr');
 
 
 
