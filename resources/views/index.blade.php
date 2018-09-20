@@ -73,10 +73,6 @@
                           <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
                             <i class="zmdi zmdi-eye"></i>
                           </a>
-                          <a class="button btn addToWishlist" href="#" title="Add to my wishlist">
-                            <i class="zmdi zmdi-favorite-outline"></i>
-                          </a>
-                          </a>
                       </div>
                     </div><!--end left block -->
                     <div class="right-block">
