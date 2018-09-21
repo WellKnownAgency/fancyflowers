@@ -9,7 +9,7 @@
   <div class="container">
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
-        <li><a href="index.html" title="Home">Home</a></li>
+        <li><a href="/" title="Home">Home</a></li>
         <li><a href="page-category-left.html" title="Categories">Categories</a></li>
         <li><span>The Cottage Bouquet</span></li>
       </ul>

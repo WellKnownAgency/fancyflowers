@@ -23,10 +23,10 @@
           <div class="footer-block block">
             <h4 class="title_block">Services</h4>
             <ul class="toggle-footer list-group bullet">
-              <li><a href="#" title="Our Policy">Our Policy</a></li>
-              <li><a href="#" title="Gurantees">Gurantees</a></li>
-              <li><a href="#" title="Terms & Conditions">Terms & Conditions</a></li>
-              <li><a href="#" title="Shipping & Returns">Shipping & Returns</a></li>
+              <li><a href="/privacy-policy" title="Our Policy">Our Policy</a></li>
+              <li><a href="/guarantees" title="Gurantees">Guarantees</a></li>
+              <li><a href="/terms" title="Terms & Conditions">Terms & Conditions</a></li>
+              <li><a href="/shipping&returns" title="Shipping & Returns">Shipping & Returns</a></li>
               <!--<li><a href="#" title="F.A.Qs">F.A.Qs</a></li>-->
             </ul>
           </div>
@@ -35,11 +35,11 @@
           <div class="footer-block block">
             <h4 class="title_block">Account</h4>
             <ul class="toggle-footer list-group bullet">
-              <li><a href="page-login.html" title="Login">Login</a></li>
-              <li><a href="page-register.html" title="Register">Register</a></li>
+              <li><a href="/login" title="Login">Login</a></li>
+              <li><a href="/register" title="Register">Register</a></li>
               <!--<li><a href="#" title="Wishlist">Wishlist</a></li>-->
-              <li><a href="#" title="Order History">Order History</a></li>
-              <li><a href="page-checkout.html" title="Checkout">Checkout</a></li>
+              <!--<li><a href="#" title="Order History">Order History</a></li>-->
+              <li><a href="{{ route('checkout.index') }}" title="Checkout">Checkout</a></li>
             </ul>
           </div>
         </div>
