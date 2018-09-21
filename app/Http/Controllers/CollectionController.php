@@ -24,7 +24,7 @@ class CollectionController extends Controller
     //collections
       public function getBirthday()
       {
-        $pagination = 1;
+        $pagination = 9;
         $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
         $flowers = Flower::whereHas('collections', function ($query) {
         $query->where('name', 'Birthday');
@@ -49,9 +49,9 @@ class CollectionController extends Controller
 
     public function getCompositions()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Flower Composition');
     });
 
@@ -69,14 +69,14 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/compositions', compact('flowers', 'collections'));
+    return view('/collections/compositions')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getCongratulation()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Congratulation');
     });
 
@@ -94,14 +94,14 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/congratulation', compact('flowers', 'collections'));
+    return view('/collections/congratulation')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getGifts()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Gifts');
     });
 
@@ -119,14 +119,14 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/gifts', compact('flowers', 'collections'));
+    return view('/collections/gifts')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getNewbaby()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'New Baby');
     });
 
@@ -144,14 +144,14 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/new-baby', compact('flowers', 'collections'));
+    return view('/collections/new-baby')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getThankyou()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Thank you');
     });
 
@@ -169,14 +169,14 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/thank-you', compact('flowers', 'collections'));
+    return view('/collections/thank-you')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getWeddings()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Wedding');
     });
 
@@ -194,14 +194,14 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/weddings', compact('flowers', 'collections'));
+    return view('/collections/weddings')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getLooseflowers()
     {
-      $pagination = 1;
-
-    $flowers = Flower::whereHas('collections', function ($query) {
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Wedding');
     });
 
@@ -219,12 +219,18 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/looseflowers', compact('flowers', 'collections'));
+    return view('/collections/looseflowers')->withFlowers($flowers)->withFlowersbest($flowersbest);
   }
 
   public function getAll()
     {
+<<<<<<< HEAD
       $flowers = Flower::take(10)->get();
+=======
+      $pagination = 9;
+      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+      $flowers = Flower::get();
+>>>>>>> 9e62d76b31ec7460eb923ce41d7a529982e77469
 
     if (request()->sort == 'low_high') {
       $flowers = $flowers->orderBy('price1', 'asc');
@@ -240,7 +246,11 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate(1);
 
+<<<<<<< HEAD
     return view('/collections/all', compact('flowers'));
+=======
+    return view('/collections/all')->withFlowers($flowers)->withFlowersbest($flowersbest);
+>>>>>>> 9e62d76b31ec7460eb923ce41d7a529982e77469
   }
 
     /**
