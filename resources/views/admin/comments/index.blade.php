@@ -24,9 +24,9 @@
           <table class="table">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Body</th>
-                <th scope="col">User ID</th>
-                <th scope="col">Post ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Post</th>
                 <th scope="col">Date</th>
                 <th scope="col"></th>
               </tr>
@@ -34,9 +34,9 @@
             <tbody>
               @foreach ($comments as $comment)
               <tr>
-                <th scope="row">{{ $comment->body }}</th>
-                <td>{{ $comment->user_id }}</td>
-                <td>{{ $comment->post_id }}</td>
+                <td scope="row">{{ $comment->user->firstname }} {{ $comment->user->lastname }}</td>
+                <th>{{ $comment->body }}</th>
+                <td>{{ $comment->post->title }}</td>
                 <td>{{ $comment->created_at }}</td>
                 <td class="text-right">
                   <a href="{{route('comments.show', $comment->id)}}" class="btn btn-success btn-sm">View</a>

@@ -19,7 +19,9 @@ class CommentController extends Controller
      public function index()
      {
        $comments = Comment::latest()->get();
-       return view('admin.comments.index')->withComments($comments);
+       $users = User::get();
+       $posts = Post::get();
+       return view('admin.comments.index')->withComments($comments)->withUsers($users)->withPosts($posts);
      }
 
 

@@ -54,7 +54,7 @@ Route::get('/blog', function () {
     return view('blog/index')->withPostss($postss);
 });
 
-Route::post('comment/{post_id}', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
+
 Route::get('/blog/{slug}', ['as' => 'post.single', 'uses' => 'PostController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 
@@ -80,21 +80,27 @@ Route::middleware('auth:web')->group(function () {
 
   Route::resource('/account/addresses', 'ShipController');
   Route::post('/account/addresses/{id}','ShipController@update');
+
+  Route::post('comment/{post_id}', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
 });
 
 
+Route::middleware('auth:admin')->group(function (){
+  Route::get('/admin', function () {
+      return view('admin/index');
+  });
 
-Route::get('/admin', function () {
-    return view('admin/index');
+  Route::get('/admin/contacts', 'ContactController@index');
+  Route::get('/admin/contacts/{id}', 'ContactController@show')->name('contacts.show');
+  Route::resource('/admin/products', 'FlowerController');
+  Route::resource('/admin/collections', 'CollectionController');
+  Route::resource('/admin/posts', 'PostController');
+  Route::post('/posts/{id}','PostController@update');
+  Route::post('/collections/{id}','CollectionController@update');
+  Route::post('/products/{id}','FlowerController@update');
+  Route::get('/admin/comments', 'CommentController@index');
+  Route::get('/admin/comments/{id}', 'CommentController@show')->name('comments.show');
 });
 
-Route::get('/admin/contacts', 'ContactController@index');
-Route::get('/admin/contacts/{id}', 'ContactController@show')->name('contacts.show');
-Route::resource('/admin/products', 'FlowerController');
-Route::resource('/admin/collections', 'CollectionController');
-Route::resource('/admin/posts', 'PostController');
-Route::post('/posts/{id}','PostController@update');
-Route::post('/collections/{id}','CollectionController@update');
-Route::post('/products/{id}','FlowerController@update');
-Route::get('/admin/comments', 'CommentController@index');
-Route::get('/admin/comments/{id}', 'CommentController@show')->name('comments.show');
+Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
