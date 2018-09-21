@@ -154,3 +154,7 @@
 .header-main{
   box-shadow: 5px 5px 50px rgba(127, 137, 161, 0.5);
 }
+
+.active-nav {
+  color:#FF8C94 !important;
+}

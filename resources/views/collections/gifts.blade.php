@@ -28,7 +28,7 @@
 					<div class="block_content">
 						<ul class="list-block">
 							<li>
-								<a href="/collections/all" title="All">
+								<a href="/collections/all" title="all">
 									All
 								</a>
 							</li>
@@ -65,6 +65,11 @@
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">
 									Loose Flowers
+								</a>
+							</li>
+							<li>
+								<a href="/collections/gifts" title="Gifts" class="{{ Request::is('collections/gifts') ?"active-nav" : ""}}">
+									Gifts
 								</a>
 							</li>
 						</ul>
@@ -213,43 +218,7 @@
 				</div><!-- end block_featured_product -->
 			</div><!-- end left_column -->
 			<div id="center_column" class="col-lg-9 col-md-9">
-				<div id="subcategories">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-sp-12">
-							<div class="scene_cat">
-								<div class="imgage">
-									<img class="img-responsive" src="img/category/270x200/cate1.jpg" alt="">
-								</div>
-								<a href="page-category-left.html" title="Weddings">Weddings</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-sp-12">
-							<div class="scene_cat">
-								<div class="imgage">
-									<img class="img-responsive" src="img/category/270x200/cate2.jpg" alt="">
-								</div>
-								<a href="page-category-left.html" title="Birthday">Birthday</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-sp-12">
-							<div class="scene_cat">
-								<div class="imgage">
-									<img class="img-responsive" src="img/category/270x200/cate3.jpg" alt="">
-								</div>
-								<a href="page-category-left.html" title="Loose flowers">Loose flowers</a>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="content_sortPagiBar top clearfix">
-					<div class="pull-left hidden-xs">
-						<nav class="tiva-nav-tabs-box">
-							<ul class="nav tiva-nav-tabs" role="tablist">
-							<li class="active"><a href="#tiva-grid" data-toggle="tab" aria-expanded="true"><i class="fa fa-th"></i></a></li>
-							<li class=""><a href="#tiva-list" data-toggle="tab" aria-expanded="false"><i class="fa fa-list-ul"></i></a></li>
-							</ul>
-						</nav>
-					</div>
 					<div class="sort pull-right">
 							<div class="select">
 								<label for="selectProductSort">Sort by</label>

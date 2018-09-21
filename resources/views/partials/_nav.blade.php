@@ -110,8 +110,8 @@
               <span id="btn-menu"><i class="zmdi zmdi-menu" style="margin-top:39px"></i></span>
               <nav id="main-nav">
                 <ul class="nav navbar-nav megamenu">
-                  <li class="dropdown">
-                    <a href='/'>Home </a>
+                  <li class="dropdown ">
+                    <a href='/' class="{{ Request::is('/') ?"active-nav" : ""}}">Home </a>
 
                   </li>
                   <li class="dropdown aligned-fullwidth">
@@ -122,9 +122,9 @@
                           <div class="block-subcategories">
 
                             <ul>
-                              <li><a href="/collections/all" title="All">All</a></li>
-                              <li><a href="/collections/birthday" title="Birthday">Birthday</a></li>
-                              <li><a href="/collections/weddings" title="Weddings">Wedding</a></li>
+                              <li class="active"><a href="/collections/all" title="All" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">All</a></li>
+                              <li class="active"><a href="/collections/birthday" title="Birthday" class="{{ Request::is('collections/birthday') ?"active-nav" : ""}}">Birthday</a></li>
+                              <li><a href="/collections/weddings" title="Weddings" class="{{ Request::is('collections/wedding') ?"active-nav" : ""}}">Wedding</a></li>
                            </ul>
                           </div>
                         </div>
@@ -132,18 +132,18 @@
                           <div class="block-subcategories">
 
                             <ul>
-                              <li><a href="/collections/congratulation" title="Congratulation">Congratulation</a></li>
-                              <li><a href="/collections/new-baby" title="New Baby">New Baby</a></li>
-                              <li><a href="/collections/thank-you" title="Thank You">Thank You</a></li>
+                              <li><a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">Congratulation</a></li>
+                              <li><a href="/collections/new-baby" title="New Baby" class="{{ Request::is('collections/new-baby') ?"active-nav" : ""}}">New Baby</a></li>
+                              <li><a href="/collections/thank-you" title="Thank You" class="{{ Request::is('collections/thank-you') ?"active-nav" : ""}}">Thank You</a></li>
                             </ul>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
                             <ul>
-                              <li><a href="/collections/compositions" title="Flower Composition">Flower Composition</a></li>
-                              <li><a href="/collections/looseflowers" title="Looseflowers">Loose Flowers</a></li>
-                              <li><a href="/collections/gifts" title="Gifts">Gifts</a></li>
+                              <li><a href="/collections/compositions" title="Flower Composition" class="{{ Request::is('collections/compositions') ?"active-nav" : ""}}">Flower Composition</a></li>
+                              <li><a href="/collections/looseflowers" title="Looseflowers" class="{{ Request::is('collections/looseflowers') ?"active-nav" : ""}}">Loose Flowers</a></li>
+                              <li><a href="/collections/gifts" title="Gifts" class="{{ Request::is('collections/gifts') ?"active-nav" : ""}}">Gifts</a></li>
                             </ul>
                           </div>
                         </div>
@@ -166,13 +166,13 @@
                   </li>
 
                   <li class="dropdown">
-                    <a href='/blog'>Blog </a>
+                    <a href='/blog' class="{{ Request::is('blog') ?"active-nav" : ""}}">Blog </a>
 
                   </li>
                   <li class="dropdown">
-                    <a href='/about-us'>About us</a>
+                    <a href='/about-us' class="{{ Request::is('about-us') ?"active-nav" : ""}}">About us</a>
                   </li>
-                  <li class="dropdown"><a href='/contact-us'>Contact</a></li>
+                  <li class="dropdown"><a href='/contact-us' class="{{ Request::is('contact-us') ?"active-nav" : ""}}">Contact</a></li>
                 </ul>
               </nav><!-- end main-nav -->
             </div><!-- end topheader-navholder-rg -->
