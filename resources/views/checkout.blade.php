@@ -411,8 +411,6 @@ function change(shipping){
 }
 </script>
 
-
-
 <script>
 (function(){
 // Create a Stripe client.

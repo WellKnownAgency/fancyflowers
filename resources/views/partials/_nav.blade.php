@@ -69,28 +69,34 @@
                   <div class="cart_block_list">
                     <table class="cart">
                       <tbody>
-                        @foreach (Cart::content() as $item)
-                        <tr>
-                          <td class="product-thumbnail">
-                            <a href="page-detail.html">
-                              <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
-                            </a>
-                          </td>
-                          <td class="product-name">
-                            <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
-                            <br><span class="amount"><strong>${{ $item->model->price1 }}</strong></span>
-                          </td>
-                          <td class="product-actions">
-                            <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                              {{ csrf_field() }}
-                              {{ method_field('DELETE') }}
-                              <button type="submit" title="Remove this item" class="remove" href="#">
-                                <i class="fa fa-times"></i>
-                              </button>
-                            </form>
-                          </td>
-                        </tr>
-                        @endforeach
+                        @if (Cart::content() != null)
+                          @foreach (Cart::content() as $item)
+                            <tr>
+                              <td class="product-thumbnail">
+                                <a href="page-detail.html">
+                                  <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
+                                </a>
+                              </td>
+                              <td class="product-name">
+                                <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+                                <br><span class="amount"><strong>${{ $item->model->price1 }}</strong></span>
+                              </td>
+                              <td class="product-actions">
+                                <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                  {{ csrf_field() }}
+                                  {{ method_field('DELETE') }}
+                                  <button type="submit" title="Remove this item" class="remove" href="#">
+                                    <i class="fa fa-times"></i>
+                                  </button>
+                                </form>
+                              </td>
+                            </tr>
+
+                          @endforeach
+                        @else
+                        <tr>Cart is Empty</tr>
+
+                        @endif
                         <tr>
                           <td class="actions" colspan="3">
                             <div class="actions-continue">
