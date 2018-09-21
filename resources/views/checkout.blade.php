@@ -411,46 +411,7 @@ function change(shipping){
 }
 </script>
 
-<script>
-$(document).ready(function() {
-	$('#payment-form').bootstrapValidator({
-		fields: {
-				name_on_card: {
-						validators: {
-										stringLength: {
-										min: 2,
-								},
-										notEmpty: {
-										message: 'Please supply your first name'
-								}
-						}
-				},
-				phone: {
-						validators: {
-								notEmpty: {
-										message: 'Please supply your phone number'
-								},
-								phone: {
-										country: 'US',
-										message: 'Please supply a vaild phone number with area code'
-								}
-						}
-				},
-				email: {
-						validators: {
-								notEmpty: {
-										message: 'Please supply your email address'
-								},
-								emailAddress: {
-										message: 'Please supply a valid email address'
-								}
-						}
-				},
 
-				}
-		})
-});
-</script>
 
 <script>
 (function(){
