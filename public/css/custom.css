@@ -1,5 +1,5 @@
 .comments-area .comments-list > li {
-    padding: 0; 
+    padding: 0;
 }
 
 .pagination > li.active > span {
@@ -137,4 +137,20 @@
   transition: 0.3s;
   background-color:#EF4566;
   border-color: #EF4566 ;
+}
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+
+.affix ~ .container-fluid {
+   position: relative;
+   top: 50px;
+}
+.header-main{
+  box-shadow: 5px 5px 50px rgba(127, 137, 161, 0.5);
 }
