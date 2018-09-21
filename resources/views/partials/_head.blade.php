@@ -52,4 +52,15 @@
   <!-- Template Custom CSS -->
   <link rel="stylesheet" href="{!! asset('css/custom.css') !!}">
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126213276-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126213276-1');
+  </script>
+
+
   @yield('extrahead')
