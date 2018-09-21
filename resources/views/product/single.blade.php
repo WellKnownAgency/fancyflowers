@@ -168,7 +168,7 @@
                   <div class="comments-list">
                     <div class="media comments">
                       <div class="pull-left">
-                        <p class="author">{{Auth::user()->firstname}}</p>
+                        <p class="author">{{$rating->user->firstname}}</p>
                         <div class="star_content clearfix">
                           @if( $rating->rating > 4.5 )
                           <div class="star star_on"></div>
