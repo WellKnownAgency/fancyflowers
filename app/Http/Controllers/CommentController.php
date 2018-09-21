@@ -16,10 +16,12 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return Comment::latest()->get();
-    }
+     public function index()
+     {
+       $comments = Comment::latest()->get();
+       return view('admin.comments.index')->withComments($comments);
+     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -63,7 +65,8 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+      $comment = Comment::find($id);
+      return view('admin.comments.show')->withComment($comment);
     }
 
     /**
