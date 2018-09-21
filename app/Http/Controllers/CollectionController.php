@@ -25,8 +25,8 @@ class CollectionController extends Controller
       public function getBirthday()
       {
         $pagination = 1;
-
-      $flowers = Flower::whereHas('collections', function ($query) {
+        $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
+        $flowers = Flower::whereHas('collections', function ($query) {
         $query->where('name', 'Birthday');
       });
 
@@ -44,7 +44,7 @@ class CollectionController extends Controller
 
       $flowers = $flowers->paginate($pagination);
 
-      return view('/collections/birthday', compact('flowers', 'collections'));
+      return view('/collections/birthday')->withFlowers($flowers)->withFlowersbest($flowersbest);
     }
 
     public function getCompositions()
