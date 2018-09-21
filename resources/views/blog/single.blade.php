@@ -11,9 +11,9 @@
   <div class="container">
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
-        <li><a href="index.html" title="Home">Home</a></li>
-        <li><a href="page-blog-left-sidebar.html" title="Last blogs">Last blogs</a></li>
-        <li><span>Nullam ullamcorper nisl quis ornare molestie</span></li>
+        <li><a href="/" title="Home">Home</a></li>
+        <li><a href="/blog" title="Last blogs">Last blogs</a></li>
+        <li><span>{{ $post->title }}</span></li>
       </ul>
       <h2 class="bread-title">Blog detail</h2>
     </div>

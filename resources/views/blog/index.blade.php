@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
-				<li><a href="index.html" title="Home">Home</a></li>
+				<li><a href="/" title="Home">Home</a></li>
 				<li><span>Latest blogs</span></li>
 			</ul>
 			<h2 class="bread-title">Latest blogs</h2>
@@ -36,7 +36,7 @@
 								<div class="post-content">
 									<h4 class="title_block"><a href="/blog/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a></h4>
 									<div class="des">{{ str_limit($post->excerpt, 50) }}</div>
-									<a class="btn-readmore" href="page-blog-left-detail.html" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
+									<a class="btn-readmore" href="/blog/{{$post->slug}}" title="Read more">Read more <i class="zmdi zmdi-chevron-right"></i></a>
 								</div>
 							</div><!-- end post -->
 						</div>
