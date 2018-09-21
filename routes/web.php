@@ -96,3 +96,5 @@ Route::resource('/admin/posts', 'PostController');
 Route::post('/posts/{id}','PostController@update');
 Route::post('/collections/{id}','CollectionController@update');
 Route::post('/products/{id}','FlowerController@update');
+Route::get('/admin/comments', 'CommentController@index');
+Route::get('/admin/comments/{id}', 'CommentController@show')->name('comments.show');
