@@ -224,13 +224,11 @@ class CollectionController extends Controller
 
   public function getAll()
     {
-<<<<<<< HEAD
-      $flowers = Flower::take(10)->get();
-=======
+
       $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
-      $flowers = Flower::get();
->>>>>>> 9e62d76b31ec7460eb923ce41d7a529982e77469
+      $flowers = Flower::orderBy('created_at', 'asc');
+
 
     if (request()->sort == 'low_high') {
       $flowers = $flowers->orderBy('price1', 'asc');
@@ -244,13 +242,10 @@ class CollectionController extends Controller
       $flowers = $flowers->where('stock', '1');
     }
 
-    $flowers = $flowers->paginate(1);
+    $flowers = $flowers->paginate($pagination);
 
-<<<<<<< HEAD
-    return view('/collections/all', compact('flowers'));
-=======
     return view('/collections/all')->withFlowers($flowers)->withFlowersbest($flowersbest);
->>>>>>> 9e62d76b31ec7460eb923ce41d7a529982e77469
+
   }
 
     /**
