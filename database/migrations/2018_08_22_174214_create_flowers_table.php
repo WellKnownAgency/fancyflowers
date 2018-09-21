@@ -29,7 +29,7 @@ class CreateFlowersTable extends Migration
             $table->integer('price3');
             $table->string('price3name');
             $table->string('dscr');
-            $table->string('lgdscr');
+            $table->text('lgdscr');
             $table->boolean('stock');
             $table->timestamps();
         });
