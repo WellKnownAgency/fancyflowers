@@ -43,6 +43,22 @@ Route::get('/contact-us', function () {
     return view('contact-us');
 });
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+});
+
+Route::get('/guarantees', function () {
+    return view('guarantees');
+});
+
+Route::get('/shipping&returns', function () {
+    return view('shipping&returns');
+});
+
+Route::get('/terms', function () {
+    return view('terms');
+});
+
 Route::post('/contact-us/contact', 'ContactController@postMess')->name('contact.store');
 
 Route::get('/products-list', function () {
