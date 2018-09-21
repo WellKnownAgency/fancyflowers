@@ -89,11 +89,37 @@
                         <div class="product_comments clearfix">
                           <div class="product-rating">
                             <div class="star_content">
+                              @if( $flower->averageRating > 4.5 )
                               <div class="star star_on"></div>
                               <div class="star star_on"></div>
                               <div class="star star_on"></div>
                               <div class="star star_on"></div>
                               <div class="star star_on"></div>
+                              @elseif( $flower->averageRating > 3.5 && $flower->averageRating < 4.5)
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star"></div>
+                              @elseif( $flower->averageRating > 2.5 && $flower->averageRating < 3.5 )
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              @elseif( $flower->averageRating > 1.5 && $flower->averageRating < 2.5 )
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              @elseif( $flower->averageRating < 1.5)
+                              <div class="star star_on"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              @endif
                             </div>
                           </div>
                         </div><!-- end product_comments -->
