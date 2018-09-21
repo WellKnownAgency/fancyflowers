@@ -28,6 +28,11 @@
 					<div class="block_content">
 						<ul class="list-block">
 							<li>
+								<a href="/collections/all" title="all" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">
+									All
+								</a>
+							</li>
+							<li>
 								<a href="/collections/birthday" title="Birthday">
 									Birthday
 								</a>
@@ -242,14 +247,6 @@
 					</div>
 				</div>
 				<div class="content_sortPagiBar top clearfix">
-					<div class="pull-left hidden-xs">
-						<nav class="tiva-nav-tabs-box">
-							<ul class="nav tiva-nav-tabs" role="tablist">
-							<li class="active"><a href="#tiva-grid" data-toggle="tab" aria-expanded="true"><i class="fa fa-th"></i></a></li>
-							<li class=""><a href="#tiva-list" data-toggle="tab" aria-expanded="false"><i class="fa fa-list-ul"></i></a></li>
-							</ul>
-						</nav>
-					</div>
 					<div class="sort pull-right">
 						<label for="selectProductSort">Sort by</label>
 						<select id="selectProductSort" class="selectProductSort form-control" onchange="location = this.value;">
