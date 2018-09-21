@@ -36,13 +36,7 @@
       <div class="tabs-top block">
         <div class="block-title">
           <h4 class="title_block">Shop By Collection</h4>
-          <!-- Nav tabs -->
-          <ul id="myTabs" class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#bouquets" aria-controls="bouquets" role="tab" data-toggle="tab">Bouquets</a></li>
-            <li role="presentation"><a href="#weddings" aria-controls="weddings" role="tab" data-toggle="tab">Weddings</a></li>
-            <li role="presentation"><a href="#home-decor" aria-controls="home-decor" role="tab" data-toggle="tab">Home decor</a></li>
-            <li role="presentation"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">Popular</a></li>
-          </ul>
+          <br>
         </div><!--end title -->
 
         <!-- Tab panes -->
