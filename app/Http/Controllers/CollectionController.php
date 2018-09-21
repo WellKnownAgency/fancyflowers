@@ -224,9 +224,7 @@ class CollectionController extends Controller
 
   public function getAll()
     {
-      $pagination = 1;
-
-      $flowers = Flower::get();
+      $flowers = Flower::take(10)->get();
 
     if (request()->sort == 'low_high') {
       $flowers = $flowers->orderBy('price1', 'asc');
@@ -240,9 +238,9 @@ class CollectionController extends Controller
       $flowers = $flowers->where('stock', '1');
     }
 
-    $flowers = $flowers->paginate($pagination);
+    $flowers = $flowers->paginate(1);
 
-    return view('/collections/all', compact('flowers', 'collections'));
+    return view('/collections/all', compact('flowers'));
   }
 
     /**
