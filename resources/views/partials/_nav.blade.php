@@ -45,7 +45,7 @@
       </div>
     </div>
   </div>
-  <div class="header-main" data-spy="affix" data-offset-top="197" style="background-color:#fbfbfb;">
+  <div class="header-main" data-spy="affix" data-offset-top="50" style="background-color:#fbfbfb;">
     <div class="container">
       <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5">
