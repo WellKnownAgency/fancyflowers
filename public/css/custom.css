@@ -142,17 +142,29 @@
     top:0;
     width: 100%;
     z-index: 9999 !important;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
+
+.affix a {
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
 .navbar {
     margin-bottom: 0px;
 }
 
 .affix ~ .container-fluid {
    position: relative;
-   top: 50px;
+   -webkit-transition: all 5s ease-in-out;
+     transition: all 5s ease-in-out;
 }
+
 .header-main{
   box-shadow: 5px 5px 50px rgba(127, 137, 161, 0.5);
+  -webkit-transition: all 5s ease-in-out;
+    transition: all 5s ease-in-out;
 }
 
 .active-nav {
