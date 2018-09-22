@@ -52,9 +52,14 @@
                         <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
                           <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
                         </a>
+                        @if($flower->new == '1')
                         <span class="label-new label">New</span>
                         <span class="label-sale label">Sale</span>
                         <span class="label-reduction label">-5%</span>
+                        @else
+                        <span class="label-sale label" style="top: 15;">Sale</span>
+                        <span class="label-reduction label">-5%</span>
+                        @endif
                       </div>
                       <div class="box-buttons">
                         <form action="{{ route('cart.store') }}" method="POST">

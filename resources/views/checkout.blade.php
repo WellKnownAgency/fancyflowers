@@ -94,44 +94,64 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" name="firstname" class="form-control" value="">
+												<input type="text" name="firstname" class="form-control" value="" required>
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
-												<input type="text" name="lastname" class="form-control">
+												<input type="text" name="lastname" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Phone Number</label>
-												<input type="text" name="phone" class="form-control">
+												<input type="number" name="phone" class="form-control" required>
 											</div>
 										</div>
 
 										<div class="form-group">
-											<div class="col-md-12">
+											<div class="col-md-9">
 												<label>Address </label>
-												<input type="text" name="street" class="form-control">
+												<input type="text" name="street" class="form-control" required>
+											</div>
+											<div class="col-md-3">
+												<label>Apt (optional)</label>
+												<input type="number" name="street" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>City </label>
-												<input type="text" name="city" class="form-control">
+												<input type="text" name="city" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>State</label>
-												<input type="text" name="state" class="form-control">
+												<input type="text" name="state" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Zip Code</label>
-												<input type="text" name="zipcode" class="form-control">
+												<input type="text" name="zipcode" class="form-control" required>
 											</div>
 										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Delivery Day (leave empty if you want it asap)</label>
+				                <div class='input-group date' id='datetimepicker1'>
+				                    <input type='text' class="form-control" />
+				                    <span class="input-group-addon">
+				                        <span class="glyphicon glyphicon-calendar"></span>
+				                    </span>
+				                </div>
+											</div>
+											<script type="text/javascript">
+														$(function () {
+																$('#datetimepicker1').datetimepicker();
+														});
+												</script>
+				            </div>
 									</div>
 
 									@if (Auth::check())
