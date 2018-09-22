@@ -20,6 +20,11 @@ class CheckoutController extends Controller
         return view('/checkout');
     }
 
+    public function checkoutComplete()
+    {
+        return view('/checkoutcomplete');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -66,7 +71,7 @@ class CheckoutController extends Controller
           Cart::instance('default')->destroy();
 
           session()->put('success','Your Purchase was Successfull');
-          return back();
+          return redirect()->route('checkout.complete');
         } catch(CardErrorException $e) {
 
           session()->put('error','Error. ' . $e->getMessage());

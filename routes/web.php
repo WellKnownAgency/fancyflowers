@@ -24,6 +24,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
+
 Route::get('product/{slug}', ['as' => 'product.single', 'uses' => 'FlowerController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
@@ -31,6 +32,7 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::patch('/cart/{flower}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{flower}', 'CartController@destroy')->name('cart.destroy');
 
+Route::get('/checkout-complete', 'CheckoutController@checkoutComplete')->name('checkout.complete');
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
