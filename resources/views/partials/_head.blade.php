@@ -1,6 +1,7 @@
   <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
   <meta name="description" content="@yield('dscr')">
   <meta name="keywords" content="@yield('keywords')">
@@ -52,5 +53,3 @@
 
     gtag('config', 'UA-126213276-1');
   </script>
-
-  
