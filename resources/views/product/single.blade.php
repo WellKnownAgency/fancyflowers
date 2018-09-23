@@ -49,11 +49,17 @@
       </div><!-- end pb-left-column -->
       <div class="pb-center-column col-xs-12 col-sm-12 col-md-7">
         <div class="pb-centercolumn">
-          <h1>{{ $flower->name }} {{ $flower->averageRating }}</h1>
+          <h1>{{ $flower->name }}</h1>
           <div class="product_comments clearfix">
             <div class="product-rating">
               <div class="star_content">
-                @if( $flower->averageRating > 4.5 )
+                @if( empty($flower->averageRating) )
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                <div class="star star_on"></div>
+                @elseif( $flower->averageRating > 4.5 )
                 <div class="star star_on"></div>
                 <div class="star star_on"></div>
                 <div class="star star_on"></div>
@@ -210,26 +216,58 @@
                     </div>
                   </div>
                   @endforeach
-                  <div class="review-form">
-                    <h4 class="title_block">Write a review</h4>
-                    <div class="reviews">
-                      <form id="form_review" action="{{ route('posts.post') }}" method="post" class="form-validate width_common">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                          <label>You rate</label>
-                          <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $flower->userAverageRating }}" data-size="xs">
-                          </div>
+                  @if (Auth::check())
+                    @if (empty($rating))
+                      <div class="review-form">
+                        <h4 class="title_block">Write a review</h4>
+                        <div class="reviews">
+                          <form id="form_review" action="{{ route('posts.post') }}" method="post" class="form-validate width_common">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                              <label>You rate</label>
+                              <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $flower->userAverageRating }}" data-size="xs">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>You review<sup class="required">*</sup></label>
+                              <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true"></textarea>
+                              <input type="hidden" name="id" required="" value="{{ $flower->id }}">
+                            </div>
+                            <div class="form-group btn-send">
+                              <button class="btn btn-default">Send your review</button>
+                            </div>
+                          </form>
                         </div>
-                        <div class="form-group">
-                          <label>You review<sup class="required">*</sup></label>
-                          <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true"></textarea>
-                          <input type="hidden" name="id" required="" value="{{ $flower->id }}">
-                        </div>
-                        <div class="form-group btn-send">
-                          <button class="btn btn-default">Send your review</button>
-                        </div>
-                      </form>
+                        @else
+                          @if (Auth::id() != $rating->user_id)
+                          <div class="review-form">
+                            <h4 class="title_block">Write a review</h4>
+                            <div class="reviews">
+                              <form id="form_review" action="{{ route('posts.post') }}" method="post" class="form-validate width_common">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                  <label>You rate</label>
+                                  <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $flower->userAverageRating }}" data-size="xs">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label>You review<sup class="required">*</sup></label>
+                                  <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true"></textarea>
+                                  <input type="hidden" name="id" required="" value="{{ $flower->id }}">
+                                </div>
+                                <div class="form-group btn-send">
+                                  <button class="btn btn-default">Send your review</button>
+                                </div>
+                              </form>
+                            </div>
+                          @endif
+                        @endif
+                    @else
+                    <div class="text-center">
+                      Only authorised users can leave a review<br>
+                      <a href="/login" class="btn btn-primary btn-raised">Login</a>
                     </div>
+                    @endif
                   </div>
                 </div>
               </div>
@@ -487,9 +525,4 @@
     </div><!-- end blockproductscategory -->
   </div> <!-- end container -->
 </div><!--end warp-->
-<script type="text/javascript">
-
-    $("#input-id").rating();
-
-</script>
 @stop
