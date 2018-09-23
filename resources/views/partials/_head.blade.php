@@ -1,15 +1,15 @@
   <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yeild('title')</title>
-  <meta name="description" content="@yield('description')">
+  <title>@yield('title')</title>
+  <meta name="description" content="@yield('dscr')">
   <meta name="keywords" content="@yield('keywords')">
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-
+    @yield('extrahead')
 
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
@@ -52,6 +52,3 @@
 
     gtag('config', 'UA-126213276-1');
   </script>
-
-
-  @yield('extrahead')
