@@ -145,9 +145,9 @@
             <span>Share:</span>
             <ul class="links list-inline">
               <li><a href="#"><em class="fa fa-facebook"></em></a></li>
-              <!--<li><a href="#"><em class="fa fa-twitter"></em></a></li>
+              <li><a href="#"><em class="fa fa-twitter"></em></a></li>
               <li><a href="#"><em class="fa fa-google-plus"></em></a></li>
-              <li><a href="#"><em class="fa fa-linkedin"></em></a></li>-->
+              <!--<li><a href="#"><em class="fa fa-linkedin"></em></a></li>-->
               <li><a href="#"><em class="fa fa-pinterest"></em></a></li>
               <li class="last"><a href="#"><em class="fa fa-instagram"></em></a></li>
             </ul>

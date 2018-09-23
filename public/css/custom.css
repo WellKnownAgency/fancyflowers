@@ -88,7 +88,7 @@
 /* Positioning */
 .notifications.top-right {
   right: 10px;
-  top: 25px;
+  top: 150px;
 }
 
 .notifications.top-left {
@@ -108,10 +108,15 @@
 
 /* Notification Element */
 .notifications > div {
+  font-size: 18px;
   position: relative;
   margin: 5px 0px;
   border-radius: 1px;
-}/* Add here all your CSS customizations */
+  box-shadow: 10px 10px 30px rgba(127, 137, 161, 0.25);
+  }
+}
+
+/* Add here all your CSS customizations */
 
 
 .btn-view-all {
