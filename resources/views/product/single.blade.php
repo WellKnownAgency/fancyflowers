@@ -8,7 +8,7 @@
 <meta property="og:type" content="product" />
 <meta property="og:title" content="{{ $flower->name }}" />
 <meta property="og:description" content="{{ $flower->dscr }}" />
-<meta property="og:url" content="{{ url()->current() }}"/>
+<meta property="og:product_link" content="{{ url()->current() }}"/>
 <meta property="og:site_name" content="Fancy Flowers" />
 <meta property="product:price:amount" content="{{ $flower->price1 }}" />
 <meta property="product:price:currency" content="USD" />
@@ -299,7 +299,7 @@
                 <div class="left-block">
                   <div class="product-image-container">
                     <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
-                      <img src="images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive image-effect" width="480" height="640">
+                      <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive image-effect" width="480" height="640">
                     </a>
                     @if($flower->new == '1')
                     <span class="label-new label">New</span>
@@ -388,4 +388,24 @@
     </div><!-- end blockproductscategory -->
   </div> <!-- end container -->
 </div><!--end warp-->
+@stop
+
+@section ('extrabody')
+<meta property="og:site_name" content="fflowers.net" />
+<div itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="name" content="{{ $flower->name}}" />
+  <meta itemprop="url" content="{{ url()->current() }}" />
+  <meta itemprop="image" content="{{ $flower->image1 }}" />
+  <meta itemprop="image" content="{{ $flower->image2 }}" />
+  <span itemprop="description">{{ $flower->dscr }}</span>
+  @foreach ($related as $flower)
+  <a itemprop="relatedItem" href="/product/{{ $flower->slug }}"></a>
+  @endforeach
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+      <span itemprop="price">{{ $flower->price1 }}</span>
+      <meta itemprop="priceCurrency" content="USD" />
+      <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability"
+          content="http://schema.org/InStock" />
+  </div>
+</div>
 @stop
