@@ -10,9 +10,9 @@
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
         <li><a href="index.html" title="Home">Home</a></li>
-        <li><span>about us</span></li>
+        <li><span>View All</span></li>
       </ul>
-      <h2 class="bread-title">About us</h2>
+      <h2 class="bread-title">Shopping Cart</h2>
     </div>
   </div>
 </div><!-- end breadcrumb -->
@@ -73,19 +73,6 @@
             <td rowspan="3" colspan="3"></td>
             <td colspan="2" class="text-right">Total products</td>
             <td colspan="1" class="price text-right" id="total_product">${{ Cart::subtotal() }}</td>
-          </tr>
-          <tr class="cart_total_delivery">
-            <td colspan="2" class="text-right">Total shipping</td>
-            <td colspan="1" class="price text-right" id="total_shipping">$7.00</td>
-          </tr>
-          <tr class="cart_total_price">
-            <td colspan="2" class="total_price_container text-right">
-              <span>Total</span>
-              <div class="hookDisplayProductPriceBlock-price"></div>
-            </td>
-            <td colspan="1" class="price text-right" id="total_price_container">
-              <span id="total_price">${{ Cart::subtotal() }}</span>
-            </td>
           </tr>
         </tfoot>
       </table>
