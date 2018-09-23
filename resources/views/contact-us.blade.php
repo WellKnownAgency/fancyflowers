@@ -4,6 +4,17 @@
 
 @extends('main')
 
+@section('extrahead')
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/common.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/util.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/geocoder.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/map.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/marker.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/onion.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/controls.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/34/7/stats.js"></script>
+@stop
+
 @section('content')
 
 			<div id="breadcrumb" class="clearfix">
