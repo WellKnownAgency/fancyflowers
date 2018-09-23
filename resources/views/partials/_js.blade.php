@@ -20,7 +20,7 @@
 
 <!-- Template Base, Components and Settings -->
 <script src="{!! asset('js/theme.js') !!}"></script>
-
+<script src="{!! asset('js/instafeed.js') !!}"></script>
 <!-- Template Custom -->
 <script src="{!! asset('js/custom.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-notify.js') !!}"></script>
