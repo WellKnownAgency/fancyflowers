@@ -1,25 +1,6 @@
 (function() {
 	"use strict";
 
-	// ==== Initial Google Map ====
-	function initialize(latitude, longitude, address, zoom) {
-		var latlng = new google.maps.LatLng(latitude,longitude);
-
-		var myOptions = {
-			zoom: zoom,
-			center: latlng,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			mapTypeControl: false
-		};
-		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-		var marker = new google.maps.Marker({
-			position: latlng,
-			map: map,
-			title: "location : " + address
-		});
-	}
-
 	// ==== Go to top ====
 	function go_up(){
 		// to top
@@ -545,27 +526,6 @@
 			controlNav: true,
 			pauseOnHover: true
 		});
-
-		// ==== Google Map ====
-		var address = jQuery('.contact-address').html();
-		var width = '100%';
-		var height = '500px';
-		var zoom = 16;
-
-		// Create map html
-		if (address) {
-			$('#map').html('<div id="map_canvas" style="width:' + width + '; height:' + height + '"></div>');
-
-			var geocoder = new google.maps.Geocoder();
-
-			geocoder.geocode({'address': address}, function(results, status) {
-				if (status == google.maps.GeocoderStatus.OK) {
-					var latitude = results[41.850033].geometry.location.lat();
-					var longitude = results[-87.6500523].geometry.location.lng();
-					initialize(latitude, longitude, address, zoom);
-				}
-			});
-		}
 
 	}); //end
 })()

@@ -13,6 +13,7 @@
 <meta property="product:price:amount" content="{{ $flower->price1 }}" />
 <meta property="product:price:currency" content="USD" />
 <meta property="og:availability" content="instock" />
+<meta property="og:site_name" content="fflowers.net" />
 @stop
 
 @section('content')
@@ -386,24 +387,4 @@
     </div><!-- end blockproductscategory -->
   </div> <!-- end container -->
 </div><!--end warp-->
-@stop
-
-@section ('extrabody')
-<meta property="og:site_name" content="fflowers.net" />
-<div itemscope itemtype="http://schema.org/Product">
-  <meta itemprop="name" content="{{ $flower->name}}" />
-  <meta itemprop="url" content="{{ url()->current() }}" />
-  <meta itemprop="image" content="{{ $flower->image1 }}" />
-  <meta itemprop="image" content="{{ $flower->image2 }}" />
-  <span itemprop="description">{{ $flower->dscr }}</span>
-  @foreach ($related as $flower)
-  <a itemprop="relatedItem" href="/product/{{ $flower->slug }}"></a>
-  @endforeach
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-      <span itemprop="price">{{ $flower->price1 }}</span>
-      <meta itemprop="priceCurrency" content="USD" />
-      <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability"
-          content="http://schema.org/InStock" />
-  </div>
-</div>
 @stop
