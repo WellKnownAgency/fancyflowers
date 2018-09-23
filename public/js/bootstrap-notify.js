@@ -49,7 +49,7 @@
         this.$note.html(this.options.message);
 
     if(this.options.closable) {
-      var link = $('<a class="close pull-right" href="#">&times;</a>');
+      var link = $('<a class="close pull-right" style="padding-left: 10px;" href="#">&times;</a>');
       $(link).on('click', $.proxy(onClose, this));
       this.$note.prepend(link);
     }
@@ -66,7 +66,7 @@
 
   Notification.prototype.show = function () {
     if(this.options.fadeOut.enabled)
-      this.$note.delay(this.options.fadeOut.delay || 3000).fadeOut('slow', $.proxy(onClose, this));
+      this.$note.delay(this.options.fadeOut.delay || 5000).fadeOut('slow', $.proxy(onClose, this));
 
     this.$element.append(this.$note);
     this.$note.alert();
@@ -74,7 +74,7 @@
 
   Notification.prototype.hide = function () {
     if(this.options.fadeOut.enabled)
-      this.$note.delay(this.options.fadeOut.delay || 3000).fadeOut('slow', $.proxy(onClose, this));
+      this.$note.delay(this.options.fadeOut.delay || 5000).fadeOut('slow', $.proxy(onClose, this));
     else onClose.call(this);
   };
 
