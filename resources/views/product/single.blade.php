@@ -1,5 +1,5 @@
-@section('title', '$flower->name')
-@section('dscr', '$flower->dscr')
+@section('title', "$flower->name")
+@section('dscr', "$flower->dscr")
 @section('keywords', '')
 
 @extends('main')
