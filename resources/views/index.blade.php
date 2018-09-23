@@ -266,9 +266,7 @@
         <p class="des-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore</p>
         <div class="block_content">
           <div class="row no-gutters">
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href=""><img class="img-responsive" src="" alt=""></a>
-            </div>
+              <div id="instafeed"></div>
           </div>
         </div>
       </div><!-- end block-gallery -->
