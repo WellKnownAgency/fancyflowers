@@ -14,8 +14,8 @@
 		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
 		var marker = new google.maps.Marker({
-			position: latlng, 
-			map: map, 
+			position: latlng,
+			map: map,
 			title: "location : " + address
 		});
 	}
@@ -30,7 +30,7 @@
 			} else {
 				$('.go-up').fadeOut();
 			}
-			
+
 			return false;
 		});
 		$('.go-up a').on('click', function (e) {
@@ -38,7 +38,7 @@
 			$("html, body").animate({
 				scrollTop: 0
 			}, 600);
-			
+
 			return false;
 		});
 	}
@@ -95,7 +95,7 @@
 			$('#footer .footer-block h4').on('click', function(e){
 				$(this).toggleClass('active').parent().find('.toggle-footer').stop().slideToggle('medium');
 				e.preventDefault();
-				
+
 				return false;
 			})
 			$('#footer').addClass('accordion').find('.toggle-footer').slideUp('fast');
@@ -113,7 +113,7 @@
 
 			$('#right_column .block .title_block, #left_column .block .title_block').on('click', function(e){
 				$(this).toggleClass('active').parent().find('.block_content').stop().slideToggle('medium');
-				
+
 				return false;
 			});
 			$('#right_column, #left_column').addClass('accordion').find('.block .block_content').slideUp('fast');
@@ -156,7 +156,7 @@
 	// ==== Document ready ====
 	var responsiveflag = false;
 	var checkfixed = false;
-	$(document).ready(function(){ 
+	$(document).ready(function(){
 		go_up();
 		responsiveResize();
 		$(window).resize(responsiveResize);
@@ -168,24 +168,24 @@
 		$('.off-mainnav .megamenu li.dropdown, .off-mainnav .megamenu li.dropdown-submenu').each(function() {
 			$(this).find('a').first().after('<span class="icon-down"><i class="fa fa-angle-down"></i></span>');
 		});
-		
+
 		$('#btn-menu').on('click', function (e) {
 			e.preventDefault();
 			$('body').toggleClass('mainmenu-active');
-			
+
 			return false;
 		});
-		
+
 		$('.off-close .close-menu').on('click', function (e) {
 			e.preventDefault();
 			$('body').removeClass('mainmenu-active');
-			
+
 			return false;
 		});
-		
+
 		$('.icon-down').on('click', function (e) {
 			$(this).closest('li').find('.dropdown-menu').first().toggleClass('tiva-active');
-			
+
 			return false;
 		});
 
@@ -197,10 +197,10 @@
 					display: 'block'
 				});
 			}
-			
+
 			return false;
 		});
-		
+
 		// ==== Fix menu postion when scroll ====
 		$('.btn-fixedheader .no').on('click', function (e) {
 			checkfixed = false;
@@ -214,7 +214,7 @@
 			checkfixed = true;
 			$('.btn-fixedheader .no').removeClass('active');
 			$('.btn-fixedheader .yes').addClass('active');
-			
+
 			return false;
 		});
 		$(window).on('scroll', function () {
@@ -227,7 +227,7 @@
 			}
 			else {
 				$('#top-header').removeClass('fixed');
-			} 
+			}
 
 			return false;
 		});
@@ -470,7 +470,7 @@
 			e.preventDefault();
 			$(this).parents('li.parent').find('ul').slideToggle('medium');
 			$(this).toggleClass('active');
-			
+
 			return false;
 		});
 
@@ -478,10 +478,10 @@
 		if ($('#image-block #view_full_size img').length) {
 			$('#image-block #view_full_size img').elevateZoom({zoomType:"inner", cursor:"crosshair", easing:true, scrollZoom:false});
 		}
-		
+
 		$('#thumbs_list ul li').on('click', function (e) {
 			$('#image-block #view_full_size').html($(this).html()).find('img').elevateZoom({zoomType:"inner", cursor:"crosshair", easing:true, scrollZoom:false});;
-			
+
 			return false;
 		});
 
@@ -502,19 +502,19 @@
 			if (screen.width < 500) {
 				$('.tiva-popup-screen .popup').css('width', '80%');
 			}
-			
+
 			// Click to close popup
 			$('html').on('click', function (e) {
 				if (e.target.id == 'tiva-popupscreen') {
 					$('.tiva-popup-screen').remove();
 				}
 			});
-			
+
 			$('.tiva-popup-screen .popup .close').on('click', function (e) {
 				e.preventDefault();
 				$('.tiva-popup-screen').remove();
 			});
-			
+
 			// Screen duration
 			setTimeout(function() {
 				$('.tiva-popup-screen').remove();
@@ -535,9 +535,9 @@
 			$('head').append('<link rel="stylesheet" href="css/multi-color/' + $(this).attr('id') + '/color.css" type="text/css" />');
 
 		});
-		
+
 		// ==== Slideshow ====
-		$('#tiva-slideshow').nivoSlider({ 
+		$('#tiva-slideshow').nivoSlider({
 			effect: 'random',
 			animSpeed: 1000,
 			pauseTime: 5000,
@@ -551,17 +551,17 @@
 		var width = '100%';
 		var height = '500px';
 		var zoom = 16;
-	   
+
 		// Create map html
 		if (address) {
 			$('#map').html('<div id="map_canvas" style="width:' + width + '; height:' + height + '"></div>');
-			
+
 			var geocoder = new google.maps.Geocoder();
 
 			geocoder.geocode({'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
-					var latitude = results[0].geometry.location.lat();
-					var longitude = results[0].geometry.location.lng();
+					var latitude = results[41.850033].geometry.location.lat();
+					var longitude = results[-87.6500523].geometry.location.lng();
 					initialize(latitude, longitude, address, zoom);
 				}
 			});

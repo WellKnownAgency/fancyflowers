@@ -1,4 +1,4 @@
-
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyC4sFMqtPMG5l3XYaMlwEyRwHG4gppqlaM"></script>
 <script src="{!! asset('vendor/jquery/jquery.min.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-star.js') !!}"></script>
 <script src="{!! asset('js/rating.js') !!}"></script>
