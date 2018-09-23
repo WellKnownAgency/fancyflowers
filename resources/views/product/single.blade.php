@@ -1,8 +1,19 @@
-@section('title', '')
-@section('dscr', '')
+@section('title', '{{ $flower->name }}')
+@section('dscr', '{{ $flower->dscr }}')
 @section('keywords', '')
 
 @extends('main')
+
+@section ('extrahead')
+<meta property="og:type" content="product" />
+<meta property="og:title" content="{{ $flower->name }}" />
+<meta property="og:description" content="{{ $flower->dscr }}" />
+<meta property="og:url" content="{{ urlencode(Request::fullUrl()) }}"/>
+<meta property="og:site_name" content="Fancy Flowers" />
+<meta property="product:price:amount" content="{{ $flower->price1name }}" />
+<meta property="product:price:currency" content="USD" />
+<meta property="og:availability" content="instock" />
+@stop
 
 @section('content')
 <div id="breadcrumb" class="clearfix">
