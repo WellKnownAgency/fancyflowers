@@ -281,16 +281,22 @@
       <div class="block_content">
         <div class="owl-row">
           <div class="blockproductscategory_grid">
+            	@foreach ($related as $flower)
             <div class="item">
               <div class="product-container">
                 <div class="left-block">
                   <div class="product-image-container">
-                    <a class="product_img_link" href="page-detail.html" title="Tulipa floriade - red">
-                      <img src="/images/product/1.jpg" alt="Tulipa floriade - red" class="img-responsive image-effect" width="480" height="640">
+                    <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
+                      <img src="images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive image-effect" width="480" height="640">
                     </a>
+                    @if($flower->new == '1')
                     <span class="label-new label">New</span>
                     <span class="label-sale label">Sale</span>
                     <span class="label-reduction label">-5%</span>
+                    @else
+                    <span class="label-sale label" style="top: 15;">Sale</span>
+                    <span class="label-reduction label">-5%</span>
+                    @endif
                   </div>
                   <div class="box-buttons">
                     <a class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></a>
@@ -308,22 +314,54 @@
                 <div class="right-block">
                   <div class="product-box">
                     <h5 class="name">
-                      <a class="product-name" href="page-detail.html" title="Tulipa floriade - red">
-                        Tulipa floriade - red
+                      <a class="product-name" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
+                        	{{ $flower->name }}
                       </a>
                     </h5>
                     <div class="content_price">
-                      <span class="price product-price">$28.98</span>
-                      <span class="old-price product-price">$30.51</span>
+                      <span class="price product-price">${{ $flower->price1 }}</span>
+                      <span class="old-price product-price">${{ $flower->price1 }}</span>
                     </div>
                     <div class="product_comments clearfix">
                       <div class="product-rating">
                         <div class="star_content">
+                          @if( empty($flower->averageRating) )
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
                           <div class="star star_on"></div>
+                          @elseif( $flower->averageRating > 4.5 )
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          @elseif( $flower->averageRating > 3.5 && $flower->averageRating < 4.5)
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          @elseif( $flower->averageRating > 2.5 && $flower->averageRating < 3.5 )
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          @elseif( $flower->averageRating > 1.5 && $flower->averageRating < 2.5 )
+                          <div class="star star_on"></div>
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          @elseif( $flower->averageRating < 1.5)
+                          <div class="star star_on"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          @endif
                         </div>
                       </div>
                     </div><!-- end product_comments -->
@@ -331,6 +369,7 @@
                 </div><!--end right block -->
               </div><!-- end product-container-->
             </div>
+            	@endforeach
         </div><!-- end blockproductscategory_grid -->
         </div><!-- end tabproduct-carousel -->
       </div>

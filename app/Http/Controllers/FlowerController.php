@@ -214,8 +214,13 @@ class FlowerController extends Controller
 
     public function getSingle($slug) {
       $flower = Flower::where('slug', '=', $slug)->first();
+      $related = Flower::whereHas('collections', function ($q) use ($flower) {
+      return $q->whereIn('name', $flower->collections->pluck('name'));
+      })
+      ->where('id', '!=', $flower->id) // So you won't fetch same post
+      ->get();
       $ratings = \willvincent\Rateable\Rating::take(10)->get();
-      return view('product.single')->withFlower($flower)->withRatings($ratings);
+      return view('product.single')->withFlower($flower)->withRatings($ratings)->withRelated($related);
     }
 
     public function postPost(Request $request)
@@ -235,4 +240,6 @@ class FlowerController extends Controller
         return back();
 
     }
+
+
 }
