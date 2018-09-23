@@ -40,6 +40,7 @@
 
   @if(Session::has('info'))
       $('.top-right').notify({
+        icon: null,
         message: { text: "{{ Session::get('info') }}" },
         type:'info'
       }).show();
@@ -51,6 +52,8 @@
 
   @if(Session::has('warning'))
   		$('.top-right').notify({
+        title: 'Bootstrap notify',
+        icon: null,
         message: { text: "{{ Session::get('warning') }}" },
         type:'warning'
       }).show();
@@ -63,7 +66,8 @@
   @if(Session::has('error'))
   		$('.top-right').notify({
         message: { text: "{{ Session::get('error') }}" },
-        type:'danger'
+        type:'danger',
+        url: 'https://github.com/mouse0270/bootstrap-notify'
       }).show();
       @php
         Session::forget('error');
