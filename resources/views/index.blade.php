@@ -267,22 +267,7 @@
         <div class="block_content">
           <div class="row no-gutters">
             <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="/images/gallery/1.jpg"><img class="img-responsive" src="images/gallery/1.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="/images/gallery/2.jpg"><img class="img-responsive" src="images/gallery/2.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="/images/gallery/3.jpg"><img class="img-responsive" src="images/gallery/3.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="/images/gallery/4.jpg"><img class="img-responsive" src="images/gallery/4.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="/images/gallery/5.jpg"><img class="img-responsive" src="images/gallery/5.jpg" alt=""></a>
-            </div>
-            <div class="image-item col-lg-2 col-md-2 col-sm-2 col-xs-2 col-sp-4">
-              <a href="/images/gallery/6.jpg"><img class="img-responsive" src="images/gallery/6.jpg" alt=""></a>
+              <a href=""><img class="img-responsive" src="" alt="">{{ $instagram->self() }}</a>
             </div>
           </div>
         </div>

@@ -14,11 +14,7 @@
 Auth::routes();
 
 // Main Pages Routes
-Route::get('/', function () {
-    $flowers = App\Flower::latest()->limit(8)->get();
-    $posts = App\Post::latest()->limit(5)->get();
-    return view('index', compact('flowers'))->withPosts($posts);
-});
+Route::get('/', 'PageController@index');
 
 Route::get('/test', function () {
     return view('test');
