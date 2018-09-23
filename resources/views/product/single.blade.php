@@ -1,5 +1,5 @@
-@section('title', '{{ $flower->name }}')
-@section('dscr', '{{ $flower->dscr }}')
+@section('title', '$flower->name')
+@section('dscr', '$flower->dscr')
 @section('keywords', '')
 
 @extends('main')
@@ -8,7 +8,7 @@
 <meta property="og:type" content="product" />
 <meta property="og:title" content="{{ $flower->name }}" />
 <meta property="og:description" content="{{ $flower->dscr }}" />
-<meta property="og:url" content="{{ Request::fullUrl() }}"/>
+<meta property="og:url" content="{{ url()->current() }}"/>
 <meta property="og:site_name" content="Fancy Flowers" />
 <meta property="product:price:amount" content="{{ $flower->price1 }}" />
 <meta property="product:price:currency" content="USD" />
