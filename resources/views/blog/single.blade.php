@@ -72,9 +72,11 @@
               <div class="post-tag-lr post-tag-right">
                 <div class="social_block">
                   <ul class="links">
-                    <li><a href="#" title="Facebook"><em class="fa fa-facebook"></em><span class="unvisible">facebook</span> </a></li>
-                    <li><a href="#" title="Pinterest"><em class="fa fa-pinterest"></em><span class="unvisible">Pinterest</span> </a></li>
-                    <li class="last"><a href="#" title="Instagram"><em class="fa fa-instagram"></em><span class="unvisible">Instagram</span> </a></li>
+                    <li><a href="https://www.facebook.com/sharer.php?u={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-facebook"></em></a></li>
+                    <li><a href="https://twitter/intent/tweet?url={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-twitter"></em></a></li>
+                    <li><a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-google-plus"></em></a></li>
+                    <!--<li><a href="#"><em class="fa fa-linkedin"></em></a></li>-->
+                    <li><a href="http://pinterest.com/pin/create/button/?url={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-pinterest"></em></a></li>
                   </ul>
                 </div>
               </div>

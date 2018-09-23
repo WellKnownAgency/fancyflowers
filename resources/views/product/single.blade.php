@@ -144,12 +144,11 @@
           <div class="share-social">
             <span>Share:</span>
             <ul class="links list-inline">
-              <li><a href="#"><em class="fa fa-facebook"></em></a></li>
-              <li><a href="#"><em class="fa fa-twitter"></em></a></li>
-              <li><a href="#"><em class="fa fa-google-plus"></em></a></li>
+              <li><a href="https://www.facebook.com/sharer.php?u={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-facebook"></em></a></li>
+              <li><a href="https://twitter/intent/tweet?url={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-twitter"></em></a></li>
+              <li><a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-google-plus"></em></a></li>
               <!--<li><a href="#"><em class="fa fa-linkedin"></em></a></li>-->
-              <li><a href="#"><em class="fa fa-pinterest"></em></a></li>
-              <li class="last"><a href="#"><em class="fa fa-instagram"></em></a></li>
+              <li><a href="http://pinterest.com/pin/create/button/?url={{ urlencode(Request::fullUrl()) }}"><em class="fa fa-pinterest"></em></a></li>
             </ul>
           </div><!-- end share-social -->
         </div><!-- end pb-centercolumn -->
