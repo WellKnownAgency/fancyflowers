@@ -88,7 +88,13 @@
                         <div class="product_comments clearfix">
                           <div class="product-rating">
                             <div class="star_content">
-                              @if( $flower->averageRating > 4.5 )
+                              @if( empty($flower->averageRating) )
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              <div class="star star_on"></div>
+                              @elseif( $flower->averageRating > 4.5 )
                               <div class="star star_on"></div>
                               <div class="star star_on"></div>
                               <div class="star star_on"></div>
