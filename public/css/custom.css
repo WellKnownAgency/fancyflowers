@@ -1,6 +1,6 @@
 @media (min-width: 992px) {
   .img-in{
-      height: 180px;
+      height: 200px;
       object-fit: cover;
   }
 }
