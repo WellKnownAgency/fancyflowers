@@ -100,7 +100,7 @@
                         <tr>
                           <td class="actions" colspan="3">
                             <div class="actions-continue">
-                              <a href="{{ route('cart.index') }}" class="btn btn-view-all">View All</a>
+                              <a href="{{ route('cart.index') }}" class="btn btn-view-all" >View All</a>
                               <a href="{{ route('checkout.index') }}" class="btn pull-right btn-checkout">Checkout<i class="fa fa-angle-right ml-xs"></i></a>
                             </div>
                           </td>

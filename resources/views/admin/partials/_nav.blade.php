@@ -25,6 +25,11 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/admin/users">
+          Users
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/admin/comments">
           Comments
         </a>
