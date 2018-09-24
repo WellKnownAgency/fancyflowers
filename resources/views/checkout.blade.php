@@ -211,7 +211,7 @@
 									</a>
 								</h4>
 							</div>
-							<div id="collapseThree" class="accordion-body collapse">
+							<div id="collapseThree" class="accordion-body collapse in">
 								<div class="panel-body">
 									<table class="table table-bordered shop_tablecart">
 										<thead>

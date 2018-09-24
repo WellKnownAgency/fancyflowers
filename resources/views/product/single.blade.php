@@ -310,15 +310,15 @@
                     @endif
                   </div>
                   <div class="box-buttons">
-                    <a class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                    <a class="button btn quick-view" href="#" title="Quick view">
+                    <form action="{{ route('cart.store') }}" method="POST">
+                      {{ csrf_field() }}
+                      <input type="hidden" name="id" value="{{ $flower->id }}">
+                      <input type="hidden" name="name" value="{{ $flower->name }}">
+                      <input type="hidden" name="price1" value="{{ $flower->price1 }}">
+                      <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
+                    </form>
+                    <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
                       <i class="zmdi zmdi-eye"></i>
-                    </a>
-                    <a class="button btn addToWishlist" href="#" title="Add to my wishlist">
-                      <i class="zmdi zmdi-favorite-outline"></i>
-                    </a>
-                    <a class="button btn add_to_compare" href="#" title="Quick view">
-                      <i class="zmdi zmdi-refresh-alt"></i>
                     </a>
                   </div>
                 </div><!--end left block -->
