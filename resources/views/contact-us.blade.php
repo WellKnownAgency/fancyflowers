@@ -22,7 +22,7 @@
 			<div id="columns" class="columns-container">
 				<div class="container">
 					<div class="contact-us">
-						<div class="row">
+						<div class="row" style="margin-top: 50px;">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<h2 class="title_block">Contact info</h2>
 								<div class="contact-box">
