@@ -24,32 +24,7 @@
   <!-- container -->
   <div class="container">
     <div class="row">
-      <div id="left_column" class="sidebar col-lg-3 col-md-3">
-        <div id="recent-posts" class="block recent-posts">
-          <h4 class="title_block">Recent posts</h4>
-          <div class="block_content">
-            <ul class="posts-list">
-              <li>
-                <div class="media">
-                  <div class="post-image pull-left">
-                    <a href="page-blog-left-detail.html">
-                      <img class="img-responsive" src="img/blog/870x578/1.jpg" alt="" width="90" height="54">
-                    </a>
-                  </div>
-                  <div class="post-info media-body">
-                    <h5><a href="page-blog-left-detail.html" title="Nullam ullamcorper">Nullam ullamcorper</a></h5>
-                    <div class="post-meta">
-                      <span class="post-date">
-                        <i class="zmdi zmdi-calendar"></i> 10 oct, 2017
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div><!-- end recent-posts -->
-      </div><!-- end left_column -->
+
       <div id="center_column" class="col-lg-9 col-md-9">
         <div class="single-post">
           <div class="blog-detail">
@@ -94,7 +69,6 @@
                       <div class="cm-meta">
                         <a class="link-author">{{ $comment->user->firstname }} {{ $comment->user->lastname }}</a>
                         <span class="cm-date">{{ Carbon\Carbon::parse($comment->created_at)->format('M, d') }}</span>
-                        <a href="#" class="reply-link"><i class="fa fa-mail-reply-all"></i>Reply</a>
                       </div>
                       <div class="cm-des">
                         <p>{{ $comment->body}}</p>
@@ -132,6 +106,34 @@
           @endif
         </div><!-- end single-post -->
       </div><!-- end center_column -->
+      <div id="left_column" class="sidebar col-lg-3 col-md-3">
+        <div id="recent-posts" class="block recent-posts">
+          <h4 class="title_block">Recent posts</h4>
+          <div class="block_content">
+            <ul class="posts-list">
+              <li>
+                  @foreach ($posts as $post)
+                <div class="media">
+                  <div class="post-image pull-left">
+                    <a href="/blog/{{$post->slug}}">
+                      <img src="/images/blog/{{$post->image}}" alt="{{$post->title}}" class="img-responsive" width="90" height="54">
+                    </a>
+                  </div>
+                  <div class="post-info media-body">
+                    <h5><a href="/blog/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a></h5>
+                    <div class="post-meta">
+                      <span class="post-date">
+                        {{ Carbon\Carbon::parse($post->created_at)->format('M, d') }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  @endforeach
+              </li>
+            </ul>
+          </div>
+        </div><!-- end recent-posts -->
+      </div><!-- end left_column -->
     </div>
   </div> <!-- end container -->
 </div><!--end columns -->

@@ -116,6 +116,7 @@ Route::middleware('auth:admin')->group(function (){
   Route::post('/products/{id}','FlowerController@update');
   Route::get('/admin/comments', 'CommentController@index');
   Route::get('/admin/comments/{id}', 'CommentController@show')->name('comments.show');
+  Route::get('/admin/users', 'UserController@index');
 });
 
 Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
