@@ -8,6 +8,7 @@
 @media (max-width: 992px) {
   .img-in{
       height: auto;
+      width: 100%;
       object-fit: cover;
   }
 }
