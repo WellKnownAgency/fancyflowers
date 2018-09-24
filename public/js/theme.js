@@ -147,7 +147,7 @@
 		$('.megamenu').clone().appendTo('.off-mainnav');
 
 		$('.off-mainnav .megamenu li.dropdown, .off-mainnav .megamenu li.dropdown-submenu').each(function() {
-			$(this).find('a').first().after('<span class="icon-down"><i class="fa fa-angle-down"></i></span>');
+			$(this).find('#collections').first().after('<span class="icon-down"><i class="fa fa-angle-down"></i></span>');
 		});
 
 		$('#btn-menu').on('click', function (e) {
@@ -164,7 +164,7 @@
 			return false;
 		});
 
-		$('.icon-down').on('click', function (e) {
+		$('.coll-open').on('click', function (e) {
 			$(this).closest('li').find('.dropdown-menu').first().toggleClass('tiva-active');
 
 			return false;

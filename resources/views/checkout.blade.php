@@ -79,7 +79,7 @@
 											<div class="row">
 												<div class="col-md-6 ">
 													<label>Choose Shipping Address</label>
-													<select class="form-control" id="show" onchange="change(this)">
+													<select class="form-control" id="show" onchange="">
 														<option value="newaddress">New Address</option>
 														@if (Auth::check())
 															@foreach(Auth::user()->ships as $ship)
@@ -90,114 +90,49 @@
 												</div>
 											</div>
 										</div>
-										<div style="display: block" id="newform">
-										<div class="form-group">
-											<div class="col-md-6">
-												<label>First Name</label>
-												<input type="text" name="firstname" class="form-control" value="" required>
-											</div>
-											<div class="col-md-6">
-												<label>Last Name</label>
-												<input type="text" name="lastname" class="form-control" required>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Phone Number</label>
-												<input type="number" name="phone" class="form-control" required>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<div class="col-md-9">
-												<label>Address </label>
-												<input type="text" name="street" class="form-control" required>
-											</div>
-											<div class="col-md-3">
-												<label>Apt (optional)</label>
-												<input type="number" name="street" class="form-control" required>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>City </label>
-												<input type="text" name="city" class="form-control" required>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>State</label>
-												<input type="text" name="state" class="form-control" required>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Zip Code</label>
-												<input type="text" name="zipcode" class="form-control" required>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-12">
-												<label>Delivery Day (leave empty if you want it asap)</label>
-				                <div class='input-group date' id='datetimepicker1'>
-				                    <input type='text' class="form-control" />
-				                    <span class="input-group-addon">
-				                        <span class="glyphicon glyphicon-calendar"></span>
-				                    </span>
-				                </div>
-											</div>
-											<script type="text/javascript">
-														$(function () {
-																$('#datetimepicker1').datetimepicker();
-														});
-												</script>
-				            </div>
-									</div>
 
 									@if (Auth::check())
-									<div style="display: none" id="filloutform">
-										@foreach(Auth::user()->ships->take(1) as $ship)
+									<div style="display: block" id="filloutform">
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" name="firstname" class="form-control" value="{{ $ship->firstname }}">
+												<input type="text" name="firstname" class="form-control" id="firstname">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
-												<input type="text" name="lastname" class="form-control" value="{{ $ship->lastname }}">
+												<input type="text" name="lastname" class="form-control" id="lastname">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Phone Number</label>
-												<input type="text" name="phone" class="form-control" value="{{ $ship->phone }}">
+												<input type="text" name="phone" class="form-control" id="phonenumber">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Address </label>
-												<input type="text" name="street" class="form-control" value="{{ $ship->street }}">
+												<input type="text" name="street" class="form-control" id="street">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>City </label>
-												<input type="text" name="city" class="form-control" value="{{ $ship->city }}">
+												<input type="text" name="city" class="form-control" id="city">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>State</label>
-												<input type="text" name="state" class="form-control" value="{{ $ship->state }}">
+												<input type="text" name="state" class="form-control" id="state">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Zip Code</label>
-												<input type="text" name="zipcode" class="form-control" value="{{ $ship->zipcode }}">
+												<input type="text" name="zipcode" class="form-control" id="zipcode">
 											</div>
 										</div>
-									@endforeach
 								</div>
 								@endif
 								</div>
@@ -413,22 +348,21 @@
 @stop
 @section('customjs')
 <script>
-function change(shipping){
-	var selectBox = shipping
-  var selected = selectBox.options[selectBox.selectedIndex].value;
-  var newform = document.getElementById("newform");
-
-	var filloutform = document.getElementById("filloutform")
-  if(selected === 'newaddress'){
-       newform.style.display = "block";
-			 filloutform.style.display = "none";
-   }
-   else{
-       newform.style.display = "none";
-			 filloutform.style.display = "block";
-   }
-
-}
+$( "#show" ).on('change',function() {
+		$.ajaxSetup({
+	       headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+	       url: "{{ route('ship.index') }}",
+	       type: "POST",
+	       data: {id: $( "#show :selected" ).val(),
+			 		},
+					dataType: "json",
+								//send data to controller
+	       success: function(result){
+					 $('#firstname').val( "firstname" );
+	       }
+	    });
+    $.ajax();
+});
 </script>
 
 <script>

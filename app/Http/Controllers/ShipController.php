@@ -20,6 +20,12 @@ class ShipController extends Controller
 
     }
 
+    public function indexCheckout(Request $request)
+    {
+      $ship = Ship::findOrFail($request->id);
+      return response()->json(['data' => $ship]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

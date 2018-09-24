@@ -92,6 +92,8 @@ Route::middleware('auth:web')->group(function () {
   Route::resource('/account/cards', 'CardController');
   Route::post('/account/cards/{id}','CardController@update');
 
+
+  Route::post('/checkout/addresses/', 'ShipController@indexCheckout')->name('ship.index');
   Route::resource('/account/addresses', 'ShipController');
   Route::post('/account/addresses/{id}','ShipController@update');
 
