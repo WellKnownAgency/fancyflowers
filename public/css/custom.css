@@ -1,3 +1,8 @@
+.img-in{
+    height: 180px;
+    object-fit: cover;
+}
+
 .comments-area .comments-list > li {
     padding: 0;
 }
