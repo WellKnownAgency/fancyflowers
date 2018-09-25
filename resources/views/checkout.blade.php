@@ -93,8 +93,6 @@
 												</div>
 											</div>
 										</div>
-
-									@if (Auth::check())
 									<div style="display: block" id="filloutform">
 										<div class="form-group">
 											<div class="col-md-6">
@@ -137,7 +135,6 @@
 											</div>
 										</div>
 								</div>
-								@endif
 								</div>
 							</div>
 						</div>
