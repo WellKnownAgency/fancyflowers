@@ -189,3 +189,10 @@
 .active-nav {
   color:#FF8C94 !important;
 }
+
+.glyphicon-comment {
+  padding-right: 10px;
+}
+.comments-list{
+  padding-left: 25px;
+}

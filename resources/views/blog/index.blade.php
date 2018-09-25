@@ -21,7 +21,7 @@
 	<!-- container -->
 	<div class="container">
 		<div class="row">
-			<div id="center_column" class="col-lg-9 col-md-9">
+			<div id="center_column" class="col-lg-12 col-md-12">
 				<div class="blog-posts clearfix">
 					<h1 class="title_block">Latest blog</h1>
 					<div class="row">
@@ -47,7 +47,7 @@
 						{{$postss->links()}}
 					</div><!-- end content_sortPagiBar -->
 			</div><!-- end blog-posts -->
-			<div id="right_column" class="sidebar col-lg-3 col-md-3">
+		<!--<div id="right_column" class="sidebar col-lg-3 col-md-3">
 				<div id="recent-posts" class="block recent-posts">
 					<h4 class="title_block">Popular posts</h4>
 					<div class="block_content">
@@ -71,8 +71,8 @@
 							</li>
 						</ul>
 					</div>
-				</div><!-- end recent-posts -->
-			</div><!-- end right_column -->
+				</div>//end recent-posts
+			</div>// end right_column -->
 		</div><!-- end row -->
 	</div> <!-- end container -->
 </div><!--end columns-->
