@@ -42,13 +42,18 @@
                   <input type="text" class="form-control" id="lastname" name="lastname" value="{{$ship->lastname}}" required>
                 </div>
               </div>
-              <hr>
               <div class="form-group required">
                 <div class="col-lg-12">
-                  <label for="street">Street Address <sup>*</sup></label>
-                  <input type="text" class="form-control" id="street" name="street" value="{{$ship->street}}" required>
-                </div>
+                  <label for="street">Address<sup>*</sup></label>
+                  <input type="text" class="form-control" id="street" name="street" required>
               </div>
+            </div>
+              <div class="form-group required">
+                <div class="col-lg-12">
+                  <label for="apartment">Apartment<sup>*</sup></label>
+                  <input type="text" class="form-control" id="apartment" name="apartment" required>
+              </div>
+            </div>
               <div class="form-group required">
                 <div class="col-lg-12">
                   <label for="city">City <sup>*</sup></label>
