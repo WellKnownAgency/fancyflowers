@@ -33,7 +33,7 @@
               <div class="post-meta">
                 <div class="post-meta-lr">
                   <span class="post-date"><i class="zmdi zmdi-calendar"></i> {{ Carbon\Carbon::parse($post->created_at)->format('M, d') }}</span>
-                  <span class="comment"><i class="zmdi zmdi-comment-outline"></i> 10</span>
+                  <span class="comment"><i class="zmdi zmdi-comment-outline"></i> {{ $post->comments()->count() }}</span>
                 </div><!-- end post-meta-left -->
               </div><!-- end post-meta -->
             </div>
@@ -59,7 +59,7 @@
           </div><!-- end blog-detail -->
 
           <div class="comments-area">
-            <h4 class="title_block">Comments <span class="cm-count">(2)</span></h4>
+            <h4 class="title_block"><span class="glyphicon glyphicon-comment"></span> <span class="cm-count">{{ $post->comments()->count() }} </span>  Comments </h4>
             <ol class="comments-list">
               @foreach ($post->comments as $comment)
               <li>
