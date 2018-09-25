@@ -25,7 +25,52 @@
         <p>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</p>
         <p>{{Auth::user()->email}}</p>
         <p>{{Auth::user()->phonenumber}}</p>
-        <p><a href="{{route('users.edit' , Auth::user())}}" class="button btn btn-edit" style="padding-right:15px; padding-left:15px;">Edit</a></p>
+        <p><button type="button" class="button btn btn-edit" style="padding-right:15px; padding-left:15px;" data-toggle="modal" data-target="#exampleModal">Edit</button></p>
+      </div>
+      <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 10px; margin-top: 5px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <form action="/account/update" method="POST" id="form-account-creation" style="margin:0px !important;" class="form-horizontal box panel panel-default">
+    					{{ csrf_field() }}
+    					<h3 class="panel-heading">Change personal information</h3>
+    					<div class="form_content panel-body clearfix">
+    						<div class="form-group required">
+    							<div class="col-lg-12">
+    								<label for="firstname">First name <sup>*</sup></label>
+    								<input type="text" class="form-control" id="firstname" name="firstname" value="{{ Auth::user()->firstname }}" required>
+    							</div>
+    						</div>
+    						<div class="form-group required">
+    							<div class="col-lg-12">
+    								<label for="lastname">Last Name <sup>*</sup></label>
+    								<input type="text" class="form-control" id="lastname" name="lastname" value="{{ Auth::user()->lastname }}" required>
+    							</div>
+    						</div>
+    						<div class="form-group required">
+    							<div class="col-lg-12">
+    								<label for="email">Email address <sup>*</sup></label>
+    								<input type="email" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}" required>
+    							</div>
+    						</div>
+    						<div class="form-group required">
+    							<div class="col-lg-12">
+    								<label for="phonenumber">Phone Number <sup>*</sup></label>
+    								<input type="number" class="form-control" id="phonenumber" name="phonenumber" value="{{ Auth::user()->phonenumber }}" required>
+    							</div>
+    						</div>
+    						<div class="form-group">
+    							<div class="col-lg-12">
+    								<button type="submit" class="btn button btn-default">Save Changes</button>
+    								<p class="pull-right required"><span><sup>*</sup>Required field</span></p>
+    							</div>
+    						</div>
+    					</div>
+    				</form><!--end form -->
+          </div>
+        </div>
       </div>
       <div class="col-md-8">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

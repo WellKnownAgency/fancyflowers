@@ -65,7 +65,7 @@
 					<p></p>
 					@endif
 					<div class="panel-group" id="accordion">
-						<form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
+						<form action="{{ route('checkout.store') }}" method="POST" id="payment-form" autocomplete="off">
 							{{ csrf_field() }}
 						<div class="panel panel-default">
 							<div class="panel-heading" >
@@ -97,41 +97,41 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" name="firstname" class="form-control" id="firstname">
+												<input type="text" name="firstname" class="form-control" id="firstname" autocomplete="nope">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
-												<input type="text" name="lastname" class="form-control" id="lastname">
+												<input type="text" name="lastname" class="form-control" id="lastname" autocomplete="nope">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Phone Number</label>
-												<input type="text" name="phone" class="form-control" id="phonenumber">
+												<input type="text" name="phone" class="form-control" id="phonenumber" autocomplete="nope">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Address </label>
-												<input type="text" name="street" class="form-control" id="street">
+												<input type="text" name="street" class="form-control" id="street" autocomplete="nope">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>City </label>
-												<input type="text" name="city" class="form-control" id="city">
+												<input type="text" name="city" class="form-control" id="city" autocomplete="nope">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>State</label>
-												<input type="text" name="state" class="form-control" id="state">
+												<input type="text" name="state" class="form-control" id="state" autocomplete="nope">
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-12">
 												<label>Zip Code</label>
-												<input type="text" name="zipcode" class="form-control" id="zipcode">
+												<input type="text" name="zipcode" class="form-control" id="zipcode" autocomplete="nope">
 											</div>
 										</div>
 								</div>
@@ -265,7 +265,7 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Email</label>
-											<input id="email" type="text" name="email" class="form-control" autocomplete="nope">
+											<input id="email" type="email" name="email" class="form-control" autocomplete="nope">
 										</div>
 									</div>
 									@if (Auth::check())
@@ -347,6 +347,7 @@
 <br>
 @stop
 @section('customjs')
+
 <script>
 $( "#show" ).on('change',function() {
 		$.ajaxSetup({

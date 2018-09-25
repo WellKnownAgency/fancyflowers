@@ -90,7 +90,7 @@ Route::middleware('auth:web')->group(function () {
       return view('account', compact('ships'))->withCards($cards);
   });
   Route::resource('/account/users', 'UserController');
-  Route::post('/account/users/{id}','UserController@update');
+  Route::post('/account/update','UserController@updateUser');
 
   Route::resource('/account/cards', 'CardController');
   Route::post('/account/cards/{id}','CardController@update');
