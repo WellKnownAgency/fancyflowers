@@ -59,8 +59,11 @@
 		<div class="page-checkout">
 			<div class="row">
 				<div class="checkoutleft col-lg-9 col-md-9 col-sm-9 col-xs-12">
-
+					@if (Auth::check() != true)
 					<p>Returning customer? <a href="/login">Click here to login</a>.</p>
+					@else
+					<p></p>
+					@endif
 					<div class="panel-group" id="accordion">
 						<form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
 							{{ csrf_field() }}
@@ -74,9 +77,9 @@
 							</div>
 							<div id="collapseTwo" class="accordion-body collapse in">
 								<div class="panel-body">
+										<div class="row">
+											<div class="form-group">
 
-										<div class="form-group">
-											<div class="row">
 												<div class="col-md-6 ">
 													<label>Choose Shipping Address</label>
 													<select class="form-control" id="show" onchange="">
@@ -96,7 +99,7 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" name="firstname" class="form-control" id="firstname">
+												<input type="text" name="firstname" value="" class="form-control" id="firstname">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
@@ -357,8 +360,8 @@ $( "#show" ).on('change',function() {
 			 		},
 					dataType: "json",
 								//send data to controller
-	       success: function(result){
-					 $('#firstname').val( "firstname" );
+	       success: function(json){
+					 $('#firstname').val(firstname.value);
 	       }
 	    });
     $.ajax();
