@@ -82,7 +82,9 @@
 							<label>Range:</label>
 							<div class="filter-item price-filter">
 								<div class="layout-slider">
-									<input id="price-filter" name="price" value="0;100" />
+									<form action="" method="POST">
+										<input id="price-filter" name="price" value="0;100" />
+									</form>
 								</div>
 								<div class="layout-slider-settings"></div>
 							</div>
