@@ -60,6 +60,7 @@ class ShipController extends Controller
       $ship->firstname = $request->firstname;
       $ship->lastname = $request->lastname;
       $ship->street = $request->street;
+      $ship->apartment = $request->apartment;
       $ship->city = $request->city;
       $ship->state = $request->state;
       $ship->zipcode = $request->zipcode;
@@ -113,6 +114,7 @@ class ShipController extends Controller
       $ship->firstname = $request->input('firstname');
       $ship->lastname = $request->input('lastname');
       $ship->street = $request->input('street');
+      $ship->apartment = $request->input('apartment');
       $ship->city = $request->input('city');
       $ship->state = $request->input('state');
       $ship->zipcode = $request->input('zipcode');

@@ -16,9 +16,6 @@
             <ul class="links">
               @guest
               <li>
-                <a href="/account" title="Account">Account</a>
-              </li>
-              <li>
                 <a href="/register" title="Register">Register</a>
               </li>
               <li class="last">
