@@ -20,9 +20,8 @@
 
 <!-- Template Base, Components and Settings -->
 <script src="{!! asset('js/theme.js') !!}"></script>
-<script src="{!! asset('js/instafeed.js') !!}"></script>
+
 <!-- Template Custom -->
-<script src="{!! asset('js/custom.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-notify.js') !!}"></script>
 
 <div class='notifications top-right'></div>
@@ -81,7 +80,7 @@
        height: 550
    };
 
-   $(document).on('click', '.links li > a', function(e){
+   $(document).on('click', '#shareb > a', function(e){
 
        var
            verticalPos = Math.floor(($(window).width() - popupSize.width) / 2),
