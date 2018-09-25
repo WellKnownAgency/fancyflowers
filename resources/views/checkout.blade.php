@@ -253,19 +253,19 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Name on Card</label>
-											<input id="name_on_card" type="text" name="name_on_card" class="form-control" data-error="Something wrong with your name">
+											<input id="name_on_card" type="text" name="name_on_card" class="form-control" autocomplete="nope">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Phone Number</label>
-											<input id="phone" type="text" name="phone" value="" class="form-control">
+											<input id="phone" type="text" name="phone" class="form-control" autocomplete="nope">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Email</label>
-											<input id="email" type="text" value="" name="email" class="form-control">
+											<input id="email" type="text" name="email" class="form-control" autocomplete="nope">
 										</div>
 									</div>
 									@if (Auth::check())
