@@ -101,6 +101,8 @@ Route::middleware('auth:web')->group(function () {
   Route::post('/account/addresses/{id}','ShipController@update');
 
   Route::post('comment/{post_id}', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
+
+  Route::post('/coupon', 'CouponController@store')->name('coupon.store');
 });
 
 

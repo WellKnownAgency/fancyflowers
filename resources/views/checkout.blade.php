@@ -53,7 +53,7 @@
 	</div>
 </div><!-- end breadcrumb -->
 
-<div id="columns" class="columns-container">
+<div id="columns" class="columns-container" >
 	<!-- container -->
 	<div class="container">
 		<div class="page-checkout">
@@ -214,6 +214,17 @@
 													Free Shipping<input type="hidden" value="free_shipping" class="shipping_method" name="shipping_method">
 												</td>
 											</tr>
+
+											<tr class="shipping">
+												<th>
+													Discount {{ session()->get('coupon')['name'] }}
+												</th>
+												<td>
+													<strong><span class="amount">-$100
+													</span></strong>
+												</td>
+											</tr>
+
 											<tr class="shipping">
 												<th>
 													Processing Fee
@@ -249,7 +260,6 @@
 									<hr class="tall">
 
 									<h4 class="heading-primary">Payment</h4>
-
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>Name on Card</label>
@@ -268,7 +278,7 @@
 											<input id="email" type="email" name="email" class="form-control" autocomplete="nope">
 										</div>
 									</div>
-									@if (Auth::check())
+									<!--@if (Auth::check())
 									<div class="col-md-6 ">
 										<label>Choose Card</label>
 										<select class="form-control">
@@ -277,7 +287,7 @@
 											@endforeach
 										</select>
 									</div>
-									@endif
+									@endif-->
 									<div class="form-row">
 										<div class="col-md-12">
 											<label>
@@ -321,9 +331,19 @@
 									Shipping
 								</th>
 								<td>
-									Free Shipping<input type="hidden" value="free_shipping" class="shipping_method" name="shipping_method">
+									Free Shipping
 								</td>
 							</tr>
+
+							<tr class="shipping">
+								<th>
+									Discount {{ session()->get('coupon')['name'] }}
+								</th>
+								<td>
+									{{ session()->get('coupon')['discount'] }}
+								</td>
+							</tr>
+
 							<tr class="total">
 								<th>
 									<strong>Order Total</strong>
@@ -339,6 +359,18 @@
 							</tr>
 						</tbody>
 					</table>
+					@if (! session()->has('coupon'))
+					<p>Have a Coupon?</p>
+					<form action="{{ route('coupon.store') }}" method="POST" autocomplete="off">
+						{{ csrf_field() }}
+						<div class="form-group">
+								<input type="text" name="coupon_code" class="form-control" id="coupn_code" autocomplete="off">
+						</div>
+						<div style="margin-top: 10px; float:right;">
+							<button type="submit" class="btn btn-primary" >Apply</button>
+						</div>
+					</form>
+					@endif
 				</div>
 			</div>
 			</div>
@@ -369,6 +401,8 @@ $( "#show" ).on('change',function() {
     $.ajax();
 });
 </script>
+
+
 
 <script>
 (function(){
