@@ -274,3 +274,7 @@
   </section><!-- end section-gallery -->
 </div><!--end columns -->
 @stop
+@section('customjs')
+<script src="{!! asset('js/custom.js') !!}"></script>
+<script src="{!! asset('js/instafeed.js') !!}"></script>
+@stop
