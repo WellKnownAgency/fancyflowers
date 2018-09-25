@@ -111,8 +111,12 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<div class="col-md-12">
+											<div class="col-md-8">
 												<label>Address </label>
+												<input type="text" name="street" class="form-control" id="street" autocomplete="nope">
+											</div>
+											<div class="col-md-4">
+												<label>Apartment Number (Optional) <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top" title="If it's not a private house"></span></label>
 												<input type="text" name="street" class="form-control" id="street" autocomplete="nope">
 											</div>
 										</div>
@@ -132,6 +136,18 @@
 											<div class="col-md-12">
 												<label>Zip Code</label>
 												<input type="text" name="zipcode" class="form-control" id="zipcode" autocomplete="nope">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Delivery Date</label>
+												<input type="date" data-date-inline-picker="true" name="date" class="form-control" id="date" >
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12">
+												<label>Additional Informtion (Optional) <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="You may point the preffered time for the delivery, or another useful infomation for our courier"></span></label>
+												<textarea  class="form-control"></textarea>
 											</div>
 										</div>
 								</div>
@@ -379,6 +395,12 @@
 <br>
 @stop
 @section('customjs')
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 
 <script>
 $( "#show" ).on('change',function() {
