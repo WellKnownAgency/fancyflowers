@@ -59,9 +59,28 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($user)
     {
-        //
+      $user =User::find($user);
+      return view('users.edit')->withUser('user', $user);
+    }
+
+    public function update(Request $request, $id)
+    {
+
+      $user = User::find($id);
+
+      $user->firstname = $request->input('firstname');
+      $user->lastname = $request->input('lastname');
+      $user->email = $request->input('email');
+      $user->phonenumber = $request->input('phonenumber');
+      $user->password = $request->input('password');
+
+      $user->save();
+
+      session()->put('success','Your Personal Information was Successfully Changed');
+
+       return redirect('/account');
     }
 
     /**

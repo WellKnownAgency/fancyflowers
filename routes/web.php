@@ -89,6 +89,9 @@ Route::middleware('auth:web')->group(function () {
     $ships = App\Ship::latest()->get();
       return view('account', compact('ships'))->withCards($cards);
   });
+  Route::resource('/account/users', 'UserController');
+  Route::post('/account/users/{id}','UserController@update');
+
   Route::resource('/account/cards', 'CardController');
   Route::post('/account/cards/{id}','CardController@update');
 

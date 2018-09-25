@@ -162,34 +162,6 @@
 				</div><!-- end block_featured_product -->
 			</div><!-- end left_column -->
 			<div id="center_column" class="col-lg-9 col-md-9">
-				<div id="subcategories">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-sp-12">
-							<div class="scene_cat">
-								<div class="imgage">
-									<img class="img-responsive" src="img/category/270x200/cate1.jpg" alt="">
-								</div>
-								<a href="page-category-left.html" title="Weddings">Weddings</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-sp-12">
-							<div class="scene_cat">
-								<div class="imgage">
-									<img class="img-responsive" src="img/category/270x200/cate2.jpg" alt="">
-								</div>
-								<a href="page-category-left.html" title="Birthday">Birthday</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-sp-12">
-							<div class="scene_cat">
-								<div class="imgage">
-									<img class="img-responsive" src="img/category/270x200/cate3.jpg" alt="">
-								</div>
-								<a href="page-category-left.html" title="Loose flowers">Loose flowers</a>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="content_sortPagiBar top clearfix">
 					<div class="sort pull-right">
 						<label for="selectProductSort">Sort by</label>

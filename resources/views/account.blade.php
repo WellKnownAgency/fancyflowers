@@ -25,7 +25,7 @@
         <p>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</p>
         <p>{{Auth::user()->email}}</p>
         <p>{{Auth::user()->phonenumber}}</p>
-        <p><a href="" class="button btn btn-edit" style="padding-right:15px; padding-left:15px;">Edit</a></p>
+        <p><a href="{{route('users.edit' , Auth::user())}}" class="button btn btn-edit" style="padding-right:15px; padding-left:15px;">Edit</a></p>
       </div>
       <div class="col-md-8">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
