@@ -77,9 +77,9 @@
           <li class="nav-item">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><h4>Shipping Information</h4></a>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><h4>Payment Information</h4></a>
-          </li>
+          </li>-->
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade active in" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -93,7 +93,7 @@
                     @foreach (Auth::user()->ships as $ship)
                       <tr>
                         <td>{{ $ship->name }}</td>
-                        <td>{{ $ship->street }} {{ $ship->city }}, {{ $ship->state }} {{ $ship->zipcode }}</td>
+                        <td>{{ $ship->street }} , {{ $ship->apartment }} , {{ $ship->city }}, {{ $ship->state }} {{ $ship->zipcode }}</td>
                         <td><a href="{{route('addresses.edit', $ship->id )}}" class="list-edit">Edit</a></td>
                       </tr>
                     @endforeach
@@ -102,7 +102,7 @@
               </div>
             </ul>
           </div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <!--<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <br>
             <a href="{{route('cards.create')}}" class="button btn btn-primary">Add New Card</a>
             <br>
@@ -124,7 +124,7 @@
                 </table>
               </div>
             </ul>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
