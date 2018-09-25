@@ -93,13 +93,11 @@
 												</div>
 											</div>
 										</div>
-
-									@if (Auth::check())
 									<div style="display: block" id="filloutform">
 										<div class="form-group">
 											<div class="col-md-6">
 												<label>First Name</label>
-												<input type="text" name="firstname" value="" class="form-control" id="firstname">
+												<input type="text" name="firstname" class="form-control" id="firstname">
 											</div>
 											<div class="col-md-6">
 												<label>Last Name</label>
@@ -137,7 +135,6 @@
 											</div>
 										</div>
 								</div>
-								@endif
 								</div>
 							</div>
 						</div>
@@ -358,10 +355,14 @@ $( "#show" ).on('change',function() {
 	       type: "POST",
 	       data: {id: $( "#show :selected" ).val(),
 			 		},
-					dataType: "json",
-								//send data to controller
-	       success: function(json){
-					 $('#firstname').val(firstname.value);
+	       success: function(response){
+					 $('#firstname').val(response.data.firstname);
+					 $('#lastname').val(response.data.lastname);
+					 $('#phonenumber').val(response.data.phone);
+					 $('#street').val(response.data.street);
+					 $('#city').val(response.data.city);
+					 $('#state').val(response.data.state);
+					 $('#zipcode').val(response.data.zipcode);
 	       }
 	    });
     $.ajax();

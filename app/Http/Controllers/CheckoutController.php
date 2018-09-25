@@ -58,13 +58,13 @@ class CheckoutController extends Controller
             'metadata' => [
                'Name of the Item' => $content,
                'Quantity' => Cart::instance('default')->count(),
-               'First Name of the Receiver' => $request->firstname,
-               'Last Name of the Receiver' => $request->lastname,
-               'Phone Number' => $request->phone,
-               'Street' => $request->street,
-               'City' => $request->city,
-               'State' => $request->state,
-               'Zip Code' => $request->zipcode,
+               'First Name of the Receiver' => $request->input('firstname'),
+               'Last Name of the Receiver' => $request->input('lastname'),
+               'Phone Number' => $request->input('phone'),
+               'Street' => $request->input('street'),
+               'City' => $request->input('city'),
+               'State' => $request->input('state'),
+               'Zip Code' => $request->input('zipcode'),
             ],
           ]);
 
