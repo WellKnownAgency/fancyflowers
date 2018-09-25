@@ -65,16 +65,15 @@ class UserController extends Controller
       return view('users.edit')->withUser('user', $user);
     }
 
-    public function update(Request $request, $id)
+    public function updateUser(Request $request)
     {
 
-      $user = User::find($id);
+      $user = Auth::user();
 
       $user->firstname = $request->input('firstname');
       $user->lastname = $request->input('lastname');
       $user->email = $request->input('email');
       $user->phonenumber = $request->input('phonenumber');
-      $user->password = $request->input('password');
 
       $user->save();
 
