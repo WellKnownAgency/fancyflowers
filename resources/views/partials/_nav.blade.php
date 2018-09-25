@@ -120,8 +120,8 @@
                     <a href='/' class="{{ Request::is('/') ?"active-nav" : ""}}">Home </a>
 
                   </li>
-                  <li class="dropdown aligned-fullwidth">
-                    <a href='#'>Collections <b class="caret"></b></a>
+                  <li class="dropdown aligned-fullwidth coll-open">
+                    <a href='#' id="collections">Collections <b class="caret"></b></a>
                     <div id="dropdown-menu2" class="dropdown-menu">
                       <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
