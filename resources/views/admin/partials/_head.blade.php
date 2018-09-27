@@ -20,3 +20,4 @@
 <!-- Vendor CSS -->
 <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
 <link rel="stylesheet" href="{!! asset('vendor/font-awesome/css/font-awesome.min.css') !!}">
+<link rel="stylesheet" href="{!! asset('admin/custom.css') !!}">
