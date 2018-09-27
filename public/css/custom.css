@@ -181,8 +181,11 @@ input[type="date"]::-webkit-clear-button {
     top:0;
     width: 100%;
     z-index: 9999 !important;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    transition: all ease 0.5s;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+      transition-delay: 0.5s;
 }
 
 .affix a {
@@ -196,8 +199,11 @@ input[type="date"]::-webkit-clear-button {
 
 .affix ~ .container-fluid {
    position: relative;
-   -webkit-transition: all 5s ease-in-out;
-     transition: all 5s ease-in-out;
+   transition: all ease 0.5s;
+     transition-property: all;
+     transition-duration: 0.5s;
+     transition-timing-function: ease;
+     transition-delay: 0.5s;
 }
 
 .header-main{
