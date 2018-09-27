@@ -19,11 +19,7 @@
   <div class="container">
     <div class="row">
       <div class=" col-md-8 col-md-offset-2">
-<<<<<<< HEAD
           <form action="{{ route('addresses.store') }}" id="form-account-creation" class="form-horizontal box panel panel-default" method="POST">
-=======
-          <form action="{{ route('addresses.store') }}" id="form-account-creation" class="form-horizontal box panel panel-default" role="form" data-toggle="validator" method="POST">
->>>>>>> 07f3f29d4b5afd5f3a8518c8c791b4c7fb191dfb
             @csrf
             <h3 class="panel-heading">Create a Shipping Address </h3>
 
@@ -55,7 +51,7 @@
             </div>
               <div class="form-group required">
                 <div class="col-lg-12">
-                  <label for="apartment">Apartment (Optional)<sup>*</sup></label>
+                  <label for="apartment">Apartment (Optional)</label>
                   <input type="text" class="form-control" id="apartment" name="apartment">
               </div>
             </div>
@@ -88,7 +84,7 @@
               </div>
               <div class="form-group">
                 <div class="col-lg-12">
-                  <button type="submit" class="btn button btn-default">Create</button>
+                  <button type="submit" class="btn button btn-default" id="submitButton" >Create</button>
                   <p class="pull-right required"><span><sup>*</sup>Required field</span></p>
                 </div>
               </div>
@@ -102,127 +98,105 @@
 @stop
 
 @section('customjs')
-<<<<<<< HEAD
-=======
-<script type="text/javascript">
-
-   $(document).ready(function() {
-    $('#form-account-creation').bootstrapValidator({
-        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        },
-        fields: {
-            first_name: {
-                validators: {
-                        stringLength: {
-                        min: 2,
-                    },
-                        notEmpty: {
-                        message: 'Please supply your first name'
-                    }
-                }
-            },
-             last_name: {
-                validators: {
-                     stringLength: {
-                        min: 2,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your last name'
-                    }
-                }
-            },
-
-            phone: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your phone number'
-                    },
-                    phone: {
-                        country: 'US',
-                        message: 'Please supply a vaild phone number with area code'
-                    }
-                }
-            },
-            address: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your street address'
-                    }
-                }
-            },
-            city: {
-                validators: {
-                     stringLength: {
-                        min: 4,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your city'
-                    }
-                }
-            },
-            state: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please select your state'
-                    }
-                }
-            },
-            zip: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your zip code'
-                    },
-                    zipCode: {
-                        country: 'US',
-                        message: 'Please supply a vaild zip code'
-                    }
-                }
-            },
-
-	 email: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your email address'
-                    },
-                    emailAddress: {
-                        message: 'Please supply a valid email address'
-                    }
-                }
-            },
-
-
-
-            }
-        })
-
-
-        .on('success.form.bv', function(e) {
-            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-                $('#reg_form').data('bootstrapValidator').resetForm();
-
-            // Prevent form submission
-            e.preventDefault();
-
-            // Get the form instance
-            var $form = $(e.target);
-
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function(result) {
-                console.log(result);
-            }, 'json');
-        });
+ <script src="{!! asset('js/jquery.validation.js') !!}"></script>
+ <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+<script>
+$("form").validate({
+	rules: {
+		Zip: {zipCodeValidation: true} // hook in custom zip code validation
+	}
 });
 
+$.validator.addMethod("zipCodeValidation", function() {
+	var zipCode = $('input#zipcode').val();
+	return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(zipCode); // returns boolean
+}, "Please enter a valid US zip code (use a hyphen if 9 digits).");
+</script>
+<script>
+$(function() {
 
+  $.validator.setDefaults({
+    errorClass: 'help-block',
+    highlight: function(element) {
+      $(element)
+        .closest('.form-group')
+        .addClass('has-error');
+    },
+    unhighlight: function(element) {
+      $(element)
+        .closest('.form-group')
+        .removeClass('has-error');
+    },
+    errorPlacement: function (error, element) {
+      if (element.prop('type') === 'checkbox') {
+        error.insertAfter(element.parent());
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
 
+  $.validator.addMethod('zipcodeMy', function(value, element) {
+   return this.optional(element)
+     || /^(08003 08034 08045 08043 08033 08002 08026 08049 08052 08053 08083 08007 08084 08035 08108 08106 08054 08078 08107 08029 08021 08057 08109 08091 08059 08031 08099 08110 08105 08104 08030 08077 08103 08101 08012 08065 08076 08055 08032 08102 19137 08036 08093 08096 19134 19148 08009 08075 19135 19125 19106 19147 08048 08073 19112 19109 19123 08046 19136 19107 19190 19195 08097 08004 08081 19124 19110 19122 19092 19093 19099 19101 19105 19019 19155 19160 19161 19162 19170 19171 19172 19173 19175 19177 19178 19179 19181 19182 19183 19184 19185 19187 19188 19191 19192 19193 19194 19196 19197 19244 19255 19108 19102 08063 08090 08010 19133 19149 19103 19145 19146 08080 19130 08086 19114 19140 19152 19120 08018 19121 19132 19104 08060 19111 08051 08061 08066 19012 19141 08071 19143 19176 19142 19154 08089 19129 19115 19021 19126 08020 19144 19020 19139 08016 19131 19027 08011 19153)/.test(value);
+ }, 'Unfotunatelly we do not serve this area')
 
- </script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
->>>>>>> 07f3f29d4b5afd5f3a8518c8c791b4c7fb191dfb
+  $("#form-account-creation").validate({
+    rules: {
+      name: {
+        required: true,
+        nowhitespace: false,
+        lettersonly: false
+      },
+      firstname: {
+        required: true,
+        nowhitespace: true,
+        lettersonly: true
+      },
+      lastname: {
+        required: true,
+        nowhitespace: true,
+        lettersonly: true
+      },
+      street: {
+        required: true,
+        nowhitespace: false,
+        lettersonly: false
+      },
+      apartment: {
+        required: false,
+        nowhitespace: false,
+        lettersonly: false
+      },
+      city: {
+        required: true,
+        nowhitespace: true,
+        lettersonly: true
+      },
+      state: {
+        required: true,
+        nowhitespace: false,
+        lettersonly: false
+      },
+      zipcode: {
+        required: true,
+        zipcodeMy: true
+      },
+      phone: {
+        required: true,
+        nowhitespace: false,
+        lettersonly: false
+      }
+    },
+    messages: {
+      email: {
+        required: 'Please enter an email address.',
+        email: 'Please enter a <em>valid</em> email address.',
+        remote: $.validator.format("{0} is already associated with an account.")
+      }
+    }
+  });
+
+});
+</script>
 @stop
