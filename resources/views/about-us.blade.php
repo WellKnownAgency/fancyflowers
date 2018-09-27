@@ -30,7 +30,7 @@
       </div>
       <div class="row">
         <div  align="middle">
-          <a href="/contact-us" class="btn-join btn button btn-primary">Join Our Team!</a>
+          <a href="/contact-us" class="btn-join btn button btn-primary">Contact Us!</a>
         </div>
       </div><!--end row-->
 
