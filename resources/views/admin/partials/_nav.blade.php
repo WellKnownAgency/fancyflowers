@@ -1,11 +1,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<<<<<<< HEAD
-  <a class="navbar-brand" href="/admin">Admin Fancy Flowers</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-=======
   <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
   <div class="logo">
     <a href="#" title="Fancy Flowers">
@@ -13,8 +10,11 @@
     </a>
   </div><!--end logo-->
   </div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2f063d0871ae43dd2429592f2dc6fcc270b4aafd
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
@@ -25,13 +25,8 @@
           Products
         </a>
       </li>
-<<<<<<< HEAD
-      <li class="nav-item {{ Request::is('/admin/collections') ?"active" : ""}}">
-        <a class="nav-link" href="/admin/collections">
-=======
       <li class="nav-item">
         <a class="nav-link {{ Request::is('/admin/collections') ?"active-nav" : ""}}" href="/admin/collections">
->>>>>>> 12f5d2cfce591a39fc08b79fc397b399851f9b39
           Collections
         </a>
       </li>
