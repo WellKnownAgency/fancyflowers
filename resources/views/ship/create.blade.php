@@ -19,7 +19,11 @@
   <div class="container">
     <div class="row">
       <div class=" col-md-8 col-md-offset-2">
+<<<<<<< HEAD
+          <form action="{{ route('addresses.store') }}" id="form-account-creation" class="form-horizontal box panel panel-default" method="POST">
+=======
           <form action="{{ route('addresses.store') }}" id="form-account-creation" class="form-horizontal box panel panel-default" role="form" data-toggle="validator" method="POST">
+>>>>>>> 07f3f29d4b5afd5f3a8518c8c791b4c7fb191dfb
             @csrf
             <h3 class="panel-heading">Create a Shipping Address </h3>
 
@@ -98,6 +102,8 @@
 @stop
 
 @section('customjs')
+<<<<<<< HEAD
+=======
 <script type="text/javascript">
 
    $(document).ready(function() {
@@ -218,4 +224,5 @@
 
  </script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+>>>>>>> 07f3f29d4b5afd5f3a8518c8c791b4c7fb191dfb
 @stop
