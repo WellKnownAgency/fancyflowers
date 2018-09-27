@@ -19,7 +19,7 @@
   <div class="container">
     <div class="row">
       <div class=" col-md-8 col-md-offset-2">
-          <form action="{{ route('addresses.store') }}" id="form-account-creation" class="form-horizontal box panel panel-default" onSubmit="javascript:validate()" method="POST">
+          <form action="{{ route('addresses.store') }}" id="form-account-creation" class="form-horizontal box panel panel-default" method="POST">
             @csrf
             <h3 class="panel-heading">Create a Shipping Address </h3>
 
@@ -98,49 +98,4 @@
 @stop
 
 @section('customjs')
-<script type="text/javascript">
-
-var showErrorSuccess = function(element, status) {
-if (status === false) {
-  element.parent().next().removeClass('hidden').parent().addClass('has-error');
-  return false;
-}
-element.parent().next().addClass('hidden').parent().removeClass('has-error').addClass('has-success');
-};
-
-var validate = function() {
-event.preventDefault();
-//validate name
-var name = $('#firstname').val();
-if (name.length < 3) {
-  return showErrorSuccess($('#firstname'), false);
-}
-showErrorSuccess($('#firstname'));
-
-var lastname = $('#lastname').val();
-if (lastname.length < 3) {
-  return showErrorSuccess($('#lastname'), false);
-}
-showErrorSuccess($('#lastname'));
-
-//validate email
-var email = $('#email').val(),
-  emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
-if (!emailReg.test(email) || email == '') {
-  return showErrorSuccess($('#email'), false);
-}
-showErrorSuccess($('#email'));
-
-//validate phone
-var phone = $('#phone').val(),
-  intRegex = /[0-9 -()+]+$/;
-if ((phone.length < 6) || (!intRegex.test(phone))) {
-  return showErrorSuccess($('#phone'), false);
-}
-showErrorSuccess($('#phone'));
-};
-
-
- </script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 @stop
