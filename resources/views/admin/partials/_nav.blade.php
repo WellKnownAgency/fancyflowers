@@ -13,7 +13,7 @@
     </a>
   </div><!--end logo-->
   </div>
->>>>>>> 12f5d2cfce591a39fc08b79fc397b399851f9b39
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
