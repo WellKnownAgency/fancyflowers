@@ -5,16 +5,11 @@
   </button>
   <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
   <div class="logo">
-    <a href="#" title="Fancy Flowers">
+    <a href="/admin" title="Fancy Flowers">
       <img class="img-responsive" src="/images/logo.png" height="110" alt="">
     </a>
   </div><!--end logo-->
   </div>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2f063d0871ae43dd2429592f2dc6fcc270b4aafd
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
