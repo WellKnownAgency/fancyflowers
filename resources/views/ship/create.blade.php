@@ -101,18 +101,6 @@
  <script src="{!! asset('js/jquery.validation.js') !!}"></script>
  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script>
-$("form").validate({
-	rules: {
-		Zip: {zipCodeValidation: true} // hook in custom zip code validation
-	}
-});
-
-$.validator.addMethod("zipCodeValidation", function() {
-	var zipCode = $('input#zipcode').val();
-	return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(zipCode); // returns boolean
-}, "Please enter a valid US zip code (use a hyphen if 9 digits).");
-</script>
-<script>
 $(function() {
 
   $.validator.setDefaults({
