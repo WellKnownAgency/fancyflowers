@@ -200,7 +200,7 @@
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/birthandgifts.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/congratulation.jpg" alt="" style="opacity:0.8;"></a>
           </div><!--end banner-item-->
         </div>
       </div>
