@@ -141,6 +141,19 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'firstname' => 'First Name',
+        'lastname' => 'Last Name',
+        'street' => 'Address',
+        'apartment' => 'Apartment Number (Optional)',
+        'city' => 'City',
+        'state' => 'State',
+        'zipcode' => 'Zip Code',
+        'date' => 'Delivery Date',
+        'additional' => 'Additional Informtion (Optional)',
+        'name_on_card' => 'Name on Card',
+        'phone' => 'Phone Number',
+        'email' => 'Email',
+    ],
 
 ];

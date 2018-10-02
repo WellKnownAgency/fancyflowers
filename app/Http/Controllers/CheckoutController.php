@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\CheckoutForm;
+use App\Rules\Zip;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Session;
 use Stripe;
 use Cart;
@@ -10,6 +14,32 @@ use Cartalyst\Stripe\Exception\CardErrorException;
 
 class CheckoutController extends Controller
 {
+    private $form;
+
+    public function __construct(CheckoutForm $form)
+    {
+        $this->form = $form;
+    }
+
+    public function validateField(Request $request)
+    {
+        $input = $request->only(['field', 'value']);
+        $name = $input['field'];
+        $value = $input['value'];
+
+        $this->form->validateField($name, $value);
+        $arrParams = [$name => $value];
+
+        return response()->json($arrParams, 200);
+    }
+
+    public function validateForm(Request $request)
+    {
+        $this->form->validateForm($request->all());
+        return response()->json([], 200);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +47,9 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        $formFields = $this->form->getFields();
 
-        return view('/checkout');
+        return view('/checkout', ['formFields' => $formFields]);
     }
 
     public function checkoutComplete()
