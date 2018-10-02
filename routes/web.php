@@ -31,6 +31,8 @@ Route::delete('/cart/{flower}', 'CartController@destroy')->name('cart.destroy');
 Route::get('/checkout-complete', 'CheckoutController@checkoutComplete')->name('checkout.complete');
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+Route::post('/checkout/validate-field', 'CheckoutController@validateField')->name('checkout.validate-field');
+Route::post('/checkout/validate-form', 'CheckoutController@validateForm')->name('checkout.validate-form');
 
 
 Route::get('/about-us', function () {
