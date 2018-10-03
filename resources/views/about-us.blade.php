@@ -5,11 +5,11 @@
 @extends('main')
 
 @section('content')
-<div id="breadcrumb" class="clearfix">
+<div id="breadcrumb" class="clearfix" style="background-image: url(/images/default/breacrum-about-us.jpg);">
   <div class="container">
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
-        <li><a href="index.html" title="Home">Home</a></li>
+        <li><a href="/" title="Home">Home</a></li>
         <li><span>about us</span></li>
       </ul>
       <h2 class="bread-title">About us</h2>
@@ -39,28 +39,28 @@
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/1.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/svetlana.jpg" alt=""></a></div>
             <div class="weare-content">
-              <a href="#" title="Steven Craig.">Steven Craig</a>
+              <a href="#" title="Steven Craig.">Svetlana Ivanova</a>
               <p class="position">CEO & Founder</p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/2.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/irina.jpg" alt=""></a></div>
             <div class="weare-content">
-              <a href="#" title="Sarah Conor">Sarah Conor</a>
+              <a href="#" title="Sarah Conor">Irina Likhnekevich</a>
               <p class="position">Chief Customer Officer</p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/3.jpg" alt=""></a></div>
+            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/alina.jpg" alt=""></a></div>
             <div class="weare-content">
-              <a href="#" title="Jenifer Lorenwer">Jenifer Lorenwer</a>
-              <p class="position">HR Officer</p>
+              <a href="#" title="Jenifer Lorenwer">Alina Green</a>
+              <p class="position">Florist</p>
             </div>
           </div>
         </div>

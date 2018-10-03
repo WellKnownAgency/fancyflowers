@@ -13,7 +13,7 @@
 
   <div id="caption1" class="nivo-html-caption">
     <div class="tiva-caption">
-      <div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>
+      <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
       <div class="left-right hidden-xs normal very_large_60">TEstint</div>
       <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
       <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
@@ -21,7 +21,7 @@
   </div>
   <div id="caption2" class="nivo-html-caption">
     <div class="tiva-caption">
-      <div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>
+      <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
       <div class="left-right hidden-xs normal very_large_60">Floral headband</div>
       <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
       <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
@@ -193,27 +193,27 @@
         <div class="tv-tablecell">
           <div class="block-html block">
             <h4></h4>
-            <h3>Flower Composition</h3>
+            <h3>Congrtulation</h3>
             <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             <a class="button btn btn-primary" href="/collections/compositions" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/congratulation.jpg" alt="" style="opacity:0.8;"></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/congratulation.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
       </div>
       <div class="tv-table block">
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/weddingday.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/composition.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
         <div class="tv-tablecell">
           <div class="block-html block">
             <h4></h4>
-            <h3>Thank You</h3>
+            <h3>Flower Compositions</h3>
             <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             <a class="button btn btn-primary" href="/collections/thank-you" title="Shop now">Shop now</a>
           </div><!--end block-html -->

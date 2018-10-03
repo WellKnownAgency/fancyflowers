@@ -7,7 +7,7 @@
 
 @section('content')
 
-			<div id="breadcrumb" class="clearfix">
+			<div id="breadcrumb" class="clearfix" style="background-image: url(/images/default/breacrum-contact-us.jpg);">
 				<div class="container">
 					<div class="breadcrumb clearfix">
 						<ul class="ul-breadcrumb">
