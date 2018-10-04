@@ -86,10 +86,10 @@
 											<div class="form-group">
 
 												<div class="col-md-6 ">
-													<label>Choose Shipping Address</label>
+													<label for="show">Choose Shipping Address</label>
 													<select class="form-control" id="show" @change="onChangeShippingAddress($event)">
 														<option value="newaddress">New Address</option>
-														<option value="newaddress2">New Address</option>
+														{{--<option value="newaddress2">New Address</option>--}}
 														@if (Auth::check())
 															@foreach(Auth::user()->ships as $ship)
 																<option value="{{ $ship->id }}">{{ $ship->name }}</option>
@@ -481,23 +481,18 @@
         methods: {
             onChangeShippingAddress: function(e)
             {
-                $.ajaxSetup({
-                    headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                    url: "{{ route('ship.index') }}",
-                    type: "POST",
-                    data: {id: $( "#show :selected" ).val(),
-                    },
-                    success: function(response){
-                        $('#firstname').val(response.data.firstname);
-                        $('#lastname').val(response.data.lastname);
-                        $('#phone').val(response.data.phone);
-                        $('#street').val(response.data.street);
-                        $('#city').val(response.data.city);
-                        $('#state').val(response.data.state);
-                        $('#zipcode').val(response.data.zipcode);
-                    }
+                axios.post('{{route('ship.index')}}', {
+                    id: $( "#show :selected" ).val()
+                })
+                .then(function (response) {
+                    this.vmForm.validateFields.firstname.value = response.data.data.firstname;
+                    this.vmForm.validateFields.lastname.value = response.data.data.lastname;
+                    this.vmForm.validateFields.phone.value = response.data.data.phone;
+                    this.vmForm.validateFields.street.value = response.data.data.street;
+                    this.vmForm.validateFields.city.value = response.data.data.city;
+                    this.vmForm.validateFields.state.value = response.data.data.state;
+                    this.vmForm.validateFields.zipcode.value = response.data.data.zipcode;
                 });
-                $.ajax();
             },
             inputField: _.debounce(function(el)
             {
