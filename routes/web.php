@@ -74,6 +74,7 @@ Route::get('/blog', function () {
 Route::get('/blog/{slug}', ['as' => 'post.single', 'uses' => 'PostController@getSingle' ]) -> where('slug', '[\w\d\-\_]+');
 
 
+Route::get('/collections/filter', 'CollectionController@filter')->name('collection.filter');
 Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
 Route::get('/collections/compositions', 'CollectionController@getCompositions')->name('collection.compositions');
 Route::get('/collections/congratulation', 'CollectionController@getCongratulation')->name('collection.congratulation');
