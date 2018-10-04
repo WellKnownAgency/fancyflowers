@@ -30,21 +30,13 @@ class CollectionController extends Controller
         $query->where('name', 'Birthday');
       });
 
-      if (request()->sort == 'low_high') {
-        $flowers = $flowers->orderBy('price1', 'asc');
-      } elseif(request()->sort == 'high_low') {
-        $flowers = $flowers->orderBy('price1', 'desc');
-      } elseif(request()->sort == 'a_z') {
-        $flowers = $flowers->orderBy('name', 'asc');
-      } elseif(request()->sort == 'z_a') {
-        $flowers = $flowers->orderBy('name', 'desc');
-      } elseif(request()->sort == 'instock') {
-        $flowers = $flowers->where('stock', '1');
-      }
+      $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+      $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+
 
       $flowers = $flowers->paginate($pagination);
 
-      return view('/collections/birthday')->withFlowers($flowers)->withFlowersbest($flowersbest);
+      return view('/collections/birthday')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
     }
 
     public function getCompositions()
@@ -55,21 +47,12 @@ class CollectionController extends Controller
       $query->where('name', 'Flower Composition');
     });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/compositions')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/compositions')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getCongratulation()
@@ -80,21 +63,12 @@ class CollectionController extends Controller
       $query->where('name', 'Congratulation');
     });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/congratulation')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/congratulation')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getGifts()
@@ -105,21 +79,12 @@ class CollectionController extends Controller
       $query->where('name', 'Gifts');
     });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/gifts')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/gifts')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getNewbaby()
@@ -130,21 +95,12 @@ class CollectionController extends Controller
       $query->where('name', 'New Baby');
     });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/new-baby')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/new-baby')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getThankyou()
@@ -155,21 +111,12 @@ class CollectionController extends Controller
       $query->where('name', 'Thank you');
     });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/thank-you')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/thank-you')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getWeddings()
@@ -180,21 +127,12 @@ class CollectionController extends Controller
       $query->where('name', 'Wedding');
     });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/weddings')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/weddings')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getLooseflowers()
@@ -202,50 +140,73 @@ class CollectionController extends Controller
       $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Wedding');
-    });
+        $query->where('name', 'Wedding');
+        });
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
 
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+
+    $flowers = $flowers->orderBy('created_at', 'asc');
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/looseflowers')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/looseflowers')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
-  public function getAll()
-    {
+  public function getAll(Request $request)
+  {
+    $pagination = 9;
+    $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
 
-      $pagination = 9;
-      $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
-      $flowers = Flower::orderBy('created_at', 'asc');
+    $flowers = new Flower();
 
+    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
+    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
 
-    if (request()->sort == 'low_high') {
-      $flowers = $flowers->orderBy('price1', 'asc');
-    } elseif(request()->sort == 'high_low') {
-      $flowers = $flowers->orderBy('price1', 'desc');
-    } elseif(request()->sort == 'a_z') {
-      $flowers = $flowers->orderBy('name', 'asc');
-    } elseif(request()->sort == 'z_a') {
-      $flowers = $flowers->orderBy('name', 'desc');
-    } elseif(request()->sort == 'instock') {
-      $flowers = $flowers->where('stock', '1');
-    }
-
+    $flowers = $flowers->orderBy('created_at', 'asc');
     $flowers = $flowers->paginate($pagination);
 
-    return view('/collections/all')->withFlowers($flowers)->withFlowersbest($flowersbest);
+    return view('/collections/all')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
+  }
 
+  public function filter(Request $request)
+  {
+      $pagination = 9;
+
+      if($request->has('category')) {
+          $reqCategory = $request->input('category');
+          $flowers = Flower::whereHas('collections', function ($query) use ($reqCategory) {
+              $query->where('name', $reqCategory);
+          });
+      } else {
+          $flowers = new Flower();
+      }
+
+      if($request->has('sort')) {
+          $reqSort = $request->input('sort');
+          $reqSortArr = explode('__', $reqSort);
+          $flowers = $flowers->orderBy($reqSortArr[0], $reqSortArr[1]);
+      }
+
+
+      if($request->has('filter')) {
+          $reqFilter = $request->input('filter');
+          $reqFilterArr = explode('__', $reqFilter);
+          if ($reqFilterArr[0] === 'price1') {
+              $reqPrice = $reqFilterArr[1];
+              $reqPriceArr = explode(';', $reqPrice);
+              $flowers = $flowers->where($reqFilterArr[0], '>=', $reqPriceArr[0])->where($reqFilterArr[0], '<=', $reqPriceArr[1]);
+          }
+      }
+
+      if($request->has('limit')) {
+          $reqLimit = $request->input('limit');
+          $flowers = $flowers->paginate($reqLimit);
+      } else {
+          $flowers = $flowers->paginate($pagination);
+      }
+
+      return view('/collections/products')->withFlowers($flowers);
   }
 
     /**

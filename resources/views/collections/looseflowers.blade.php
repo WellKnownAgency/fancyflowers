@@ -161,90 +161,127 @@
 					</div>
 				</div><!-- end block_featured_product -->
 			</div><!-- end left_column -->
-			<div id="center_column" class="col-lg-9 col-md-9">
-				<div class="content_sortPagiBar top clearfix">
-					<div class="sort pull-right">
-						<label for="selectProductSort">Sort by</label>
-						<select id="selectProductSort" class="selectProductSort form-control" onchange="location = this.value;">
-							<option selected="selected">Choose...</option>
-							<option value="{{ route('collection.looseflowers', ['sort' => 'low_high']) }}">Lowest First</option>
-							<option value="{{ route('collection.looseflowers', ['sort' => 'high_low']) }}">Highest First</option>
-							<option value="{{ route('collection.looseflowers', ['sort' => 'a_z']) }}">Product Name A-Z</option>
-							<option value="{{ route('collection.looseflowers', ['sort' => 'z_a']) }}">Product Name Z-A</option>
-							<option value="{{ route('collection.looseflowers', ['sort' => 'instock']) }}">In Stock</option>
-						</select>
-					</div>
-				</div>
-				<div class="tab-content">
-					<div class="tab-pane fade active in" id="tiva-grid">
-						<div class="row">
-							@foreach ($flowers as $flower)
-							<div class="type_block_product col-sp-12 col-xs-6 col-sm-4 col-md-4 col-lg-4">
-								<div class="product-container">
-									<div class="left-block">
-										<div class="product-image-container">
-											<a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
-												<img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
-											</a>
-											@if($flower->new == '1')
-											<span class="label-new label">New</span>
-											<span class="label-sale label">Sale</span>
-											<span class="label-reduction label">-5%</span>
-											@else
-											<span class="label-sale label" style="top: 15;">Sale</span>
-											<span class="label-reduction label">-5%</span>
-											@endif
-										</div>
-										<div class="box-buttons">
-											<form action="{{ route('cart.store') }}" method="POST">
-												{{ csrf_field() }}
-												<input type="hidden" name="id" value="{{ $flower->id }}">
-												<input type="hidden" name="name" value="{{ $flower->name }}">
-												<input type="hidden" name="price1" value="{{ $flower->price1 }}">
-												<button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
-											</form>
-												<a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
-													<i class="zmdi zmdi-eye"></i>
-												</a>
-										</div>
-									</div><!--end left block -->
-									<div class="right-block">
-										<div class="product-box">
-											<h5 class="name">
-												<a class="product-name" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
-													{{ $flower->name }}
-												</a>
-											</h5>
-											<div class="content_price">
-												<span class="price product-price">${{ $flower->price1 }}</span>
-												<span class="old-price product-price">${{ $flower->price1 }}</span>
-											</div>
-											<div class="product_comments clearfix">
-												<div class="product-rating">
-													<div class="star_content">
-														<div class="star star_on"></div>
-														<div class="star star_on"></div>
-														<div class="star star_on"></div>
-														<div class="star star_on"></div>
-														<div class="star star_on"></div>
-													</div>
-												</div>
-											</div><!-- end product_comments -->
-										</div><!-- end product-box -->
-									</div><!--end right block -->
-								</div><!-- end product-container-->
-							</div><!-- end type_block_product -->
-							@endforeach
-						</div><!-- end row -->
-					</div><!-- end tiva-grid -->
-				</div>
-				<div class="content_sortPagiBar bottom clearfix">
-					{{$flowers->appends(request()->input())->links()}}
-				</div>
-			</div><!-- end center_column -->
+            <div id="center_column" class="col-lg-9 col-md-9">
+                <div class="content_sortPagiBar top clearfix">
+                    <div class="sort pull-right">
+                        <form id="productsSortForm" action="#" class="form-inline pull-right">
+                            <div class="select">
+                                <label for="selectProductSort">Sort by</label>
+                                <select id="selectProductSort" class="selectProductSort form-control">
+                                    <option selected="selected" value="created_at__asc">Choose...</option>
+                                    <option value="price1__asc">Lowest First</option>
+                                    <option value="price1__desc">Highest First</option>
+                                    <option value="name__asc">Product Name A-Z</option>
+                                    <option value="name__desc">Product Name Z-A</option>
+                                    <option value="stock__desc">In Stock</option>
+                                </select>
+                            </div>
+                        </form>
+                        <form id="productsShowForm" action="#" class="form-inline pull-right">
+                            <div class="select">
+                                <label for="selectProductShow">Show</label>
+                                <select id="selectProductShow" class="selectProductShow form-control">
+                                    <option value="9" selected="selected">9</option>
+                                    <option value="15">15</option>
+                                    <option value="25">25</option>
+                                    <option value="45">45</option>
+                                    <option value="60">60</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="products-content">
+                    @include('collections/products')
+                </div>
+            </div><!-- end center_column -->
 		</div>
 	</div> <!-- end container -->
 </div><!--end columns-->
+@stop
 
+@section('customjs')
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        window.onload = function() {
+            var sortSelect = $("#selectProductSort");
+            var limitSelect = $("#selectProductShow");
+            var category = 'Loose Flowers';
 
+            $("#price-filter").slider({
+                from: {{$minPrice}},
+                to: {{$maxPrice}},
+                step: 1,
+                smooth: true,
+                round: 0,
+                dimension: "&nbsp;$",
+                skin: "plastic",
+                callback: function (value) {
+                    $('#products-content').fadeOut(300);
+                    axios.get('{{route('collection.filter')}}', {params: {
+                            'filter': 'price1__' + value,
+                            'sort': sortSelect.val(),
+                            'limit': limitSelect.val(),
+                            'category': category
+                        }})
+                        .then(function (response) {
+                            //console.log(response.data);
+                            $('#products-content').html(response.data);
+                            $('#products-content').fadeIn(300);
+                        })
+                }
+            });
+
+            $("#selectProductSort").on('change', function (e) {
+                var page = $(".pagination li.active span").text();
+                var thisSelect = $( this );
+                $('#products-content').fadeOut(300);
+                axios.get('{{route('collection.filter')}}', {params: {
+                        'filter': 'price1__' + $("#price-filter").slider("value"),
+                        'sort': thisSelect.val(),
+                        'page': page,
+                        'limit': limitSelect.val(),
+                        'category': category
+                    }})
+                    .then(function (response) {
+                        $('#products-content').html(response.data);
+                        $('#products-content').fadeIn(300);
+                    })
+            });
+
+            $("#selectProductShow").on('change', function (e) {
+                var thisSelect = $( this );
+                $('#products-content').fadeOut(300);
+                axios.get('{{route('collection.filter')}}', {params: {
+                        'filter': 'price1__' + $("#price-filter").slider("value"),
+                        'sort': sortSelect.val(),
+                        'limit': thisSelect.val(),
+                        'category': category
+                    }})
+                    .then(function (response) {
+                        $('#products-content').html(response.data);
+                        $('#products-content').fadeIn(300);
+                    })
+            });
+
+            $(document).on('click', '.pagination a',function(event)
+            {
+                event.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                $('#products-content').fadeOut(300);
+                axios.get('{{route('collection.filter')}}', {params: {
+                        'filter': 'price1__' + $("#price-filter").slider("value"),
+                        'sort': sortSelect.val(),
+                        'page': page,
+                        'limit': limitSelect.val(),
+                        'category': category
+                    }})
+                    .then(function (response) {
+                        $('#products-content').html(response.data);
+                        $('#products-content').fadeIn(300);
+                    })
+            })
+        };
+    </script>
 @stop

@@ -436,7 +436,7 @@
 		});
 
 		// ===== Slider range ======
-		$("#price-filter").slider({
+		/*$("#price-filter").slider({
 			from: 0,
 			to: 100,
 			step: 1,
@@ -444,7 +444,7 @@
 			round: 0,
 			dimension: "&nbsp;$",
 			skin: "plastic"
-		});
+		});*/
 
 		// ===== Block categories ======
 		$('#categories_block_left ul li.parent .arrow').on('click', function (e) {
