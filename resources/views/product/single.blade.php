@@ -107,11 +107,13 @@
           </div><!-- end product_comments -->
           <div class="price clearfix">
             <p class="our_price_display">
-              ${{ $flower->price1 }}
+              ${{ $flower->price }}
             </p>
-            <p class="old_price">
-              ${{ $flower->price1 }}
-            </p>
+              @if($flower->old_price)
+                <p class="old_price">
+                  ${{ $flower->old_price }}
+                </p>
+              @endif
           </div><!-- end price -->
           <div class="product-boxinfo">
             <p id="availability_statut">
@@ -126,7 +128,7 @@
           <div id="short_description_block">
             <p>{{ $flower->dscr}}</p>
           </div><!-- end short_description_block -->
-          <div class="box-info-product clearfix">
+          {{--<div class="box-info-product clearfix">
             <div id="attributes">
               <div class="attribute_fieldset clearfix">
                 <label class="attribute_label">Size</label>
@@ -139,13 +141,13 @@
                 </div>
               </div>
             </div>
-          </div><!-- end box-info-product -->
+          </div>--}}<!-- end box-info-product -->
           <div class="box-cart-bottom clearfix">
             <form action="{{ route('cart.store') }}" method="POST">
               {{ csrf_field() }}
               <input type="hidden" name="id" value="{{ $flower->id }}">
               <input type="hidden" name="name" value="{{ $flower->name }}">
-              <input type="hidden" name="price1" value="{{ $flower->price1 }}">
+              <input type="hidden" name="price" value="{{ $flower->price1 }}">
               <button id="add_to_cart" type="submit" class="exclusive btn button btn-primary" title="Add to cart">
                 Add to cart
               </button>

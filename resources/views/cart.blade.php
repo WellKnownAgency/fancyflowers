@@ -53,7 +53,7 @@
               <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
             </td>
             <td class="cart_unit text-right">
-              <span class="amount">${{ $item->model->price1 }}</span>
+              <span class="amount">${{ $item->model->price }}</span><br>@if($item->model->old_price)<span class="old_price">${{ $item->model->old_price }}</span>@endif
             </td>
             <td class="cart_quantity text-center">
               <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
