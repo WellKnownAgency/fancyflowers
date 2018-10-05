@@ -49,7 +49,11 @@ class CheckoutController extends Controller
     {
         $formFields = $this->form->getFields();
 
-        return view('/checkout', ['formFields' => $formFields]);
+        $cart = Cart::class;
+
+       // dd($cart::content());
+
+        return view('/checkout', ['formFields' => $formFields, 'cart' => $cart]);
     }
 
     public function checkoutComplete()
@@ -75,6 +79,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
 
         $content = Cart::content()->map(function ($item) {
           return $item->model->name;
@@ -82,7 +87,7 @@ class CheckoutController extends Controller
 
         try {
           $charge = Stripe::charges()->create([
-            'amount' => Cart::total()+0.30 ,
+            'amount' => Cart::total(),
             'currency' => 'USD',
             'source' => $request->stripeToken,
             'description' => $content,

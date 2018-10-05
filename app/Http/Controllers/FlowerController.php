@@ -147,10 +147,6 @@ class FlowerController extends Controller
      $flower->new = $request->input('new');
      $flower->price1 = $request->input ('price1');
      $flower->price1name = $request->input ('price1name');
-     $flower->price2 = $request->input ('price2');
-     $flower->price2name = $request->input ('price2name');
-     $flower->price3 = $request->input ('price3');
-     $flower->price3name = $request->input ('price3name');
      $flower->dscr = $request->input ('dscr');
      $flower->lgdscr = $request->input ('lgdscr');
 

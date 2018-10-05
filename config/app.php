@@ -148,9 +148,12 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         willvincent\Rateable\RateableServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
+        App\Providers\CartProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -210,6 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Cart' => App\Facades\Cart::class,
     ],
 
 ];

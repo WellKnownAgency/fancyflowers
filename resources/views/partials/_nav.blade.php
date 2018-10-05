@@ -76,7 +76,7 @@
                               </td>
                               <td class="product-name">
                                 <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
-                                <br><span class="amount"><strong>${{ $item->model->price1 }}</strong></span>
+                                <br><span class="amount"><strong>${{ $item->model->price }}</strong></span>
                               </td>
                               <td class="product-actions">
                                 <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
