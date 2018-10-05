@@ -50,7 +50,7 @@ class CartController extends Controller
           return back();
         }
 
-        Cart::add($request->id, $request->name, 1, $request->price1)->associate('App\Flower');
+        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Flower');
 
         session()->put('success','Item Added Successfully to Your Cart');
 

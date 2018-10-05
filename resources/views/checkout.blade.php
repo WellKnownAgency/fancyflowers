@@ -214,7 +214,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											@foreach (Cart::content() as $item)
+											@foreach ($cart::content() as $item)
 												<tr class="cart_table_item">
 													<td class="product-thumbnail text-center">
 														<a href="/product/{{ $item->model->slug }}">
@@ -225,13 +225,13 @@
 														<a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
 													</td>
 													<td class="product-price text-right">
-														<span class="amount">${{ $item->model->price1 }}</span>
+														<span class="amount">${{ $item->model->price }}</span>@if($item->model->old_price)<br><span class="old-price product-price">${{ $item->model->old_price }}</span>@endif
 													</td>
 													<td class="product-quantity text-center">
-														1
+                                                        {{ $item->qty }}
 													</td>
 													<td class="product-subtotal text-right">
-														<span class="amount">${{ $item->model->price1 }}</span>
+														<span class="amount">${{ $item->model->price * $item->qty }}</span>
 													</td>
 												</tr>
 											@endforeach
@@ -248,7 +248,7 @@
 													<strong>Cart Subtotal</strong>
 												</th>
 												<td>
-													<strong><span class="amount">${{ Cart::subtotal() }}</span></strong>
+													<strong><span class="amount">$ {{ Cart::subtotal() }}</span></strong>
 												</td>
 											</tr>
 											<tr class="shipping">
@@ -265,8 +265,7 @@
 													Discount {{ session()->get('coupon')['name'] }}
 												</th>
 												<td>
-													<strong><span class="amount">-$100
-													</span></strong>
+													<strong><span class="amount">-$ 0.00</span></strong>
 												</td>
 											</tr>
 
@@ -275,13 +274,15 @@
 													Processing Fee
 												</th>
 												<td>
-													<strong><span class="amount">$
-													@if (Cart::subtotal() > 0)
-													{{ Cart::tax()+0.3 }}
-													@else
-													0.00
-													@endif
-													</span></strong>
+													<strong>
+                                                        <span class="amount">$
+                                                            @if ($cart::subtotal() > 0)
+                                                                {{ $cart::tax() }}
+                                                            @else
+                                                                0.00
+                                                            @endif
+                                                        </span>
+                                                    </strong>
 												</td>
 											</tr>
 											<tr class="total">
@@ -291,7 +292,7 @@
 												<td>
 													<strong><span class="amount">$
 														@if (Cart::subtotal() > 0)
-														{{ Cart::total()+0.3 }}
+														{{ Cart::total() }}
 														@else
 														0.00
 														@endif
@@ -374,7 +375,7 @@
 									<strong>Cart Subtotal</strong>
 								</th>
 								<td>
-									<strong><span class="amount">${{ Cart::subtotal() }}</span></strong>
+									<strong><span class="amount">${{ $cart::subtotal() }}</span></strong>
 								</td>
 							</tr>
 							<tr class="shipping">
@@ -402,7 +403,7 @@
 								<td>
 									<strong><span class="amount">
 										@if (Cart::subtotal() > 0)
-										{{ Cart::total()+0.3 }}
+										{{ Cart::total() }}
 										@else
 										0.00
 										@endif</span></strong>
