@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Session;
 use App\Flower;
 use App\Collection;
@@ -9,6 +11,8 @@ use Illuminate\Http\Request;
 
 class CollectionController extends Controller
 {
+    private $limit = 9;
+
     /**
      * Display a listing of the resource.
      *
@@ -24,155 +28,162 @@ class CollectionController extends Controller
     //collections
       public function getBirthday()
       {
-        $pagination = 9;
         $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
         $flowers = Flower::whereHas('collections', function ($query) {
         $query->where('name', 'Birthday');
       });
 
-      $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-      $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+      $flowers = $flowers->paginate($this->limit);
 
-
-      $flowers = $flowers->paginate($pagination);
+      $min = $flowers->min('price');
+      $minPrice = $min ? $min : 0;
+      $max = $flowers->max('price');
+      $maxPrice = $max ? ceil($max) : 100;
 
       return view('/collections/birthday')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
     }
 
     public function getCompositions()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Flower Composition');
     });
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+    $flowers = $flowers->paginate($this->limit);
 
-    $flowers = $flowers->paginate($pagination);
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/compositions')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getCongratulation()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Congratulation');
     });
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+    $flowers = $flowers->paginate($this->limit);
 
-    $flowers = $flowers->paginate($pagination);
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/congratulation')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getGifts()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Gifts');
     });
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+    $flowers = $flowers->paginate($this->limit);
 
-    $flowers = $flowers->paginate($pagination);
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/gifts')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getNewbaby()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'New Baby');
     });
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+    $flowers = $flowers->paginate($this->limit);
 
-    $flowers = $flowers->paginate($pagination);
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/new-baby')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getThankyou()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Thank you');
     });
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+    $flowers = $flowers->paginate($this->limit);
 
-    $flowers = $flowers->paginate($pagination);
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/thank-you')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getWeddings()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
       $query->where('name', 'Wedding');
     });
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+    $flowers = $flowers->paginate($this->limit);
 
-    $flowers = $flowers->paginate($pagination);
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/weddings')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getLooseflowers()
     {
-      $pagination = 9;
       $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
         $query->where('name', 'Wedding');
         });
 
-
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
-
     $flowers = $flowers->orderBy('created_at', 'asc');
-    $flowers = $flowers->paginate($pagination);
+    $flowers = $flowers->paginate($this->limit);
+
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/looseflowers')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getAll(Request $request)
   {
-    $pagination = 9;
     $flowersbest = Flower::where('best', '=', '1')->take(4)->get();
 
     $flowers = new Flower();
 
-    $minPrice = $flowers->min('price1') ? $flowers->min('price1') : 0;
-    $maxPrice = $flowers->max('price1') ? $flowers->max('price1') : 100;
+
 
     $flowers = $flowers->orderBy('created_at', 'asc');
-    $flowers = $flowers->paginate($pagination);
+    $flowers = $flowers->paginate($this->limit);
+
+    $min = $flowers->min('price');
+    $minPrice = $min ? $min : 0;
+    $max = $flowers->max('price');
+    $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/all')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function filter(Request $request)
   {
-      $pagination = 9;
-
       if($request->has('category')) {
           $reqCategory = $request->input('category');
           $flowers = Flower::whereHas('collections', function ($query) use ($reqCategory) {
@@ -188,26 +199,36 @@ class CollectionController extends Controller
           $flowers = $flowers->orderBy($reqSortArr[0], $reqSortArr[1]);
       }
 
+      $flowers = $flowers->get();
 
       if($request->has('filter')) {
           $reqFilter = $request->input('filter');
           $reqFilterArr = explode('__', $reqFilter);
-          if ($reqFilterArr[0] === 'price1') {
+          if ($reqFilterArr[0] === 'price') {
               $reqPrice = $reqFilterArr[1];
               $reqPriceArr = explode(';', $reqPrice);
-              $flowers = $flowers->where($reqFilterArr[0], '>=', $reqPriceArr[0])->where($reqFilterArr[0], '<=', $reqPriceArr[1]);
+              $flowers = $flowers->filter(function ($item) use ($reqFilterArr, $reqPriceArr) {
+                  return $item[$reqFilterArr[0]] >= $reqPriceArr[0] && $item[$reqFilterArr[0]] <= $reqPriceArr[1];
+              });
           }
       }
 
       if($request->has('limit')) {
           $reqLimit = $request->input('limit');
-          $flowers = $flowers->paginate($reqLimit);
+          $flowers = $this->paginate($flowers, $reqLimit, $request->input('page'));
       } else {
-          $flowers = $flowers->paginate($pagination);
+          $flowers = $this->paginate($flowers, $this->limit);
       }
 
       return view('/collections/products')->withFlowers($flowers);
   }
+
+    public function paginate($items, $perPage = 15, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof \Illuminate\Database\Eloquent\Collection ? $items : \Illuminate\Database\Eloquent\Collection::make($items);
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -52,21 +52,20 @@
                         <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
                           <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
                         </a>
-                        @if($flower->new == '1')
-                        <span class="label-new label">New</span>
-                        <span class="label-sale label">Sale</span>
-                        <span class="label-reduction label">-5%</span>
-                        @else
-                        <span class="label-sale label" style="top: 15;">Sale</span>
-                        <span class="label-reduction label">-5%</span>
-                        @endif
+                          @if($flower->new == '1')
+                              <span class="label-new label">New</span>
+                          @endif
+                          @if($flower->sale)
+                              <span class="label-sale label">Sale</span>
+                              <span class="label-reduction label">-{{$flower->sale}}%</span>
+                          @endif
                       </div>
                       <div class="box-buttons">
                         <form action="{{ route('cart.store') }}" method="POST">
                           {{ csrf_field() }}
                           <input type="hidden" name="id" value="{{ $flower->id }}">
                           <input type="hidden" name="name" value="{{ $flower->name }}">
-                          <input type="hidden" name="price1" value="{{ $flower->price1 }}">
+                          <input type="hidden" name="price" value="{{ $flower->price }}">
                           <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
                         </form>
                           <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
@@ -82,8 +81,10 @@
                           </a>
                         </h5>
                         <div class="content_price">
-                          <span class="price product-price">${{ $flower->price1 }}</span>
-                          <span class="old-price product-price">${{ $flower->price1 }}</span>
+                          <span class="price product-price">${{ $flower->price }}</span>
+                            @if($flower->old_price)
+                                <span class="old-price product-price">${{ $flower->old_price }}</span>
+                            @endif
                         </div>
                         <div class="product_comments clearfix">
                           <div class="product-rating">
