@@ -28,6 +28,8 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::patch('/cart/{flower}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{flower}', 'CartController@destroy')->name('cart.destroy');
 
+
+
 Route::get('/checkout-complete', 'CheckoutController@checkoutComplete')->name('checkout.complete');
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
@@ -106,6 +108,8 @@ Route::middleware('auth:web')->group(function () {
   Route::post('comment/{post_id}', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
 
   Route::post('/coupon', 'CouponController@store')->name('coupon.store');
+    Route::post('/coupon/apply', 'CouponController@apply')->name('coupon.apply')->middleware('auth');
+    Route::post('/coupon/cancel', 'CouponController@cancel')->name('coupon.cancel')->middleware('auth');
 });
 
 

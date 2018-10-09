@@ -239,69 +239,9 @@
 									</table>
 
 									<hr class="tall">
-
-									<h4 class="heading-primary">Cart Totals</h4>
-									<table class="table cart-totals">
-										<tbody>
-											<tr class="cart-subtotal">
-												<th>
-													<strong>Cart Subtotal</strong>
-												</th>
-												<td>
-													<strong><span class="amount">$ {{ Cart::subtotal() }}</span></strong>
-												</td>
-											</tr>
-											<tr class="shipping">
-												<th>
-													Shipping
-												</th>
-												<td>
-													Free Shipping<input type="hidden" value="free_shipping" class="shipping_method" name="shipping_method">
-												</td>
-											</tr>
-
-											<tr class="shipping">
-												<th>
-													Discount {{ session()->get('coupon')['name'] }}
-												</th>
-												<td>
-													<strong><span class="amount">-$ 0.00</span></strong>
-												</td>
-											</tr>
-
-											<tr class="shipping">
-												<th>
-													Processing Fee
-												</th>
-												<td>
-													<strong>
-                                                        <span class="amount">$
-                                                            @if ($cart::subtotal() > 0)
-                                                                {{ $cart::tax() }}
-                                                            @else
-                                                                0.00
-                                                            @endif
-                                                        </span>
-                                                    </strong>
-												</td>
-											</tr>
-											<tr class="total">
-												<th>
-													<strong>Order Total</strong>
-												</th>
-												<td>
-													<strong><span class="amount">$
-														@if (Cart::subtotal() > 0)
-														{{ Cart::total() }}
-														@else
-														0.00
-														@endif
-													</span></strong>
-
-												</td>
-											</tr>
-										</tbody>
-									</table>
+                                    <div class="checkout-totals">
+                                        @include('cart/checkout-totals')
+                                    </div>
 
 									<hr class="tall">
 
@@ -367,62 +307,32 @@
 					</div>
 				</div>
 				<div class="checkoutright col-lg-3 col-md-3 col-sm-3 col-xs-12">
-					<h4 class="title_block">Cart Totals</h4>
-					<table class="table cart-totals">
-						<tbody>
-							<tr class="cart-subtotal">
-								<th>
-									<strong>Cart Subtotal</strong>
-								</th>
-								<td>
-									<strong><span class="amount">${{ $cart::subtotal() }}</span></strong>
-								</td>
-							</tr>
-							<tr class="shipping">
-								<th>
-									Shipping
-								</th>
-								<td>
-									Free Shipping
-								</td>
-							</tr>
-
-							<tr class="shipping">
-								<th>
-									Discount {{ session()->get('coupon')['name'] }}
-								</th>
-								<td>
-									{{ session()->get('coupon')['discount'] }}
-								</td>
-							</tr>
-
-							<tr class="total">
-								<th>
-									<strong>Order Total</strong>
-								</th>
-								<td>
-									<strong><span class="amount">
-										@if (Cart::subtotal() > 0)
-										{{ Cart::total() }}
-										@else
-										0.00
-										@endif</span></strong>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					@if (! session()->has('coupon'))
-					<p>Have a Coupon?</p>
-					<form action="{{ route('coupon.store') }}" method="POST" autocomplete="off">
-						{{ csrf_field() }}
-						<div class="form-group">
-								<input type="text" name="coupon_code" class="form-control" id="coupn_code" autocomplete="off">
-						</div>
-						<div style="margin-top: 10px; float:right;">
-							<button type="submit" class="btn btn-primary" >Apply</button>
-						</div>
-					</form>
-					@endif
+                    <div class="checkout-totals-mini">
+                        @include('cart/checkout-totals-mini')
+                    </div>
+                    <div v-if="is_auth">
+                        <div class="block-coupon" v-if="!coupon.data.id">
+                            <p>Have a Coupon?</p>
+                            <form action="{{ route('coupon.apply') }}" method="POST" autocomplete="off" @submit="applyCoupon($event)">
+                                {{ csrf_field() }}
+                                <div class="form-group" v-bind:class="{'has-error': coupon.errors.length}">
+                                    <input type="text" name="coupon_code" class="form-control" id="coupn_code" autocomplete="off" v-model="coupon.data.code">
+                                    <div class="help-block">
+                                        <span v-for="error in coupon.errors" v-text="error + ' '"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 10px; float:right;">
+                                    <button type="submit" class="btn btn-primary" >Apply</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div v-else>
+                            <span v-text='"Coupon applied " + coupon.data.code'></span>
+                            <button type="button" title="Remove this coupon" class="remove pull-right" @click="cancelCoupon($event)">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
 				</div>
 			</div>
 			</div>
@@ -477,7 +387,14 @@
                     value: '',
                     errors: []
                 },
-            }
+            },
+            coupon: {
+                data: {
+                    code: ''
+                },
+                errors: []
+            },
+            is_auth: {!! $is_auth !!}
         },
         methods: {
             onChangeShippingAddress: function(e)
@@ -550,6 +467,39 @@
                             document.getElementById('complete-order').disabled = false;
                         });
                 });
+            },
+            applyCoupon: function (e) {
+                e.preventDefault();
+                axios.post('{{route('coupon.apply')}}', {'coupon-code': this.coupon.data.code})
+                    .then(function (response) {
+                        this.vmForm.coupon.data = response.data.coupon;
+                        this.vmForm.coupon.errors = [];
+
+                        $('.checkout-totals').html(response.data['totals'])
+                        $('.checkout-totals-mini').html(response.data['totalsMini'])
+                    })
+                    .catch(function (error) {
+                        this.vmForm.coupon.errors = error.response.data.errors['coupon-code'];
+                    })
+            },
+            cancelCoupon: function (e) {
+                e.preventDefault();
+                axios.post('{{route('coupon.cancel')}}', {'coupon-code': this.coupon.data.code})
+                    .then(function (response) {
+                        this.vmForm.coupon.data = {code: ''};
+                        this.vmForm.coupon.errors = [];
+
+                        $('.checkout-totals').html(response.data['totals'])
+                        $('.checkout-totals-mini').html(response.data['totalsMini'])
+                    })
+                    .catch(function (error) {
+                        //this.vmForm.coupon.errors = error.response.data.errors['coupon-code'];
+                    })
+            }
+        },
+        created() {
+            if ({!! $coupon !!}) {
+                this.coupon.data = {!! $coupon !!};
             }
         }
     })

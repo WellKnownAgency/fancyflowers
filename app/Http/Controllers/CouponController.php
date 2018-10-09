@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Cart;
 use App\Coupon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class CouponController extends Controller
 {
@@ -91,5 +94,48 @@ class CouponController extends Controller
       session()->forget('coupon')->put('success','Coupon has been removed');
 
       return back();
+    }
+
+
+    public function apply(Request $request)
+    {
+        Validator::make(
+            $request->all(),
+            [
+                'coupon-code' => 'required|exists:coupons,code'
+            ], [
+                'exists' => 'This coupon does not exist.',
+                'required' => 'The coupon field is required.'
+            ])->validate();
+
+        $couponCode = $request->input('coupon-code');
+        $coupon = Coupon::where('code', $couponCode)->first();
+        Session::put('coupon-code', $couponCode);
+
+        $cart = Cart::class;
+        $totals = view('cart.checkout-totals', compact('cart'))->render();
+        $totalsMini = view('cart.checkout-totals-mini', compact('cart'))->render();
+
+        return response()->json(compact('coupon', 'totals', 'totalsMini'), 200);
+    }
+
+    public function cancel(Request $request)
+    {
+        Validator::make(
+            $request->all(),
+            [
+                'coupon-code' => 'required|exists:coupons,code'
+            ], [
+            'exists' => 'This coupon does not exist.',
+            'required' => 'The coupon field is required.'
+        ])->validate();
+
+        Session::forget('coupon-code');
+
+        $cart = Cart::class;
+        $totals = view('cart.checkout-totals', compact('cart'))->render();
+        $totalsMini = view('cart.checkout-totals-mini', compact('cart'))->render();
+
+        return response()->json(compact('totals', 'totalsMini'), 200);
     }
 }

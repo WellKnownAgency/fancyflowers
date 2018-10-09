@@ -20,6 +20,10 @@ class Coupon extends Model
       } else {
         return 0;
       }
+    }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'coupon_user', 'coupon_id', 'user_id')->withPivot('is_use');
     }
 }

@@ -3,11 +3,45 @@
 namespace App\Classes;
 
 
+use App\Coupon;
 use Gloudemans\Shoppingcart\CartItem;
+use Illuminate\Support\Facades\Session;
 
 
 class Cart extends \Gloudemans\Shoppingcart\Cart
 {
+    public function getCoupon()
+    {
+        if (Session::has('coupon-code')) {
+            $coupon = Coupon::where('code', Session::get('coupon-code'))->first();
+            return $coupon ? $coupon : null;
+        }
+        return null;
+    }
+
+    public function coupon($decimals = null, $decimalPoint = null, $thousandSeperator = null)
+    {
+        $coupon = $this->getCoupon();
+        $value = 0;
+        if ($coupon) {
+            switch ($coupon->type):
+                case 'fixed':
+                    $value = $coupon->value;
+                    break;
+                case 'percent':
+                    $content = $this->getContent();
+                    $summPrice = 0;
+                    foreach ($content as $item) {
+                        $summPrice += $item->price;
+                    }
+                    $value = $summPrice - ($summPrice * $coupon->value / 100);
+                    break;
+
+            endswitch;
+        }
+        return $this->numberFormat($value, $decimals, $decimalPoint, $thousandSeperator);
+    }
+
     /**
      * Get the total tax of the items in the cart.
      *
@@ -20,15 +54,19 @@ class Cart extends \Gloudemans\Shoppingcart\Cart
     {
         $content = $this->getContent();
         $tax = config('cart.tax');
+        $coupon = $this->coupon();
 
         $summPrice = 0;
         foreach ($content as $item) {
             $summPrice += $item->price;
         }
+
+        $summPrice = $summPrice - $coupon;
         $priceTax = $summPrice * $tax / 100 + 0.3 + $summPrice;
         $summPriceTax = $priceTax * $tax / 100 + 0.3;
         return $this->numberFormat($summPriceTax, $decimals, $decimalPoint, $thousandSeperator);
     }
+
 
     /**
      * Get the total price of the items in the cart.
@@ -43,14 +81,10 @@ class Cart extends \Gloudemans\Shoppingcart\Cart
 
         $subtotal = $this->subtotal();
         $tax = $this->tax();
-        return $this->numberFormat($subtotal + $tax, $decimals, $decimalPoint, $thousandSeperator);
-        /*$content = $this->getContent();
+        $coupon = $this->coupon();
 
-        $total = $content->reduce(function ($total, CartItem $cartItem) {
-            return $total + ($cartItem->qty * $cartItem->priceTax);
-        }, 0);
-
-        return $this->numberFormat($total, $decimals, $decimalPoint, $thousandSeperator);*/
+        $total = $subtotal - $coupon + $tax;
+        return $this->numberFormat($total, $decimals, $decimalPoint, $thousandSeperator);
     }
 
     /**
