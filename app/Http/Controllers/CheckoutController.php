@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\CheckoutForm;
+use App\Coupon;
 use App\Rules\Zip;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -51,9 +52,20 @@ class CheckoutController extends Controller
 
         $cart = Cart::class;
 
-       // dd($cart::content());
+        $coupon = Coupon::where('code', Session::get('coupon-code'))->first();
 
-        return view('/checkout', ['formFields' => $formFields, 'cart' => $cart]);
+        $output = [
+            'formFields' => $formFields,
+            'cart' => $cart,
+            'coupon' => $coupon ? $coupon->toJson(JSON_PRETTY_PRINT) : json_encode(null),
+            'is_auth' => json_encode(\Auth::check())
+        ];
+
+       /*if(Session::has('coupon-code')) {
+           $output['coupon'] = json_encode(Coupon::where('code', Session::get('coupon-code'))->first());
+       }*/
+
+        return view('/checkout', $output);
     }
 
     public function checkoutComplete()
@@ -106,7 +118,9 @@ class CheckoutController extends Controller
           ]);
 
           Cart::instance('default')->destroy();
-
+          if (Session::has('coupon-code')) {
+              Session::forget('coupon-code');
+          }
           session()->put('success','Your Purchase was Successfull');
           return redirect()->route('checkout.complete');
         } catch(CardErrorException $e) {
