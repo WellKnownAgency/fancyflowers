@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Jobs\SendNotificationEmail;
 
 class RegisterController extends Controller
 {
@@ -75,6 +76,8 @@ class RegisterController extends Controller
 
         $coupons = Coupon::all();
         $user->coupons()->attach($coupons);
+
+        dispatch(new SendNotificationEmail($user));
 
         return $user;
     }
