@@ -40,24 +40,6 @@
             <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="470" height="627">
           </div>
         </div><!-- end #image-block -->
-        <div id="views_block" class="clearfix">
-          <div id="thumbs_list">
-            <ul id="thumbs_list_frame" class="list-inline">
-              <li class="first">
-                <img src="/images/product/{{ $flower->image2 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
-              </li>
-              <li>
-                <img src="/images/product/{{ $flower->image3 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
-              </li>
-              <li>
-                <img src="/images/product/{{ $flower->image4 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
-              </li>
-              <li class="last">
-                <img src="/images/product/{{ $flower->image5 }}" alt="{{ $flower->name }}" class="img-responsive" width="102" height="136">
-              </li>
-            </ul>
-          </div>
-        </div><!-- end views_block -->
       </div><!-- end pb-left-column -->
       <div class="pb-center-column col-xs-12 col-sm-12 col-md-7">
         <div class="pb-centercolumn">
@@ -128,7 +110,7 @@
           <div id="short_description_block">
             <p>{{ $flower->dscr}}</p>
           </div><!-- end short_description_block -->
-          {{--<div class="box-info-product clearfix">
+          <!--<div class="box-info-product clearfix">
             <div id="attributes">
               <div class="attribute_fieldset clearfix">
                 <label class="attribute_label">Size</label>
@@ -141,7 +123,8 @@
                 </div>
               </div>
             </div>
-          </div>--}}<!-- end box-info-product -->
+          </div>-->
+          <!-- end box-info-product -->
           <div class="box-cart-bottom clearfix">
             <form action="{{ route('cart.store') }}" method="POST">
               {{ csrf_field() }}

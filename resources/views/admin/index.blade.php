@@ -5,101 +5,85 @@
 @extends('admin.main')
 
 @section('content')
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 550px}
-
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-
-    /* On small screens, set height to 'auto' for the grid */
-    @media screen and (max-width: 767px) {
-      .row.content {height: auto;}
-    }
-
-    .well{
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    }
-    
-  </style>
-</head>
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3">
-
+      <div class="card" style="width: 100%;">
+        <div class="card-header">
+          <h3> Website Links </h>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+          <li class="list-group-item"><a href="/" class="list-group-item list-group-item-action">Main Page</a></li>
+          <li class="list-group-item"><a href="collections/all" class="list-group-item list-group-item-action">All Collections</a></li>
+          <li class="list-group-item"><a href="/blog" class="list-group-item list-group-item-action">Blog</a></li>
+          <li class="list-group-item"><a href="/about-us" class="list-group-item list-group-item-action">About Us</a></li>
+          <li class="list-group-item"><a href="/contact-us" class="list-group-item list-group-item-action">Contact Us</a></li>
+          <li class="list-group-item"><a href="/privacy-policy" class="list-group-item list-group-item-action">Privacy</a></li>
+        </ul>
+        </div>
+      </div>
     </div>
     <br>
 
     <div class="col-sm-9">
       <div class="well">
-        <h4>Dashboard</h4>
+        <h4><b>FancyFlowers Dashboard</b></h4>
         <p>Some text..</p>
       </div>
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
             <a class="nav-link" href="/admin/products">Total Products</a>
-            <p></p>
+            <p class="well-count">{{ $flowers->count() }}</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
             <a class="nav-link" href="/admin/collections">Total Collections</a>
-            <p></p>
+            <p class="well-count">{{ $collections->count() }}</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
             <a class="nav-link" href="/admin/posts">Total Posts</a>
-            <p></p>
+            <p class="well-count">{{ $posts->count() }}</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
             <a class="nav-link" href="/admin/users">Total Users</a>
-            <p></p>
+            <p class="well-count">{{ $users->count() }}</p>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Last comments</p>
-            <p>Text</p>
-            <p>Text</p>
+        <div class="col-sm-6">
+          <div class="well com">
+            <a class="nav-link" href="/admin/comments">Last Comments</a>
+          @foreach ($comments as $comment)
+            <p>{{ $comment->body }}</p>
+          @endforeach
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Last messages from contact us</p>
-            <p>Text</p>
-            <p>Text</p>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Some other bullshit</p>
-            <p>Text</p>
-            <p>Text</p>
+        <div class="col-sm-6">
+          <div class="well com">
+            <a class="nav-link" href="/admin/contacts">Last messages</a>
+            @foreach ($contacts as $contact)
+              <p>{{ $contact->body }}</p>
+            @endforeach
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <div class="well">
-            <p>orders summary</p>
+            <p><b>ORDERS SUMMARY :</b></p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="well">
-            <p>$ orders summary</p>
+            <p><b>$ ORDERS SUMMARY :</b></p>
           </div>
         </div>
       </div>

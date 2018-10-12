@@ -43,4 +43,12 @@ class ContactController extends Controller
       $contact = Contact::find($id);
       return view('admin.contacts.show')->withContact($contact);
     }
+
+    public function destroy($id)
+    {
+      $contact = Contact::findOrFail($id);
+      $contact->delete();
+      return redirect('/admin/contacts');
+    }
+
 }

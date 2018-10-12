@@ -15,7 +15,7 @@
         <div class="card-body">
           <a href="/admin/products" class="btn btn-info">All Products</a>
           <br><br>
-          <a href="/admin/products/" class="btn btn-danger">Delete Product</a>
+          <a href="/admin/products/{{ $flower->id }}/delete" class="btn btn-danger delete">Delete Product</a>
         </div>
       </div>
       <br>
@@ -39,14 +39,9 @@
 
        <ul class="list-group list-group-flush">
          <li class="list-group-item">{{ $flower->slug }}</li>
-         <li class="list-group-item">{{ $flower->price1name }} - ${{ $flower->price1}}</li>
-         <li class="list-group-item">{{ $flower->price2name }} - ${{ $flower->price2}}</li>
-         <li class="list-group-item">{{ $flower->price3name }} - ${{ $flower->price3}}</li>
-         <li class="list-group-item"><img src="/images/product/{{ $flower->image1 }}" height="200px"/>
-           <img src="/images/product/{{ $flower->image2 }}" height="200px"/>
-           <img src="/images/product/{{ $flower->image3 }}" height="200px"/>
-           <img src="/images/product/{{ $flower->image4 }}" height="200px"/>
-           <img src="/images/product/{{ $flower->image5 }}" height="200px"/></li>
+         <li class="list-group-item">${{ $flower->price1}}</li>
+         <li class="list-group-item">%{{ $flower->sale}}</li>
+         <li class="list-group-item"><img src="/images/product/{{ $flower->image1 }}" height="200px"/></li>
          <li class="list-group-item">{{ $flower->dscr }}</li>
          <li class="list-group-item">
            @if ($flower->stock == true)

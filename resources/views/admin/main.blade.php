@@ -5,6 +5,7 @@
   <body>
     <div id="all">
       @include('admin/partials/_nav')
+      <br>
       @yield('content')
     </div>
     @include('admin/partials/_js')
