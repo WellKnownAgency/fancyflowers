@@ -111,9 +111,12 @@ class CheckoutController extends Controller
                'Last Name of the Receiver' => $request->input('lastname'),
                'Phone Number' => $request->input('phone'),
                'Street' => $request->input('street'),
+               'Apt' = > $request->input('apartment')
                'City' => $request->input('city'),
                'State' => $request->input('state'),
                'Zip Code' => $request->input('zipcode'),
+               'Delivery Day' => $request->input('date'),
+               'Message' => $request->input('additional')
             ],
           ]);
 
