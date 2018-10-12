@@ -26,12 +26,11 @@
               <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Price 1</th>
-                <th scope="col">Price 2</th>
-                <th scope="col">Price 3</th>
                 <th scope="col">Created</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
+                <th scope="col">Sales</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -40,8 +39,6 @@
               <tr>
                 <th scope="row">{{ $flower->name }}</th>
                 <td>${{ $flower->price1 }}</td>
-                <td>${{ $flower->price2 }}</td>
-                <td>${{ $flower->price3 }}</td>
                 <td>{{ $flower->created_at }}</td>
                 <td>
                   @if ($flower->stock == true)
@@ -64,9 +61,16 @@
                   <span class="badge badge-danger">Not New</span>
                   @endif
                 </td>
+                <td>
+                  @if ($flower->sale == true)
+                  <span class="badge badge-success">Sale {{ $flower->sale}}% </span>
+                  @else
+                  <span class="badge badge-danger">Not on Sale</span>
+                  @endif
+                </td>
                 <td class="text-right">
                   <a href="{{ route('products.show', $flower->id) }}" class="btn btn-success btn-sm">View</a>
-                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                  <a href="/admin/products/{{ $flower->id }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
                 </td>
               </tr>
               @endforeach

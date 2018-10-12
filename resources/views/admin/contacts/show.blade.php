@@ -15,7 +15,7 @@
         <div class="card-body">
           <a href="/admin/contacts" class="btn btn-info">All Contacts</a>
           <br><br>
-          <a href="/admin/contacts/" class="btn btn-danger">Delete Contact</a>
+          <a href="/admin/contacts/{{ $contact->id }}/delete" class="btn btn-danger delete">Delete Contact</a>
         </div>
       </div>
       <br>

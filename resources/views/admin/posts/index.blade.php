@@ -44,7 +44,7 @@
                   <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">View</a>
                 </td>
                 <td>
-                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                  <a href="/admin/posts/{{ $post->id }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
                 </td>
               </tr>
               @endforeach

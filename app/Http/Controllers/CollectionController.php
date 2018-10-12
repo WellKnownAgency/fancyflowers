@@ -315,6 +315,8 @@ class CollectionController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $collection = Collection::findOrFail($id);
+      $collection->delete();
+      return redirect('/admin/collections');
     }
 }

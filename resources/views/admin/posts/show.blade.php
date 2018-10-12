@@ -15,7 +15,7 @@
         <div class="card-body">
           <a href="/admin/posts" class="btn btn-info">All Posts</a>
           <br><br>
-          <a href="/admin/posts/" class="btn btn-danger">Delete Post</a>
+          <a href="/admin/posts/{{ $post->id }}/delete" class="btn btn-danger delete">Delete Post</a>
         </div>
       </div>
       <br>
