@@ -116,7 +116,7 @@ class CheckoutController extends Controller
                'State' => $request->input('state'),
                'Zip Code' => $request->input('zipcode'),
                'Delivery Day' => $request->input('date'),
-               'Message' => $request->input('additional')
+               'Message' => $request->input('additional'),
             ],
           ]);
 
