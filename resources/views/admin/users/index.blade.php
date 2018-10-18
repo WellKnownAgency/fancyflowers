@@ -29,6 +29,7 @@
                 <th scope="col">E-mail</th>
                 <th scope="col">Number</th>
                 <th scope="col">Registration date</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -40,7 +41,7 @@
                 <td>{{ $user->phonenumber }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td class="text-right">
-                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                  <a href="/admin/users/{{ $user->id }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
                 </td>
               </tr>
               @endforeach

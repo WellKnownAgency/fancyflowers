@@ -40,7 +40,7 @@
                 <td>{{ $comment->created_at }}</td>
                 <td class="text-right">
                   <a href="{{route('comments.show', $comment->id)}}" class="btn btn-success btn-sm">View</a>
-                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                  <a href="/admin/comments/{{ $comment->id }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
                 </td>
               </tr>
               @endforeach

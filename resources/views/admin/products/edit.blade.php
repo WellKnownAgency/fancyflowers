@@ -58,28 +58,8 @@
                 <input type="number" name="price1" class="form-control" id="price1" placeholder="Price" value="{{$flower->price1}}">
               </div>
               <div class="form-group col-md-6">
-                <label for="price1name">Name of the Price 1</label>
-                <input type="text" name="price1name" class="form-control" id="price1name" placeholder="Price 1 Name" value="{{$flower->price1name}}">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="price2">Product Price 2 ($)</label>
-                <input type="number" name="price2" class="form-control" id="price2" placeholder="Price" value="{{$flower->price2}}">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="price2name">Name of the Price 2</label>
-                <input type="text" name="price2name" class="form-control" id="price2name" placeholder="Price 2 Name" value="{{$flower->price2name}}">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="price3">Product Price 3 ($)</label>
-                <input type="number" name="price3" class="form-control" id="price3" placeholder="Price" value="{{$flower->price3}}">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="price3name">Name of the Price 3</label>
-                <input type="text" name="price3name" class="form-control" id="price3name" placeholder="Price 3 Name" value="{{$flower->price3name}}">
+                <label for="sale">Sale (%)</label>
+                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
               </div>
             </div>
             <div class="form-group">
@@ -107,26 +87,6 @@
             <div class="form-group">
               <label for="image1">Uplaod Image 1 (600x800)</label>
               <input type="file" class="form-control-file" name="image1" id="image1">
-            </div>
-            <hr>
-            <div class="form-group">
-              <label for="image2">Upload Image 2 (600x800)</label>
-              <input type="file" class="form-control-file" name="image2" id="image2">
-            </div>
-            <hr>
-            <div class="form-group">
-              <label for="image3">Upload Image 3 (600x800)</label>
-              <input type="file" class="form-control-file" name="image3" id="image3">
-            </div>
-            <hr>
-            <div class="form-group">
-              <label for="image4">Upload Image 4 (600x800)</label>
-              <input type="file" class="form-control-file" name="image4" id="image4">
-            </div>
-            <hr>
-            <div class="form-group">
-              <label for="image5">Upload Image 5 (600x800)</label>
-              <input type="file" class="form-control-file" name="image5" id="image5">
             </div>
             <hr>
             <button type="submit" class="btn btn-success">Save Changes</button>

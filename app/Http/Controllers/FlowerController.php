@@ -54,11 +54,7 @@ class FlowerController extends Controller
          $flower->best = $request->best;
          $flower->new = $request->new;
          $flower->price1 = $request->price1;
-         $flower->price1name = $request->price1name;
-         $flower->price2 = $request->price2;
-         $flower->price2name = $request->price2name;
-         $flower->price3 = $request->price3;
-         $flower->price3name = $request->price3name;
+         $flower->sale = $request->sale;
          $flower->dscr = $request->dscr;
          $flower->lgdscr = $request->lgdscr;
          if ($request->hasFile('image1')) {
@@ -67,34 +63,6 @@ class FlowerController extends Controller
            $location = public_path('images/product/' . $filename);
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image1 = $filename;
-         }
-         if ($request->hasFile('image2')) {
-           $image = $request->file('image2');
-           $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/product/' . $filename);
-           Image::make($image)->resize(600, 800)->save($location);
-           $flower->image2 = $filename;
-         }
-         if ($request->hasFile('image3')) {
-           $image = $request->file('image3');
-           $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/product/' . $filename);
-           Image::make($image)->resize(600, 800)->save($location);
-           $flower->image3 = $filename;
-         }
-         if ($request->hasFile('image4')) {
-           $image = $request->file('image4');
-           $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/product/' . $filename);
-           Image::make($image)->resize(600, 800)->save($location);
-           $flower->image4 = $filename;
-         }
-         if ($request->hasFile('image5')) {
-           $image = $request->file('image5');
-           $filename = time() . $image->getClientOriginalName();
-           $location = public_path('images/product/' . $filename);
-           Image::make($image)->resize(600, 800)->save($location);
-           $flower->image5 = $filename;
          }
 
          $flower->save();
@@ -146,7 +114,7 @@ class FlowerController extends Controller
      $flower->best = $request->input('best');
      $flower->new = $request->input('new');
      $flower->price1 = $request->input ('price1');
-     $flower->price1name = $request->input ('price1name');
+     $flower->sale = $request->input ('sale');
      $flower->dscr = $request->input ('dscr');
      $flower->lgdscr = $request->input ('lgdscr');
 
@@ -160,34 +128,7 @@ class FlowerController extends Controller
        Image::make($image)->resize(600, 800)->save($location);
        $flower->image1 = $filename;
      }
-     if ($request->hasFile('image2')) {
-       $image = $request->file('image2');
-       $filename = time() . $image->getClientOriginalName();
-       $location = public_path('images/product/' . $filename);
-       Image::make($image)->resize(600, 800)->save($location);
-       $flower->image2 = $filename;
-     }
-     if ($request->hasFile('image3')) {
-       $image = $request->file('image3');
-       $filename = time() . $image->getClientOriginalName();
-       $location = public_path('images/product/' . $filename);
-       Image::make($image)->resize(600, 800)->save($location);
-       $flower->image3 = $filename;
-     }
-     if ($request->hasFile('image4')) {
-       $image = $request->file('image4');
-       $filename = time() . $image->getClientOriginalName();
-       $location = public_path('images/product/' . $filename);
-       Image::make($image)->resize(600, 800)->save($location);
-       $flower->image4 = $filename;
-     }
-     if ($request->hasFile('image5')) {
-       $image = $request->file('image5');
-       $filename = time() . $image->getClientOriginalName();
-       $location = public_path('images/product/' . $filename);
-       Image::make($image)->resize(600, 800)->save($location);
-       $flower->image5 = $filename;
-     }
+
      $flower->save();
      if (isset($request->collections)) {
               $flower->collections()->sync($request->collections);
@@ -205,7 +146,9 @@ class FlowerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flower = Flower::findOrFail($id);
+        $flower->delete();
+        return redirect()->route('products.index');
     }
 
     public function getSingle($slug) {

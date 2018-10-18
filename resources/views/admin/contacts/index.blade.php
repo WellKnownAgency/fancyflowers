@@ -42,7 +42,7 @@
                 <td>{{ $contact->created_at }}</td>
                 <td class="text-right">
                   <a href="{{route('contacts.show', $contact->id)}}" class="btn btn-success btn-sm">View</a>
-                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                  <a href="/admin/contacts/{{ $contact->id }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
                 </td>
               </tr>
               @endforeach
