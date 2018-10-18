@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Classes\CheckoutForm;
 use App\Coupon;
+use App\Notifications\newOrderManager;
+use App\Notifications\newOrderUser;
 use App\Rules\Zip;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -61,10 +64,6 @@ class CheckoutController extends Controller
             'is_auth' => json_encode(\Auth::check())
         ];
 
-       /*if(Session::has('coupon-code')) {
-           $output['coupon'] = json_encode(Coupon::where('code', Session::get('coupon-code'))->first());
-       }*/
-
         return view('/checkout', $output);
     }
 
@@ -91,9 +90,8 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-
-        $content = Cart::content()->map(function ($item) {
+        $cart = Cart::class;
+        $content = $cart::content()->map(function ($item) {
           return $item->model->name;
         })->values()->toJson();
 
@@ -117,6 +115,29 @@ class CheckoutController extends Controller
             ],
           ]);
 
+          $extra = [
+              'First Name' => $request->input('firstname'),
+              'Last Name' => $request->input('lastname'),
+              'Email' => $request->email,
+              'Phone Number' => $request->input('phone'),
+              'Street' => $request->input('street'),
+              'City' => $request->input('city'),
+              'State' => $request->input('state'),
+              'Zip Code' => $request->input('zipcode'),
+          ];
+
+          // Send all managers
+            $managers = Admin::all();
+            \Notification::send($managers, new newOrderManager($cart, $extra));
+
+            // Send current user
+          if ($user = \Auth::user()) {
+              $user->notify(new newOrderUser($cart));
+          } else {
+              \Notification::route('mail', $request->email)
+                  ->notify(new newOrderUser($cart));
+          }
+
           Cart::instance('default')->destroy();
           if (Session::has('coupon-code')) {
               Session::forget('coupon-code');
@@ -124,7 +145,6 @@ class CheckoutController extends Controller
           session()->put('success','Your Purchase was Successfull');
           return redirect()->route('checkout.complete');
         } catch(CardErrorException $e) {
-
           session()->put('error','Error. ' . $e->getMessage());
           return back();
         };
