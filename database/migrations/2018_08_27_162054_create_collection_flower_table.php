@@ -17,9 +17,9 @@ class CreateCollectionFlowerTable extends Migration
             $table->increments('id');
 
             $table->integer('collection_id')->unsigned();
-            $table->foreign('collection_id')->references('id')->on('collections')->onDelete('cascade');;
+            $table->foreign('collection_id')->references('id')->on('collections')->onDelete('cascade');
             $table->integer('flower_id')->unsigned();
-            $table->foreign('flower_id')->references('id')->on('flowers')->onDelete('cascade');;
+            $table->foreign('flower_id')->references('id')->on('flowers')->onDelete('cascade');
         });
     }
 

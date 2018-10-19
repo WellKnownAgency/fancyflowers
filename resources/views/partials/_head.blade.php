@@ -53,3 +53,4 @@
 
     gtag('config', 'UA-126213276-1');
   </script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
