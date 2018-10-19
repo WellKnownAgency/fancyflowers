@@ -285,11 +285,12 @@
                       <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive image-effect" width="480" height="640">
                     </a>
                     @if($flower->new == '1')
-                        <span class="label-new label">New</span>
-                    @endif
-                    @if($flower->sale)
-                        <span class="label-sale label">Sale</span>
-                        <span class="label-reduction label">-{{$flower->sale}}%</span>
+                    <span class="label-new label">New</span>
+                    <span class="label-sale label">Sale</span>
+                    <span class="label-reduction label">-5%</span>
+                    @else
+                    <span class="label-sale label" style="top: 15;">Sale</span>
+                    <span class="label-reduction label">-5%</span>
                     @endif
                   </div>
                   <div class="box-buttons">
@@ -297,7 +298,7 @@
                       {{ csrf_field() }}
                       <input type="hidden" name="id" value="{{ $flower->id }}">
                       <input type="hidden" name="name" value="{{ $flower->name }}">
-                      <input type="hidden" name="price" value="{{ $flower->price }}">
+                      <input type="hidden" name="price1" value="{{ $flower->price1 }}">
                       <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
                     </form>
                     <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
@@ -313,12 +314,8 @@
                       </a>
                     </h5>
                     <div class="content_price">
-                      <span class="price product-price">${{ $flower->price }}</span>
-                      <span class="old-price product-price">
-                        @if($flower->old_price)
-                            ${{ $flower->old_price }}
-                        @endif
-                      </span>
+                      <span class="price product-price">${{ $flower->price1 }}</span>
+                      <span class="old-price product-price">${{ $flower->price1 }}</span>
                     </div>
                     <div class="product_comments clearfix">
                       <div class="product-rating">

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Checkout;
+use App\Admin;
 use App\Classes\CheckoutForm;
 use App\Coupon;
+use App\Notifications\newOrderManager;
+use App\Notifications\newOrderUser;
 use App\Rules\Zip;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -13,7 +15,6 @@ use Stripe;
 use Cart;
 use Illuminate\Http\Request;
 use Cartalyst\Stripe\Exception\CardErrorException;
-use App\Jobs\SendCheckoutEmail;
 
 class CheckoutController extends Controller
 {
@@ -63,10 +64,6 @@ class CheckoutController extends Controller
             'is_auth' => json_encode(\Auth::check())
         ];
 
-       /*if(Session::has('coupon-code')) {
-           $output['coupon'] = json_encode(Coupon::where('code', Session::get('coupon-code'))->first());
-       }*/
-
         return view('/checkout', $output);
     }
 
@@ -93,18 +90,12 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-
-
-        $content = Cart::content()->map(function ($item) {
+        $cart = Cart::class;
+        $content = $cart::content()->map(function ($item) {
           return $item->model->name;
         })->values()->toJson();
 
         try {
-          $checkout = Checkout::create([
-              'firstname' => $data['firstname'],
-          ]);
-
           $charge = Stripe::charges()->create([
             'amount' => Cart::total(),
             'currency' => 'USD',
@@ -118,26 +109,42 @@ class CheckoutController extends Controller
                'Last Name of the Receiver' => $request->input('lastname'),
                'Phone Number' => $request->input('phone'),
                'Street' => $request->input('street'),
-               'Apt' => $request->input('apartment'),
                'City' => $request->input('city'),
                'State' => $request->input('state'),
                'Zip Code' => $request->input('zipcode'),
-               'Delivery Day' => $request->input('date'),
-               'Message' => $request->input('additional'),
             ],
           ]);
+
+          $extra = [
+              'First Name' => $request->input('firstname'),
+              'Last Name' => $request->input('lastname'),
+              'Email' => $request->email,
+              'Phone Number' => $request->input('phone'),
+              'Street' => $request->input('street'),
+              'City' => $request->input('city'),
+              'State' => $request->input('state'),
+              'Zip Code' => $request->input('zipcode'),
+          ];
+
+          // Send all managers
+            $managers = Admin::all();
+            \Notification::send($managers, new newOrderManager($cart, $extra));
+
+            // Send current user
+          if ($user = \Auth::user()) {
+              $user->notify(new newOrderUser($cart));
+          } else {
+              \Notification::route('mail', $request->email)
+                  ->notify(new newOrderUser($cart));
+          }
 
           Cart::instance('default')->destroy();
           if (Session::has('coupon-code')) {
               Session::forget('coupon-code');
           }
           session()->put('success','Your Purchase was Successfull');
-
-          dispatch(new SendCheckoutEmail($checkout));
-
-          return redirect()->route('checkout.complete')->$checkout;
+          return redirect()->route('checkout.complete');
         } catch(CardErrorException $e) {
-
           session()->put('error','Error. ' . $e->getMessage());
           return back();
         };

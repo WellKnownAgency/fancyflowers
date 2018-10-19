@@ -56,56 +56,66 @@
           <div class="topheader-navholder">
             <div class="topheader-navholder-lf">
               <div id="block-cart" class="block-cart dropdown-over pull-right">
-                <div data-toggle="dropdown" class="dropdown-title">
-                  <a href="{{ route('cart.index') }}" title="Shopping cart">
-                    <span class="title-cart"><i class="zmdi zmdi-shopping-basket"></i></span>
-                    <span class="ajax_cart_quantity">{{ Cart::instance('default')->count() }}</span>
-                  </a>
-                </div>
-                <div class="dropdown-content">
-                  <div class="cart_block_list">
-                    <table class="cart">
-                      <tbody>
-                        @if (Cart::content() != null)
-                          @foreach (Cart::content() as $item)
+                  @if (Cart::instance('default')->count() < 1)
+                      <div class="dropdown-title">
+                          <a>
+                              <span class="title-cart"><i class="zmdi zmdi-shopping-basket"></i></span>
+                              <span class="ajax_cart_quantity">{{ Cart::instance('default')->count() }}</span>
+                          </a>
+                      </div>
+                  @else
+                      <div data-toggle="dropdown" class="dropdown-title">
+                          <a href="{{ route('cart.index') }}" title="Shopping cart">
+                              <span class="title-cart"><i class="zmdi zmdi-shopping-basket"></i></span>
+                              <span class="ajax_cart_quantity">{{ Cart::instance('default')->count() }}</span>
+                          </a>
+                      </div>
+                    <div class="dropdown-content">
+                      <div class="cart_block_list">
+                        <table class="cart">
+                          <tbody>
+                            @if (Cart::content() != null)
+                              @foreach (Cart::content() as $item)
+                                <tr>
+                                  <td class="product-thumbnail">
+                                    <a href="page-detail.html">
+                                      <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
+                                    </a>
+                                  </td>
+                                  <td class="product-name">
+                                    <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+                                    <br><span class="amount"><strong>${{ $item->model->price }}</strong></span>
+                                  </td>
+                                  <td class="product-actions">
+                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                      {{ csrf_field() }}
+                                      {{ method_field('DELETE') }}
+                                      <button type="submit" title="Remove this item" class="remove" href="#">
+                                        <i class="fa fa-times"></i>
+                                      </button>
+                                    </form>
+                                  </td>
+                                </tr>
+
+                              @endforeach
+                            @else
+                            <tr>Cart is Empty</tr>
+
+                            @endif
                             <tr>
-                              <td class="product-thumbnail">
-                                <a href="page-detail.html">
-                                  <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
-                                </a>
-                              </td>
-                              <td class="product-name">
-                                <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
-                                <br><span class="amount"><strong>${{ $item->model->price }}</strong></span>
-                              </td>
-                              <td class="product-actions">
-                                <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                                  {{ csrf_field() }}
-                                  {{ method_field('DELETE') }}
-                                  <button type="submit" title="Remove this item" class="remove" href="#">
-                                    <i class="fa fa-times"></i>
-                                  </button>
-                                </form>
+                              <td class="actions" colspan="3">
+                                <div class="actions-continue">
+                                  <a href="{{ route('cart.index') }}" class="btn btn-view-all" >View All</a>
+                                  <a href="{{ route('checkout.index') }}" class="btn pull-right btn-checkout">Checkout<i class="fa fa-angle-right ml-xs"></i></a>
+                                </div>
                               </td>
                             </tr>
-
-                          @endforeach
-                        @else
-                        <tr>Cart is Empty</tr>
-
-                        @endif
-                        <tr>
-                          <td class="actions" colspan="3">
-                            <div class="actions-continue">
-                              <a href="{{ route('cart.index') }}" class="btn btn-view-all" >View All</a>
-                              <a href="{{ route('checkout.index') }}" class="btn pull-right btn-checkout">Checkout<i class="fa fa-angle-right ml-xs"></i></a>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div><!-- end dropdown-content -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- end dropdown-content -->
+                  @endif
               </div><!-- end blockcart_top -->
 
             </div><!-- end topheader-navholder-lf -->

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Jobs\SendNotificationEmail;
+use App\Rules\Captcha;
 
 class RegisterController extends Controller
 {
@@ -54,7 +54,9 @@ class RegisterController extends Controller
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'phonenumber' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
+            'g-recaptcha-response' => new Captcha()
         ]);
     }
 
@@ -76,8 +78,6 @@ class RegisterController extends Controller
 
         $coupons = Coupon::all();
         $user->coupons()->attach($coupons);
-
-        dispatch(new SendNotificationEmail($user));
 
         return $user;
     }

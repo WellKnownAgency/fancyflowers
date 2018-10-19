@@ -513,7 +513,7 @@ $(function () {
 
 <script>
 // Create a Stripe client.
-var stripe = Stripe('pk_test_kNME1Uabtx5fXc1bbqpxyJSW');
+var stripe = Stripe('{{ env('STRIPE_API_KEY') }}');
 
 // Create an instance of Elements.
 var elements = stripe.elements();
