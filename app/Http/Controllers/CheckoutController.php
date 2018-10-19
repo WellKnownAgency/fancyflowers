@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Checkout;
 use App\Classes\CheckoutForm;
 use App\Coupon;
 use App\Rules\Zip;
@@ -12,6 +13,7 @@ use Stripe;
 use Cart;
 use Illuminate\Http\Request;
 use Cartalyst\Stripe\Exception\CardErrorException;
+use App\Jobs\SendCheckoutEmail;
 
 class CheckoutController extends Controller
 {
@@ -93,11 +95,16 @@ class CheckoutController extends Controller
     {
         //dd($request->all());
 
+
         $content = Cart::content()->map(function ($item) {
           return $item->model->name;
         })->values()->toJson();
 
         try {
+          $checkout = Checkout::create([
+              'firstname' => $data['firstname'],
+          ]);
+
           $charge = Stripe::charges()->create([
             'amount' => Cart::total(),
             'currency' => 'USD',
@@ -125,7 +132,10 @@ class CheckoutController extends Controller
               Session::forget('coupon-code');
           }
           session()->put('success','Your Purchase was Successfull');
-          return redirect()->route('checkout.complete');
+
+          dispatch(new SendCheckoutEmail($checkout));
+
+          return redirect()->route('checkout.complete')->$checkout;
         } catch(CardErrorException $e) {
 
           session()->put('error','Error. ' . $e->getMessage());

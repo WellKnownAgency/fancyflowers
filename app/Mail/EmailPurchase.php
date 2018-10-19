@@ -7,19 +7,19 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EmailVerification extends Mailable
+class EmailPurchase extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $user;
+    protected $checkout;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($checkout)
     {
-        $this->user = $user;
+        $this->checkout = $checkout;
     }
 
     /**
@@ -29,9 +29,8 @@ class EmailVerification extends Mailable
      */
     public function build()
     {
-      return $this->subject('Подтверждение Email')->view('email.email')->with([
-      'email_token' => $this->user->email_token,
-      'name' => $this->user->name,
+      return $this->subject('Thank you for your order')->view('email.checkout')->with([
+      'firstname' => $this->checkout->firstname,
       ]);
     }
 }
