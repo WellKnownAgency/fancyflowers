@@ -47,7 +47,7 @@
     font-size: 18px;
   }
 
-  .well h4{
+  .well h2{
     color:#FF8C94;
   }
 
@@ -55,6 +55,10 @@
     color:#000;
     font-weight: bolder;
       text-align: center;
+  }
+
+  .active-nav{
+    color:#FF8C94;
   }
 
   .well-count{

@@ -13,36 +13,41 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="/admin">Home</a>
+        <a class="nav-link {{ Request::is('admin') ?"active-nav" : ""}}" href="/admin">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/products">
+        <a class="nav-link {{ Request::is('admin/products') ?"active-nav" : ""}}" href="/admin/products">
           Products
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('/admin/collections') ?"active-nav" : ""}}" href="/admin/collections">
+        <a class="nav-link {{ Request::is('admin/collections') ?"active-nav" : ""}}" href="/admin/collections">
           Collections
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/posts">
+        <a class="nav-link {{ Request::is('admin/posts') ?"active-nav" : ""}}" href="/admin/posts">
           Posts
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/users">
+        <a class="nav-link {{ Request::is('admin/users') ?"active-nav" : ""}}" href="/admin/users">
           Users
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/comments">
+        <a class="nav-link {{ Request::is('admin/comments') ?"active-nav" : ""}}" href="/admin/comments">
           Comments
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/contacts">
+        <a class="nav-link {{ Request::is('admin/contacts') ?"active-nav" : ""}}" href="/admin/contacts">
           Contacts
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('admin/coupons') ?"active-nav" : ""}}" href="/admin/coupons">
+          Coupons
         </a>
       </li>
     </ul>

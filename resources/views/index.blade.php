@@ -7,7 +7,7 @@
 @section('content')
 <div class="tiva-slideshow-wrapper">
   <div id="tiva-slideshow" class="nivoSlider">
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h10.jpg" title="#caption1" alt="Slideshow image"></a>
+    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h12.jpg" title="#caption1" alt="Slideshow image"></a>
     <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide2-h11.jpg" title="#caption2" alt="Slideshow image"></a>
   </div>
 
