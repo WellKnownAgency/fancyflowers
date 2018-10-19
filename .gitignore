@@ -16,3 +16,4 @@ yarn-error.log
 docker-compose.yml
 Makefile
 _ide_helper.php
+.DS_Store
