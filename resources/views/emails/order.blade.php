@@ -30,7 +30,7 @@
              width="120" height="90"/>
     </a>
     <!-- body -->
-    <table class="body-wrap" style="padding:0 20px 20px 20px;width: 100%;background:#f6f6f6;margin-top:10px;">
+    <table class="body-wrap" style="padding:0 15px 15px 15px;width: 100%;background:#f6f6f6;margin-top:10px;">
         <tr>
             <td></td>
             <td class="container" style="border:1px solid #f0f0f0;background:#ffffff;width:800px;margin:auto;">
@@ -40,7 +40,7 @@
                             <td>
                                 @yield('title')
 
-                                <table style="width:90%;margin:auto;">
+                                <table style="width:95%;margin:auto;">
                                     <thead>
                                     <tr>
                                         <th>&nbsp;</th>
