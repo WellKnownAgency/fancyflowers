@@ -15,3 +15,4 @@ yarn-error.log
 /docker
 docker-compose.yml
 Makefile
+_ide_helper.php
