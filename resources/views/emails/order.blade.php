@@ -20,6 +20,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{'site_name' | option}</title>
+    <style>
+
+    </style>
 </head>
 <body style="{{$style['body']}};">
 <div style="height:100%;padding-top:20px;background:#f6f6f6;">
@@ -30,24 +33,24 @@
              width="120" height="90"/>
     </a>
     <!-- body -->
-    <table class="body-wrap" style="padding:0 20px 20px 20px;width: 100%;background:#f6f6f6;margin-top:10px;">
+    <table class="body-wrap" style="padding:0 5px 5px 5px;width: 100%;background:#f6f6f6;margin-top:10px;max-width:800px;margin:auto;">
         <tr>
             <td></td>
-            <td class="container" style="border:1px solid #f0f0f0;background:#ffffff;width:800px;margin:auto;">
+            <td class="container" style="border:1px solid #f0f0f0;background:#ffffff;">
                 <div class="content">
                     <table style="width:100%;">
                         <tr>
                             <td>
                                 @yield('title')
 
-                                <table style="width:90%;margin:auto;">
+                                <table style="width:95%;margin:auto;">
                                     <thead>
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th style="{{$style['th']}}">Product</th>
-                                        <th style="{{$style['th']}}">Price</th>
-                                        <th style="{{$style['th']}}">Quantity</th>
-                                        <th style="{{$style['th']}}">Total</th>
+                                        <th style="{{$style['th']}} text-align: center;">Price</th>
+                                        <th style="{{$style['th']}} text-align: center;">Quantity</th>
+                                        <th style="{{$style['th']}} text-align: center;">Total</th>
                                     </tr>
                                     </thead>
 
@@ -57,21 +60,21 @@
                                                 <img src="{{ env('APP_URL') }}/images/product/{{ $product->model->image1 }}"
                                                      alt="{{ $product->model->name }}"
                                                      title="{{ $product->model->name }}"
-                                                     width="120" height="90"/>
+                                                     width="75"/>
                                             </td>
                                             <td style="{{$style['th']}}">
                                                 <a href="{{ env('APP_URL') }}/product/{{ $product->model->slug }}" style="{{$style['a']}}">{{ $product->model->name }}</a>
                                             </td>
-                                            <td style="{{$style['th']}}">$ {{ $product->model->price }}</td>
-                                            <td style="{{$style['th']}}">{{ $product->qty }}</td>
-                                            <td style="{{$style['th']}}">${{ $product->model->price * $product->qty }}</td>
+                                            <td style="{{$style['th']}} text-align: center;">${{ $product->model->price }}</td>
+                                            <td style="{{$style['th']}} text-align: center;">{{ $product->qty }}</td>
+                                            <td style="{{$style['th']}} text-align: center;">${{ $product->model->price * $product->qty }}</td>
                                         </tr>
                                     @endforeach
                                     <tfoot>
                                     <tr>
-                                        <th colspan="3"></th>
-                                        <th style="{{$style['th']}}">{{ $cart::count() }}</th>
-                                        <th style="{{$style['th']}}">$ {{ $cart::subtotal() }}</th>
+                                        <th colspan="3" style="border-top: 1px solid #eeeeee;"></th>
+                                        <th style="{{$style['th']}} border-top: 1px solid #eeeeee;text-align: center;padding-top: 5px;">{{ $cart::count() }}</th>
+                                        <th style="{{$style['th']}} border-top: 1px solid #eeeeee;text-align: center;padding-top: 5px;">${{ $cart::subtotal() }}</th>
                                     </tr>
                                     </tfoot>
                                 </table>
