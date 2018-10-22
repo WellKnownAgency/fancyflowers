@@ -10,7 +10,7 @@ use App\Post;
 use App\User;
 use App\Comment;
 use App\Contact;
-
+use App\Coupon;
 
 class AdminPageController extends Controller
 {
@@ -21,6 +21,7 @@ class AdminPageController extends Controller
     $users = User::get();
     $comments = Comment::take(3)->get();
     $contacts = Contact::take(3)->get();
-      return view('admin/index')->withFlowers($flowers)->withCollections($collections)->withPosts($posts)->withUsers($users)->withComments($comments)->withContacts($contacts);
+    $coupons = Coupon::take(3)->get();
+      return view('admin/index')->withFlowers($flowers)->withCollections($collections)->withPosts($posts)->withUsers($users)->withComments($comments)->withContacts($contacts)->withCoupons($coupons);
   }
 }

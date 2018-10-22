@@ -28,8 +28,7 @@
 
     <div class="col-sm-9">
       <div class="well">
-        <h4><b>FancyFlowers Dashboard</b></h4>
-        <p>Some text..</p>
+        <h2><b>FancyFlowers Dashboard</b></h2>
       </div>
       <div class="row">
         <div class="col-sm-3">
@@ -58,7 +57,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <div class="well com">
             <a class="nav-link" href="/admin/comments">Last Comments</a>
           @foreach ($comments as $comment)
@@ -66,11 +65,25 @@
           @endforeach
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <div class="well com">
             <a class="nav-link" href="/admin/contacts">Last messages</a>
             @foreach ($contacts as $contact)
               <p>{{ $contact->body }}</p>
+            @endforeach
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well com">
+            <a class="nav-link" href="/admin/coupons">Our Coupons</a>
+            @foreach ($coupons as $coupon)
+              <p>{{ $coupon->code }} | {{ $coupon->value }}
+                @if($coupon->type == 'fixed')
+                <span>$</span>
+                @else
+                <span>%</span>
+                @endif
+              </p>
             @endforeach
           </div>
         </div>

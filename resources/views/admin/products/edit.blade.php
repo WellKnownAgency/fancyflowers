@@ -59,7 +59,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="sale">Sale (%)</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
+                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale" value="{{$flower->sale}}">
               </div>
             </div>
             <div class="form-group">
