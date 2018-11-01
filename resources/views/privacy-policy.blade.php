@@ -81,8 +81,5 @@
   			  <h2></h2>
   			  	<p></p>
 
-  			<h2>Credit & Contact Information</h2>
-  							<p>This privacy policy was created at <a style="color:inherit;text-decoration:none;" href="https://termsandconditionstemplate.com/privacy-policy-generator/" title="Privacy policy template generator" target="_blank">termsandconditionstemplate.com</a>. If you have any questions about this Privacy Policy, please contact us via <a href="mailto:">email</a> or <a href="tel:2679723986">phone</a>.</p>
-  					  </div> <!-- end container -->
 </div><!--end columns -->
 @stop

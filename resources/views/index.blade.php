@@ -151,8 +151,8 @@
                 <i class="zmdi zmdi-truck"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Free shipping" href="#">Free shipping</a></h4>
-                <p>Guaranteed delivery in 3 days</p>
+                <h4><a title="Free shipping" href="">Free shipping</a></h4>
+                <p>Guaranteed delivery in same day</p>
               </div>
             </div>
           </div><!--end services-item-->
@@ -161,11 +161,11 @@
           <div class="services-item services-item2">
             <div class="media">
               <div class="icon-box">
-                <i class="zmdi zmdi-mail-reply-all"></i>
+                <i class="zmdi zmdi-flower-alt"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Exchanges & returns" href="#">Exchanges & returns</a></h4>
-                <p>100% money back within 30 days</p>
+                <h4><a title="Exchanges & returns" href="/contact-us">Customized Orders</a></h4>
+                <p>Contact Us to Create Your Customized Bouquet</p>
               </div>
             </div>
           </div><!--end services-item-->
@@ -177,8 +177,8 @@
                 <i class="zmdi zmdi-comments"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Online support" href="#">Online support</a></h4>
-                <p>Live chat or call us 24/7</p>
+                <h4><a title="Online support" href="/contact-us">Online support</a></h4>
+                <p>Text or call us 24/7</p>
               </div>
             </div>
           </div><!--end services-item-->

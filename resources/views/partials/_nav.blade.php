@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8">
           <div class="block-callus pull-left hidden-xs">
-            <span>Call us now:        <img src="images/language/en.jpg" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12673562820" style="" class="nav_phone">+1 267 356-2820</a>  /
-              <img src="images/language/ru.png" alt="" width="16" height="11" style="margin:5px;"><a href="tel:+12679723986" style="" class="nav_phone">+1 267 972-3986</a>
+            <span>Call us now:        <img src="/images/language/en.jpg" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12673562820" style="" class="nav_phone">+1 267 356-2820</a>  /
+              <img src="/images/language/ru.png" alt="" width="16" height="11" style="margin:5px;"><a href="tel:+12679723986" style="" class="nav_phone">+1 267 972-3986</a>
             </span>
           </div><!-- end call us -->
         </div>

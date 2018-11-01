@@ -26,7 +26,7 @@
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<h2 class="title_block">Contact info</h2>
 								<div class="contact-box">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut semper metus. Nullam a elit faucibus, tempor ex at, placerat ligula. Maecenas varius ex mi, elementum porttitor mauris gravida sit amet.<p>
+									<p>Ask us a question and we'll write back to you promptly! Simply fill out the form below and click "Send Message." Thanks!<p>
 									<ul>
 										<li><i class="zmdi zmdi-pin"></i><span>3602 Greenwood Terrace, Chalfont, PA, USA</span></li>
 										<li><i class="zmdi zmdi-phone"></i><span><img src="images/language/en.jpg" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12673562820" style="" class="">+1 (267) 356-2820</a> / <br><img src="images/language/ru.png" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12679723986">+1 (267) 972-3986</a></span></li>
