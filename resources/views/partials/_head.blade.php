@@ -8,7 +8,7 @@
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
     @yield('extrahead')
 

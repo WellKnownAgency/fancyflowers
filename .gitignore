@@ -17,3 +17,5 @@ docker-compose.yml
 Makefile
 _ide_helper.php
 .DS_Store
+webpack.mix.docker.js
+yarn.lock

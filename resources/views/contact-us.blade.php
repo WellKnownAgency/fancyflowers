@@ -28,9 +28,9 @@
 								<div class="contact-box">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut semper metus. Nullam a elit faucibus, tempor ex at, placerat ligula. Maecenas varius ex mi, elementum porttitor mauris gravida sit amet.<p>
 									<ul>
-										<li><i class="zmdi zmdi-pin"></i><span>123 canberra Street, New York, USA</span></li>
-										<li><i class="zmdi zmdi-phone"></i><span>+844 123 456 78 / +844 123 456 79</span></li>
-										<li><i class="zmdi zmdi-email"></i><a href="mailto:myfancyflower@gmail.com" title="">myfancyflower@gmail.com</a></li>
+										<li><i class="zmdi zmdi-pin"></i><span>3602 Greenwood Terrace, Chalfont, PA, USA</span></li>
+										<li><i class="zmdi zmdi-phone"></i><span><img src="images/language/en.jpg" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12673562820" style="" class="">+1 (267) 356-2820</a> / <br><img src="images/language/ru.png" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12679723986">+1 (267) 972-3986</a></span></li>
+										<li><i class="zmdi zmdi-email"></i><a href="mailto:myfancyflowers@gmail.com" title="">myfancyflowers@gmail.com</a></li>
 									</ul>
 								</div><!-- contact-box-->
 							</div>
