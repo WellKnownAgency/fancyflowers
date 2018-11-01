@@ -24,9 +24,9 @@
             <h4 class="title_block">Services</h4>
             <ul class="toggle-footer list-group bullet">
               <li><a href="/privacy-policy" title="Our Policy">Our Policy</a></li>
-              <li><a href="/guarantees" title="Gurantees">Guarantees</a></li>
+              <!--<li><a href="/guarantees" title="Gurantees">Guarantees</a></li>-->
               <li><a href="/terms" title="Terms & Conditions">Terms & Conditions</a></li>
-              <li><a href="/shipping&returns" title="Shipping & Returns">Shipping & Returns</a></li>
+              <!--<li><a href="/shipping&returns" title="Shipping & Returns">Shipping & Returns</a></li>-->
               <!--<li><a href="#" title="F.A.Qs">F.A.Qs</a></li>-->
             </ul>
           </div>
@@ -49,7 +49,6 @@
             <div class="block_content">
               <p>Monday to Friday ....... 8 am - 10 pm</p>
               <p>Saturday & Sunday ....... 10 am - 9 pm</p>
-              <p>Holiday is off</p>
             </div>
           </div><!-- end block-gallery -->
         </div>

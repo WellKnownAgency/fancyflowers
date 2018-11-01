@@ -1,3 +1,11 @@
+.nav_phone{
+  color: #bfbfbf !important;
+}
+
+.nav_phone:hover{
+  color: #FF8C94 !important;
+}
+
 .very_large_60{
   color: white !important;
   text-shadow: 3px 3px 5px darkgrey;
