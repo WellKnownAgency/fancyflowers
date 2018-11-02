@@ -151,7 +151,7 @@
                 <i class="zmdi zmdi-truck"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Free shipping" href="">Free shipping</a></h4>
+                <h4><a title="Free shipping" href="/shipping">Free shipping</a></h4>
                 <p>Guaranteed delivery in same day</p>
               </div>
             </div>

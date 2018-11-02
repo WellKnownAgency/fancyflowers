@@ -53,8 +53,8 @@ Route::get('/guarantees', function () {
     return view('guarantees');
 });
 
-Route::get('/shipping&returns', function () {
-    return view('shipping&returns');
+Route::get('/shipping', function () {
+    return view('shipping');
 });
 
 Route::get('/terms', function () {

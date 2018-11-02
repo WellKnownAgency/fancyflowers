@@ -1,3 +1,8 @@
+.breadcrumb_back{
+  background-image: url(/images/default/breacrum7.jpg);
+  filter: grayscale(55%);
+}
+
 .nav_phone{
   color: #bfbfbf !important;
 }

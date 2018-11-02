@@ -39,7 +39,7 @@
               <li><a href="/register" title="Register">Register</a></li>
               <!--<li><a href="#" title="Wishlist">Wishlist</a></li>-->
               <!--<li><a href="#" title="Order History">Order History</a></li>-->
-              <li><a href="{{ route('checkout.index') }}" title="Checkout">Checkout</a></li>
+              <!--<li><a href="{{ route('checkout.index') }}" title="Checkout">Checkout</a></li>-->
             </ul>
           </div>
         </div>
