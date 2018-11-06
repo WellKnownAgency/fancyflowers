@@ -7,6 +7,13 @@
             <h4 class="title_block">About us</h4>
             <div class="block_content">
               <p>Lorem Khaled Ipsum is a major key to success. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. You do know</p>
+              <p>
+                <ul class="toggle-footer list-group bullet">
+                  <li><span>3602 Greenwood Terrace, Chalfont, PA, USA</span></li>
+                  <li><span><img src="/images/language/en.jpg" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12673562820" style="" class="">+1 (267) 356-2820</a> / <br><img src="/images/language/ru.png" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12679723986">+1 (267) 972-3986</a></span></li>
+                  <li><a href="mailto:myfancyflowers@gmail.com" title="">myfancyflowers@gmail.com</a></li>
+                </ul>
+              </p>
             </div>
           </div>
           <div class="social_block">

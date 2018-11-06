@@ -22,7 +22,7 @@
   <!-- container -->
   <div class="container">
     <h1>Shipping Policy</h1>
-    FancyFlowers LLC is located at:
+    FancyFlowers Inc is located at:
     <address>
     3602 Greenwood Terrace, Chalfont, PA - 18914, USA<br/>(267)972-39-86</address>
 

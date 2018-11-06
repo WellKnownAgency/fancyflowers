@@ -11,7 +11,7 @@
 				<div class="container">
 					<div class="breadcrumb clearfix">
 						<ul class="ul-breadcrumb">
-							<li><a href="index.html" title="Home">home</a></li>
+							<li><a href="/" title="Home">home</a></li>
 							<li><span>Contact us</span></li>
 						</ul>
 						<h2 class="bread-title">Contact us</h2>

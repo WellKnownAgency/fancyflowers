@@ -201,14 +201,14 @@
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/congratulation.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/congratulations.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
       </div>
       <div class="tv-table block">
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/composition.jpg" alt=""></a>
+            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/birthday.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
         <div class="tv-tablecell">

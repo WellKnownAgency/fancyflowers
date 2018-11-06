@@ -50,7 +50,7 @@
 	<div class="container">
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
-				<li><a href="index.html" title="Home">Home</a></li>
+				<li><a href="/" title="Home">Home</a></li>
 				<li><span>Checkout</span></li>
 			</ul>
 			<h2 class="bread-title">Checkout</h2>

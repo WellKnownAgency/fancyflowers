@@ -66,10 +66,6 @@
               <label for="description">Quick Product Description</label>
               <textarea class="form-control" name="dscr" id="description" rows="3"></textarea>
             </div>
-            <div class="form-group">
-              <label for="description">Large Product Description</label>
-              <textarea class="form-control" name="lgdscr" id="description" rows="3"></textarea>
-            </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name">Slug</label>

@@ -146,7 +146,7 @@
                           <div class="block-subcategories">
 
                             <ul>
-                              <li><a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">Congratulation</a></li>
+                              <li><a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">Congratulations</a></li>
                               <li><a href="/collections/new-baby" title="New Baby" class="{{ Request::is('collections/new-baby') ?"active-nav" : ""}}">New Baby</a></li>
                               <li><a href="/collections/thank-you" title="Thank You" class="{{ Request::is('collections/thank-you') ?"active-nav" : ""}}">Thank You</a></li>
                             </ul>
@@ -161,20 +161,6 @@
                             </ul>
                           </div>
                         </div>
-
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                          <div class="block-image">
-                            <img class="img-responsive" src="images/menu/banner-1.jpg" width="378" height="128" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                          <div class="block-image">
-                            <img class="img-responsive" src="images/menu/banner-2.jpg" width="378" height="128" alt="">
-                          </div>
-                        </div>
-
                       </div>
                     </div>
                   </li>

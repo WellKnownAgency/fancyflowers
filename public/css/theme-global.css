@@ -338,9 +338,6 @@ input[type=number] {
   color: #666666;
   display: inline-block;
 }
-.dropdown-over .dropdown-content a:hover {
-  color: white;
-}
 .dropdown-over .dropdown-content ul {
   margin-bottom: 0;
 }
@@ -777,7 +774,7 @@ input[type=number] {
   right: 50%;
 }
 .tiva-slideshow-wrapper .tiva-caption .btn {
-  color: white;
+  color: #000;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -1096,7 +1093,7 @@ box-shadow:0 10px 20px rgba(0,0,0,0.11), 0 10px 10px rgba(0,0,0,0.15);
   font-family: "Poppins", sans-serif;
 }
 .home-1 #main-nav .dropdown-menu li a {
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
 }
 .home-1 .header_user_info .dropdown-title {

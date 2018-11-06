@@ -54,3 +54,30 @@
     gtag('config', 'UA-126213276-1');
   </script>
   <script src='https://www.google.com/recaptcha/api.js'></script>
+
+<style>
+.btn-view-all {
+  color: #000 !important;
+  background:#A8E6CE !important;
+  border-color: #A8E6CE !important;
+}
+
+.btn-view-all:hover{
+  color:#fff !important;
+  background:#75a190 !important;
+  border-color: #A8E6CE !important;
+  transition: 0.3s;
+}
+.btn-checkout{
+  color:#fff !important;
+  background-color:#FF8C94;
+  border-color: #FF8C94 ;
+}
+
+.btn-checkout:hover {
+  color: #fff !important;
+  transition: 0.3s;
+  background-color:#EF4566;
+  border-color: #EF4566 ;
+}
+</style>
