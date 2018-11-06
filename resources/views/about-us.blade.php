@@ -37,76 +37,9 @@
     <div class="about-weare">
       <h4 class="title_block">Our team</h4>
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/svetlana.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Steven Craig.">Svetlana Ivanova</a>
-              <p class="position">CEO & Founder</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/irina.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Sarah Conor">Irina Likhnekevich</a>
-              <p class="position">Chief Customer Officer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/alina.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Jenifer Lorenwer">Alina Green</a>
-              <p class="position">Florist</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/4.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Craig Bordon">Craig Bordon</a>
-              <p class="position">Business Manager</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/5.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Kitty">Kitty</a>
-              <p class="position">Art Director</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/6.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Steve Pham">Steve Pham</a>
-              <p class="position">Photographer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/7.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Laura">Laura</a>
-              <p class="position">Content Manager</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-sp-12">
-          <div class="weare-item">
-            <div class="weare-image"><a href="#" title=""><img class="img-responsive" src="images/about-us/370x270/8.jpg" alt=""></a></div>
-            <div class="weare-content">
-              <a href="#" title="Mirinda">Mirinda</a>
-              <p class="position">Model Creative</p>
-            </div>
+            <div class="weare-image"><img class="img-responsive" src="images/about-us/370x270/team1.jpg" alt=""></div>
           </div>
         </div>
       </div>

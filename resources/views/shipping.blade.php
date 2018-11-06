@@ -186,7 +186,7 @@
     <p>Our shipping is absolutely free</p>
 
           <h3>WHEN WILL I RECEIVE MY ORDER?</h3>
-    <p>You will reice your order in a particular day you have mentioned in the chekout page. Same day delivery is only accaptable till 12 p.m.</p>
+    <p>You will recieve your order in a particular day you have mentioned in the chekout page. Same day delivery is only accaptable till 12 p.m.</p>
 
           <h3>I PLACED AN ORDER, BUT DIDN’T RECEIVE A CONFIRMATION EMAIL.</h3>
     <p>You can email us at myfancyflowers@gmail.com or call us at +1 267 972-39-86</p>

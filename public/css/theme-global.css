@@ -370,7 +370,6 @@ input[type=number] {
   background-color: #c3c3c3;
   background-repeat: repeat;
   background-position: top center;
-  text-shadow: 1px 1px white;
 }
 #breadcrumb .breadcrumb {
   padding: 0;

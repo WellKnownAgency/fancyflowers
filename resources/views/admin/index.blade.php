@@ -14,12 +14,12 @@
         </div>
         <div class="card-body">
           <ul class="list-group">
-          <li class="list-group-item"><a href="/" class="list-group-item list-group-item-action">Main Page</a></li>
-          <li class="list-group-item"><a href="collections/all" class="list-group-item list-group-item-action">All Collections</a></li>
-          <li class="list-group-item"><a href="/blog" class="list-group-item list-group-item-action">Blog</a></li>
-          <li class="list-group-item"><a href="/about-us" class="list-group-item list-group-item-action">About Us</a></li>
-          <li class="list-group-item"><a href="/contact-us" class="list-group-item list-group-item-action">Contact Us</a></li>
-          <li class="list-group-item"><a href="/privacy-policy" class="list-group-item list-group-item-action">Privacy</a></li>
+          <li class="list-group-item"><a href="/" target="_blank" class="list-group-item list-group-item-action">Main Page</a></li>
+          <li class="list-group-item"><a href="collections/all" target="_blank" class="list-group-item list-group-item-action">All Collections</a></li>
+          <li class="list-group-item"><a href="/blog" target="_blank" class="list-group-item list-group-item-action">Blog</a></li>
+          <li class="list-group-item"><a href="/about-us" target="_blank" class="list-group-item list-group-item-action">About Us</a></li>
+          <li class="list-group-item"><a href="/contact-us" target="_blank" class="list-group-item list-group-item-action">Contact Us</a></li>
+          <li class="list-group-item"><a href="/privacy-policy" target="_blank" class="list-group-item list-group-item-action">Privacy</a></li>
         </ul>
         </div>
       </div>

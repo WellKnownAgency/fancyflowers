@@ -6,7 +6,7 @@
           <div class="block-keep block">
             <h4 class="title_block">About us</h4>
             <div class="block_content">
-              <p>Lorem Khaled Ipsum is a major key to success. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. You do know</p>
+              <p>We want to bring the beauty of flowers to your hands, celebrate holidays and other festive dates in a creative and magical way with arrangements, vases, and bouquets</p>
               <p>
                 <ul class="toggle-footer list-group bullet">
                   <li><span>3602 Greenwood Terrace, Chalfont, PA, USA</span></li>
@@ -33,7 +33,7 @@
               <li><a href="/privacy-policy" title="Our Policy">Our Policy</a></li>
               <!--<li><a href="/guarantees" title="Gurantees">Guarantees</a></li>-->
               <li><a href="/terms" title="Terms & Conditions">Terms & Conditions</a></li>
-              <!--<li><a href="/shipping&returns" title="Shipping & Returns">Shipping & Returns</a></li>-->
+              <li><a href="/shipping" title="Shipping">Shipping</a></li>
               <!--<li><a href="#" title="F.A.Qs">F.A.Qs</a></li>-->
             </ul>
           </div>
