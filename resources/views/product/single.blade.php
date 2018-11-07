@@ -5,15 +5,23 @@
 @extends('main')
 
 @section ('extrahead')
-<meta property="og:type" content="product" />
-<meta property="og:title" content="{{ $flower->name }}" />
-<meta property="og:description" content="{{ $flower->dscr }}" />
-<meta property="og:product_link" content="{{ url()->current() }}"/>
-<meta property="og:site_name" content="Fancy Flowers" />
-<meta property="product:price:amount" content="{{ $flower->price1 }}" />
-<meta property="product:price:currency" content="USD" />
-<meta property="og:availability" content="instock" />
-<meta property="og:site_name" content="fflowers.net" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="{{ $flower->name }}" />
+    <meta property="og:description" content="{{ $flower->dscr }}" />
+    <meta property="og:product_link" content="{{ url()->current() }}"/>
+    <meta property="og:site_name" content="Fancy Flowers" />
+    <meta property="product:price:amount" content="{{ $flower->price1 }}" />
+    <meta property="product:price:currency" content="USD" />
+    <meta property="og:availability" content="instock" />
+    <meta property="og:site_name" content="fflowers.net" />
+    <style>
+        .price-color {
+            transition: color 0.3s;
+        }
+        .price-color--change {
+            color: #5cb85c;
+        }
+    </style>
 @stop
 
 @section('content')
@@ -42,7 +50,7 @@
         </div><!-- end #image-block -->
       </div><!-- end pb-left-column -->
       <div class="pb-center-column col-xs-12 col-sm-12 col-md-7">
-        <div class="pb-centercolumn">
+        <div id="form-flower" class="pb-centercolumn">
           <h1>{{ $flower->name }}</h1>
           <div class="product_comments clearfix">
             <div class="product-rating">
@@ -89,11 +97,11 @@
           </div><!-- end product_comments -->
           <div class="price clearfix">
             <p class="our_price_display">
-              ${{ $flower->price }}
+              $<span class="price-color" v-text="price">{{ $flower->price_default }}</span>
             </p>
-              @if($flower->old_price)
+              @if($flower->price_old_default)
                 <p class="old_price">
-                  ${{ $flower->old_price }}
+                  $<span v-text="price_old">{{ $flower->price_old_default }}</span>
                 </p>
               @endif
           </div><!-- end price -->
@@ -107,37 +115,36 @@
               @endif
             </p>
           </div><!-- end product-boxinfo -->
-          <div id="short_description_block">
-            <p>{{ $flower->dscr}}</p>
-          </div><!-- end short_description_block -->
-          <!--<div class="box-info-product clearfix">
-            <div id="attributes">
-              <div class="attribute_fieldset clearfix">
-                <label class="attribute_label">Size</label>
-                <div class="attribute_list">
-                  <select class="form-control">
-                    <option value="0">{{ $flower->price1name }}</option>
-                    <option value="0">{{ $flower->price2name }}</option>
-                    <option value="0">{{ $flower->price3name }}</option>
-                  </select>
+            <div id="short_description_block">
+                <p>{{ $flower->dscr}}</p>
+            </div><!-- end short_description_block -->
+            <div class="box-info-product clearfix">
+                <div id="attributes">
+                    <div class="attribute_fieldset clearfix">
+                        <label class="attribute_label">Size</label>
+                        <div class="attribute_list">
+                            <select class="form-control" name="size" @change="onChangeSize($event)" v-model="size">
+                                @foreach($sizes as $size)
+                                    <option value="{{$size->id}}">{{$size->display_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>-->
-          <!-- end box-info-product -->
-          <div class="box-cart-bottom clearfix">
-            <form action="{{ route('cart.store') }}" method="POST">
-              {{ csrf_field() }}
-              <input type="hidden" name="id" value="{{ $flower->id }}">
-              <input type="hidden" name="name" value="{{ $flower->name }}">
-              <input type="hidden" name="price" value="{{ $flower->price1 }}">
-              <button id="add_to_cart" type="submit" class="exclusive btn button btn-primary" title="Add to cart">
-                Add to cart
-              </button>
-            </form>
-
-
-          </div><!-- end box-cart-bottom -->
+            </div><!-- end box-info-product -->
+            <div class="box-cart-bottom clearfix">
+                <form action="{{ route('cart.store') }}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $flower->id }}">
+                    <input type="hidden" name="name" value="{{ $flower->name }}">
+                    <input type="hidden" name="price" value="{{ $flower->price }}" v-model="price">
+                    <input type="hidden" name="price" value="{{ $flower->price_old }}" v-model="price_old">
+                    <input type="hidden" name="size" value="{{ $flower->size }}" v-model="size">
+                    <button id="add_to_cart" type="submit" class="exclusive btn button btn-primary" title="Add to cart">
+                        Add to cart
+                    </button>
+                </form>
+            </div><!-- end box-cart-bottom -->
           <div class="share-social">
             <span>Share:</span>
             <ul class="links list-inline">
@@ -289,7 +296,7 @@
                     <span class="label-sale label">Sale</span>
                     <span class="label-reduction label">-5%</span>
                     @else
-                    <span class="label-sale label" style="top: 15;">Sale</span>
+                    <span class="label-sale label" style="top: 15px;">Sale</span>
                     <span class="label-reduction label">-5%</span>
                     @endif
                   </div>
@@ -372,3 +379,40 @@
   </div> <!-- end container -->
 </div><!--end warp-->
 @stop
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+@section('customjs')
+    <script>
+        var vmForm = new Vue({
+            el: '#form-flower',
+            data: {
+                price: '{{$flower->price_default}}',
+                price_old: '{{$flower->price_old_default}}',
+                size: null
+            },
+            methods: {
+                onChangeSize: function(e)
+                {
+                    axios.get('/product/{{$flower->id}}/price-of-size/' + e.target.value)
+                        .then(response => {
+                            this.price = response.data.price;
+                            this.price_old = response.data.price_old;
+                            window.$('.price-color').addClass('price-color--change');
+                            window.setTimeout(function () {
+                                window.$('.price-color').removeClass('price-color--change');
+                            }, 300);
+                        })
+                }
+            },
+            created() {
+                @foreach($sizes as $size)
+                    @if ($default_size === $size->name)
+                        this.size = {{$size->id}};
+                    @endif
+                @endforeach
+            }
+        })
+    </script>
+@endsection

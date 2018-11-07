@@ -65,7 +65,9 @@
                           {{ csrf_field() }}
                           <input type="hidden" name="id" value="{{ $flower->id }}">
                           <input type="hidden" name="name" value="{{ $flower->name }}">
-                          <input type="hidden" name="price" value="{{ $flower->price }}">
+                          <input type="hidden" name="price" value="{{ $flower->price_default }}">
+                          <input type="hidden" name="price_old" value="{{ $flower->price_old_default }}">
+                          <input type="hidden" name="size" value="{{ \App\FLSize::getSizeDefaultId() }}">
                           <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
                         </form>
                           <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
@@ -81,9 +83,9 @@
                           </a>
                         </h5>
                         <div class="content_price">
-                          <span class="price product-price">${{ $flower->price }}</span>
-                            @if($flower->old_price)
-                                <span class="old-price product-price">${{ $flower->old_price }}</span>
+                          <span class="price product-price">${{ $flower->price_default }}</span>
+                            @if($flower->price_old_default)
+                                <span class="old-price product-price">${{ $flower->price_old_default }}</span>
                             @endif
                         </div>
                         <div class="product_comments clearfix">

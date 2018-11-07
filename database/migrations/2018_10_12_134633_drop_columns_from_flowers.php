@@ -26,7 +26,11 @@ class DropColumnsFromFlowers extends Migration
     public function down()
     {
       Schema::table('flowers', function($table) {
-               $table->dropColumn(['image2','image3','image4','image5','price1name']);
-              });
+          $table->string('image2');
+          $table->string('image3');
+          $table->string('image4');
+          $table->string('image5');
+          $table->string('price1name');
+      });
 }
 }

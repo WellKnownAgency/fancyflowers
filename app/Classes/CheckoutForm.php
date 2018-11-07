@@ -41,7 +41,6 @@ class CheckoutForm
         return $this->fields;
     }
 
-
     public function validateField($name, $value)
     {
         $arrParams = [$name => $value];

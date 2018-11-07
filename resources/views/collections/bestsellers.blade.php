@@ -59,7 +59,7 @@
                             </a>
                         </h5>
                         <div class="content_price">
-                            <span class="price product-price">${{ $flower->price }}</span>
+                            <span class="price product-price">${{ $flower->price_default }}</span>
                         </div>
                     </div>
                 </div>

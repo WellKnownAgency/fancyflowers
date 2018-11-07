@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Flower;
 use App\Ship;
 use App\Card;
-use Flower;
 use Session;
 use Cart;
 use Illuminate\Http\Request;
@@ -50,7 +50,16 @@ class CartController extends Controller
           return back();
         }
 
-        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Flower');
+        Cart::add(
+            $request->input('id'),
+            $request->input('name'),
+            1,
+            $request->input('price'),
+            [
+                'size' => $request->input('size'),
+                'price_old' => $request->input('price_old'),
+            ]
+        )->associate(Flower::class);
 
         session()->put('success','Item Added Successfully to Your Cart');
 

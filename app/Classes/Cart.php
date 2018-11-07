@@ -4,6 +4,7 @@ namespace App\Classes;
 
 
 use App\Coupon;
+use App\FLSize;
 use Gloudemans\Shoppingcart\CartItem;
 use Illuminate\Support\Facades\Session;
 
@@ -32,7 +33,7 @@ class Cart extends \Gloudemans\Shoppingcart\Cart
                     $content = $this->getContent();
                     $summPrice = 0;
                     foreach ($content as $item) {
-                        $summPrice += $item->price;
+                        $summPrice += $item->price * $item->qty;
                     }
                     $value = $summPrice - ($summPrice * $coupon->value / 100);
                     break;
@@ -58,7 +59,7 @@ class Cart extends \Gloudemans\Shoppingcart\Cart
 
         $summPrice = 0;
         foreach ($content as $item) {
-            $summPrice += $item->price;
+            $summPrice += $item->price * $item->qty;
         }
 
         $summPrice = $summPrice - $coupon;

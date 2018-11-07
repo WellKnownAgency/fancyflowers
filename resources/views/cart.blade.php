@@ -51,9 +51,10 @@
             </td>
             <td class="cart_description">
               <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+                <p>Size: {{ App\FLSize::getSizeDisplayName($item->options->size) }}</p>
             </td>
             <td class="cart_unit text-right">
-              <span class="amount">${{ $item->model->price }}</span><br>@if($item->model->old_price)<span class="old_price">${{ $item->model->old_price }}</span>@endif
+              <span class="amount">${{ $item->price }}</span><br>@if($item->options->price_old)<span class="old_price">${{ $item->options->price_old }}</span>@endif
             </td>
             <td class="cart_quantity text-center">
               <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">

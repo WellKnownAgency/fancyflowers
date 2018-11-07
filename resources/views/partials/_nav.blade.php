@@ -42,6 +42,7 @@
       </div>
     </div>
   </div>
+    {{--{{dd(Cart::content())}}--}}
   <div class="header-main" data-spy="affix" data-offset-top="50" style="background-color:#fbfbfb;">
     <div class="container">
       <div class="row">
@@ -84,7 +85,8 @@
                                   </td>
                                   <td class="product-name">
                                     <a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
-                                    <br><span class="amount"><strong>${{ $item->model->price }}</strong></span>
+                                    <p>Size: {{ App\FLSize::getSizeDisplayName($item->options->size) }}</p>
+                                    <span class="amount"><strong>${{ $item->price }}</strong></span>
                                   </td>
                                   <td class="product-actions">
                                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">

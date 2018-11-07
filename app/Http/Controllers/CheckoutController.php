@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Admin;
 use App\Classes\CheckoutForm;
 use App\Coupon;
+use App\FLSize;
 use App\Notifications\newOrderManager;
 use App\Notifications\newOrderUser;
 use App\Rules\Zip;
@@ -92,7 +93,13 @@ class CheckoutController extends Controller
     {
         $cart = Cart::class;
         $content = $cart::content()->map(function ($item) {
-          return $item->model->name;
+          return [
+              'name' => $item->name,
+              'qty' => $item->qty,
+              'size' => FLSize::getSizeDisplayName($item->options->size),
+              'price' => $item->price,
+              'subtotal' => $item->subtotal,
+          ];
         })->values()->toJson();
 
         try {

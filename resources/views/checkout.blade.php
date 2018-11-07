@@ -223,15 +223,16 @@
 													</td>
 													<td class="product-name">
 														<a href="/product/{{ $item->model->slug }}">{{ $item->model->name }}</a>
+                                                        <p>Size: {{ App\FLSize::getSizeDisplayName($item->options->size) }}</p>
 													</td>
 													<td class="product-price text-right">
-														<span class="amount">${{ $item->model->price }}</span>@if($item->model->old_price)<br><span class="old-price product-price">${{ $item->model->old_price }}</span>@endif
+														<span class="amount">${{ $item->price }}</span>@if($item->options->price_old)<br><span class="old-price product-price">${{ $item->options->price_old }}</span>@endif
 													</td>
 													<td class="product-quantity text-center">
                                                         {{ $item->qty }}
 													</td>
 													<td class="product-subtotal text-right">
-														<span class="amount">${{ $item->model->price * $item->qty }}</span>
+														<span class="amount">${{ $item->price * $item->qty }}</span>
 													</td>
 												</tr>
 											@endforeach
@@ -322,7 +323,7 @@
                                     </div>
                                 </div>
                                 <div style="margin-top: 10px; float:right;">
-                                    <button type="submit" class="btn btn-primary" >Apply</button>
+                                    <button type="submit" class="btn btn-primary">Apply</button>
                                 </div>
                             </form>
                         </div>
@@ -343,7 +344,7 @@
 
 @section('customjs')
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
 
 <script>

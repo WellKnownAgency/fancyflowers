@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use App\FlowerFLSize;
+use App\FLSize;
 use Image;
 use App\Collection;
 use App\Flower;
 use Illuminate\Http\Request;
+use Intervention\Image\Size;
 
 class FlowerController extends Controller
 {
@@ -151,15 +154,27 @@ class FlowerController extends Controller
         return redirect()->route('products.index');
     }
 
-    public function getSingle($slug) {
-      $flower = Flower::where('slug', '=', $slug)->first();
-      $related = Flower::whereHas('collections', function ($q) use ($flower) {
-      return $q->whereIn('name', $flower->collections->pluck('name'));
-      })
-      ->where('id', '!=', $flower->id) // So you won't fetch same post
-      ->get();
-      $ratings = \willvincent\Rateable\Rating::take(10)->get();
-      return view('product.single')->withFlower($flower)->withRatings($ratings)->withRelated($related);
+    public function getSingle($slug)
+    {
+        $flower = Flower::with('sizes')
+          ->where('slug', '=', $slug)
+          ->first();
+
+        //dd($flower);
+
+        $related = Flower::whereHas('collections', function ($q) use ($flower) {
+            return $q->whereIn('name', $flower->collections->pluck('name'));
+          })
+          ->where('id', '!=', $flower->id) // So you won't fetch same post
+          ->get();
+
+        $ratings = \willvincent\Rateable\Rating::take(10)->get();
+
+        $sizes = FLSize::all();
+
+        $default_size = FLSize::DEFAULT;
+
+        return view('product.single', compact('flower', 'ratings', 'related', 'sizes', 'default_size'));
     }
 
     public function postPost(Request $request)
@@ -180,5 +195,21 @@ class FlowerController extends Controller
 
     }
 
+    public function priceOfSize(Flower $flower, FLSize $size)
+    {
+        $flower_size = $flower
+                            ->with(['sizes' => function ($q) use ($size) {
+                                $q->where('id', $size->id);
+                            }])
+                            ->where('id', $flower->id)
+                            ->first();
+
+        $size = $flower_size->sizes->first()->pivot;
+
+        $price = $size['price'];
+        $price_old = $size['price_old'];
+
+        return response(compact('price', 'price_old'), 200);
+    }
 
 }

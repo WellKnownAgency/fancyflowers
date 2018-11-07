@@ -9,26 +9,44 @@ class Flower extends Model
 {
     use Rateable;
 
-    protected $appends = ['price', 'old_price'];
+    protected $appends = ['price_default', 'price_old_default'];
 
-    public function getPriceAttribute()
+    // ACCESSORS
+
+    public function getPriceDefaultAttribute()
     {
-        $price = $this->attributes['sale']
-            ? $this->attributes['price1'] - ($this->attributes['price1'] * $this->attributes['sale'] / 100)
-            : $this->attributes['price1'];
-        return round($price, 2);
+        if ($this->sizes)
+            return $this->sizes->where('name', FLSize::DEFAULT)->first()->pivot->price;
     }
 
-    public function getOldPriceAttribute()
+    public function getPriceOldDefaultAttribute()
     {
-        return $this->attributes['sale']
-            ? $this->attributes['price1']
-            : null;
+        if ($this->sizes)
+            return $this->sizes->where('name', FLSize::DEFAULT)->first()->pivot->price_old;
     }
+
+    // RELATIONS
 
     public function collections()
     {
-      return $this->belongsToMany('App\Collection');
+      return $this->belongsToMany(Collection::class);
+    }
+
+    public function sizes()
+    {
+        return $this->belongsToMany(FLSize::class, 'flower_flsize', 'flower_id', 'flsize_id')->using(FlowerFLSize::class)->withPivot('price');
+    }
+
+    // SCOPES
+
+    public function scopeIsBestsellers($query)
+    {
+        return $query->where('best', '1');
+    }
+
+    public function getPriceOfSize($size_id)
+    {
+        return $this->sizes->where('id', $size_id)->first()->pivot->price;
     }
 
 
