@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use Session;
+use Mail;
 
 class ContactController extends Controller
 {
@@ -31,6 +32,19 @@ class ContactController extends Controller
 
       $contact->save();
 
+      $data = array(
+      'name' => $request->name,
+      'body'  => $request->body,
+      'email'     => $request->email,
+      'subj'     => $request->subj,
+    );
+
+    Mail::send('emails.contact', $data, function($message) use ($data){
+          $message->from($data['email']);
+          $message->to('myfancyflowers@gmail.com');
+          $message->subject('Contact Request');
+
+        });
 
       session()->put('success','Your message Successfully Sent');
 

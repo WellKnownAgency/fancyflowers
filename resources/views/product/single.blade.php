@@ -315,8 +315,8 @@
                       </a>
                     </h5>
                     <div class="content_price">
-                      <span class="price product-price">${{ $flower->price1 }}</span>
-                      <span class="old-price product-price">${{ $flower->price1 }}</span>
+                      <span class="price product-price">${{ $flower->price_default }}</span>
+                      <span class="old-price product-price">${{ $flower->price_old_default }}</span>
                     </div>
                     <div class="product_comments clearfix">
                       <div class="product-rating">

@@ -58,10 +58,37 @@
                 <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
               </div>
               <div class="form-group col-md-6">
+                <label for="sale">Size</label>
+                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="price1">Product Price 2 ($)</label>
+                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="sale">Size</label>
+                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale" disabled>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="price1">Product Price 3 ($)</label>
+                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="sale">Size</label>
+                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
                 <label for="sale">Sale (%)</label>
                 <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
               </div>
             </div>
+
             <div class="form-group">
               <label for="description">Quick Product Description</label>
               <textarea class="form-control" name="dscr" id="description" rows="3"></textarea>
