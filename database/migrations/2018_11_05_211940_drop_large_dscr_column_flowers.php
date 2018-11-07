@@ -26,7 +26,7 @@ class DropLargeDscrColumnFlowers extends Migration
     public function down()
     {
       Schema::table('flowers', function(Blueprint $table) {
-      $table->integer('lgdscr');
-       });
+        $table->text('lgdscr')->nullable();
+      });
     }
 }

@@ -138,7 +138,7 @@
                     <input type="hidden" name="id" value="{{ $flower->id }}">
                     <input type="hidden" name="name" value="{{ $flower->name }}">
                     <input type="hidden" name="price" value="{{ $flower->price }}" v-model="price">
-                    <input type="hidden" name="price" value="{{ $flower->price_old }}" v-model="price_old">
+                    <input type="hidden" name="price_old" value="{{ $flower->price_old }}" v-model="price_old">
                     <input type="hidden" name="size" value="{{ $flower->size }}" v-model="size">
                     <button id="add_to_cart" type="submit" class="exclusive btn button btn-primary" title="Add to cart">
                         Add to cart
@@ -389,6 +389,7 @@
             methods: {
                 onChangeSize: function(e)
                 {
+                    window.$('#add_to_cart').attr('disabled', 'disabled');
                     axios.get('/product/{{$flower->id}}/price-of-size/' + e.target.value)
                         .then(response => {
                             this.price = response.data.price;
@@ -397,6 +398,7 @@
                             window.setTimeout(function () {
                                 window.$('.price-color').removeClass('price-color--change');
                             }, 300);
+                            window.$('#add_to_cart').removeAttr('disabled');
                         })
                 }
             },
