@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div id="breadcrumb" class="clearfix">
+<div id="breadcrumb" class="clearfix breadcrumb_back">
 	<div class="container">
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">

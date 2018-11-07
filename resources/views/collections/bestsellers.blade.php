@@ -5,7 +5,7 @@
             <li>
                 <div class="product-container media">
                     <div class="product-image-container pull-left">
-                        <a class="product_img_link" href="page-detail.html" title="Queen rose - pink">
+                        <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Queen rose - pink">
                             <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="86" height="115">
                         </a>
                     </div>

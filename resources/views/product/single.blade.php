@@ -25,7 +25,7 @@
 @stop
 
 @section('content')
-<div id="breadcrumb" class="clearfix">
+<div id="breadcrumb" class="clearfix breadcrumb_back">
   <div class="container">
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
@@ -160,15 +160,9 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="tabs-top accordion-info">
           <ul id="myTabs" class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
             <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
           </ul>
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="description">
-              <div class="panel-body">
-                <p>{{ $flower->lgdscr }}.</p>
-              </div>
-            </div>
             <div role="tabpanel" class="tab-pane" id="reviews">
               <div class="panel-body">
                 <div class="comments-review">

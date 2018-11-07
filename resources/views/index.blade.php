@@ -7,22 +7,22 @@
 @section('content')
 <div class="tiva-slideshow-wrapper">
   <div id="tiva-slideshow" class="nivoSlider">
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h12.jpg" title="#caption1" alt="Slideshow image"></a>
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide2-h11.jpg" title="#caption2" alt="Slideshow image"></a>
+    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h13.jpg" title="#caption1" alt="Slideshow image"></a>
+    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h10.jpg" title="#caption2" alt="Slideshow image"></a>
   </div>
 
   <div id="caption1" class="nivo-html-caption">
     <div class="tiva-caption">
       <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
-      <div class="left-right hidden-xs normal very_large_60">TEstint</div>
-      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
+      <div class="left-right hidden-xs normal very_large_60">Fancy Flowers</div>
+      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">Delivering appreciation and art through flowers and gifts is not our job but our lifestyle. <br>We are sure that the style is in every detail, talented florists, beautiful, fresh flowers,  <br>stylish, packing material, logo, ribbons, and attentive attitudes towards each client. <br>We carefully listen to each client and provide the best gifts option trough something <br> magic and beautiful even from one flower.</div>
       <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
     </div>
   </div>
   <div id="caption2" class="nivo-html-caption">
     <div class="tiva-caption">
       <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
-      <div class="left-right hidden-xs normal very_large_60">Floral headband</div>
+      <div class="left-right hidden-xs normal very_large_60">Fancy Flowers</div>
       <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
       <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
     </div>
@@ -153,8 +153,8 @@
                 <i class="zmdi zmdi-truck"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Free shipping" href="#">Free shipping</a></h4>
-                <p>Guaranteed delivery in 3 days</p>
+                <h4><a title="Free shipping" href="/shipping">Free shipping</a></h4>
+                <p>Guaranteed delivery in same day</p>
               </div>
             </div>
           </div><!--end services-item-->
@@ -163,11 +163,11 @@
           <div class="services-item services-item2">
             <div class="media">
               <div class="icon-box">
-                <i class="zmdi zmdi-mail-reply-all"></i>
+                <i class="zmdi zmdi-flower-alt"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Exchanges & returns" href="#">Exchanges & returns</a></h4>
-                <p>100% money back within 30 days</p>
+                <h4><a title="Exchanges & returns" href="/contact-us">Customized Orders</a></h4>
+                <p>Contact Us to Create Your Customized Bouquet</p>
               </div>
             </div>
           </div><!--end services-item-->
@@ -179,8 +179,8 @@
                 <i class="zmdi zmdi-comments"></i>
               </div>
               <div class="media-body">
-                <h4><a title="Online support" href="#">Online support</a></h4>
-                <p>Live chat or call us 24/7</p>
+                <h4><a title="Online support" href="/contact-us">Online support</a></h4>
+                <p>Text or call us 24/7</p>
               </div>
             </div>
           </div><!--end services-item-->
@@ -196,28 +196,28 @@
         <div class="tv-tablecell">
           <div class="block-html block">
             <h4></h4>
-            <h3>Congrtulation</h3>
-            <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <h3>Thank You</h3>
+            <p class="block-htmldes">Appreciation in a "Thank You" for gifts symbolizes care, hope and love. Choose your gift and symbolize your thanks, and let Fancy Flowers take care of all the service to the final destination with total satisfaction and convenience to the customer. This is one of the most beautiful way to say "Thank You". </p>
             <a class="button btn btn-primary" href="/collections/compositions" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/congratulation.jpg" alt=""></a>
+            <a class="image-wrap" href=""><img class="img-responsive" src="/images/banner/congratulations.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
       </div>
       <div class="tv-table block">
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href="#"><img class="img-responsive" src="/images/banner/composition.jpg" alt=""></a>
+            <a class="image-wrap" href=""><img class="img-responsive" src="/images/banner/birthday.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
         <div class="tv-tablecell">
           <div class="block-html block">
             <h4></h4>
-            <h3>Flower Compositions</h3>
-            <p class="block-htmldes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <h3>Birthday</h3>
+            <p class="block-htmldes">A birthday is a special day of every person. Men and women, boys and girls are waiting for congratulations and gifts. If you want to make this day unforgettable for someone you love, order a unique bouquet for him or her. Fancy Flowers will deliver the happiness in the early morning or in the late evening. </p>
             <a class="button btn btn-primary" href="/collections/thank-you" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>

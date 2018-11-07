@@ -2,13 +2,14 @@
   <div class="header-topbar">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-8">
-
+        <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8">
           <div class="block-callus pull-left hidden-xs">
-            <span>Call us now: 0123-456-789</span>
+            <span>Call us now:        <img src="/images/language/en.jpg" alt="" width="16" height="11" style="margin-right:10px;"><a href="tel:+12673562820" style="" class="nav_phone">+1 267 356-2820</a>  /
+              <img src="/images/language/ru.png" alt="" width="16" height="11" style="margin:5px;"><a href="tel:+12679723986" style="" class="nav_phone">+1 267 972-3986</a>
+            </span>
           </div><!-- end call us -->
         </div>
-        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-4">
+        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4">
           <div class="header_user_info pull-right">
             <div data-toggle="dropdown" class="dropdown-title">
               <a href="#" title="My account"><i class="fa fa-user" style=margin-top:4px;></i></a>
@@ -147,7 +148,7 @@
                           <div class="block-subcategories">
 
                             <ul>
-                              <li><a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">Congratulation</a></li>
+                              <li><a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">Congratulations</a></li>
                               <li><a href="/collections/new-baby" title="New Baby" class="{{ Request::is('collections/new-baby') ?"active-nav" : ""}}">New Baby</a></li>
                               <li><a href="/collections/thank-you" title="Thank You" class="{{ Request::is('collections/thank-you') ?"active-nav" : ""}}">Thank You</a></li>
                             </ul>
@@ -162,20 +163,6 @@
                             </ul>
                           </div>
                         </div>
-
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                          <div class="block-image">
-                            <img class="img-responsive" src="images/menu/banner-1.jpg" width="378" height="128" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                          <div class="block-image">
-                            <img class="img-responsive" src="images/menu/banner-2.jpg" width="378" height="128" alt="">
-                          </div>
-                        </div>
-
                       </div>
                     </div>
                   </li>
