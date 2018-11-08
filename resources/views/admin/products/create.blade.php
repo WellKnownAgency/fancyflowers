@@ -52,51 +52,34 @@
                 </select>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="price1">Product Price 1 ($)</label>
-                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="sale">Size</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
-              </div>
+              <h5>Prices</h5>
+            <div class="form-group">
+                @foreach($sizes as $size)
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Size {{$size->display_name}}</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="prices[{{$size->name}}]" class="form-control" id="price_{{$size->name}}" placeholder="0.00" min="0.01" step=".01" pattern="^\d+(?:\.\d{1,2})?$" required>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="price1">Product Price 2 ($)</label>
-                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
+
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="sale">Sale %</label>
+                      <input type="number" name="sale" class="form-control" id="sale" placeholder="0">
+                  </div>
               </div>
-              <div class="form-group col-md-6">
-                <label for="sale">Size</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale" disabled>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="price1">Product Price 3 ($)</label>
-                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="sale">Size</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="sale">Sale (%)</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
-              </div>
-            </div>
+
 
             <div class="form-group">
               <label for="description">Quick Product Description</label>
-              <textarea class="form-control" name="dscr" id="description" rows="3"></textarea>
+              <textarea class="form-control" name="dscr" id="description" rows="3" required></textarea>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name">Slug</label>
-                <input type="text" class="form-control" name="slug" id="name" placeholder="Slug">
+                <input type="text" class="form-control" name="slug" id="name" placeholder="Slug" required>
               </div>
               <div class="col-md-6">
               @foreach ($collections as $collection)
@@ -109,7 +92,7 @@
             </div>
             <div class="form-group">
               <label for="image1">Uplaod Image 1 (600x800)</label>
-              <input type="file" class="form-control-file" name="image1" id="image1">
+              <input type="file" class="form-control-file" name="image1" id="image1" required>
             </div>
             <hr>
             <button type="submit" class="btn btn-success">Create</button>

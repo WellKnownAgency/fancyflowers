@@ -36,11 +36,21 @@
 
          <span style="float:right;"><a href="/admin/products/{{ $flower->id }}/edit" class="btn btn-warning">Edit Product</a></span>
        </h2>
-
+          {{--{{dd($flower)}}--}}
        <ul class="list-group list-group-flush">
          <li class="list-group-item">{{ $flower->slug }}</li>
-         <li class="list-group-item">${{ $flower->price1}}</li>
-         <li class="list-group-item">%{{ $flower->sale}}</li>
+         <li class="list-group-item">
+             @foreach($flower->sizes as $size)
+                 {{$size->display_name}}: ${{$size->pivot->price}} <br>
+             @endforeach
+         </li>
+         <li class="list-group-item">
+             @if ($flower->sale)
+                 %{{ $flower->sale}}
+             @else
+                 no sale
+             @endif
+         </li>
          <li class="list-group-item"><img src="/images/product/{{ $flower->image1 }}" height="200px"/></li>
          <li class="list-group-item">{{ $flower->dscr }}</li>
          <li class="list-group-item">

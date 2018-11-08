@@ -32,7 +32,8 @@ class FlowerController extends Controller
     public function create()
     {
       $collections = Collection::all();
-      return view('admin.products.create')->withCollections($collections);
+      $sizes = FLSize::all();
+      return view('admin.products.create', compact('collections', 'sizes'));
     }
 
     /**
@@ -43,12 +44,21 @@ class FlowerController extends Controller
      */
     public function store(Request $request)
     {
+        $sizes = FLSize::all();
+        // validate rules prices
+        $prices_rules = [];
+        foreach ($sizes as $size) {
+            $prices_rules[] = 'prices.' . $size->name = 'required|regex:/^\d*(\.\d{1,2})?$/';
+        }
+
           // validate the data
-         $this->validate($request, array(
+         $this->validate($request, array_merge([
                  'name'         => 'required|max:255',
                  'slug'          => 'required|alpha_dash|min:5|max:255|unique:flowers,slug',
-                 'dscr'          => 'required'
-             ));
+                 'dscr'          => 'required',
+                 'image1'          => 'required|file',
+             ], $prices_rules));
+
          // store in the database
          $flower = new Flower;
          $flower->name = $request->name;
@@ -56,7 +66,6 @@ class FlowerController extends Controller
          $flower->stock = $request->stock;
          $flower->best = $request->best;
          $flower->new = $request->new;
-         $flower->price1 = $request->price1;
          $flower->sale = $request->sale;
          $flower->dscr = $request->dscr;
          if ($request->hasFile('image1')) {
@@ -66,10 +75,16 @@ class FlowerController extends Controller
            Image::make($image)->resize(600, 800)->save($location);
            $flower->image1 = $filename;
          }
-
          $flower->save();
 
          $flower->collections()->sync($request->collections, false);
+
+         // attach prices of sizes
+        $req_sizes = $request->input('prices');
+         foreach ( $req_sizes as $size => $price) {
+             $size_id = FLSize::where('name', $size)->first()->id;
+             $flower->sizes()->attach($size_id, ['price' => $price]);
+         }
 
          return redirect()->route('products.index');
     }
@@ -82,9 +97,13 @@ class FlowerController extends Controller
      */
     public function show($id)
     {
-      $flower = Flower::find($id);
+      //$flower = Flower::find($id);
+      $flower = Flower::with('sizes')
+                    ->where('id', $id)
+                    ->first();
       $collections = Collection::all();
-      return view('admin.products.show')->withFlower($flower)->withCollections($collections);
+      $sizes = FLSize::all();
+      return view('admin.products.show', compact('flower', 'collections', 'sizes'));
     }
 
     /**
@@ -95,8 +114,10 @@ class FlowerController extends Controller
      */
     public function edit($id)
     {
-      $flower = Flower::find($id);
-        return view('admin.products.edit')->withFlower($flower);
+        $flower = Flower::with('sizes')
+            ->where('id', $id)
+            ->first();
+        return view('admin.products.edit', compact('flower'));
     }
 
     /**
@@ -108,6 +129,21 @@ class FlowerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $sizes = FLSize::all();
+        // validate rules prices
+        $prices_rules = [];
+        foreach ($sizes as $size) {
+            $prices_rules[] = 'prices.' . $size->name = 'required|regex:/^\d*(\.\d{1,2})?$/';
+        }
+
+        // validate the data
+        $this->validate($request, array_merge([
+            'name'         => 'required|max:255',
+            'slug'          => 'required|alpha_dash|min:5|max:255|unique:flowers,slug,'.$id,
+            'dscr'          => 'required',
+        ], $prices_rules));
+
+
      // store in the database
      $flower = Flower::find($id);
      $flower->name = $request->input('name');
@@ -115,12 +151,8 @@ class FlowerController extends Controller
      $flower->stock = $request->input('stock');
      $flower->best = $request->input('best');
      $flower->new = $request->input('new');
-     $flower->price1 = $request->input ('price1');
      $flower->sale = $request->input ('sale');
      $flower->dscr = $request->input ('dscr');
-
-
-
 
      if ($request->hasFile('image1')) {
        $image = $request->file('image1');
@@ -129,13 +161,22 @@ class FlowerController extends Controller
        Image::make($image)->resize(600, 800)->save($location);
        $flower->image1 = $filename;
      }
-
      $flower->save();
+
      if (isset($request->collections)) {
-              $flower->collections()->sync($request->collections);
-          } else {
-              $flower->collections()->sync(array());
-          }
+          $flower->collections()->sync($request->collections);
+      } else {
+          $flower->collections()->sync(array());
+      }
+
+        // attach prices of sizes
+        $req_sizes = $request->input('prices');
+        foreach ( $req_sizes as $size => $price) {
+            $size_id = FLSize::where('name', $size)->first()->id;
+            $flower->sizes()->updateExistingPivot($size_id, ['price' => $price]);
+        }
+
+
       return redirect()->route('products.show', $flower->id);
 }
 
