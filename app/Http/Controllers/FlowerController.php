@@ -67,6 +67,8 @@ class FlowerController extends Controller
            $flower->image1 = $filename;
          }
 
+         $flower->sizes()->attach($request->flsize_id, ['price' => $request->price1 ]);
+
          $flower->save();
 
          $flower->collections()->sync($request->collections, false);

@@ -58,24 +58,24 @@
                 <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
               </div>
               <div class="form-group col-md-6">
-                <label for="sale">Size</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale">
+                <label for="sale">Size Original</label>
+                <input type="number" name="flsize_id" class="form-control" id="sale" placeholder="Sale" value="1" disabled>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="price1">Product Price 2 ($)</label>
-                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
+                <input type="number" name="price2" class="form-control" id="price1" placeholder="Price">
               </div>
               <div class="form-group col-md-6">
                 <label for="sale">Size</label>
-                <input type="number" name="sale" class="form-control" id="sale" placeholder="Sale" disabled>
+                <input type="number" name="flsize_id" class="form-control" id="sale" placeholder="Sale" disabled>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="price1">Product Price 3 ($)</label>
-                <input type="number" name="price1" class="form-control" id="price1" placeholder="Price">
+                <input type="number" name="price3" class="form-control" id="price1" placeholder="Price">
               </div>
               <div class="form-group col-md-6">
                 <label for="sale">Size</label>
