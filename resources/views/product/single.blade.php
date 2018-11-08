@@ -160,7 +160,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="tabs-top accordion-info">
           <ul id="myTabs" class="nav nav-tabs" role="tablist">
-            <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+            <li role="presentation" class="active"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
           </ul>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="reviews">

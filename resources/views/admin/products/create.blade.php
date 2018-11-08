@@ -74,12 +74,12 @@
 
             <div class="form-group">
               <label for="description">Quick Product Description</label>
-              <textarea class="form-control" name="dscr" id="description" rows="3" required></textarea>
+              <textarea class="form-control" name="dscr" id="description" rows="3"></textarea>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name">Slug</label>
-                <input type="text" class="form-control" name="slug" id="name" placeholder="Slug" required>
+                <input type="text" class="form-control" name="slug" id="name" placeholder="Slug">
               </div>
               <div class="col-md-6">
               @foreach ($collections as $collection)
@@ -92,7 +92,7 @@
             </div>
             <div class="form-group">
               <label for="image1">Uplaod Image 1 (600x800)</label>
-              <input type="file" class="form-control-file" name="image1" id="image1" required>
+              <input type="file" class="form-control-file" name="image1" id="image1">
             </div>
             <hr>
             <button type="submit" class="btn btn-success">Create</button>

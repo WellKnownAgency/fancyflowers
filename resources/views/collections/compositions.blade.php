@@ -1,4 +1,4 @@
-@section('title', '')
+@section('title', 'Flowers Compositions | fancy Flowers')
 @section('dscr', '')
 @section('keywords', '')
 
