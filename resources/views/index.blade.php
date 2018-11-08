@@ -23,7 +23,7 @@
     <div class="tiva-caption">
       <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
       <div class="left-right hidden-xs normal very_large_60">Fancy Flowers</div>
-      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">when an unknown printer took a galley of type and scrambled it to <br>make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining.</div>
+      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">Our floral company is glad to create and deliver exclusive<br>gorgeous bouquets for you. Our flowers are always fresh and beautiful. <br>Make the best present you can by ordering flowers at fflowers.com </div>
       <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
     </div>
   </div>
@@ -231,7 +231,7 @@
       <div class="tiva-postslist">
         <h4 class="title_block">Latest blog posts</h4>
         <div class="des-text">
-          <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
+          <p></p>
         </div>
         <div class="block_content">
           <div class="postslist-owlcaousel owl-carousel">
@@ -266,7 +266,7 @@
     <div class="container">
       <div class="block-gallery block">
         <h4 class="title_block">Instagram</h4>
-        <p class="des-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore</p>
+        <p class="des-text"></p>
         <div class="block_content">
           <div class="row no-gutters">
               <div id="instafeed"></div>
