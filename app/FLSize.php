@@ -20,7 +20,8 @@ class FLSize extends Model
 
     public static function getSizeDisplayName($size_id)
     {
-        return self::find($size_id)->display_name;
+        if ($size = self::find($size_id))
+            return $size->display_name;
     }
 
     public static function getSizeDefaultId()

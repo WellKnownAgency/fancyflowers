@@ -169,10 +169,6 @@ class CollectionController extends Controller
     $flowersbest = Flower::isBestsellers()->take(4)->get();
 
     $flowers = new Flower();
-    /*$flowers = $flowers->with(['sizes' => function ($q) {
-        $q->orderBy('price');
-        $q->first();
-    }]);*/
     $flowers = $flowers->orderBy('created_at', 'asc');
     $flowers = $flowers->paginate($this->limit);
 

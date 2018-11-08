@@ -273,102 +273,105 @@
       </div>
     </div><!-- end row -->
     <div class="blockproductscategory block">
-      <h4 class="title_block">Related Products</h4>
-      <div class="block_content">
-        <div class="owl-row">
-          <div class="blockproductscategory_grid">
-            	@foreach ($related as $flower)
-            <div class="item">
-              <div class="product-container">
-                <div class="left-block">
-                  <div class="product-image-container">
-                    <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
-                      <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive image-effect" width="480" height="640">
-                    </a>
-                    @if($flower->new == '1')
-                    <span class="label-new label">New</span>
-                    <span class="label-sale label">Sale</span>
-                    <span class="label-reduction label">-5%</span>
-                    @else
-                    <span class="label-sale label" style="top: 15px;">Sale</span>
-                    <span class="label-reduction label">-5%</span>
-                    @endif
-                  </div>
-                  <div class="box-buttons">
-                    <form action="{{ route('cart.store') }}" method="POST">
-                      {{ csrf_field() }}
-                      <input type="hidden" name="id" value="{{ $flower->id }}">
-                      <input type="hidden" name="name" value="{{ $flower->name }}">
-                      <input type="hidden" name="price1" value="{{ $flower->price1 }}">
-                      <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
-                    </form>
-                    <a class="button btn quick-view" href="/product/{{ $flower->slug }}" title="Quick view">
-                      <i class="zmdi zmdi-eye"></i>
-                    </a>
-                  </div>
-                </div><!--end left block -->
-                <div class="right-block">
-                  <div class="product-box">
-                    <h5 class="name">
-                      <a class="product-name" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
-                        	{{ $flower->name }}
-                      </a>
-                    </h5>
-                    <div class="content_price">
-                      <span class="price product-price">${{ $flower->price1 }}</span>
-                      <span class="old-price product-price">${{ $flower->price1 }}</span>
-                    </div>
-                    <div class="product_comments clearfix">
-                      <div class="product-rating">
-                        <div class="star_content">
-                          @if( empty($flower->averageRating) )
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          @elseif( $flower->averageRating > 4.5 )
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          @elseif( $flower->averageRating > 3.5 && $flower->averageRating < 4.5)
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star"></div>
-                          @elseif( $flower->averageRating > 2.5 && $flower->averageRating < 3.5 )
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star"></div>
-                          <div class="star"></div>
-                          @elseif( $flower->averageRating > 1.5 && $flower->averageRating < 2.5 )
-                          <div class="star star_on"></div>
-                          <div class="star star_on"></div>
-                          <div class="star"></div>
-                          <div class="star"></div>
-                          <div class="star"></div>
-                          @elseif( $flower->averageRating < 1.5)
-                          <div class="star star_on"></div>
-                          <div class="star"></div>
-                          <div class="star"></div>
-                          <div class="star"></div>
-                          <div class="star"></div>
-                          @endif
-                        </div>
-                      </div>
-                    </div><!-- end product_comments -->
-                  </div><!-- end product-box -->
-                </div><!--end right block -->
-              </div><!-- end product-container-->
+        <div class="container">
+            <h4 class="title_block">Related Products</h4>
+            <div class="block_content">
+                <div class="owl-row">
+                    <div class="blockproductscategory_grid">
+                        @foreach ($related as $item)
+                            <div class="item">
+                                <div class="product-container">
+                                    <div class="left-block">
+                                        <div class="product-image-container">
+                                            <a class="product_img_link" href="/product/{{ $item->slug }}" title="Tulipa floriade - red">
+                                                <img src="/images/product/{{ $item->image1 }}" alt="{{ $item->name }}" class="img-responsive image-effect" width="480" height="640">
+                                            </a>
+                                            @if($item->new == '1')
+                                                <span class="label-new label">New</span>
+                                            @endif
+                                            @if($item->sale)
+                                                <span class="label-sale label">Sale</span>
+                                                <span class="label-reduction label">-{{$item->sale}}%</span>
+                                            @endif
+                                        </div>
+                                        <div class="box-buttons">
+                                            <form action="{{ route('cart.store') }}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="id" value="{{ $item->id }}">
+                                                <input type="hidden" name="name" value="{{ $item->name }}">
+                                                <input type="hidden" name="price" value="{{ $item->price_default }}">
+                                                <input type="hidden" name="price_old" value="{{ $item->price_old_default }}">
+                                                <input type="hidden" name="size" value="{{ \App\FLSize::getSizeDefaultId() }}">
+                                                <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
+                                            </form>
+                                            <a class="button btn quick-view" href="/product/{{ $item->slug }}" title="Quick view">
+                                                <i class="zmdi zmdi-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div><!--end left block -->
+                                    <div class="right-block">
+                                        <div class="product-box">
+                                            <h5 class="name">
+                                                <a class="product-name" href="/product/{{ $item->slug }}" title="Tulipa floriade - red">
+                                                    {{ $item->name }}
+                                                </a>
+                                            </h5>
+                                            <div class="content_price">
+                                                <span class="price product-price">${{ $item->price_default }}</span>
+                                                <span class="old-price product-price">${{ $item->price_old_default }}</span>
+                                            </div>
+                                            <div class="product_comments clearfix">
+                                                <div class="product-rating">
+                                                    <div class="star_content">
+                                                        @if( empty($item->averageRating) )
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                        @elseif( $item->averageRating > 4.5 )
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                        @elseif( $item->averageRating > 3.5 && $item->averageRating < 4.5)
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star"></div>
+                                                        @elseif( $item->averageRating > 2.5 && $item->averageRating < 3.5 )
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star"></div>
+                                                            <div class="star"></div>
+                                                        @elseif( $item->averageRating > 1.5 && $item->averageRating < 2.5 )
+                                                            <div class="star star_on"></div>
+                                                            <div class="star star_on"></div>
+                                                            <div class="star"></div>
+                                                            <div class="star"></div>
+                                                            <div class="star"></div>
+                                                        @elseif( $item->averageRating < 1.5)
+                                                            <div class="star star_on"></div>
+                                                            <div class="star"></div>
+                                                            <div class="star"></div>
+                                                            <div class="star"></div>
+                                                            <div class="star"></div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div><!-- end product_comments -->
+                                        </div><!-- end product-box -->
+                                    </div><!--end right block -->
+                                </div><!-- end product-container-->
+                            </div>
+                        @endforeach
+                    </div><!-- end blockproductscategory_grid -->
+                </div><!-- end tabproduct-carousel -->
             </div>
-            	@endforeach
-        </div><!-- end blockproductscategory_grid -->
-        </div><!-- end tabproduct-carousel -->
-      </div>
+        </div>
     </div><!-- end blockproductscategory -->
   </div> <!-- end container -->
 </div><!--end warp-->

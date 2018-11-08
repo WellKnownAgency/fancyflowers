@@ -387,7 +387,7 @@
 
 		// ==== Related Product ====
 		$('.blockproductscategory_grid').owlCarousel({
-			rtl: true,
+			rtl: false,
 			loop: true,
 			margin: 30,
 			stopOnHover: false,
