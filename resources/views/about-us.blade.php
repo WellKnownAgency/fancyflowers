@@ -39,7 +39,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sp-12">
           <div class="weare-item">
-            <div class="weare-image"><img class="img-responsive" src="images/about-us/370x270/team1.jpg" alt=""></div>
+            <div class="weare-image"><img class="img-responsive" src="images/about-us/370x270/team2.jpg" alt=""></div>
           </div>
         </div>
       </div>
