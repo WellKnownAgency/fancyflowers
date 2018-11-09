@@ -25,7 +25,7 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Price (Original)</th>
+                <th scope="col">Price (Sale)</th>
                 <th scope="col">Created</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -41,7 +41,7 @@
                 @if($flower->sale == null)
                 <td>${{ $flower->price_default }}</td>
                 @else
-                <td>${{ $flower->price_old_default }}</td>
+                <td>${{ $flower->price_old_default }} (${{ $flower->price_default }})</td>
                 @endif
                 <td>{{ $flower->created_at }}</td>
                 <td>
