@@ -199,8 +199,6 @@ class FlowerController extends Controller
           ->where('slug', '=', $slug)
           ->first();
 
-        //dd($flower);
-
         $related = Flower::whereHas('collections', function ($q) use ($flower) {
             return $q->whereIn('name', $flower->collections->pluck('name'));
           })
