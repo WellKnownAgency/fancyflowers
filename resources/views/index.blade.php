@@ -2,6 +2,8 @@
 @section('dscr', 'FREE SAME-DAY flowers delivery in Philadelphia area. Find flower bouquets collections for different ocassions.')
 @section('keywords', '')
 
+
+
 @extends('main')
 
 @section('content')
