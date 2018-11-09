@@ -2,6 +2,8 @@
 @section('dscr', 'FREE SAME-DAY flowers delivery in Philadelphia area. Find flower bouquets collections for different ocassions.')
 @section('keywords', '')
 
+
+
 @extends('main')
 
 @section('content')
@@ -15,7 +17,9 @@
     <div class="tiva-caption">
       <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
       <div class="left-right hidden-xs normal very_large_60">Fancy Flowers</div>
-      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">Delivering appreciation and art through flowers and gifts is not our job but our lifestyle. <br>We are sure that the style is in every detail, talented florists, beautiful, fresh flowers,  <br>stylish, packing material, logo, ribbons, and attentive attitudes towards each client. <br>We carefully listen to each client and provide the best gifts option trough something <br> magic and beautiful even from one flower.</div>
+      <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">We are sure that the style is in every detail: <br>
+        talented florists, beautiful fresh flowers,
+stylish packing material,<br>  and attentive attitudes toward each client.</div>
       <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
     </div>
   </div>

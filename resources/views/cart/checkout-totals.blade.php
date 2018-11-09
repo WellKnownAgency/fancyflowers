@@ -17,7 +17,7 @@
             Free Shipping<input type="hidden" value="free_shipping" class="shipping_method" name="shipping_method">
         </td>
     </tr>
-
+    @if( $cart::coupon() > 0)
     <tr class="shipping">
         <th>
             Discount
@@ -26,7 +26,7 @@
             <strong><span class="amount">-$ {{ $cart::coupon() }}</span></strong>
         </td>
     </tr>
-
+    @endif
     <tr class="shipping">
         <th>
             Processing Fee

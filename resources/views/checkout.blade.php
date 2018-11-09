@@ -1,4 +1,4 @@
-@section('title', '')
+@section('title', 'Checkout Page | Fancy Flowers')
 @section('dscr', '')
 @section('keywords', '')
 
@@ -100,85 +100,85 @@
 											</div>
 										</div>
 									<div style="display: block" id="filloutform">
-                                        {{-- Shipping Fields Start --}}
-                                            <div class="form-group">
-                                                <div class="col-md-6" v-bind:class="{'has-error': validateFields.firstname.errors.length}">
-                                                    <label for="firstname">First Name</label>
-                                                    <input type="text" name="firstname" class="form-control" id="firstname" autocomplete="none" v-model="validateFields.firstname.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.firstname.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6" v-bind:class="{'has-error': validateFields.lastname.errors.length}">
-                                                    <label for="lastname">Last Name</label>
-                                                    <input type="text" name="lastname" class="form-control" id="lastname" autocomplete="nope" v-model="validateFields.lastname.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.lastname.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12" v-bind:class="{'has-error': validateFields.phone.errors.length}">
-                                                    <label for="phone">Phone Number</label>
-                                                    <input type="text" name="phone" class="form-control" id="phone" autocomplete="none" v-model="validateFields.phone.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.phone.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-8" v-bind:class="{'has-error': validateFields.street.errors.length}">
-                                                    <label for="street">Address</label>
-                                                    <input type="text" name="street" class="form-control" id="street" autocomplete="none" v-model="validateFields.street.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.street.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="apartment">Apartment Number (Optional) <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top" title="If it's not a private house"></span></label>
-                                                    <input type="text" name="apartment" class="form-control" id="apartment" autocomplete="none">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12" v-bind:class="{'has-error': validateFields.city.errors.length}">
-                                                    <label for="city">City</label>
-                                                    <input type="text" name="city" class="form-control" id="city" autocomplete="none" v-model="validateFields.city.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.city.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12" v-bind:class="{'has-error': validateFields.state.errors.length}">
-                                                    <label for="state">State</label>
-                                                    <input type="text" name="state" class="form-control" id="state" autocomplete="none" v-model="validateFields.state.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.state.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12" v-bind:class="{'has-error': validateFields.zipcode.errors.length}">
-                                                    <label for="zipcode">Zip Code</label>
-                                                    <input type="text" name="zipcode" class="form-control" id="zipcode" autocomplete="none" v-model="validateFields.zipcode.value" @input="inputField($event)">
-                                                    <div id="firstname-error" class="help-block">
-                                                        <span v-for="error in validateFields.zipcode.errors" v-text="error + ' '"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <label for="date">Delivery Date</label>
-                                                    <input type="date" data-date-inline-picker="true" name="date" class="form-control" id="date" >
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <label for="additional">Additional Informtion (Optional) <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="You may point the preffered time for the delivery, or another useful infomation for our courier"></span></label>
-                                                    <textarea class="form-control" name="additional" id="additional"></textarea>
-                                                </div>
-                                            </div>
-                                        {{-- Shipping Fields  End--}}
+                  {{-- Shipping Fields Start --}}
+                      <div class="form-group">
+                          <div class="col-md-6" v-bind:class="{'has-error': validateFields.firstname.errors.length}">
+                              <label for="firstname">First Name</label>
+                              <input type="text" name="firstname" class="form-control" id="firstname" autocomplete="none" v-model="validateFields.firstname.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.firstname.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                          <div class="col-md-6" v-bind:class="{'has-error': validateFields.lastname.errors.length}">
+                              <label for="lastname">Last Name</label>
+                              <input type="text" name="lastname" class="form-control" id="lastname" autocomplete="nope" v-model="validateFields.lastname.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.lastname.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12" v-bind:class="{'has-error': validateFields.phone.errors.length}">
+                              <label for="phone">Phone Number</label>
+                              <input type="text" name="phone" class="form-control" id="phone" autocomplete="none" v-model="validateFields.phone.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.phone.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-8" v-bind:class="{'has-error': validateFields.street.errors.length}">
+                              <label for="street">Address</label>
+                              <input type="text" name="street" class="form-control" id="street" autocomplete="none" v-model="validateFields.street.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.street.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <label for="apartment">Apartment Number (Optional) <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top" title="If it's not a private house"></span></label>
+                              <input type="text" name="apartment" class="form-control" id="apartment" autocomplete="none">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12" v-bind:class="{'has-error': validateFields.city.errors.length}">
+                              <label for="city">City</label>
+                              <input type="text" name="city" class="form-control" id="city" autocomplete="none" v-model="validateFields.city.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.city.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12" v-bind:class="{'has-error': validateFields.state.errors.length}">
+                              <label for="state">State</label>
+                              <input type="text" name="state" class="form-control" id="state" autocomplete="none" v-model="validateFields.state.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.state.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12" v-bind:class="{'has-error': validateFields.zipcode.errors.length}">
+                              <label for="zipcode">Zip Code</label>
+                              <input type="text" name="zipcode" class="form-control" id="zipcode" autocomplete="none" v-model="validateFields.zipcode.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.zipcode.errors" v-text="error + ' '"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12">
+                              <label for="date">Delivery Date</label>
+                              <input type="date" data-date-inline-picker="true" name="date" class="form-control" id="date" >
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12">
+                              <label for="additional">Additional Informtion (Optional) <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="You may point the preffered time for the delivery, or another useful infomation for our courier"></span></label>
+                              <textarea class="form-control" name="additional" id="additional"></textarea>
+                          </div>
+                      </div>
+                  {{-- Shipping Fields  End--}}
 								    </div>
 								</div>
 							</div>
@@ -333,6 +333,9 @@
                                 <i class="fa fa-times"></i>
                             </button>
                         </div>
+                    </div>
+										<div v-else>
+											<p><a href="/login">Login</a> to Apply Coupon</p>
                     </div>
 				</div>
 			</div>

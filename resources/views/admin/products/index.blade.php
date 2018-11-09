@@ -25,7 +25,7 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Price 1</th>
+                <th scope="col">Price (Sale)</th>
                 <th scope="col">Created</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -38,7 +38,11 @@
               @foreach ($flowers as $flower)
               <tr>
                 <th scope="row">{{ $flower->name }}</th>
-                <td>${{ $flower->price1 }}</td>
+                @if($flower->sale == null)
+                <td>${{ $flower->price_default }}</td>
+                @else
+                <td>${{ $flower->price_old_default }} (${{ $flower->price_default }})</td>
+                @endif
                 <td>{{ $flower->created_at }}</td>
                 <td>
                   @if ($flower->stock == true)

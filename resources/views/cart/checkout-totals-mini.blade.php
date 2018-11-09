@@ -18,6 +18,7 @@
         </td>
     </tr>
 
+    @if( $cart::coupon() > 0)
     <tr class="shipping">
         <th>
             Discount
@@ -26,6 +27,7 @@
             - $ {{ $cart::coupon() }}
         </td>
     </tr>
+    @endif
 
     <tr class="total">
         <th>
