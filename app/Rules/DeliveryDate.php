@@ -27,9 +27,9 @@ class DeliveryDate implements Rule
     public function passes($attribute, $value)
     {
         $current = Carbon::now();
-        $check_date = Carbon::now()->setTime(12, 0, 0);
-        $input_date = Carbon::parse($value)->setTime($current->hour, $current->minute, $current->second);
-        if ($input_date->lessThanOrEqualTo($check_date)) {
+        $check_date = Carbon::now()->setTime($current->hour, $current->minute, $current->second);
+        $input_date = Carbon::parse($value)->setTime(12, 0, 0);
+        if ($input_date->greaterThanOrEqualTo($check_date)) {
             return true;
         }
     }
