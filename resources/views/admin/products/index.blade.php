@@ -41,7 +41,7 @@
                 @if($flower->sale == null)
                 <td>${{ $flower->price_default }}</td>
                 @else
-                <td>${{ $flower->price_old_default }} (${{ $flower->price_default }})</td>
+                <td>${{ $flower->price_old_default }} (${{ $flower->price_new_default }})</td>
                 @endif
                 <td>{{ $flower->created_at }}</td>
                 <td>
