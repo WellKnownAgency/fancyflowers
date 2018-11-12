@@ -41,7 +41,13 @@
          <li class="list-group-item">{{ $flower->slug }}</li>
          <li class="list-group-item">
              @foreach($flower->sizes as $size)
-                 {{$size->display_name}}: ${{$size->pivot->price}} <br>
+                 {{$size->display_name}}:
+                @if($flower->sale)
+                     ${{$size->pivot->price_old}} (${{$size->pivot->price_new}}) <br>
+                @else
+                     ${{$size->pivot->price}} <br>
+                @endif
+
              @endforeach
          </li>
          <li class="list-group-item">

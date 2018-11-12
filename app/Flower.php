@@ -9,7 +9,7 @@ class Flower extends Model
 {
     use Rateable;
 
-    protected $appends = ['price_default', 'price_old_default'];
+    protected $appends = ['price_default', 'price_new_default','price_old_default'];
 
     // ACCESSORS
 
@@ -17,12 +17,21 @@ class Flower extends Model
     {
         if ($this->sizes)
             return $this->sizes->where('name', FLSize::DEFAULT)->first()->pivot->price;
+        return null;
+    }
+
+    public function getPriceNewDefaultAttribute()
+    {
+        if ($this->sizes)
+            return $this->sizes->where('name', FLSize::DEFAULT)->first()->pivot->price_new;
+        return null;
     }
 
     public function getPriceOldDefaultAttribute()
     {
         if ($this->sizes)
             return $this->sizes->where('name', FLSize::DEFAULT)->first()->pivot->price_old;
+        return null;
     }
 
     // RELATIONS
@@ -47,6 +56,16 @@ class Flower extends Model
     public function getPriceOfSize($size_id)
     {
         return $this->sizes->where('id', $size_id)->first()->pivot->price;
+    }
+
+    public function isSale(): bool
+    {
+        return $this->sale > 0;
+    }
+
+    public function isNew(): bool
+    {
+        return $this->new == '1';
     }
 
 

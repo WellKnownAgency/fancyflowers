@@ -35,7 +35,7 @@ class Cart extends \Gloudemans\Shoppingcart\Cart
                     foreach ($content as $item) {
                         $summPrice += $item->price * $item->qty;
                     }
-                    $value = $summPrice - ($summPrice * $coupon->value / 100);
+                    $value = $summPrice * $coupon->value / 100;
                     break;
 
             endswitch;

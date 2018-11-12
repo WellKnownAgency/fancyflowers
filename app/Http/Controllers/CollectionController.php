@@ -36,9 +36,9 @@ class CollectionController extends Controller
 
       $flowers = $flowers->paginate($this->limit);
 
-      $min = $flowers->min('price_default');
+      $min = $flowers->min('price_new_default');
       $minPrice = $min ? $min : 0;
-      $max = $flowers->max('price_default');
+      $max = $flowers->max('price_new_default');
       $maxPrice = $max ? ceil($max) : 100;
 
       return view('/collections/birthday')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -53,9 +53,9 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/compositions')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -70,9 +70,9 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/congratulation')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -87,9 +87,9 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/gifts')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -104,9 +104,9 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/new-baby')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -121,9 +121,9 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/thank-you')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -138,9 +138,9 @@ class CollectionController extends Controller
 
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/weddings')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -156,9 +156,9 @@ class CollectionController extends Controller
     $flowers = $flowers->orderBy('created_at', 'asc');
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/looseflowers')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -172,9 +172,9 @@ class CollectionController extends Controller
     $flowers = $flowers->orderBy('created_at', 'asc');
     $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_default');
+    $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_default');
+    $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
     return view('/collections/all')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
@@ -203,7 +203,7 @@ class CollectionController extends Controller
           $reqFilter = $request->input('filter');
           $reqFilterArr = explode('__', $reqFilter);
           if ($reqFilterArr[0] === 'price') {
-              $reqFilterArr[0] = 'price_default';
+              $reqFilterArr[0] = 'price_new_default';
               $reqPrice = $reqFilterArr[1];
               $reqPriceArr = explode(';', $reqPrice);
               $flowers = $flowers->filter(function ($item) use ($reqFilterArr, $reqPriceArr) {

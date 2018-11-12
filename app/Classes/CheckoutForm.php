@@ -2,6 +2,7 @@
 
 namespace App\Classes;
 
+use App\Rules\DeliveryDate;
 use App\Rules\Zip;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,7 +29,11 @@ class CheckoutForm
                 new Zip(),
                 'size:5'
             ],
-            'date' => 'date',
+            'date' => [
+                'nullable',
+                'date',
+                new DeliveryDate()
+            ],
             'additional' => '',
             'name_on_card' => 'required|string',
             'phone' => '',

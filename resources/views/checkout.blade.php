@@ -166,10 +166,18 @@
                               </div>
                           </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" v-bind:class="{'has-error': validateFields.date.errors.length}">
                           <div class="col-md-12">
+<<<<<<< HEAD
                               <label for="date">Delivery Date <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Same day delivery is acceptable till 12.00 p.m. only"></span></label>
                               <input type="date" data-date-inline-picker="true" name="date" class="form-control" id="date" >
+=======
+                              <label for="date">Delivery Date</label>
+                              <input type="date"  data-date-inline-picker="true" min="{{date("Y-m-d")}}" name="date" class="form-control" id="date"  v-model="validateFields.date.value" @input="inputField($event)">
+                              <div id="firstname-error" class="help-block">
+                                  <span v-for="error in validateFields.date.errors" v-text="error + ' '"></span>
+                              </div>
+>>>>>>> 287b5515b47c8ffdcb6d04d98d469acca3b61b22
                           </div>
                       </div>
                       <div class="form-group">
@@ -388,6 +396,10 @@
                     errors: []
                 },
                 email: {
+                    value: '',
+                    errors: []
+                },
+                date: {
                     value: '',
                     errors: []
                 },

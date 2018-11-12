@@ -36,7 +36,7 @@ class FlowerFLSize extends Pivot
         return null;
     }
 
-    public function getPriceAttribute()
+    public function getPriceNewAttribute()
     {
         $price = $this->attributes['price'];
         if ($sale = $this->getSale()) {
