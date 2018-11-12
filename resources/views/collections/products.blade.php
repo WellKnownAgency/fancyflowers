@@ -10,10 +10,10 @@
                             <a class="product_img_link" href="/product/{{ $flower->slug }}" title="Tulipa floriade - red">
                                 <img src="/images/product/{{ $flower->image1 }}" alt="{{ $flower->name }}" class="img-responsive" width="480" height="640">
                             </a>
-                            @if($flower->new == '1')
+                            @if($flower->isNew())
                                 <span class="label-new label">New</span>
                             @endif
-                            @if($flower->sale)
+                            @if($flower->isSale())
                                 <span class="label-sale label">Sale</span>
                                 <span class="label-reduction label">-{{$flower->sale}}%</span>
                             @endif
@@ -23,7 +23,7 @@
                                 {{ csrf_field() }}
                                 <input type="hidden" name="id" value="{{ $flower->id }}">
                                 <input type="hidden" name="name" value="{{ $flower->name }}">
-                                <input type="hidden" name="price" value="{{ $flower->price_default }}">
+                                <input type="hidden" name="price" value="{{ $flower->price_new_default }}">
                                 <input type="hidden" name="price_old" value="{{ $flower->price_old_default }}">
                                 <input type="hidden" name="size" value="{{ \App\FLSize::getSizeDefaultId() }}">
                                 <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
@@ -42,8 +42,8 @@
                             </h5>
                             <div class="content_price">
 
-                                <span class="price product-price">${{ $flower->price_default }}</span>
-                                @if($flower->price_old_default)
+                                <span class="price product-price">${{ $flower->price_new_default }}</span>
+                                @if($flower->isSale())
                                     <span class="old-price product-price">${{ $flower->price_old_default }}</span>
                                 @endif
                             </div>

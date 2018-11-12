@@ -96,13 +96,13 @@
             </div>
           </div><!-- end product_comments -->
           <div class="price clearfix">
-            <p class="our_price_display">
-              $<span class="price-color" v-text="price">{{ $flower->price_default }}</span>
-            </p>
-              @if($flower->price_old_default)
-                <p class="old_price">
-                  $<span v-text="price_old">{{ $flower->price_old_default }}</span>
-                </p>
+              <p class="our_price_display">
+                  $<span class="price-color" v-text="price">{{ $flower->price_new_default }}</span>
+              </p>
+              @if ($flower->isSale())
+                  <p class="old_price">
+                      $<span v-text="price_old">{{ $flower->price_old_default }}</span>
+                  </p>
               @endif
           </div><!-- end price -->
           <div class="product-boxinfo">
@@ -137,7 +137,7 @@
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{ $flower->id }}">
                     <input type="hidden" name="name" value="{{ $flower->name }}">
-                    <input type="hidden" name="price" value="{{ $flower->price }}" v-model="price">
+                    <input type="hidden" name="price" value="{{ $flower->price_new }}" v-model="price">
                     <input type="hidden" name="price_old" value="{{ $flower->price_old }}" v-model="price_old">
                     <input type="hidden" name="size" value="{{ $flower->size }}" v-model="size">
                     <button id="add_to_cart" type="submit" class="exclusive btn button btn-primary" title="Add to cart">
@@ -286,10 +286,10 @@
                                             <a class="product_img_link" href="/product/{{ $item->slug }}" title="Tulipa floriade - red">
                                                 <img src="/images/product/{{ $item->image1 }}" alt="{{ $item->name }}" class="img-responsive image-effect" width="480" height="640">
                                             </a>
-                                            @if($item->new == '1')
+                                            @if($item->isNew())
                                                 <span class="label-new label">New</span>
                                             @endif
-                                            @if($item->sale)
+                                            @if($item->isSale())
                                                 <span class="label-sale label">Sale</span>
                                                 <span class="label-reduction label">-{{$item->sale}}%</span>
                                             @endif
@@ -299,7 +299,7 @@
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="id" value="{{ $item->id }}">
                                                 <input type="hidden" name="name" value="{{ $item->name }}">
-                                                <input type="hidden" name="price" value="{{ $item->price_default }}">
+                                                <input type="hidden" name="price" value="{{ $item->price_new_default }}">
                                                 <input type="hidden" name="price_old" value="{{ $item->price_old_default }}">
                                                 <input type="hidden" name="size" value="{{ \App\FLSize::getSizeDefaultId() }}">
                                                 <button type="submit" class="ajax_add_to_cart_button button btn" href="#" rel="nofollow" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></button>
@@ -317,8 +317,10 @@
                                                 </a>
                                             </h5>
                                             <div class="content_price">
-                                                <span class="price product-price">${{ $item->price_default }}</span>
-                                                <span class="old-price product-price">${{ $item->price_old_default }}</span>
+                                                <span class="price product-price">${{ $item->price_new_default }}</span>
+                                                @if($item->isSale())
+                                                    <span class="old-price product-price">${{ $item->price_old_default }}</span>
+                                                @endif
                                             </div>
                                             <div class="product_comments clearfix">
                                                 <div class="product-rating">
@@ -385,7 +387,7 @@
         var vmForm = new Vue({
             el: '#form-flower',
             data: {
-                price: '{{$flower->price_default}}',
+                price: '{{$flower->price_new_default}}',
                 price_old: '{{$flower->price_old_default}}',
                 size: null
             },

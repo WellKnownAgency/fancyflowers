@@ -199,8 +199,6 @@ class FlowerController extends Controller
           ->where('slug', '=', $slug)
           ->first();
 
-        //dd($flower);
-
         $related = Flower::whereHas('collections', function ($q) use ($flower) {
             return $q->whereIn('name', $flower->collections->pluck('name'));
           })
@@ -245,7 +243,7 @@ class FlowerController extends Controller
 
         $size = $flower_size->sizes->first()->pivot;
 
-        $price = $size['price'];
+        $price = $size['price_new'];
         $price_old = $size['price_old'];
 
         return response(compact('price', 'price_old'), 200);
