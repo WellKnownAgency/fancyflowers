@@ -1,3 +1,13 @@
+.custom-h3 {
+  color: #333333;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-top: 0;
+  margin-bottom: 12.5px;
+  text-transform: uppercase;
+}
+
 .footer_connect{
   color:white;
 }

@@ -39,7 +39,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
       <!-- tabs-top -->
       <div class="tabs-top block">
         <div class="block-title">
-          <h4 class="title_block">Shop By Collection</h4>
+          <h1 class="title_block">Fancy Flowers Delivery Philadelphia</h1>
           <br>
         </div><!--end title -->
 
@@ -199,8 +199,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
       <div class="tv-table block">
         <div class="tv-tablecell">
           <div class="block-html block">
-            <h4></h4>
-            <h3>Thank You</h3>
+            <p class="custom-h3">Thank You</p>
             <p class="block-htmldes">Appreciation in a "Thank You" for gifts symbolizes care, hope and love. Choose your gift and symbolize your thanks, and let Fancy Flowers take care of all the service to the final destination with total satisfaction and convenience to the customer. This is one of the most beautiful way to say "Thank You". </p>
             <a class="button btn btn-primary" href="/collections/compositions" title="Shop now">Shop now</a>
           </div><!--end block-html -->
@@ -219,8 +218,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
         </div>
         <div class="tv-tablecell">
           <div class="block-html block">
-            <h4></h4>
-            <h3>Birthday</h3>
+            <p class="custom-h3">Birthday</p>
             <p class="block-htmldes">A birthday is a special day of every person. Men and women, boys and girls are waiting for congratulations and gifts. If you want to make this day unforgettable for someone you love, order a unique bouquet for him or her. Fancy Flowers will deliver the happiness in the early morning or in the late evening. </p>
             <a class="button btn btn-primary" href="/collections/thank-you" title="Shop now">Shop now</a>
           </div><!--end block-html -->

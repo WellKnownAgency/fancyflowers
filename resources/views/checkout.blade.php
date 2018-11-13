@@ -159,7 +159,7 @@
                       </div>
                       <div class="form-group">
                           <div class="col-md-12" v-bind:class="{'has-error': validateFields.zipcode.errors.length}">
-                              <label for="zipcode">Zip Code</label>
+                              <label for="zipcode">Zip Code <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="To familiarize with Zip Code list please visit shipping policy page"></span></label>
                               <input type="text" name="zipcode" class="form-control" id="zipcode" autocomplete="none" v-model="validateFields.zipcode.value" @input="inputField($event)">
                               <div id="firstname-error" class="help-block">
                                   <span v-for="error in validateFields.zipcode.errors" v-text="error + ' '"></span>
@@ -168,7 +168,7 @@
                       </div>
                       <div class="form-group" v-bind:class="{'has-error': validateFields.date.errors.length}">
                           <div class="col-md-12">
-                              <label for="date">Delivery Date</label>
+                              <label for="date">Delivery Date <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Same-day delivery is acceptable till 12.00 pm only"></span></label>
                               <input type="date"  data-date-inline-picker="true" min="{{date("Y-m-d")}}" name="date" class="form-control" id="date"  v-model="validateFields.date.value" @input="inputField($event)">
                               <div id="firstname-error" class="help-block">
                                   <span v-for="error in validateFields.date.errors" v-text="error + ' '"></span>
