@@ -13,10 +13,9 @@
     <meta property="og:description" content="{{ $flower->dscr }}" />
     <meta property="og:product_link" content="{{ url()->current() }}"/>
     <meta property="og:site_name" content="Fancy Flowers" />
-    <meta property="product:price:amount" content="{{ $flower->price1 }}" />
+    <meta property="product:price:amount" content="{{ $flower->price_new_default }}" />
     <meta property="product:price:currency" content="USD" />
     <meta property="og:availability" content="instock" />
-    <meta property="og:site_name" content="fflowers.net" />
     <style>
         .price-color {
             transition: color 0.3s;
