@@ -45,13 +45,13 @@
               <div class="form-group required">
                 <div class="col-lg-12">
                   <label for="street">Address<sup>*</sup></label>
-                  <input type="text" class="form-control" id="street" name="street" required>
+                  <input type="text" class="form-control" id="street" name="street" value="{{$ship->street}}" required>
               </div>
             </div>
               <div class="form-group required">
                 <div class="col-lg-12">
                   <label for="apartment">Apartment<sup>*</sup></label>
-                  <input type="text" class="form-control" id="apartment" name="apartment" required>
+                  <input type="text" class="form-control" id="apartment" value="{{$ship->apartment}}" name="apartment">
               </div>
             </div>
               <div class="form-group required">
