@@ -127,8 +127,8 @@ class FlowerController extends Controller
                     $item['checked'] = true;
                     return $item;
                 }
-                return $item;
             }
+            return $item;
         });
 
         return view('admin.products.edit', compact('flower', 'collections'));
@@ -177,7 +177,6 @@ class FlowerController extends Controller
      }
      $flower->save();
 
-     //dd($request->input('collections'));
      if ($request->input('collections')) {
           $flower->collections()->sync($request->collections);
       } else {
