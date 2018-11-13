@@ -163,7 +163,7 @@
             <li role="presentation" class="active"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
           </ul>
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane" id="reviews">
+            <div role="tabpanel" class="tab-pane active" id="reviews">
               <div class="panel-body">
                 <div class="comments-review">
                   @foreach ($flower->ratings as $rating)
