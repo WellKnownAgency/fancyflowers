@@ -6,12 +6,12 @@
 
 @section ('extrahead')
     <meta property="og:type" content="product" />
-    <meta property="og:image" content="/images/product/{{ $flower->image1 }}" />
+    <meta property="og:image" content="https://fflowers.net/images/product/{{ $flower->image1 }}" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="800" />
     <meta property="og:title" content="{{ $flower->name }}" />
     <meta property="og:description" content="{{ $flower->dscr }}" />
-    <meta property="og:product_link" content="{{ url()->current() }}"/>
+    <meta property="og:product_link" content="https://fflowers.net/{{ $flower->slug }}"/>
     <meta property="og:site_name" content="Fancy Flowers" />
     <meta property="product:price:amount" content="{{ $flower->price_new_default }}" />
     <meta property="product:price:currency" content="USD" />
