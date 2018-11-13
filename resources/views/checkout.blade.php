@@ -1,5 +1,5 @@
 @section('title', 'Checkout Page | Fancy Flowers')
-@section('dscr', '')
+@section('dscr', 'Fully Secure Checkout Page with coupons.')
 @section('keywords', '')
 
 @extends('main')

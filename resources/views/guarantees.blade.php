@@ -1,4 +1,4 @@
-@section('title', '')
+@section('title', 'Guarantees')
 @section('dscr', '')
 @section('keywords', '')
 

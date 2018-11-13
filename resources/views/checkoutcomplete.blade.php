@@ -1,4 +1,4 @@
-@section('title', 'Checkout Page | Fancy Flowers')
+@section('title', 'Your order is Complete | Fancy Flowers')
 @section('dscr', '')
 @section('keywords', '')
 

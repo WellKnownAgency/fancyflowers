@@ -1,5 +1,5 @@
-@section('title', 'Birthday Flowers Collections | Fancy Flowers ')
-@section('dscr', '')
+@section('title', 'Birthday Flowers Collection | Fancy Flowers ')
+@section('dscr', 'For a Birthday occasion Flowers Collection from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')

@@ -1,5 +1,5 @@
-@section('title', 'Fancy Flowers All Bouqets')
-@section('dscr', '')
+@section('title', 'All Flowers Collections | Fancy Flowers')
+@section('dscr', 'A list of all available flowers on the website for Fancy Flowers.')
 @section('keywords', '')
 
 @extends('main')

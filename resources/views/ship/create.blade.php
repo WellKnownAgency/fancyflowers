@@ -1,4 +1,4 @@
-@section('title', '')
+@section('title', 'Create Shipping Address | Fancy Flowers')
 @section('dscr', '')
 @section('keywords', '')
 

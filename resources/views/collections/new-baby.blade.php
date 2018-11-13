@@ -1,5 +1,5 @@
-@section('title', 'New Baby Flowers Collections | Fancy Flowers')
-@section('dscr', '')
+@section('title', 'New Baby Flowers Collection | Fancy Flowers')
+@section('dscr', 'New Baby occasion flowers collection from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')

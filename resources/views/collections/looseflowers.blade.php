@@ -1,5 +1,5 @@
 @section('title', 'Lose Flowers | Fancy Flowers')
-@section('dscr', '')
+@section('dscr', 'All types of Loose Flowers. Choose Flower and amount you want from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')

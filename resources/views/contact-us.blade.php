@@ -1,5 +1,5 @@
 @section('title', 'Contact us | Fancy Flowers')
-@section('dscr', '')
+@section('dscr', 'Contact form and information to get in touch with Fancy Flowers')
 @section('keywords', '')
 
 @extends('main')
