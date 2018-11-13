@@ -6,6 +6,7 @@
 
 @section ('extrahead')
     <meta property="og:type" content="product" />
+    <meta property="og:image" content="/images/product/{{ $flower->image1 }}" />
     <meta property="og:title" content="{{ $flower->name }}" />
     <meta property="og:description" content="{{ $flower->dscr }}" />
     <meta property="og:product_link" content="{{ url()->current() }}"/>
@@ -30,10 +31,9 @@
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
         <li><a href="/" title="Home">Home</a></li>
-        <li><a href="page-category-left.html" title="Categories">Categories</a></li>
         <li><span>{{ $flower->name }}</span></li>
       </ul>
-      <h2 class="bread-title">Product Details</h2>
+      <h1 class="bread-title">{{ $flower->name }}</h1>
     </div>
   </div>
 </div><!-- end breadcrumb -->
