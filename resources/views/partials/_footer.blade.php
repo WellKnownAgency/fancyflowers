@@ -18,11 +18,11 @@
           </div>
           <div class="social_block">
             <ul class="links">
-              <li><a href="#"><em class="fa fa-facebook"></em><span class="unvisible">facebook</span> </a></li>
+              <li><a href="https://www.facebook.com/FancyFlowers-1876902799054956"><em class="fa fa-facebook"></em><span class="unvisible">facebook</span> </a></li>
               <!--<li><a href="#"><em class="fa fa-twitter"></em><span class="unvisible">twitter</span> </a></li>-->
               <!--<li><a href="#"><em class="fa fa-google-plus"></em><span class="unvisible">google</span> </a></li>-->
-              <li><a href="#"><em class="fa fa-pinterest"></em><span class="unvisible">pinterest</span> </a></li>
-              <li class="last"><a href="#"><em class="fa fa-instagram"></em><span class="unvisible">instagram</span> </a></li>
+              <!--<li><a href="#"><em class="fa fa-pinterest"></em><span class="unvisible">pinterest</span> </a></li>-->
+              <li class="last"><a href="https://www.instagram.com/fancyflowersandgifts/"><em class="fa fa-instagram"></em><span class="unvisible">instagram</span> </a></li>
             </ul>
           </div><!-- end social_block -->
         </div>
