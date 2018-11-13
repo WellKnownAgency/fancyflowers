@@ -80,12 +80,17 @@
                 <input type="text" class="form-control" name="slug" id="name" placeholder="Slug" value="{{$flower->slug}}">
               </div>
               <div class="col-md-6">
-              @foreach ($flower->collections as $collection)
-                <div class="form-check form-check-inline" >
-                  <input class="form-check-input" type="checkbox" id="collections" value="{{$collection->id}}" name="collections[]">
-                  <label class="form-check-label" for="collections">{{ $collection->name }}</label>
-                </div>
-              @endforeach
+                  <div>Collections</div>
+                  @foreach ($collections as $collection)
+                      <div class="form-check form-check-inline" >
+                          <input class="form-check-input" type="checkbox" id="collections" value="{{$collection->id}}" name="collections[]"
+                          @if ($collection->checked)
+                              checked="checked"
+                          @endif
+                          >
+                          <label class="form-check-label" for="collections">{{ $collection->name }}</label>
+                      </div>
+                  @endforeach
                 </div>
             </div>
             <div class="form-group">

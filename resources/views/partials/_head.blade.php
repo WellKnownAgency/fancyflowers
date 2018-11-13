@@ -9,7 +9,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    
+
     @yield('extrahead')
 
   <!-- Google Fonts -->
@@ -79,5 +79,12 @@
   transition: 0.3s;
   background-color:#EF4566;
   border-color: #EF4566 ;
+}
+
+.nivoSlider > a:not(:first-child) {
+    display: none;
+}
+.nivoSlider .img-responsive {
+    width: 100%;
 }
 </style>

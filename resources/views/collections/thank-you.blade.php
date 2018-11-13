@@ -101,8 +101,8 @@
                                 <label for="selectProductSort">Sort by</label>
                                 <select id="selectProductSort" class="selectProductSort form-control">
                                     <option selected="selected" value="created_at__asc">Choose...</option>
-                                    <option value="price1__asc">Lowest First</option>
-                                    <option value="price1__desc">Highest First</option>
+                                    <option value="price_new_default__asc">Lowest First</option>
+                                    <option value="price_new_default__desc">Highest First</option>
                                     <option value="name__asc">Product Name A-Z</option>
                                     <option value="name__desc">Product Name Z-A</option>
                                     <option value="stock__desc">In Stock</option>
