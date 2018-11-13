@@ -115,9 +115,23 @@ class FlowerController extends Controller
     public function edit($id)
     {
         $flower = Flower::with('sizes')
+            ->with('collections')
             ->where('id', $id)
             ->first();
-        return view('admin.products.edit', compact('flower'));
+
+        $collections = Collection::all();
+
+        $collections->transform(function ($item, $key) use ($flower){
+            foreach ($flower->collections as $fcollection) {
+                if ($item->id === $fcollection->id) {
+                    $item['checked'] = true;
+                    return $item;
+                }
+                return $item;
+            }
+        });
+
+        return view('admin.products.edit', compact('flower', 'collections'));
     }
 
     /**
@@ -163,7 +177,8 @@ class FlowerController extends Controller
      }
      $flower->save();
 
-     if (isset($request->collections)) {
+     dd($request->input('collections'));
+     if ($request->input('collections')) {
           $flower->collections()->sync($request->collections);
       } else {
           $flower->collections()->sync(array());
