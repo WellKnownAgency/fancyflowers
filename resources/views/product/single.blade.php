@@ -7,6 +7,8 @@
 @section ('extrahead')
     <meta property="og:type" content="product" />
     <meta property="og:image" content="/images/product/{{ $flower->image1 }}" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="800" />
     <meta property="og:title" content="{{ $flower->name }}" />
     <meta property="og:description" content="{{ $flower->dscr }}" />
     <meta property="og:product_link" content="{{ url()->current() }}"/>
@@ -33,7 +35,7 @@
         <li><a href="/" title="Home">Home</a></li>
         <li><span>{{ $flower->name }}</span></li>
       </ul>
-      <h1 class="bread-title">{{ $flower->name }}</h1>
+      <h2 class="bread-title">{{ $flower->name }} Details</h2>
     </div>
   </div>
 </div><!-- end breadcrumb -->
