@@ -10,9 +10,9 @@
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="800" />
     <meta property="og:title" content="{{ $flower->name }}" />
-    <meta property="og:url" content="https://fflowers.net/{{ $flower->slug }}" />
+    <meta property="og:url" content="https://fflowers.net/product/{{ $flower->slug }}" />
     <meta property="og:description" content="{{ $flower->dscr }}" />
-    <meta property="og:product_link" content="https://fflowers.net/{{ $flower->slug }}"/>
+    <meta property="og:product_link" content="https://fflowers.net/product/{{ $flower->slug }}"/>
     <meta property="og:site_name" content="Fancy Flowers" />
     <meta property="product:price:amount" content="{{ $flower->price_new_default }}" />
     <meta property="product:price:currency" content="USD" />
