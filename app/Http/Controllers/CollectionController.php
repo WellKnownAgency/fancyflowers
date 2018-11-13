@@ -191,13 +191,16 @@ class CollectionController extends Controller
           $flowers = new Flower();
       }
 
+      $flowers = $flowers->get();
+
       if($request->has('sort')) {
           $reqSort = $request->input('sort');
           $reqSortArr = explode('__', $reqSort);
-          $flowers = $flowers->orderBy($reqSortArr[0], $reqSortArr[1]);
+          if ($reqSortArr[1] == 'asc')
+              $flowers = $flowers->sortBy($reqSortArr[0]);
+          else if($reqSortArr[1] == 'desc')
+              $flowers = $flowers->sortByDesc($reqSortArr[0]);
       }
-
-      $flowers = $flowers->get();
 
       if($request->has('filter')) {
           $reqFilter = $request->input('filter');
