@@ -177,7 +177,7 @@ class FlowerController extends Controller
      }
      $flower->save();
 
-     dd($request->input('collections'));
+     //dd($request->input('collections'));
      if ($request->input('collections')) {
           $flower->collections()->sync($request->collections);
       } else {
