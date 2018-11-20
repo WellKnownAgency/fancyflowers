@@ -44,7 +44,7 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>

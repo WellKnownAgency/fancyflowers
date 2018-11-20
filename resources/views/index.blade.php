@@ -9,8 +9,8 @@
 @section('content')
 <div class="tiva-slideshow-wrapper">
   <div id="tiva-slideshow" class="nivoSlider">
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h13.jpg" title="#caption1" alt="Slideshow image"></a>
-    <a href="#" title="Slideshow image"><img class="img-responsive" src="images/slide/slide1-h10.jpg" title="#caption2" alt="Slideshow image"></a>
+    <a href="" title="Fancy Flowers"><img class="img-responsive" src="images/slide/slide1-h13.jpg" title="#caption1" alt="Fancy Flowers"></a>
+    <a href="" title="Fancy Flowers"><img class="img-responsive" src="images/slide/slide1-h10.jpg" title="#caption2" alt="Flower Delivery"></a>
   </div>
 
   <div id="caption1" class="nivo-html-caption">
@@ -199,28 +199,28 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
       <div class="tv-table block">
         <div class="tv-tablecell">
           <div class="block-html block">
-            <p class="custom-h3">Thank You</p>
+            <p class="custom-h3">Congratulations</p>
             <p class="block-htmldes">Appreciation in a "Thank You" for gifts symbolizes care, hope and love. Choose your gift and symbolize your thanks, and let Fancy Flowers take care of all the service to the final destination with total satisfaction and convenience to the customer. This is one of the most beautiful way to say "Thank You". </p>
-            <a class="button btn btn-primary" href="/collections/compositions" title="Shop now">Shop now</a>
+            <a class="button btn btn-primary" href="/collections/congratulation" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href=""><img class="img-responsive" src="/images/banner/congratulations.jpg" alt=""></a>
+            <a class="image-wrap" href="/collections/congratulation"><img class="img-responsive" src="/images/banner/congratulations.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
       </div>
       <div class="tv-table block">
         <div class="tv-tablecell box-image">
           <div class="banner-item effectbanner">
-            <a class="image-wrap" href=""><img class="img-responsive" src="/images/banner/birthday.jpg" alt=""></a>
+            <a class="image-wrap" href="/collections/birthday"><img class="img-responsive" src="/images/banner/birthday.jpg" alt=""></a>
           </div><!--end banner-item-->
         </div>
         <div class="tv-tablecell">
           <div class="block-html block">
             <p class="custom-h3">Birthday</p>
             <p class="block-htmldes">A birthday is a special day of every person. Men and women, boys and girls are waiting for congratulations and gifts. If you want to make this day unforgettable for someone you love, order a unique bouquet for him or her. Fancy Flowers will deliver the happiness in the early morning or in the late evening. </p>
-            <a class="button btn btn-primary" href="/collections/thank-you" title="Shop now">Shop now</a>
+            <a class="button btn btn-primary" href="/collections/birthday" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
       </div>
