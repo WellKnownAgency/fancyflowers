@@ -116,7 +116,7 @@ class CollectionController extends Controller
     {
       $flowersbest = Flower::isBestsellers()->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Thank you');
+      $query->where('name', 'Holidays');
     });
 
     $flowers = $flowers->paginate($this->limit);
@@ -126,7 +126,7 @@ class CollectionController extends Controller
     $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
-    return view('/collections/thank-you')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
+    return view('/collections/holidays')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
   public function getWeddings()
