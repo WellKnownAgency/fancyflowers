@@ -1,5 +1,5 @@
-@section('title', 'Thank you Flowers Collection | Fancy Flowers')
-@section('dscr', 'For a Thank You occasion Flowers Collection from Phladelphia Fancy Flowers Delivery.')
+@section('title', 'Holidays Flowers Collection | Fancy Flowers')
+@section('dscr', 'For a Holidays occasions Flowers Collection from Phladelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/Holidays" title="Thank-You" class="{{ Request::is('collections/holidays') ?"active-nav" : ""}}">
-									Holidays
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">

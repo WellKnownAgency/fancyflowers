@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">

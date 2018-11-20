@@ -11,9 +11,9 @@
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
 				<li><a href="/collections/all" title="Categories">Collections</a></li>
-				<li><span>Compositions</span></li>
+				<li><span>Our Friends Florists</span></li>
 			</ul>
-			<h2 class="bread-title">Compositions</h2>
+			<h2 class="bread-title">Our Friends Florists</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition" class="{{ Request::is('collections/compositions') ?"active-nav" : ""}}">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">

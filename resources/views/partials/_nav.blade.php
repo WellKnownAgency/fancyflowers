@@ -150,14 +150,14 @@
                             <ul>
                               <li><a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">Congratulations</a></li>
                               <li><a href="/collections/new-baby" title="New Baby" class="{{ Request::is('collections/new-baby') ?"active-nav" : ""}}">New Baby</a></li>
-                              <li><a href="/collections/thank-you" title="Thank You" class="{{ Request::is('collections/thank-you') ?"active-nav" : ""}}">Thank You</a></li>
+                              <li><a href="/collections/thank-you" title="Holidays" class="{{ Request::is('collections/holidays') ?"active-nav" : ""}}">Holidays</a></li>
                             </ul>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
                             <ul>
-                              <li><a href="/collections/compositions" title="Flower Composition" class="{{ Request::is('collections/compositions') ?"active-nav" : ""}}">Flower Composition</a></li>
+                              <li><a href="/collections/compositions" title="Our Friends Florists" class="{{ Request::is('collections/our-friends-florists') ?"active-nav" : ""}}">Our Friends Florists</a></li>
                               <li><a href="/collections/looseflowers" title="Looseflowers" class="{{ Request::is('collections/looseflowers') ?"active-nav" : ""}}">Loose Flowers</a></li>
                               <li><a href="/collections/gifts" title="Gifts" class="{{ Request::is('collections/gifts') ?"active-nav" : ""}}">Gifts</a></li>
                             </ul>
