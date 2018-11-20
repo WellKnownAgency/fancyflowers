@@ -53,7 +53,7 @@
 								</a>
 							</li>
 							<li>
-									<a href="/collections/holidays" title="Holidays">
+									<a href="/collections/holidays" title="Holidays" class="active-nav">
 											Holidays
 									</a>
 							</li>

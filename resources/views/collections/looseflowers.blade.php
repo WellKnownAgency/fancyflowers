@@ -63,7 +63,7 @@
 									</a>
 							</li>
 							<li>
-								<a href="/collections/looseflowers" title="Loose-Flowers" class="{{ Request::is('collections/looseflowers') ?"active-nav" : ""}}">
+								<a href="/collections/looseflowers" title="Loose-Flowers" class="active-nav">
 									Loose Flowers
 								</a>
 							</li>

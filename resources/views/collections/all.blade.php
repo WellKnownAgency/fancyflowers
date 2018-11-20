@@ -28,7 +28,7 @@
                     <div class="block_content">
                         <ul class="list-block">
                             <li>
-                                <a href="/collections/all" title="all" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">
+                                <a href="/collections/all" title="all" class="active-nav">
                                     All
                                 </a>
                             </li>

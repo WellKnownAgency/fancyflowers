@@ -48,7 +48,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/new-baby" title="New-Baby" class="{{ Request::is('collections/new-baby') ?"active-nav" : ""}}">
+								<a href="/collections/new-baby" title="New-Baby" class="active-nav">
 									New Baby
 								</a>
 							</li>

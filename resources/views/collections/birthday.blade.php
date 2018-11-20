@@ -33,7 +33,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/birthday" title="Birthday" class="{{ Request::is('collections/birthday') ?"active-nav" : ""}}">
+								<a href="/collections/birthday" title="Birthday" class="active-nav">
 									Birthday
 								</a>
 							</li>

@@ -1,5 +1,5 @@
-@section('title', 'Flowers Compositions Collection | fancy Flowers')
-@section('dscr', 'Flowers Compositions Collection from Philadelphia Fancy Flowers Delivery.')
+@section('title', 'Our Friends Florists Collection | fancy Flowers')
+@section('dscr', 'Our Friends Florists Collection from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
@@ -58,7 +58,7 @@
 									</a>
 							</li>
 							<li>
-									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+									<a href="/collections/our-friends-florists" title="Our Friends Florists" class="active-nav">
 											Our Friends Florists
 									</a>
 							</li>
