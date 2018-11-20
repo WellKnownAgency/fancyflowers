@@ -112,7 +112,7 @@ class CollectionController extends Controller
     return view('/collections/new-baby')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
   }
 
-  public function getThankyou()
+  public function getHolidays()
     {
       $flowersbest = Flower::isBestsellers()->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {

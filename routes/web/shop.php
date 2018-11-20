@@ -6,7 +6,7 @@ Route::get('/collections/compositions', 'CollectionController@getCompositions')-
 Route::get('/collections/congratulation', 'CollectionController@getCongratulation')->name('collection.congratulation');
 Route::get('/collections/gifts', 'CollectionController@getGifts')->name('collection.gifts');
 Route::get('/collections/new-baby', 'CollectionController@getNewbaby')->name('collection.newbaby');
-Route::get('/collections/holidays', 'CollectionController@getThankyou')->name('collection.thankyou');
+Route::get('/collections/holidays', 'CollectionController@getHolidays')->name('collection.holidays');
 Route::get('/collections/weddings', 'CollectionController@getWeddings')->name('collection.weddings');
 Route::get('/collections/looseflowers', 'CollectionController@getLooseflowers')->name('collection.looseflowers');
 Route::get('/collections/all', 'CollectionController@getAll')->name('collection.all');
