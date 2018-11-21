@@ -8,7 +8,7 @@ Route::get('/', 'PageController@index');
 Route::get('/sitemap', function () {
     $posts = App\Post::get();
     $flowers = App\Flower::get();
-    return view('sitemap')-withPosts($posts)->withFlowers($flowers);
+    return view('sitemap')->withPosts($posts)->withFlowers($flowers);
 });
 
 Route::get('/about-us', function () {
