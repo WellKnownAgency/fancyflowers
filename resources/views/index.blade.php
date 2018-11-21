@@ -247,7 +247,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
                   <span class="post-date"><span class="month">{{ Carbon\Carbon::parse($post->created_at)->format('M') }}</span><br><span class="day">{{ Carbon\Carbon::parse($post->created_at)->format('d') }}</span></span>
                 </div>
                 <div class="post-content">
-                  <h4><a href="/blog/{{$post->slug}}" title="{{$post->title}}" class="ltr">{{$post->title}}</a></h4>
+                  <h4 class="ltr"><a href="/blog/{{$post->slug}}" title="{{$post->title}}" >{{$post->title}}</a></h4>
                   <div class="post-meta">
                     <div class="post-meta-lr post-meta-left">
                       <span class="post-comment">By FancyFlowers</span>
