@@ -22,8 +22,8 @@ class PageController extends Controller
 
     public function sitemap()
     {
-      $posts = App\Post::get();
-      $flowers = App\Flower::get();
+      $posts = Post::get();
+      $flowers = Flower::get();
       return view('sitemap')->withPosts($posts)->withFlowers($flowers)->header('Content-Type', 'text/xml');
     }
 
