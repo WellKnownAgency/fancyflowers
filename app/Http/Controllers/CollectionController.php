@@ -150,7 +150,7 @@ class CollectionController extends Controller
     {
       $flowersbest = Flower::isBestsellers()->take(4)->get();
       $flowers = Flower::whereHas('collections', function ($query) {
-        $query->where('name', 'Wedding');
+        $query->where('name', 'Loose Flowers');
         });
 
     $flowers = $flowers->orderBy('created_at', 'asc');
