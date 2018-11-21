@@ -25,127 +25,15 @@ class CollectionController extends Controller
       return view('admin.collections.index')->withCollections($collections);
     }
 
-
-    //collections
-      public function getBirthday()
-      {
+    public function show($slug)
+    {
         $flowersbest = Flower::isBestsellers()->take(4)->get();
-        $flowers = Flower::whereHas('collections', function ($query) {
-        $query->where('name', 'Birthday');
-      });
+        $collection = Collection::where('slug', $slug)->first();
 
-      $flowers = $flowers->paginate($this->limit);
+        $collections = Collection::orderBy('sort')->get();
 
-      $min = $flowers->min('price_new_default');
-      $minPrice = $min ? $min : 0;
-      $max = $flowers->max('price_new_default');
-      $maxPrice = $max ? ceil($max) : 100;
-
-      return view('/collections/birthday')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-    }
-
-    public function getOurfriendsflorists()
-    {
-      $flowersbest = Flower::isBestsellers()->take(4)->get();
-      $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Our Friends Florists');
-    });
-
-    $flowers = $flowers->paginate($this->limit);
-
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    return view('/collections/our-friends-florists')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
-
-  public function getCongratulation()
-    {
-      $flowersbest = Flower::isBestsellers()->take(4)->get();
-      $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Congratulation');
-    });
-
-    $flowers = $flowers->paginate($this->limit);
-
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    return view('/collections/congratulation')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
-
-  public function getGifts()
-    {
-      $flowersbest = Flower::isBestsellers()->take(4)->get();
-      $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Gifts');
-    });
-
-    $flowers = $flowers->paginate($this->limit);
-
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    return view('/collections/gifts')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
-
-  public function getNewbaby()
-    {
-      $flowersbest = Flower::isBestsellers()->take(4)->get();
-      $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'New Baby');
-    });
-
-    $flowers = $flowers->paginate($this->limit);
-
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    return view('/collections/new-baby')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
-
-  public function getHolidays()
-    {
-      $flowersbest = Flower::isBestsellers()->take(4)->get();
-      $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Holidays');
-    });
-
-    $flowers = $flowers->paginate($this->limit);
-
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    return view('/collections/holidays')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
-
-  public function getWeddings()
-    {
-      $flowersbest = Flower::isBestsellers()->take(4)->get();
-      $flowers = Flower::whereHas('collections', function ($query) {
-      $query->where('name', 'Wedding');
-    });
-
-    $flowers = $flowers->paginate($this->limit);
-
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    return view('/collections/weddings')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
-
+        $flowers = Flower::whereHas('collections', function ($query) use ($slug) {
+            $query->where('slug', $slug);
   public function getLooseflowers()
     {
       $flowersbest = Flower::isBestsellers()->take(4)->get();
@@ -153,20 +41,21 @@ class CollectionController extends Controller
         $query->where('name', 'Loose Flowers');
         });
 
-    $flowers = $flowers->orderBy('created_at', 'asc');
-    $flowers = $flowers->paginate($this->limit);
+        $flowers = $flowers->paginate($this->limit);
 
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
+        $min = $flowers->min('price_new_default');
+        $minPrice = $min ? $min : 0;
+        $max = $flowers->max('price_new_default');
+        $maxPrice = $max ? ceil($max) : 100;
 
-    return view('/collections/looseflowers')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
-  }
+        return view('collections.show', compact('collection', 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
+    }
 
-  public function getAll(Request $request)
+  public function all(Request $request)
   {
     $flowersbest = Flower::isBestsellers()->take(4)->get();
+
+    $collections = Collection::all();
 
     $flowers = new Flower();
     $flowers = $flowers->orderBy('created_at', 'asc');
@@ -177,15 +66,15 @@ class CollectionController extends Controller
     $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
 
-    return view('/collections/all')->withFlowers($flowers)->withMinPrice($minPrice)->withMaxPrice($maxPrice)->withFlowersbest($flowersbest);
+    return view('collections.all', compact( 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
   }
 
   public function filter(Request $request)
   {
       if($request->has('category')) {
-          $reqCategory = $request->input('category');
-          $flowers = Flower::whereHas('collections', function ($query) use ($reqCategory) {
-              $query->where('name', $reqCategory);
+          $slug_category = $request->input('category');
+          $flowers = Flower::whereHas('collections', function ($query) use ($slug_category) {
+              $query->where('slug', $slug_category);
           });
       } else {
           $flowers = new Flower();
@@ -222,7 +111,7 @@ class CollectionController extends Controller
           $flowers = $this->paginate($flowers, $this->limit);
       }
 
-      return view('/collections/products')->withFlowers($flowers);
+      return view('collections._products')->withFlowers($flowers);
   }
 
     public function paginate($items, $perPage = 15, $page = null, $options = [])
@@ -264,17 +153,6 @@ class CollectionController extends Controller
 
      session()->put('success','Item Deleted Successfully from Your Cart ');
      return redirect()->route('collections.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

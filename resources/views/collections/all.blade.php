@@ -10,8 +10,7 @@
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
-				<li><a href="/collections/all" title="Categories">Collections</a></li>
-				<li><span>All</span></li>
+				<li>Collections</li>
 			</ul>
 			<h2 class="bread-title">All Collections</h2>
 		</div>
@@ -23,78 +22,8 @@
 	<div class="container">
 		<div class="row">
 			<div id="left_column" class="sidebar col-lg-3 col-md-3">
-                <div id="categories_block_left" class="block">
-                    <h4 class="title_block">Collections</h4>
-                    <div class="block_content">
-                        <ul class="list-block">
-                            <li>
-                                <a href="/collections/all" title="all" class="active-nav">
-                                    All
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/birthday" title="Birthday">
-                                    Birthday
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/weddings" title="Wedding">
-                                    Wedding
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/congratulation" title="Congratulation">
-                                    Congratulations
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/new-baby" title="New-Baby">
-                                    New Baby
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/holidays" title="Holidays">
-                                    Holidays
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/our-friends-florists" title="Our Friends Florists">
-                                    Our Friends Florists
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/looseflowers" title="Loose-Flowers">
-                                    Loose Flowers
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/collections/gifts" title="Gifts">
-                                    Gifts
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-				<div id="block_price_filter" class="block">
-					<h4 class="title_block">Filter by price</h4>
-					<div class="block_content">
-						<div id="slider-range" class="tiva-filter">
-							<label for="price-filter">Range:</label>
-							<div class="filter-item price-filter">
-								<div class="layout-slider">
-									<form action="" method="POST">
-										<input id="price-filter" name="price" value="{{$minPrice}};{{$maxPrice}}" />
-									</form>
-								</div>
-								<div class="layout-slider-settings"></div>
-							</div>
-						</div>
-					</div>
-				</div><!-- end block_price_filter -->
-				<div id="block_featured_product" class="block">
-                    @include('collections/bestsellers')
-				</div><!-- end block_featured_product -->
-			</div><!-- end left_column -->
+                @include('collections._sidebar')
+			</div>
 			<div id="center_column" class="col-lg-9 col-md-9">
 				<div class="content_sortPagiBar top clearfix">
                     <div class="sort pull-right">
@@ -127,7 +56,7 @@
                     </div>
 				</div>
                 <div id="products-content">
-                    @include('collections/products')
+                    @include('collections/_products')
                 </div>
 			</div><!-- end center_column -->
 		</div>
@@ -154,7 +83,7 @@
             skin: "plastic",
             callback: function (value) {
                 $('#products-content').fadeOut(300);
-                axios.get('{{route('collection.filter')}}', {params: {
+                axios.get('{{route('collections.filter')}}', {params: {
                     'filter': 'price__' + value,
                     'sort': sortSelect.val(),
                     'limit': limitSelect.val()
@@ -171,7 +100,7 @@
             var page = $(".pagination li.active span").text();
             var thisSelect = $( this );
             $('#products-content').fadeOut(300);
-            axios.get('{{route('collection.filter')}}', {params: {
+            axios.get('{{route('collections.filter')}}', {params: {
                 'filter': 'price__' + $("#price-filter").slider("value"),
                 'sort': thisSelect.val(),
                 'page': page,
@@ -186,7 +115,7 @@
         $("#selectProductShow").on('change', function (e) {
             var thisSelect = $( this );
             $('#products-content').fadeOut(300);
-            axios.get('{{route('collection.filter')}}', {params: {
+            axios.get('{{route('collections.filter')}}', {params: {
                     'filter': 'price__' + $("#price-filter").slider("value"),
                     'sort': sortSelect.val(),
                     'limit': thisSelect.val()
@@ -202,7 +131,7 @@
             event.preventDefault();
             var page = $(this).attr('href').split('page=')[1];
             $('#products-content').fadeOut(300);
-            axios.get('{{route('collection.filter')}}', {params: {
+            axios.get('{{route('collections.filter')}}', {params: {
                     'filter': 'price__' + $("#price-filter").slider("value"),
                     'sort': sortSelect.val(),
                     'page': page,
