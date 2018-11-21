@@ -93,14 +93,9 @@ class CheckoutController extends Controller
     {
         $cart = Cart::class;
         $content = $cart::content()->map(function ($item) {
-          return [
-              'name' => $item->name,
-              'qty' => $item->qty,
-              'size' => FLSize::getSizeDisplayName($item->options->size),
-              'price' => $item->price,
-              'subtotal' => $item->subtotal,
-          ];
-        })->values()->toJson();
+            return $item->name . ' - ' . $item->qty . ' pcs - ' . FLSize::getSizeDisplayName($item->options->size) . ' - $' . $item->price;
+        })->values()->all();
+        $content = implode(', ', $content);
 
         try {
           $charge = Stripe::charges()->create([
