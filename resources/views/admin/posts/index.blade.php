@@ -26,7 +26,6 @@
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Image</th>
-                <th scope="col">Published</th>
                 <th scope="col">Created date</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -38,7 +37,6 @@
                 <th scope="row">{{ $post->title }}</th>
                 <td >{{ $post->slug }}</td>
                 <td>{{ $post->image }}</td>
-                <td>{{ $post->published}}</td>
                 <td>{{ $post->created_at}}</td>
                 <td class="text-right">
                   <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">View</a>

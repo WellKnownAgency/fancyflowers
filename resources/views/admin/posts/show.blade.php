@@ -43,7 +43,7 @@
          <li class="list-group-item">{{ $post->metatitle }}</li>
          <li class="list-group-item">{{ $post->dscr }}</li>
          <li class="list-group-item">{{ $post->excerpt }}</li>
-         <li class="list-group-item">{{ $post->body }}</li>
+         <li class="list-group-item">{!! $post->body !!}</li>
          <li class="list-group-item"><img src="/images/blog/{{ $post->image }}" height="200px"/>
 
        </ul>
