@@ -20,4 +20,11 @@ class PageController extends Controller
       return view('index', compact('flowers'))->withPosts($posts);
     }
 
+    public function sitemap()
+    {
+      $posts = App\Post::get();
+      $flowers = App\Flower::get();
+      return view('sitemap')->withPosts($posts)->withFlowers($flowers)->header('Content-Type', 'text/xml');
+    }
+
 }
