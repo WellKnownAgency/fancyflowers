@@ -1,5 +1,5 @@
-@section('title', '$post->metatitle')
-@section('dscr', '$post->dscr')
+@section('title', "$post->metatitle")
+@section('dscr', "$post->dscr")
 @section('keywords', '')
 
 @extends('main')
@@ -12,10 +12,10 @@
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
         <li><a href="/" title="Home">Home</a></li>
-        <li><a href="/blog" title="Last blogs">Last blogs</a></li>
+        <li><a href="/blog" title="Last blogs">Blog</a></li>
         <li><span>{{ $post->title }}</span></li>
       </ul>
-      <h2 class="bread-title">Blog detail</h2>
+      <h2 class="bread-title">Post</h2>
     </div>
   </div>
 </div><!-- end breadcrumb -->
@@ -40,7 +40,7 @@
             <h1 class="title_block">{{ $post->title }}</h1>
             <div class="post-content">
               <p>
-                {{$post->body}}
+                {!! $post->body !!}
               </p>
             </div>
             <div class="post-tag clearfix">
@@ -111,8 +111,8 @@
           <h4 class="title_block">Recent posts</h4>
           <div class="block_content">
             <ul class="posts-list">
+              @foreach ($posts as $post)
               <li>
-                  @foreach ($posts as $post)
                 <div class="media">
                   <div class="post-image pull-left">
                     <a href="/blog/{{$post->slug}}">
@@ -128,8 +128,8 @@
                     </div>
                   </div>
                 </div>
-                  @endforeach
               </li>
+              @endforeach
             </ul>
           </div>
         </div><!-- end recent-posts -->
