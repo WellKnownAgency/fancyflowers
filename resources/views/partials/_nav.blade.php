@@ -160,7 +160,6 @@
 
 
                             <ul>
-                              <li class="active"><a href="/collections" title="All" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">All</a></li>
                               <li class="active"><a href="/collections/birthday" title="Birthday" class="{{ Request::is('collections/birthday') ?"active-nav" : ""}}">Birthday</a></li>
                               <li><a href="/collections/weddings" title="Weddings" class="{{ Request::is('collections/wedding') ?"active-nav" : ""}}">Wedding</a></li>
                            </ul>
