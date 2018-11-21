@@ -5,8 +5,10 @@ Auth::routes();
 // Main Pages Routes
 Route::get('/', 'PageController@index');
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/sitemap', function () {
+    $posts = App\Post::get();
+    $flowers = App\Flower::get();
+    return view('sitemap')-withPosts($posts)->withFlowers($flowers);
 });
 
 Route::get('/about-us', function () {
