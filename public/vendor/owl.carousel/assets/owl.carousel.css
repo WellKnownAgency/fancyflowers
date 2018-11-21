@@ -132,7 +132,7 @@
   cursor: grab;
 }
 .owl-carousel.owl-rtl {
-  direction: ltr;
+  direction: rtl;
 }
 .owl-carousel.owl-rtl .owl-item {
   float: right;
