@@ -93,14 +93,14 @@
 </url>
  @foreach($posts as $post)
         <url>
-            <loc>https://fflowers.net/blog{{ $post->slug }}</loc>
+            <loc>https://fflowers.net/blog/{{ $post->slug }}</loc>
             <lastmod>{{ date('Y-m-d', strtotime($post->created_at)) }}</lastmod>
             <priority>0.70</priority>
         </url>
 @endforeach
 @foreach($flowers as $flower)
        <url>
-           <loc>https://fflowers.net/blog{{ $flower->slug }}</loc>
+           <loc>https://fflowers.net/product/{{ $flower->slug }}</loc>
            <lastmod>{{ date('Y-m-d', strtotime($flower->updated_at)) }}</lastmod>
            <priority>1.00</priority>
        </url>
