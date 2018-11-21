@@ -1,5 +1,5 @@
-@section('title', 'Gifts Flowers Collections | Fancy Flowers')
-@section('dscr', '')
+@section('title', 'Gifts Flowers Collection | Fancy Flowers')
+@section('dscr', 'Any occasion gifts from Phildalphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
@@ -44,7 +44,7 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">
@@ -68,7 +68,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/gifts" title="Gifts" class="{{ Request::is('collections/gifts') ?"active-nav" : ""}}">
+								<a href="/collections/gifts" title="Gifts" class="active-nav">
 									Gifts
 								</a>
 							</li>

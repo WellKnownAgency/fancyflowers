@@ -6,14 +6,17 @@
 
 @section ('extrahead')
     <meta property="og:type" content="product" />
+    <meta property="og:image" content="https://fflowers.net/images/product/{{ $flower->image1 }}" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="800" />
     <meta property="og:title" content="{{ $flower->name }}" />
+    <meta property="og:url" content="https://fflowers.net/product/{{ $flower->slug }}" />
     <meta property="og:description" content="{{ $flower->dscr }}" />
-    <meta property="og:product_link" content="{{ url()->current() }}"/>
+    <meta property="og:product_link" content="https://fflowers.net/product/{{ $flower->slug }}"/>
     <meta property="og:site_name" content="Fancy Flowers" />
-    <meta property="product:price:amount" content="{{ $flower->price1 }}" />
+    <meta property="product:price:amount" content="{{ $flower->price_new_default }}" />
     <meta property="product:price:currency" content="USD" />
     <meta property="og:availability" content="instock" />
-    <meta property="og:site_name" content="fflowers.net" />
     <style>
         .price-color {
             transition: color 0.3s;
@@ -30,10 +33,9 @@
     <div class="breadcrumb clearfix">
       <ul class="ul-breadcrumb">
         <li><a href="/" title="Home">Home</a></li>
-        <li><a href="page-category-left.html" title="Categories">Categories</a></li>
         <li><span>{{ $flower->name }}</span></li>
       </ul>
-      <h2 class="bread-title">Product Details</h2>
+      <h2 class="bread-title">{{ $flower->name }} Details</h2>
     </div>
   </div>
 </div><!-- end breadcrumb -->
@@ -163,7 +165,7 @@
             <li role="presentation" class="active"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
           </ul>
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane" id="reviews">
+            <div role="tabpanel" class="tab-pane active" id="reviews">
               <div class="panel-body">
                 <div class="comments-review">
                   @foreach ($flower->ratings as $rating)

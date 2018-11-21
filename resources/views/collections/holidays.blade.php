@@ -1,19 +1,19 @@
-@section('title', 'Flowers Compositions | fancy Flowers')
-@section('dscr', '')
+@section('title', 'Holidays Flowers Collection | Fancy Flowers')
+@section('dscr', 'For a Holidays occasions Flowers Collection from Phladelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
 
 @section('content')
-<div id="breadcrumb" class="clearfix  breadcrumb_back">
+<div id="breadcrumb" class="clearfix breadcrumb_back">
 	<div class="container">
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
 				<li><a href="/collections/all" title="Categories">Collections</a></li>
-				<li><span>Compositions</span></li>
+				<li><span>Holidays</span></li>
 			</ul>
-			<h2 class="bread-title">Compositions</h2>
+			<h2 class="bread-title">Holidays</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
@@ -44,7 +44,7 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays" class="active-nav">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition" class="{{ Request::is('collections/compositions') ?"active-nav" : ""}}">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">
@@ -139,7 +139,7 @@
         window.onload = function() {
             var sortSelect = $("#selectProductSort");
             var limitSelect = $("#selectProductShow");
-            var category = 'Flower Composition';
+            var category = 'Thank you';
 
             $("#price-filter").slider({
                 from: {{$minPrice}},

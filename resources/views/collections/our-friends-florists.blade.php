@@ -1,19 +1,19 @@
-@section('title', 'Thank you Flowers Collections | Fancy Flowers')
-@section('dscr', '')
+@section('title', 'Our Friends Florists Collection | fancy Flowers')
+@section('dscr', 'Our Friends Florists Collection from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
 
 @section('content')
-<div id="breadcrumb" class="clearfix breadcrumb_back">
+<div id="breadcrumb" class="clearfix  breadcrumb_back">
 	<div class="container">
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
 				<li><a href="/collections/all" title="Categories">Collections</a></li>
-				<li><span>Thank You</span></li>
+				<li><span>Our Friends Florists</span></li>
 			</ul>
-			<h2 class="bread-title">Thank You</h2>
+			<h2 class="bread-title">Our Friends Florists</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
@@ -44,7 +44,7 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You" class="{{ Request::is('collections/thank-you') ?"active-nav" : ""}}">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists" class="active-nav">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">
@@ -139,7 +139,7 @@
         window.onload = function() {
             var sortSelect = $("#selectProductSort");
             var limitSelect = $("#selectProductShow");
-            var category = 'Thank you';
+            var category = 'Flower Composition';
 
             $("#price-filter").slider({
                 from: {{$minPrice}},

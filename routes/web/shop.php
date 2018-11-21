@@ -2,11 +2,11 @@
 
 Route::get('/collections/filter', 'CollectionController@filter')->name('collection.filter');
 Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
-Route::get('/collections/compositions', 'CollectionController@getCompositions')->name('collection.compositions');
+Route::get('/collections/our-friends-florists', 'CollectionController@getOurfriendsflorists')->name('collection.getOurfriendsflorists');
 Route::get('/collections/congratulation', 'CollectionController@getCongratulation')->name('collection.congratulation');
 Route::get('/collections/gifts', 'CollectionController@getGifts')->name('collection.gifts');
 Route::get('/collections/new-baby', 'CollectionController@getNewbaby')->name('collection.newbaby');
-Route::get('/collections/thank-you', 'CollectionController@getThankyou')->name('collection.thankyou');
+Route::get('/collections/holidays', 'CollectionController@getHolidays')->name('collection.holidays');
 Route::get('/collections/weddings', 'CollectionController@getWeddings')->name('collection.weddings');
 Route::get('/collections/looseflowers', 'CollectionController@getLooseflowers')->name('collection.looseflowers');
 Route::get('/collections/all', 'CollectionController@getAll')->name('collection.all');

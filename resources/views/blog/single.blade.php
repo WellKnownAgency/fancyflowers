@@ -1,5 +1,5 @@
-@section('title', '')
-@section('dscr', '')
+@section('title', '$post->metatitle')
+@section('dscr', '$post->dscr')
 @section('keywords', '')
 
 @extends('main')

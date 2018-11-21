@@ -1,5 +1,5 @@
-@section('title', 'Birthday Flowers Collections | Fancy Flowers ')
-@section('dscr', '')
+@section('title', 'Birthday Flowers Collection | Fancy Flowers ')
+@section('dscr', 'For a Birthday occasion Flowers Collection from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
@@ -33,7 +33,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/birthday" title="Birthday" class="{{ Request::is('collections/birthday') ?"active-nav" : ""}}">
+								<a href="/collections/birthday" title="Birthday" class="active-nav">
 									Birthday
 								</a>
 							</li>
@@ -44,7 +44,7 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">

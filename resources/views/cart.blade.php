@@ -1,5 +1,5 @@
-@section('title', '')
-@section('dscr', '')
+@section('title', 'Flowers Cart | Fancy Flowers')
+@section('dscr', 'Flowers Cart on Fancy Flowers.')
 @section('keywords', '')
 
 @extends('main')

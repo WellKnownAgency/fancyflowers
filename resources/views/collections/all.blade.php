@@ -1,5 +1,5 @@
-@section('title', 'Fancy Flowers All Bouqets')
-@section('dscr', '')
+@section('title', 'All Flowers Collections | Fancy Flowers')
+@section('dscr', 'A list of all available flowers on the website for Fancy Flowers.')
 @section('keywords', '')
 
 @extends('main')
@@ -28,7 +28,7 @@
                     <div class="block_content">
                         <ul class="list-block">
                             <li>
-                                <a href="/collections/all" title="all" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">
+                                <a href="/collections/all" title="all" class="active-nav">
                                     All
                                 </a>
                             </li>
@@ -44,7 +44,7 @@
                             </li>
                             <li>
                                 <a href="/collections/congratulation" title="Congratulation">
-                                    Congratulation
+                                    Congratulations
                                 </a>
                             </li>
                             <li>
@@ -53,13 +53,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/collections/thank-you" title="Thank-You">
-                                    Thank You
+                                <a href="/collections/holidays" title="Holidays">
+                                    Holidays
                                 </a>
                             </li>
                             <li>
-                                <a href="/collections/compositions" title="Flower-Composition">
-                                    Flower Composition
+                                <a href="/collections/our-friends-florists" title="Our Friends Florists">
+                                    Our Friends Florists
                                 </a>
                             </li>
                             <li>

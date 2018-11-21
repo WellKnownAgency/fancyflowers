@@ -1,5 +1,5 @@
-@section('title', 'Flowers Congratulations Collections | Fancy Flowers')
-@section('dscr', '')
+@section('title', 'Flowers Congratulations Collection | Fancy Flowers')
+@section('dscr', 'For a Congratulation occasion Flowers Collection from Phladelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
@@ -11,9 +11,9 @@
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
 				<li><a href="/collections/all" title="Categories">Collections</a></li>
-				<li><span>Congratulation</span></li>
+				<li><span>Congratulations</span></li>
 			</ul>
-			<h2 class="bread-title">Congratulation</h2>
+			<h2 class="bread-title">Congratulations</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
@@ -44,7 +44,7 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation" class="{{ Request::is('collections/congratulation') ?"active-nav" : ""}}">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>
@@ -53,14 +53,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">

@@ -1,5 +1,5 @@
-@section('title', '')
-@section('dscr', '')
+@section('title', 'Blog about Flowers | Fancy Flowers')
+@section('dscr', 'Find interesting information about flowers. Answers on most popular questions, from which flowers to gift, to how to grow.')
 @section('keywords', '')
 
 @extends('main')

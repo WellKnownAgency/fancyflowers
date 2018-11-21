@@ -1,5 +1,5 @@
-@section('title', 'New Baby Flowers Collections | Fancy Flowers')
-@section('dscr', '')
+@section('title', 'New Baby Flowers Collection | Fancy Flowers')
+@section('dscr', 'New Baby occasion flowers collection from Philadelphia Fancy Flowers Delivery.')
 @section('keywords', '')
 
 @extends('main')
@@ -44,23 +44,23 @@
 							</li>
 							<li>
 								<a href="/collections/congratulation" title="Congratulation">
-									Congratulation
+									Congratulations
 								</a>
 							</li>
 							<li>
-								<a href="/collections/new-baby" title="New-Baby" class="{{ Request::is('collections/new-baby') ?"active-nav" : ""}}">
+								<a href="/collections/new-baby" title="New-Baby" class="active-nav">
 									New Baby
 								</a>
 							</li>
 							<li>
-								<a href="/collections/thank-you" title="Thank-You">
-									Thank You
-								</a>
+									<a href="/collections/holidays" title="Holidays">
+											Holidays
+									</a>
 							</li>
 							<li>
-								<a href="/collections/compositions" title="Flower-Composition">
-									Flower Composition
-								</a>
+									<a href="/collections/our-friends-florists" title="Our Friends Florists">
+											Our Friends Florists
+									</a>
 							</li>
 							<li>
 								<a href="/collections/looseflowers" title="Loose-Flowers">
