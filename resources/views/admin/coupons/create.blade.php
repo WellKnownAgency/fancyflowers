@@ -13,7 +13,7 @@
           Fancy Flowers Coupons
         </h5>
         <div class="card-body">
-          <a href="/admin/coupons" class="btn btn-info">All Collections</a>
+          <a href="/admin/coupons" class="btn btn-info">All Coupons</a>
         </div>
       </div>
     </div>
