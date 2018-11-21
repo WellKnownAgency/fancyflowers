@@ -24,7 +24,7 @@ class PageController extends Controller
     {
       $posts = Post::get();
       $flowers = Flower::get();
-      return response()->view('sitemap')->withPosts($posts)->withFlowers($flowers)->header('Content-Type', 'text/xml');
+      return response()->view('sitemap', compact('posts'), compact('flowers'))->header('Content-Type', 'text/xml');
     }
 
 }
