@@ -41,7 +41,7 @@
                 <td>{{ $user->phonenumber }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td class="text-right">
-                  <a href="/admin/users/{{ $user }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
+                  <a href="/admin/users/{{ $user->id }}/delete" class="btn btn-danger btn-sm delete">Delete</a>
                 </td>
               </tr>
               @endforeach
