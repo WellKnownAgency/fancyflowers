@@ -5,7 +5,7 @@ Auth::routes();
 // Main Pages Routes
 Route::get('/', 'PageController@index');
 
-Route::get('/sitemap', function () {
+Route::get('/sitemap.xml', function () {
     $posts = App\Post::get();
     $flowers = App\Flower::get();
     return view('sitemap')->withPosts($posts)->withFlowers($flowers);
