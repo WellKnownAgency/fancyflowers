@@ -1,3 +1,9 @@
+@php
+    $collections = \App\Collection::orderBy('sort')->get();
+      $chunks = $collections->prepend(collect(['name' => 'All', 'slug' => '']))->chunk(3);
+@endphp
+
+
 <header id="top-header">
   <div class="header-topbar">
     <div class="container">
@@ -134,11 +140,27 @@
                     <a href='#' id="collections" class="coll-open" >Collections <b class="caret"></b></a>
                     <div id="dropdown-menu2" class="dropdown-menu">
                       <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                          @php
+                              $collections = \App\Collection::orderBy('sort')->get();
+                                $chunks = $collections->prepend(['name' => 'All', 'slug' => ''])->chunk(3)->toArray();
+                          @endphp
+                          @foreach($chunks as $chunk)
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="block-subcategories">
+                                      <ul>
+                                          @foreach($chunk as $collection)
+                                              <li><a href="/collections{{$collection['slug'] ? '/'.$collection['slug'] : ''}}" title="{{$collection['name']}}">{{$collection['name']}}</a></li>
+                                          @endforeach
+                                      </ul>
+                                  </div>
+                              </div>
+                          @endforeach
+                        {{--<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                           <div class="block-subcategories">
 
+
                             <ul>
-                              <li class="active"><a href="/collections/all" title="All" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">All</a></li>
+                              <li class="active"><a href="/collections" title="All" class="{{ Request::is('collections/all') ?"active-nav" : ""}}">All</a></li>
                               <li class="active"><a href="/collections/birthday" title="Birthday" class="{{ Request::is('collections/birthday') ?"active-nav" : ""}}">Birthday</a></li>
                               <li><a href="/collections/weddings" title="Weddings" class="{{ Request::is('collections/wedding') ?"active-nav" : ""}}">Wedding</a></li>
                            </ul>
@@ -162,7 +184,7 @@
                               <li><a href="/collections/gifts" title="Gifts" class="{{ Request::is('collections/gifts') ?"active-nav" : ""}}">Gifts</a></li>
                             </ul>
                           </div>
-                        </div>
+                        </div>--}}
                       </div>
                     </div>
                   </li>

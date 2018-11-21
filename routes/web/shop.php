@@ -1,15 +1,8 @@
 <?php
 
-Route::get('/collections/filter', 'CollectionController@filter')->name('collection.filter');
-Route::get('/collections/birthday', 'CollectionController@getBirthday')->name('collection.birthday');
-Route::get('/collections/our-friends-florists', 'CollectionController@getOurfriendsflorists')->name('collection.getOurfriendsflorists');
-Route::get('/collections/congratulation', 'CollectionController@getCongratulation')->name('collection.congratulation');
-Route::get('/collections/gifts', 'CollectionController@getGifts')->name('collection.gifts');
-Route::get('/collections/new-baby', 'CollectionController@getNewbaby')->name('collection.newbaby');
-Route::get('/collections/holidays', 'CollectionController@getHolidays')->name('collection.holidays');
-Route::get('/collections/weddings', 'CollectionController@getWeddings')->name('collection.weddings');
-Route::get('/collections/looseflowers', 'CollectionController@getLooseflowers')->name('collection.looseflowers');
-Route::get('/collections/all', 'CollectionController@getAll')->name('collection.all');
+Route::get('/collections/filter', 'CollectionController@filter')->name('collections.filter');
+Route::get('/collections/{slug}', 'CollectionController@show')->name('collection');
+Route::get('/collections', 'CollectionController@all')->name('collections');
 
 Route::get('/products-list', function () {
     return view('products-list/products-list');
