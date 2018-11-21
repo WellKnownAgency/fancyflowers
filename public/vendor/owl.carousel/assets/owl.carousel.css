@@ -131,7 +131,9 @@
   cursor: -ms-grab;
   cursor: grab;
 }
-
+.owl-carousel.owl-rtl {
+  direction: ltr;
+}
 .owl-carousel.owl-rtl .owl-item {
   float: right;
 }
