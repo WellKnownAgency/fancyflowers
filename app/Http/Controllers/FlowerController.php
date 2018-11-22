@@ -153,7 +153,7 @@ class FlowerController extends Controller
         // validate the data
         $this->validate($request, array_merge([
             'name'         => 'required|max:255',
-            'slug'          => 'required|alpha_dash|min:5|max:255|unique:flowers,slug,'.$id,
+            'slug'          => 'required|alpha_dash|min:1|max:255|unique:flowers,slug,'.$id,
             'dscr'          => 'required',
         ], $prices_rules));
 
