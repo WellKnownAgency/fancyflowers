@@ -70,5 +70,5 @@
 @stop
 @section('customjs')
 <!-- Map google -->
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyBd1UJcqm8K9sZ4p9xloWUHSzsFaovKxuM"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDzH9dDQUCBCUlalG100KYMFIhXOjqmlcU"></script>
 @stop
