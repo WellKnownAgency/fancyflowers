@@ -68,3 +68,7 @@
 				</div><!-- end container -->
 			</div><!--end columns-->
 @stop
+@section('customjs')
+<!-- Map google -->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyBd1UJcqm8K9sZ4p9xloWUHSzsFaovKxuM"></script>
+@stop
