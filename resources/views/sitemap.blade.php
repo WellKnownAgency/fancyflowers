@@ -4,105 +4,103 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-
-<url>
-  <loc>https://fflower.net/</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/all</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/congratulation</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/our-friends-florists</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/birthday</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/new-baby</loc>
-  <lastmod>22018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/looseflowers</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/weddings</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/holidays</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/collections/gifts</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/about-us</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/contact-us</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/register</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/login</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/cart</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/checkout</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fflowers.net/blog</loc>
-  <lastmod>2018-11-21T01:04:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
- @foreach($posts as $post)
-        <url>
-            <loc>https://fflowers.net/blog/{{ $post->slug }}</loc>
-            <lastmod>{{ date('Y-m-d', strtotime($post->created_at)) }}</lastmod>
-            <priority>0.70</priority>
-        </url>
-@endforeach
-@foreach($flowers as $flower)
-       <url>
-           <loc>https://fflowers.net/product/{{ $flower->slug }}</loc>
-           <lastmod>{{ date('Y-m-d', strtotime($flower->updated_at)) }}</lastmod>
-           <priority>1.00</priority>
-       </url>
-@endforeach
+      <url>
+      <loc>https://fflower.net/</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>1.00</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/all</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/congratulation</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/our-friends-florists</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/birthday</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/new-baby</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/looseflowers</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/weddings</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/holidays</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/collections/gifts</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/about-us</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/contact-us</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/register</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/login</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/cart</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/checkout</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      <url>
+      <loc>https://fflowers.net/blog</loc>
+      <lastmod>2018-11-21T01:04:07+00:00</lastmod>
+      <priority>0.80</priority>
+      </url>
+      @foreach($posts as $post)
+            <url>
+                <loc>https://fflowers.net/blog/{{ $post->slug }}</loc>
+                <lastmod>{{ date('Y-m-d', strtotime($post->created_at)) }}</lastmod>
+                <priority>0.70</priority>
+            </url>
+      @endforeach
+      @foreach($flowers as $flower)
+           <url>
+               <loc>https://fflowers.net/product/{{ $flower->slug }}</loc>
+               <lastmod>{{ date('Y-m-d', strtotime($flower->updated_at)) }}</lastmod>
+               <priority>1.00</priority>
+           </url>
+      @endforeach
 </urlset>
