@@ -13,7 +13,7 @@
 				<li><a href="/collections" title="Categories">Collections</a></li>
 				<li><span>{{$collection->name}}</span></li>
 			</ul>
-			<h2 class="bread-title">Birthday</h2>
+			<h2 class="bread-title">{{$collection->name}}</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
