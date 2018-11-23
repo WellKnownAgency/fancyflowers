@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://fflower.net/</loc>
+        <loc>https://fflowers.net/</loc>
         <lastmod>2018-11-21T01:04:07+00:00</lastmod>
         <priority>1.00</priority>
       </url>
