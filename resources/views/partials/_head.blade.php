@@ -7,6 +7,7 @@
   <meta name="keywords" content="@yield('keywords')">
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="google-site-verification" content="jfqV_hxgFSnMd4JvUvyjca0qY4HfPltkgGELFHZ9k5w" />
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
