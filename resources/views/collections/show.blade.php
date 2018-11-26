@@ -1,5 +1,5 @@
-@section('title', 'Birthday Flowers Collection | Fancy Flowers ')
-@section('dscr', 'For a Birthday occasion Flowers Collection from Philadelphia Fancy Flowers Delivery.')
+@section('title', "{{$collection->name}} Flowers Collection | Fancy Flowers ")
+@section('dscr', "For a {{$collection->name}} occasion Flowers Collection from Philadelphia Fancy Flowers Delivery.")
 @section('keywords', '')
 
 @extends('main')
