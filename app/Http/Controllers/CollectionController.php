@@ -14,6 +14,11 @@ class CollectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function ourfriendsflorists() {
+       return view('collections.ourfriendsflorists');
+     }
+
+
     public function index()
     {
       $collections = Collection::orderBy('id')->get();

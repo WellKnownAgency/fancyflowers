@@ -1,5 +1,6 @@
 <?php
 
+Route::get('collections/our-friends-florists', 'CollectionController@ourfriendsflorists')->name('collections.ourfriendsflorists');
 Route::get('/collections/filter', 'CollectionController@filter')->name('collections.filter');
 Route::get('/collections/{slug}', 'CollectionController@show')->name('collection');
 Route::get('/collections', 'CollectionController@all')->name('collections');
