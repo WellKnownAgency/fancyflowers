@@ -76,7 +76,7 @@
             var myLatLng = {lat: 40.275060, lng: -75.180279};
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
+                zoom: 8,
                 center: myLatLng
             });
 
