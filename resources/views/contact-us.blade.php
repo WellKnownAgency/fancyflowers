@@ -61,14 +61,49 @@
 							</div>
 						</div>
 						<div id="contact-map" class="clearfix">
-							<div id="map"></div><!-- end map -->
-							<div class="hidden-lg hidden-md hidden-sm hidden-xs contact-address">Philadelphia PA</div>
+							<div id="map" style="width: 100%; height: 400px;"></div><!-- end map -->
+							{{--<div class="hidden-lg hidden-md hidden-sm hidden-xs contact-address">815 Sunset Boulevard Ca 70079</div>--}}
 						</div><!-- end contact-map -->
 					</div><!-- end contact-us -->
 				</div><!-- end container -->
 			</div><!--end columns-->
 @stop
+
+
 @section('customjs')
-<!-- Map google -->
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyA-RjSZyHoV4rgFyBUGNsh-mnuFV5d7qu8"></script>
+    <script>
+        function initMap() {
+            var myLatLng = {lat: 40.275060, lng: -75.180279};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 18,
+                center: myLatLng
+            });
+
+            var contentString = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h4 id="firstHeading" class="firstHeading">Fancy Flowers (Philadelphia)</h4>'+
+                '<div id="bodyContent">'+
+                '<p>3602 Greenwood Terrace, Chalfont, PA, USA</p>'+
+                '</div>'+
+                '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Fancy Flowers (Philadelphia)'
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-RjSZyHoV4rgFyBUGNsh-mnuFV5d7qu8&callback=initMap">
+    </script>
 @stop
