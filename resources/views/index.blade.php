@@ -250,7 +250,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
                   <h4 class="ltr"><a href="/blog/{{$post->slug}}" title="{{$post->title}}" >{{$post->title}}</a></h4>
                   <div class="post-meta">
                     <div class="post-meta-lr post-meta-left">
-                      <span class="post-comment">By FancyFlowers</span>
+                      <span class="post-comment">By Fancy Flowers</span>
                     </div><!-- end post-meta-left -->
                   </div><!-- end post-meta -->
                   <div class="des">{{ str_limit($post->excerpt, 50, '') }}</div>

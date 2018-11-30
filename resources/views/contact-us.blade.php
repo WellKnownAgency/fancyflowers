@@ -62,7 +62,7 @@
 						</div>
 						<div id="contact-map" class="clearfix">
 							<div id="map"></div><!-- end map -->
-							<div class="hidden-lg hidden-md hidden-sm hidden-xs contact-address">815 Sunset Boulevard Ca 70079</div>
+							<div class="hidden-lg hidden-md hidden-sm hidden-xs contact-address">Philadelphia PA</div>
 						</div><!-- end contact-map -->
 					</div><!-- end contact-us -->
 				</div><!-- end container -->
@@ -70,5 +70,5 @@
 @stop
 @section('customjs')
 <!-- Map google -->
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyDzH9dDQUCBCUlalG100KYMFIhXOjqmlcU"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyA-RjSZyHoV4rgFyBUGNsh-mnuFV5d7qu8"></script>
 @stop

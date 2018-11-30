@@ -22,11 +22,11 @@
   <!-- container -->
   <div class="container">
     <h1>Shipping Policy</h1>
-    FancyFlowers Inc is located at:
+    Fancy Flowers Inc is located at:
     <address>
     3602 Greenwood Terrace, Chalfont, PA - 18914, USA<br/>(267)972-39-86</address>
 
-    <p>Fflower.net is a marketplace for users to buy and send flowers. Fflowers.net verifies every bouquet to make sure they’re authentic and live up to their product description.
+    <p>Fflowers.net is a marketplace for users to buy and send flowers. Fflowers.net verifies every bouquet to make sure they’re authentic and live up to their product description.
 
       fflowers.net also offers a flat rate for shipping, depending on where you live. You can see their full FAQ page here.</p>
 
@@ -189,7 +189,7 @@
     <p>You will recieve your order in a particular day you have mentioned in the chekout page. Same day delivery is only accaptable till 12 p.m.</p>
 
           <h3>I PLACED AN ORDER, BUT DIDN’T RECEIVE A CONFIRMATION EMAIL.</h3>
-    <p>You can email us at myfancyflowers@gmail.com or call us at +1 267 972-39-86</p>
+    <p>You can email us at myFancy Flowers@gmail.com or call us at +1 267 972-39-86</p>
 
 
   </div> <!-- end container -->
