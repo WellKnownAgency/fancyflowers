@@ -13,7 +13,7 @@
           Fancy Flowers Coupons
         </div>
         <div class="card-body">
-          <a href="/admin/coupons/create" class="btn btn-success">Create Collection</a>
+          <a href="/admin/coupons/create" class="btn btn-success">Create Coupon</a>
         </div>
       </div>
     </div>

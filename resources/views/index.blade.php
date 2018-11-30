@@ -200,7 +200,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
         <div class="tv-tablecell">
           <div class="block-html block">
             <p class="custom-h3">Congratulations</p>
-            <p class="block-htmldes">Appreciation in a "Thank You" for gifts symbolizes care, hope and love. Choose your gift and symbolize your thanks, and let Fancy Flowers take care of all the service to the final destination with total satisfaction and convenience to the customer. This is one of the most beautiful way to say "Thank You". </p>
+            <p class="block-htmldes">Flowers from "Congratulations" symbolize the wish of happiness, joy, love, and success! Choose your gift and present your friendship and love, and let Fancy Flowers take care of all the services to the final destination with total satisfaction and convinience to the customer. This is one of the most beautiful ways to send Congratulations. </p>
             <a class="button btn btn-primary" href="/collections/congratulation" title="Shop now">Shop now</a>
           </div><!--end block-html -->
         </div>
@@ -247,7 +247,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
                   <span class="post-date"><span class="month">{{ Carbon\Carbon::parse($post->created_at)->format('M') }}</span><br><span class="day">{{ Carbon\Carbon::parse($post->created_at)->format('d') }}</span></span>
                 </div>
                 <div class="post-content">
-                  <h4><a href="/blog/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a></h4>
+                  <h4 class="ltr"><a href="/blog/{{$post->slug}}" title="{{$post->title}}" >{{$post->title}}</a></h4>
                   <div class="post-meta">
                     <div class="post-meta-lr post-meta-left">
                       <span class="post-comment">By FancyFlowers</span>

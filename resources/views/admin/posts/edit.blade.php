@@ -10,7 +10,7 @@
     <div class="col-md-3">
       <div class="card" style="width: 100%;">
         <h5 class="card-header">
-          Fancy Flowers Edit Collection
+          Fancy Flowers Edit Post
         </h5>
         <div class="card-body">
           <a href="/admin/posts" class="btn btn-info">All Posts</a>
@@ -19,7 +19,7 @@
     </div>
     <div class="col-md-9">
       <div class="card" style="width: 100%;">
-        <h5 class="card-header">EditPost</h5>
+        <h5 class="card-header">Edit Post</h5>
         <div class="card-body">
           <form action="{{action('PostController@update', $post->id)}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -63,4 +63,21 @@
     </div>
   </div>
 </div>
+@stop
+@section('customjs')
+<script>
+  tinymce.init({
+         selector: "textarea",
+         plugins: [
+             "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+             "searchreplace wordcount visualblocks visualchars code fullscreen",
+             "insertdatetime media nonbreaking save table contextmenu directionality",
+             "emoticons template paste textcolor colorpicker textpattern"
+         ],
+         file_browser_callback: function(field_name, url, type, win) {
+            // trigger file upload form
+            if (type == 'image') $('#formUpload input').click();
+        }
+       });
+</script>
 @stop

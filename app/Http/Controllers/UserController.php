@@ -93,6 +93,6 @@ class UserController extends Controller
      {
        $user = User::findOrFail($id);
        $user->delete();
-       return redirect()->route('users.destroy');
+       return redirect('/admin/users');
      }
 }

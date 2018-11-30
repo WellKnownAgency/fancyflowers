@@ -5,9 +5,7 @@ Auth::routes();
 // Main Pages Routes
 Route::get('/', 'PageController@index');
 
-Route::get('/test', function () {
-    return view('test');
-});
+Route::get('/sitemap.xml', 'PageController@sitemap');
 
 Route::get('/about-us', function () {
     return view('about-us');

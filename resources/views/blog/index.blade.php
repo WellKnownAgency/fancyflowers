@@ -10,9 +10,9 @@
 		<div class="breadcrumb clearfix">
 			<ul class="ul-breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
-				<li><span>Latest blogs</span></li>
+				<li><span>Blog</span></li>
 			</ul>
-			<h2 class="bread-title">Latest blogs</h2>
+			<h2 class="bread-title">Latest posts</h2>
 		</div>
 	</div>
 </div><!-- end breadcrumb -->
