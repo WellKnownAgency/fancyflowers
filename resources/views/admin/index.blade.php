@@ -15,7 +15,7 @@
         <div class="card-body">
           <ul class="list-group">
           <li class="list-group-item"><a href="/" target="_blank" class="list-group-item list-group-item-action">Main Page</a></li>
-          <li class="list-group-item"><a href="collections/all" target="_blank" class="list-group-item list-group-item-action">All Collections</a></li>
+          <li class="list-group-item"><a href="/collections" target="_blank" class="list-group-item list-group-item-action">All Collections</a></li>
           <li class="list-group-item"><a href="/blog" target="_blank" class="list-group-item list-group-item-action">Blog</a></li>
           <li class="list-group-item"><a href="/about-us" target="_blank" class="list-group-item list-group-item-action">About Us</a></li>
           <li class="list-group-item"><a href="/contact-us" target="_blank" class="list-group-item list-group-item-action">Contact Us</a></li>

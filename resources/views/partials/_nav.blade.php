@@ -86,7 +86,7 @@
                               @foreach (Cart::content() as $item)
                                 <tr>
                                   <td class="product-thumbnail">
-                                    <a href="page-detail.html">
+                                    <a href="/product/{{ $item->model->slug }}">
                                       <img width="80" height="107" alt="" class="img-responsive" src="/images/product/{{ $item->model->image1 }}">
                                     </a>
                                   </td>
