@@ -91,7 +91,7 @@
                         <tr>
                             <td align="center">
                                 <p style="{{$style['p']}}">
-                                    <a href="{{ env('APP_URL') }}" style="color: #999999;">
+                                    <a href="https://fflowers.net" style="color: #999999;">
                                         {{ env('APP_NAME') }}
                                     </a>
                                 </p>

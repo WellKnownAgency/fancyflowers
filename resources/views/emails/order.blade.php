@@ -57,13 +57,13 @@
                                     @foreach($cart::content() as $product)
                                         <tr>
                                             <td style="{{$style['th']}}">
-                                                <img src="{{ env('APP_URL') }}/images/product/{{ $product->image1 }}"
+                                                <img src="{{ env('APP_URL') }}/images/product/{{ $product->model->image1 }}"
                                                      alt="{{ $product->name }}"
                                                      title="{{ $product->name }}"
                                                      width="75"/>
                                             </td>
                                             <td style="{{$style['th']}}">
-                                                <a href="{{ env('APP_URL') }}/product/{{ $product->slug }}" style="{{$style['a']}}">{{ $product->name }}</a>
+                                                <a href="{{ env('APP_URL') }}/product/{{ $product->model->slug }}" style="{{$style['a']}}">{{ $product->name }}</a>
                                             </td>
                                             <td style="{{$style['th']}} text-align: center;">${{ $product->price }}</td>
                                             <td style="{{$style['th']}} text-align: center;">{{ $product->qty }}</td>

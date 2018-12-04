@@ -17,10 +17,9 @@
 @endphp
 
 @section('title')
-    <h3 style="{{$style['h']}}{{$style['h3']}}">You made the order on the website of "{{env('APP_NAME')}}"</h3>
+    <h3 style="{{$style['h']}}{{$style['h3']}}">You order on "{{env('APP_NAME')}}"</h3>
 @endsection
 
 @section('extra')
 
 @endsection
-
