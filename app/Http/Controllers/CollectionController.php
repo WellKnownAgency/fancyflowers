@@ -19,7 +19,7 @@ class CollectionController extends Controller
       $collections = Collection::orderBy('id')->get();
       return view('admin.collections.index')->withCollections($collections);
     }
-    public function show($slug)
+    public function show(Request $request, $slug)
     {
         $flowersbest = Flower::isBestsellers()->take(4)->get();
         $collection = Collection::where('slug', $slug)->first();
@@ -27,11 +27,14 @@ class CollectionController extends Controller
         $flowers = Flower::whereHas('collections', function ($query) use ($slug) {
             $query->where('slug', $slug);
         });
-        $flowers = $flowers->paginate($this->limit);
+        $flowers = $flowers->get();
+
         $min = $flowers->min('price_new_default');
         $minPrice = $min ? $min : 0;
         $max = $flowers->max('price_new_default');
         $maxPrice = $max ? ceil($max) : 100;
+
+        $flowers = $this->paginate($flowers, $this->limit, $request->input('page'));
         return view('collections.show', compact('collection', 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
     }
   public function all(Request $request)
@@ -40,11 +43,14 @@ class CollectionController extends Controller
     $collections = Collection::all();
     $flowers = new Flower();
     $flowers = $flowers->orderBy('created_at', 'asc');
-    $flowers = $flowers->paginate($this->limit);
+    $flowers = $flowers->get();
+
     $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
     $max = $flowers->max('price_new_default');
     $maxPrice = $max ? ceil($max) : 100;
+
+    $flowers = $this->paginate($flowers, $this->limit, $request->input('page'));
     return view('collections.all', compact( 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
   }
   public function filter(Request $request)
