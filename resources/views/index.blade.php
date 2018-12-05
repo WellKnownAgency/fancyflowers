@@ -20,7 +20,7 @@
       <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">We are sure that the style is in every detail: <br>
         talented florists, beautiful fresh flowers,
 stylish packing material,<br>  and attentive attitudes toward each client.</div>
-      <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
+      <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="/collections" title="Shop now">Shop now</a></div>
     </div>
   </div>
   <div id="caption2" class="nivo-html-caption">
@@ -28,7 +28,7 @@ stylish packing material,<br>  and attentive attitudes toward each client.</div
       <!--<div class="left-right hidden-xs medium_yellow_16"><span>Accessories</span></div>-->
       <div class="left-right hidden-xs normal very_large_60">Fancy Flowers</div>
       <div class="left-right  hidden-md hidden-sm hidden-xs slow medium_16">Our floral company is glad to create and deliver exclusive<br>gorgeous bouquets for you. Our flowers are always fresh and beautiful. <br>Make the best present you can by ordering flowers at fflowers.com </div>
-      <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="collections/all" title="Shop now">Shop now</a></div>
+      <div class="left-right hidden-xs slow"><a class="btn button btn-primary" href="/collections" title="Shop now">Shop now</a></div>
     </div>
   </div>
 </div><!-- end tiva-slideshow-wrapper -->
