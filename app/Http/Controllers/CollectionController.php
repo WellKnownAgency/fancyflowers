@@ -33,6 +33,10 @@ class CollectionController extends Controller
             $query->where('slug', $slug);
         });
         $flowers = $flowers->get();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3db8f2aa7e1ce84f5e191a71359b4739e6d9bd2d
         $min = $flowers->min('price_new_default');
         $minPrice = $min ? $min : 0;
         $max = $flowers->max('price_new_default');
@@ -48,6 +52,10 @@ class CollectionController extends Controller
     $flowers = new Flower();
     $flowers = $flowers->orderBy('created_at', 'asc');
     $flowers = $flowers->get();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3db8f2aa7e1ce84f5e191a71359b4739e6d9bd2d
     $min = $flowers->min('price_new_default');
     $minPrice = $min ? $min : 0;
     $max = $flowers->max('price_new_default');

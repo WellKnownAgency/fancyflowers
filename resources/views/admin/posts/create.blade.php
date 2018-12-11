@@ -64,9 +64,15 @@
   </div>
 </div>
 @stop
+@include('mceImageUpload::upload_form')
 @section('customjs')
 <script>
   tinymce.init({
+        relative_urls: false,
+        file_browser_callback: function(field_name, url, type, win) {
+                // trigger file upload form
+                if (type == 'image') $('#formUpload input').click();
+            }
          selector: "textarea",
          plugins: [
              "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -74,10 +80,6 @@
              "insertdatetime media nonbreaking save table contextmenu directionality",
              "emoticons template paste textcolor colorpicker textpattern"
          ],
-         file_browser_callback: function(field_name, url, type, win) {
-            // trigger file upload form
-            if (type == 'image') $('#formUpload input').click();
-        }
        });
 </script>
 @stop
