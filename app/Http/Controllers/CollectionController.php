@@ -19,6 +19,25 @@ class CollectionController extends Controller
      }
 
 
+		 public function all(Request $request)
+  		{
+				 $flowersbest = Flower::isBestsellers()->take(4)->get();
+
+				  $collections = Collection::all();
+
+					$flowers = new Flower();
+					$flowers = $flowers->orderBy('created_at', 'asc');
+					$flowers = $flowers->paginate($this->limit);
+
+					$min = $flowers->min('price_new_default');
+			 		$minPrice = $min ? $min : 0;
+					$max = $flowers->max('price_new_default');
+					$maxPrice = $max ? ceil($max) : 100;
+
+					return view('collections.all', compact( 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
+			}
+
+
     public function index()
     {
       $collections = Collection::orderBy('id')->get();
