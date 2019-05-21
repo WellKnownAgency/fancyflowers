@@ -42,7 +42,7 @@ class CollectionController extends Controller
         $flowers = $this->paginate($flowers, $this->limit, $request->input('page'));
         return view('collections.show', compact('collection', 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
     }
-  }
+
   public function filter(Request $request)
   {
       if($request->has('category')) {
