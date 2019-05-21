@@ -33,10 +33,7 @@ class CollectionController extends Controller
             $query->where('slug', $slug);
         });
         $flowers = $flowers->get();
-<<<<<<< HEAD
-=======
 
->>>>>>> 3db8f2aa7e1ce84f5e191a71359b4739e6d9bd2d
         $min = $flowers->min('price_new_default');
         $minPrice = $min ? $min : 0;
         $max = $flowers->max('price_new_default');
@@ -45,24 +42,6 @@ class CollectionController extends Controller
         $flowers = $this->paginate($flowers, $this->limit, $request->input('page'));
         return view('collections.show', compact('collection', 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
     }
-  public function all(Request $request)
-  {
-    $flowersbest = Flower::isBestsellers()->take(4)->get();
-    $collections = Collection::all();
-    $flowers = new Flower();
-    $flowers = $flowers->orderBy('created_at', 'asc');
-    $flowers = $flowers->get();
-<<<<<<< HEAD
-=======
-
->>>>>>> 3db8f2aa7e1ce84f5e191a71359b4739e6d9bd2d
-    $min = $flowers->min('price_new_default');
-    $minPrice = $min ? $min : 0;
-    $max = $flowers->max('price_new_default');
-    $maxPrice = $max ? ceil($max) : 100;
-
-    $flowers = $this->paginate($flowers, $this->limit, $request->input('page'));
-    return view('collections.all', compact( 'flowers', 'collections', 'flowersbest', 'minPrice', 'maxPrice'));
   }
   public function filter(Request $request)
   {

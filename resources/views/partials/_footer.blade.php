@@ -67,7 +67,9 @@
     <div class="container">
       <div class="row">
         <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sp-12">
-          Copyright © 2018 - All rights reserved. Powered by <a href="https://wknown.com">WellKnown Agency</a>
+          Copyright © <script>
+		        document.write(new Date().getFullYear())
+		      </script> - All rights reserved. Powered by <a href="https://wknown.com">WellKnown Agency</a>
         </div>
       </div>
     </div>

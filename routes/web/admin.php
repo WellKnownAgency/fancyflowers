@@ -1,6 +1,6 @@
 <?php
 
-Route::middleware('auth:admin')->group(function (){
+Route::middleware('admin')->group(function (){
     Route::get('/admin', 'AdminPageController@index');
     Route::get('/admin/contacts', 'ContactController@index');
     Route::get('/admin/contacts/{id}', 'ContactController@show')->name('contacts.show');
@@ -23,6 +23,3 @@ Route::middleware('auth:admin')->group(function (){
     Route::get('/admin/coupons/{id}/delete', ['uses' => 'CouponAdminController@destroy', 'as' => 'coupon.delete']);
     Route::get('/admin/contacts/{id}/delete', ['uses' => 'ContactController@destroy', 'as' => 'contact.delete']);
 });
-
-Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');

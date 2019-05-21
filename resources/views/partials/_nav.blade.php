@@ -29,6 +29,11 @@
                 <a href="/login" title="Login">Login</a>
               </li>
               @else
+							@if(auth()->user()->isAdmin == 1)
+							<li>
+                <a href="/admin" title="Account">Admin</a>
+              </li>
+							@endif
               <li>
                 <a href="/account" title="Account">Account</a>
               </li>
